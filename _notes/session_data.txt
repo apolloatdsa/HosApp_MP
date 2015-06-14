@@ -1,0 +1,17 @@
+array(14)
+ { 
+["session_id"]=> string(32) "6593f37acf8e9c14a41613a684cd2763" 
+["ip_address"]=> string(10) "xx.xx.xx.xx" 
+["user_agent"]=> string(109) "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36" 
+["last_activity"]=> int(1434036691) 
+["user_data"]=> string(0) "" 
+["identity"]=> string(15) "admin@admin.com" 
+["username"]=> string(13) "administrator" 
+["email"]=> string(15) "admin@admin.com" 
+["user_id"]=> string(1) "1" 
+["old_last_login"]=> string(10) "1434033115" 
+["user_first_name"]=> string(5) "Admin" 
+["user_last_name"]=> string(8) "istrator" 
+["Group_1"]=> string(5) "admin" 
+["Group_2"]=> string(7) "members" 
+}
