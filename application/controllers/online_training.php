@@ -85,8 +85,98 @@ class Online_training extends CI_Controller {
 			
 			
 			}
-
-
+		public function about(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('about_us');
+			$this->load->view('templates/footer');
+			
+			
+			}	
+		public function company_offices(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('company_offices');
+			$this->load->view('templates/footer');
+			
+			
+			}	
+		public function partners(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('partners');
+			$this->load->view('templates/footer');
+			
+			
+			}	
+		public function terms_of_use(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('terms_of_use');
+			$this->load->view('templates/footer');
+			
+			
+			}		
+		public function privacy(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('privacy');
+			$this->load->view('templates/footer');
+			
+			
+			}	
+		public function become_a_tutor(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('become_a_tutor');
+			$this->load->view('templates/footer');
+			
+			
+			}		
+		public function pricing(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('pricing');
+			$this->load->view('templates/footer');
+			
+			
+			}		
+		public function courses(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('courses');
+			$this->load->view('templates/footer');
+			
+			
+			}		
+		public function sign_up(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('sign_up');
+			$this->load->view('templates/footer');
+			
+			
+			}		
+		public function tutors(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('tutors');
+			$this->load->view('templates/footer');
+			
+			
+			}		
+		
+			
 //#################################################################################################
 
 

@@ -1,3 +1,53 @@
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <h4 class="text-headline text-light">Corporate</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="<?php echo base_url();?>online_training/about">About the company</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/company_offices">Company offices</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/partners">Partners</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/terms_of_use">Terms of use</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/privacy">Privacy</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h4 class="text-headline text-light">Explore</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="<?php echo base_url();?>online_training/courses">Courses</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/tutors">Tutors</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/become_a_tutor">Become Tutor</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/sign_up">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h4 class="text-headline text-light">Newsletter</h4>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter email here...">
+                            <span class="input-group-btn">
+								<button class="btn btn-grey-800" type="button">Subscribe</button>
+							  </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <p>
+                        <a href="#" class="btn btn-indigo-500 btn-circle"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="btn btn-pink-500 btn-circle"><i class="fa fa-dribbble"></i></a>
+                        <a href="#" class="btn btn-blue-500 btn-circle"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fa fa-google-plus"></i></a>
+                    </p>
+                    <p class="text-subhead">
+                        &copy; 2015 Learning and accreditation through HosApp.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         PHP | OOP | MVC | Javascript | Bootstrap | CodeIgniter | MySql |  &copy; Copyright HosApp & DSA 2015
