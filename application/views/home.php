@@ -1,154 +1,622 @@
-<!--
-Author: Thomas Delaney
-Workshop: CodeIgniter MVC Webservice Assignment
-Student ID: D14126353
-Date:2015/06/09
-Ref:
-A Bootstrap starter template was used in this assessment
--->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Thomas Delaney MVC assessment</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-	<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
-  
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/script.js"></script>
-
-</head>
-
-<body>
-<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button > <a class="navbar-brand" href="#"></a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li id="nav-home">
-							<a href="#">Thomas Delaney MVC JSON assignment</a>
-						</li>
-						
-					</ul>
-					
-				</div>
-				
-			</nav>
-			<div id="jumbo-home" class="jumbotron">
-				<h3>
-					Page one.
-				</h3>
-				
-			</div>
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-        
-			<p>The Breezecatcher api has access to a database that contains nine product. The api URI to get all products is<strong> <a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products" target="_blank">http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products</a></strong> or it can access any one product by appending the URI with <strong>/product_id</strong> where <strong>product_id</strong> is <strong>1</strong> to <strong>9</strong>. If an invalid product_id is supplied it will return an error message.</p>
-				<p> 
-                The second end point api can collect a product description with url links to the Breezecatcher website along with stock availability and other product information.<strong> <a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/productsDesc" target="_blank">http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/productsDesc</a></strong> . The api can access any one product by appending the URI with <strong>/sku</strong> where the (stock keeping unit) <strong>sku</strong> is one of the following <strong>TS4-140, TS3-100, TS3-125, TS4-140, TS4-36M, PLD-204, WOOD-PLD-272, HD4-270, CVR-001</strong>. </p>
-            <p>
-            <h3>
-					Breezecatcher product by id.
-				</h3
-            		><ul>
-						<li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products" target="_blank">Breezecatcher all product api </a>
-						</li>
-						<li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products/1" target="_blank">Breezecatcher product 1  </a>
-						</li>
-                        <li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products/3" target="_blank">Breezecatcher product 3  </a>
-						</li>
-                         <li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products/5" target="_blank">Breezecatcher product 6  </a>
-						</li>
-                        
-                        <li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products/25" target="_blank">Breezecatcher invalid product id  </a>
-						</li>
-                        
-					</ul>
-            
-            
-            </p>
-			
-            <p>
-            
-            	<h3>
-					Breezecatcher product descriptions by sku.
-				</h3
-            
-            		><ul>
-						<li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/productsDesc" target="_blank">Breezecatcher all product description api </a>
-						</li>
-						<li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/productsDesc/TS4-140" target="_blank">Breezecatcher product TS4-140  </a>
-						</li>
-                        <li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/productsDesc/HD4-270" target="_blank">Breezecatcher product HD4-270  </a>
-						</li>
-                         <li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/productsDesc/WOOD-PLD-272" target="_blank">Breezecatcher product WOOD-PLD-272  </a>
-						</li>
-                        
-                        <li>
-							<a href="http://d14126353-dsa.com/mvc_assignment/breezecatcher_api/products/TS4-36MB" target="_blank">Breezecatcher invalid product sku  </a>
-						</li>
-                        
-					</ul>
-            
-            </p>
-            
-			<p>
-			 An example jQuery $.getJSON function is available in the JS folder script.js file.
-			</p>
-            <p>
-             
-            </p>
-		</div>
-		
-	</div>
-        <div class="row clearfix">
-            <div class="col-md-6 column" >
-    
-            
-            <div class="panel panel-info">
-            <div class="panel-heading"><button class="btn btn-success" id="button-products">Click to run getJSON and display product 2 data </button> </div>
-                      <div class="panel-body" id="display_area" >
-                        
-                      </div>
-                      <div class="panel-footer"><span> <button class="button-default" id="clear">Clear display </button> </span> </div>
+    <div class="parallax cover overlay cover-image-full home">
+        <img class="parallax-layer" src="<?php echo base_url();?>images/online_staff_training.jpg" alt="Learning Cover" />
+        <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-speed="8" data-opacity="true">
+            <div class="v-center">
+                <div class="page-section overlay-bg-white-strong relative paper-shadow" data-z="1">
+                    <h1 class="text-display-2 margin-v-0-15 display-inline-block">Home Training for the hospitality sector</h1>
+                    <p class="text-subhead">Professionally Developed Web-Based Training Course Libraries.</p>
+                    <p class="text-subhead">Automated training for staff in the hospitality business. Track staff progress as they learn through videos and quizzes.</p>
+                    <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="#modal-overlay-signup">Sign Up From- &euro;19.99/mo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-section-heading">
+            <h2 class="text-display-1">Butlers Chocolate Cafe</h2>
+            <p class="lead text-muted">Hosapp have provided us with a superior training resource. They have been a valuable asset and partner to our company.  They have provided practical methodologies for cultivating and expanding performance and productivity through improved skills, knowledge and attitudes.</p>
+        </div>
+        <div class="row" data-toggle="gridalicious">
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-green-300 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-film fa-2x fa-fw"></i>
+                        </div>
                     </div>
-            
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-headline">Watch Courses Offline</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-purple-300 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-life-bouy fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-headline">Premium Support</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-       </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-					<ul class="nav navbar-nav">
-                    
-						<li id="nav-home">
-							<a href="#">Thomas Delaney MVC JSON assignment</a>
-						</li>
-					
-					</ul>
-					
-				</div> 
-</div>
-
-</body>
-</html>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-orange-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-user fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-headline">Learn from Top Tutors</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-cyan-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-code fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-headline">All sectors covered</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-pink-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-print fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-headline">Printed Certificates</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-red-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-tasks fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-headline">HETAC accredited </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="page-section bg-white">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="text-display-1">Featured Courses</h3>
+                <p class="lead text-muted">Intermediate Food Hygiene </p>
+                <h4 class="media-heading margin-v-5-3">The course is recommended for Supervisors or anyone requiring an in-depth understanding of Food Hygiene</h4>
+            </div>
+            <br/>
+            <div class="slick-basic slick-slider" data-items="4" data-items-lg="3" data-items-md="2" data-items-sm="1" data-items-xs="1">
+                <div class="item">
+                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <i class="fa fa-university"></i>
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Cork Institute of Technology </a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-primary"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-primary">
+                        <span class="v-center">
+                            <i class="fa fa-university"></i>
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Best practices from hospitality practitioners.</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-lightred"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-lightred">
+                        <span class="v-center">
+                            <i class="fa fa-university"></i>
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-red-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Accreditation and Recognition - Hibernia College</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-brown"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-brown">
+                        <span class="v-center">
+                            <i class="fa fa-university"></i>
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-orange-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Compliance and Endorsements</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-purple"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-purple">
+                        <span class="v-center">
+                            <i class="fa fa-university"></i>
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-purple-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">FLOW Hospitality Training</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <i class="fa fa-university"></i>
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Irish Hospitality Professional</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <br/>
+                <a class="btn btn-lg btn-primary" href="website-directory-grid.html">Browse Courses</a>
+            </div>
+        </div>
+    </div>
+    <div class="parallax cover overlay height-300 margin-none">
+        <img class="parallax-layer" data-auto-offset="true" data-auto-size="false" src="<?php echo base_url();?>images/photodune-6745579-modern-creative-man-relaxing-on-workspace-m.jpg" alt="Learning Cover" />
+        <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-opacity="true" data-speed="8">
+            <div class="v-center">
+                <div class="page-section">
+                    <h1 class="text-display-2 overlay-bg-white margin-v-0-15 inline-block">Brother Hubbard Support HosApp</h1>
+                    <br/>
+                    <p class="lead text-overlay overlay-bg-white-strong inline-block">Since 2014, HosApp Training has earned a reputation for delivering high quality education and training to the Hospitality and Food Service industry. In 2015 over 12,000 students participated in study programs with Hospitality Training Ireland.
+</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-section">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet doloremque enim error id, inventore magni odio odit quo tenetur.</p>
+                            </div>
+                        </div>
+                        <div class="media v-middle">
+                            <div class="media-left">
+                                <img src="<?php echo base_url();?>images/people/50/guy-1.jpg" alt="People" class="img-circle width-40" />
+                            </div>
+                            <div class="media-body">
+                                <p class="text-subhead margin-v-5-0">
+                                    <strong>Adrian D. <span class="text-muted">@ Mosaicpro Inc.</span></strong>
+                                </p>
+                                <p class="small">
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet doloremque enim error id, inventore magni odio odit quo tenetur.</p>
+                            </div>
+                        </div>
+                        <div class="media v-middle">
+                            <div class="media-left">
+                                <img src="<?php echo base_url();?>images/people/50/guy-8.jpg" alt="People" class="img-circle width-40" />
+                            </div>
+                            <div class="media-body">
+                                <p class="text-subhead margin-v-5-0">
+                                    <strong>Adrian D. <span class="text-muted">@ Mosaicpro Inc.</span></strong>
+                                </p>
+                                <p class="small">
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet doloremque enim error id, inventore magni odio odit quo tenetur.</p>
+                            </div>
+                        </div>
+                        <div class="media v-middle">
+                            <div class="media-left">
+                                <img src="<?php echo base_url();?>images/people/50/guy-4.jpg" alt="People" class="img-circle width-40" />
+                            </div>
+                            <div class="media-body">
+                                <p class="text-subhead margin-v-5-0">
+                                    <strong>Adrian D. <span class="text-muted">@ Mosaicpro Inc.</span></strong>
+                                </p>
+                                <p class="small">
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+    </div>
+    <div class="modal grow modal-overlay modal-backdrop-body fade" id="modal-overlay-signup">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <div class="modal-dialog">
+            <div class="v-cell">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="wizard-container wizard-1" id="wizard-demo-1">
+                            <div data-scrollable-h>
+                                <ul class="wiz-progress">
+                                    <li class="active">Plan &amp; Payment</li>
+                                    <li>Account Setup</li>
+                                    <li>Personal Details</li>
+                                </ul>
+                            </div>
+                            <form action="#" data-toggle="wizard" class="max-width-400 h-center">
+                                <fieldset class="step relative paper-shadow form-horizontal" data-z="2">
+                                    <div class="page-section-heading">
+                                        <h2 class="text-h3 margin-v-0">Payment</h2>
+                                        <h3 class="text-h4 margin-v-10 text-grey-400">Your plan is
+                                            <strong class="text-uppercase">learner</strong> for
+                                            <strong>&euro;19.99/mo</strong>
+                                        </h3>
+                                        <a href="pricing.html">See pricing</a>
+                                    </div>
+                                    <hr/>
+                                    <div class="form-group">
+                                        <label for="credit-card" class="col-xs-4 control-label">Credit Card</label>
+                                        <div class="col-xs-8">
+                                            <div class="form-control-material">
+                                                <input type="text" class="form-control" id="credit-card" placeholder="**** **** **** 2422">
+                                                <label for="credit-card">Credit Card</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-expiration" class="col-xs-4 control-label">Expiration:</label>
+                                        <div class="col-xs-8">
+                                            <select id="card-expiration" data-toggle="select2">
+                                                <option value="1" selected>January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                            <select data-toggle="select2">
+                                                <option value="2015" selected>2015</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv" class="col-xs-4 control-label">CVV</label>
+                                        <div class="col-xs-8">
+                                            <div class="form-control-material">
+                                                <input type="email" class="form-control" id="cvv" placeholder="123">
+                                                <label for="cvv">CVV</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="wiz-next btn btn-primary">Next</button>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="step relative paper-shadow" data-z="2">
+                                    <div class="page-section-heading">
+                                        <h2 class="text-h3 margin-v-0">Create your account</h2>
+                                        <h3 class="text-h4 margin-v-10 text-grey-400">This is a multi step form</h3>
+                                    </div>
+                                    <div class="form-group form-control-material">
+                                        <input class="form-control" type="text" id="wiz-email" placeholder="Email" />
+                                        <label for="wiz-email">Email:</label>
+                                    </div>
+                                    <div class="form-group form-control-material">
+                                        <input class="form-control" type="password" id="wiz-password" placeholder="Password" />
+                                        <label for="wiz-password">Password:</label>
+                                    </div>
+                                    <div class="form-group form-control-material">
+                                        <input class="form-control" type="password" id="wiz-password2" placeholder="Confirm Password" />
+                                        <label for="wiz-password2">Confirm Password:</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <button type="button" class="wiz-prev btn btn-default">Previous</button>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <button type="button" class="wiz-next btn btn-primary">Next</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="step relative paper-shadow" data-z="2">
+                                    <div class="page-section-heading">
+                                        <h2 class="text-h3 margin-v-0">Personal Details</h2>
+                                        <h3 class="text-h4 margin-v-10 text-grey-400">Your personal details are safe with us</h3>
+                                    </div>
+                                    <div class="form-group form-control-material">
+                                        <input class="form-control" type="text" id="wiz-fname" placeholder="First name" />
+                                        <label for="wiz-fname">First name:</label>
+                                    </div>
+                                    <div class="form-group form-control-material">
+                                        <input class="form-control" type="tel" id="wiz-lname" placeholder="Last name" />
+                                        <label for="wiz-lname">Last name:</label>
+                                    </div>
+                                    <div class="form-group form-control-material">
+                                        <input class="form-control" type="text" id="wiz-phone" placeholder="Phone" />
+                                        <label for="wiz-phone">Phone:</label>
+                                    </div>
+                                    <div class="form-group form-control-material">
+                                        <textarea rows="5" class="form-control" id="wiz-address" placeholder="Your address"></textarea>
+                                        <label for="wiz-address">Address:</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <button type="button" class="wiz-prev btn btn-default">Previous</button>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <button type="button" class="wiz-step btn btn-primary" data-target="0">Submit</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <h4 class="text-headline text-light">Corporate</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About the company</a></li>
+                        <li><a href="#">Company offices</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h4 class="text-headline text-light">Explore</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="">Courses</a></li>
+                        <li><a href="">Tutors</a></li>
+                        <li><a href="">Pricing</a></li>
+                        <li><a href="">Become Tutor</a></li>
+                        <li><a href="">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h4 class="text-headline text-light">Newsletter</h4>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter email here...">
+                            <span class="input-group-btn">
+								<button class="btn btn-grey-800" type="button">Subscribe</button>
+							  </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <p>
+                        <a href="#" class="btn btn-indigo-500 btn-circle"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="btn btn-pink-500 btn-circle"><i class="fa fa-dribbble"></i></a>
+                        <a href="#" class="btn btn-blue-500 btn-circle"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fa fa-google-plus"></i></a>
+                    </p>
+                    <p class="text-subhead">
+                        &copy; 2015 Learning App by mosaicpro.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>

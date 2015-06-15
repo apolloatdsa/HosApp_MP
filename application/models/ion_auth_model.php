@@ -2305,4 +2305,34 @@ class Ion_auth_model extends CI_Model
 		
 		}
 	
+	// function called by page loads in the online_training controller this will return the user level navbar to use 
+	
+	public function navbar(){
+
+	if ($this->session->userdata('admin')){// if user is also admin load the admin navbar menu 
+				return	$this->load->view('templates/admin_navbar');
+					}
+				
+				elseif ($this->session->userdata('instructor')){// if user is also instructor load the admin navbar menu 
+					return	$this->load->view('templates/instructor_navbar');
+					}
+					elseif ($this->session->userdata('manager')){// if user is also instructor load the admin navbar menu 
+					return	$this->load->view('templates/manager_navbar');
+					}
+						
+					elseif ($this->session->userdata('student')){// if user is also instructor load the admin navbar menu 
+						return	$this->load->view('templates/student_navbar');
+						}
+							elseif ($this->session->userdata('member')){// if user is also instructor load the admin navbar menu 
+								return	$this->load->view('templates/member_navbar');
+							}
+								else{
+									return	$this->load->view('templates/public_navbar'); // else load the student navbar menu
+									
+									}
+
+				}
+		
+
+	
 }

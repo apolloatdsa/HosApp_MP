@@ -1,5 +1,5 @@
 
-    <!-- Fixed navbar -->
+    <!-- Fixed ADMIN navbar -->
     <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand navbar-brand-logo">
-                    <a class="svg" href="index.html">
+                    <a class="svg" href="<?php echo base_url(); ?>">
                        <svg viewBox="0 19 612 171" height="100%" width="100%" preserveAspectRatio="xMidYMid meet">
                         <g>
                             <path d="M40.1,82.8h56.1v-33c0-5.9-0.4-9.8-1.2-11.6c-0.6-1.4-1.8-2.6-3.7-3.7c-2.6-1.4-5.3-2-8.1-2H79v-3.1h51.7v3.1h-4.3
@@ -58,7 +58,7 @@
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="<?php echo base_url();?>online_training">Home page</a></li>
+                            <li class="active"><a href="<?php echo base_url();?>">Home page</a></li>
                             <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>
                             <li><a href="<?php echo base_url();?>online_training/tutors">Tutors</a></li>
                             <li><a href="<?php echo base_url();?>online_training/survey">Survey</a></li>
@@ -67,7 +67,7 @@
                             <li><a href="<?php echo base_url();?>online_training/forum-thread">Forum Thread</a></li>
                             <li><a href="<?php echo base_url();?>online_training/blog">Blog Listing</a></li>
                             <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Post</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/contact_page">Contact</a></li>
+                            <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

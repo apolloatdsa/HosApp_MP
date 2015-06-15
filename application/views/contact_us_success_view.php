@@ -21,34 +21,23 @@
         <div class="container">
             <div class="panel margin-none panel-default paper-shadow max-width-400 h-center" data-z="0.5">
                 <div class="panel-heading">
-                    <h4 class="text-headline">Send a message</h4>
+                    <h4 class="text-headline">Message received</h4>
                 </div>
-                <div class="panel-body">
-                 <h1> </h1>
-                    <?php echo form_open(base_url().'email'); ?>
-                        <div class="form-group form-control-material">
-                        
+                <div class="panel-body " style="min-height: 300px;" >
+                
+                 <h1>Success </h1>
+                    <h4>
+                    You message has been received, we will contact you shortly.
                     
-                        
-                            <input class="form-control" type="text" id="fname" placeholder="First name" />
-                            <label for="fname"></label>
-                        </div>
-                        <div class="form-group form-control-material">
-                            <input class="form-control" type="tel" id="lname" placeholder="Last name" />
-                            <label for="lname"></label>
-                        </div>
-                        <div class="form-group form-control-material">
-                            <input class="form-control" type="text" id="phone" placeholder="Phone" />
-                            <label for="phone"></label>
-                        </div>
-                        <div class="form-group form-control-material">
-                            <textarea class="form-control" id="message" placeholder="Your message"></textarea>
-                            <label for="message"></label>
-                        </div>
-                        <div class="text-right">
-                            <button class="btn btn-primary relative paper-shadow" data-z="0.5" data-hover-z="1" data-animated>Send message</button>
-                        </div>
-                    </form>
+                    </h4>
+                    
+                   <h5>
+                    Have a nice day.
+                    
+                    </h5> 
+                    
+                    
+
                 </div>
             </div>
             <br/>

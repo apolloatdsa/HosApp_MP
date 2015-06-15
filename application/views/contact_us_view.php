@@ -25,30 +25,43 @@
                 </div>
                 <div class="panel-body">
                  <h1> </h1>
-                    <?php echo form_open(base_url().'email'); ?>
-                        <div class="form-group form-control-material">
-                        
-                    
-                        
-                            <input class="form-control" type="text" id="fname" placeholder="First name" />
-                            <label for="fname"></label>
-                        </div>
-                        <div class="form-group form-control-material">
-                            <input class="form-control" type="tel" id="lname" placeholder="Last name" />
-                            <label for="lname"></label>
-                        </div>
-                        <div class="form-group form-control-material">
-                            <input class="form-control" type="text" id="phone" placeholder="Phone" />
-                            <label for="phone"></label>
-                        </div>
-                        <div class="form-group form-control-material">
-                            <textarea class="form-control" id="message" placeholder="Your message"></textarea>
-                            <label for="message"></label>
-                        </div>
-                        <div class="text-right">
-                            <button class="btn btn-primary relative paper-shadow" data-z="0.5" data-hover-z="1" data-animated>Send message</button>
-                        </div>
-                    </form>
+                    <?php // Change the css classes to suit your needs    
+
+							$attributes = array('class' => '', 'id' => '');
+							echo form_open('contact_us_controller', $attributes); ?>
+							
+							<p>
+									<label for="fname">First Name <span class="required">*</span></label>
+									<?php echo form_error('fname'); ?>
+									<br /><input id="fname" type="text" name="fname" maxlength="30" value="<?php echo set_value('fname'); ?>"  />
+							</p>
+							
+							<p>
+									<label for="lname">Last Name <span class="required">*</span></label>
+									<?php echo form_error('lname'); ?>
+									<br /><input id="lname" type="text" name="lname" maxlength="30" value="<?php echo set_value('lname'); ?>"  />
+							</p>
+							
+							<p>
+									<label for="subject">subject <span class="required">*</span></label>
+									<?php echo form_error('subject'); ?>
+									<br /><input id="subject" type="text" name="subject" maxlength="100" value="<?php echo set_value('subject'); ?>"  />
+							</p>
+							
+							<p>
+									<label for="message">Your Message <span class="required">*</span></label>
+								<?php echo form_error('message'); ?>
+								<br />
+														
+								<?php echo form_textarea( array( 'name' => 'message', 'rows' => '8', 'cols' => '48', 'value' => set_value('message') ) )?>
+							</p>
+							
+							<p>
+									<?php echo form_submit( 'submit', 'Submit'); ?>
+							</p>
+							
+							<?php echo form_close(); ?>
+
                 </div>
             </div>
             <br/>

@@ -72,7 +72,7 @@
                             <li><a href="website-forum-thread.html">Forum Thread</a></li>
                             <li><a href="website-blog.html">Blog Listing</a></li>
                             <li><a href="website-blog-post.html">Blog Post</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/contact_page">Contact</a></li>
+                            <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

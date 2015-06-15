@@ -1,5 +1,7 @@
+<?php // var_dump ($this->session->all_userdata()) ?> 
+ 
     <div class="parallax cover overlay cover-image-full home">
-        <img class="parallax-layer" src="<?php echo base_url();?>images/photodune-4161018-group-of-workers-m.jpg" alt="Learning Cover" />
+        <img class="parallax-layer" src="<?php echo base_url();?>images/online_staff_training.jpg" alt="Learning Cover" />
         <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-speed="8" data-opacity="true">
             <div class="v-center">
                 <div class="page-section overlay-bg-white-strong relative paper-shadow" data-z="1">

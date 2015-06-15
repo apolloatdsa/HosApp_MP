@@ -1,5 +1,5 @@
 
-    <!-- Fixed STUDENT navbar -->
+    <!-- Fixed MEMBER navbar -->
     <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -67,30 +67,19 @@
                             <li><a href="<?php echo base_url();?>online_training/forum-thread">Forum Thread</a></li>
                             <li><a href="<?php echo base_url();?>online_training/blog">Blog Listing</a></li>
                             <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Post</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
+                           <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url();?>online_training/directory_grid">Grid Directory</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/directory_list">List Directory</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/course">Single Course</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown active ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
-                        <ul class="dropdown-menu ">
-                            <li><a href="<?php echo base_url();?>student/student_dashboard">Dashboard</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_courses">My Courses</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_take_course">Take Course</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_course_forums">Course Forums</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_take_quiz">Take Quiz</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_messages">Messages</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_private_profile">Private Profile</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Member options <span class="caret"></span></a>
+                        <ul class="dropdown-menu active ">
+                            <li><a href="<?php echo base_url();?>member/member_dashboard">Dashboard</a></li>
+                            <li><a href="<?php echo base_url();?>member/member_profile">My Profile</a></li>
+                            <li><a href="<?php echo base_url();?>member/member_forum">Members Forum</a></li>
                         </ul>
                     </li>
                    
+                    
                     
                 </ul>
                 
@@ -110,14 +99,14 @@
                  
                     <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
                         <!-- user -->
-                        <li class="dropdown user">
+                        <li class="dropdown user active ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                  <?php echo " " . $this->session->userdata('user_first_name'). " " ; ?>  <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 
                                 
-                               
+                                <li><a href="<?php echo base_url();?>member/member_dashboard"><i class="fa fa-user"></i> Dashboard</a></li>
                                 <li><a href="<?php echo base_url();?>auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                             </ul>
                         </li>

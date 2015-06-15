@@ -124,9 +124,15 @@ class Auth extends CI_Controller {
 				
 				}		
 					
+			elseif($this->session->userdata('member')){
+				
+							redirect('member/index', 'refresh'); // go here if the user is an student
+				
+				}				
+			
 			else {
 				
-						redirect('online_training/body', 'refresh');// this is the home page redirect when successful - 
+						redirect('online_training/index', 'refresh');// this is the home page redirect when successful - 
 					}
 				
 				
@@ -944,5 +950,11 @@ class Auth extends CI_Controller {
 		
 		
 		}
+		
+	
+		
+		
+		
+		
 	
 }

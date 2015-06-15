@@ -17,6 +17,7 @@
 |
 */
 $config['base_url'] = 'http://d14126353-dsa.com/codeigniter_h';
+$config['server_root'] = $_SERVER['DOCUMENT_ROOT'];
 
 /*
 |--------------------------------------------------------------------------

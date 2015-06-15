@@ -48,8 +48,8 @@ class Online_training extends CI_Controller {
 				}
 			
 		}// if
-			// end 
-	#####################################################################################################################
+	
+		
 				
         }
 		
@@ -57,114 +57,40 @@ class Online_training extends CI_Controller {
 	 
 	 public function index()
 	{
-    
-	
-	
-	
+   
 	 // executes the code in here first
-	 	
-		//$this->load->view('home'); // load basic view with details and links to the api
-		$this->load->view('templates/header');
-		$this->load->view('templates/'.$this->user_type().'_navbar');
-		$this->load->view('body');
-		$this->load->view('templates/footer');
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('body');
+			$this->load->view('templates/footer');
 		
 		}
 	 
 	 
-		 
-	public function login_page(){
-		
-		$this->load->view('templates/header');
-		$this->load->view('templates/'.$this->user_type().'_navbar');
-		$this->load->view('login');
-		$this->load->view('templates/footer');
-		
-		}
 		public function contact_page(){
 		
-		$this->load->view('templates/header');
-		$this->load->view('templates/'.$this->user_type().'_navbar');
-		$this->load->view('contact');
-		$this->load->view('templates/footer');
-		
-		}
-		public function sign_up(){
-		
-		$this->load->view('templates/header');
-		$this->load->view('templates/'.$this->user_type().'_navbar');
-		$this->load->view('sign_up');
-		$this->load->view('templates/footer');
-		
-		}
-		public function student_dash_board(){
-		
-		$this->load->view('templates/header');
-		$this->load->view('templates/'.$this->user_type().'_navbar');
-		$this->load->view('student_dash_board');
-		$this->load->view('templates/footer');
-		
-		}
-		public function login_auth(){
-		
-		$this->load->view('templates/header');
-		$this->load->view('templates/'.$this->user_type().'_navbar');
-		$this->load->view('auth/login', $data);
-		$this->load->view('templates/footer');
-		
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('contact');
+			$this->load->view('templates/footer');
+			
 		}
 		
-		public function instructor_dashboard(){
+		public function contact_us_view(){
 			
 			$this->load->view('templates/header');
-			$this->load->view('templates/'.$this->user_type().'_navbar');
-			$this->load->view('instructor_dashboard');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('contact_us_view');
 			$this->load->view('templates/footer');
 			
 			
 			}
-		
 
 
 //#################################################################################################
 
- public function user_type(){
-	 
-	 if($this->session->userdata('admin')){
-		 
-		 return 'admin';
-		 
-		 }
-	 
-	 elseif($this->session->userdata('instructor')){
-		 
-		  return 'instructor';
-		 
-		 }
-		 
-	elseif($this->session->userdata('student')){
-		 
-		  return 'student';
-		 
-		 }	 
-		 
-	 elseif($this->session->userdata('manager')){
-		 
-		  return 'manager';
-		 
-		 }	 
-		 
-	 elseif ($this->session->userdata('members')){
-		 
-		 return 'members';
-		 
-		 }
-	 
-	 else{
-		 return 'public';
-		 }
-	 
-	 }
+
+
 
 	 
 
