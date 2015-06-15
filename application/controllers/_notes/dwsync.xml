@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="online_training.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788758462369727" remote="130788506400000000" Dst="2" />
-<file name="auth.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788446967103216" remote="130788195000000000" Dst="2" />
+<file name="auth.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788826740164993" remote="130788574800000000" Dst="2" />
 <file name="member.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788446593451845" remote="130788194400000000" Dst="2" />
 <file name="email.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788562691622280" remote="130788310200000000" Dst="2" />
 <file name="contact_us_controller.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788654408278173" remote="130788402600000000" Dst="2" />
+<file name="student.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788802713730760" remote="130788550800000000" Dst="2" />
+<file name="instructor.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130788807454431912" remote="130788555600000000" Dst="2" />
 </dwsync>

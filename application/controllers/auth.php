@@ -34,7 +34,7 @@ class Auth extends CI_Controller {
 			$this->load->view('templates/header');
 			$this->load->view('templates/public_navbar');
 			redirect('auth/login', 'refresh'); // go back to login page if not logged on or unsuccessful log in
-			$this->load->view('templates/footer');
+			//$this->load->view('templates/footer');
 		}
 		elseif (!$this->ion_auth->is_admin()) //remove this elseif if you want to enable this for non-admins
 		{
@@ -43,7 +43,7 @@ class Auth extends CI_Controller {
 			$this->load->view('templates/header');
 			$this->load->view('templates/public_navbar');
 			return show_error('You must be an administrator to view this page.');
-			$this->load->view('templates/footer');
+			//$this->load->view('templates/footer');
 		}
 		
 		
@@ -103,7 +103,8 @@ class Auth extends CI_Controller {
 					//redirect them to the home page because they must be an administrator to view this
 							
 							redirect('auth/index', 'refresh'); // go here if the user is an administrator
-			
+							
+							
 					}
 					
 			elseif($this->session->userdata('instructor') == 'instructor'){
@@ -148,7 +149,7 @@ class Auth extends CI_Controller {
 				$this->load->view('templates/header');
 				$this->load->view('templates/public_navbar');
 				redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
-				
+				//$this->load->view('templates/footer');
 			}
 		}
 		else

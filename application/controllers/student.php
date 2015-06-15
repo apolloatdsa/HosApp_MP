@@ -19,7 +19,7 @@ class Student extends CI_Controller {
 				
 				if (!$this->session->userdata('student') && !$this->session->userdata('admin') && !$this->session->userdata('instructor')){
 					
-	 					redirect('online_training/body');
+	 					redirect('online_training/index');
 					 
 					 };
 				
@@ -31,79 +31,72 @@ class Student extends CI_Controller {
 
 				$this->lang->load('auth');
 				//$this->login_index();
-				$this->index();
+				//$this->index();
         }
 		
 
 	 
 	 public function index()
 	{
-  			$this->load->view('templates/header');
-			
-			if ($this->session->userdata('admin')){// if user is also admin load the admin navbar menu 
-					$this->load->view('templates/admin_navbar');
-				}
-				
-				elseif ($this->session->userdata('instructor')){// if user is also instructor load the admin navbar menu 
-						$this->load->view('templates/instructor_navbar');
-					}
-				
-					else{
-						$this->load->view('templates/student_navbar'); // else load the student navbar menu
-						}
-			
-			$this->load->view('templates/footer');
+  			
 		
 		}
 	 
 	 
 	 public function student_dashboard(){
 		 
-			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('student_dashboard');
-			
+			$this->load->view('templates/footer');
 		 }
 	 public function student_courses(){
 		 
-			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('student_courses');
-			
+			$this->load->view('templates/footer');
 		 }
 	
 	
 		public function student_take_course(){
 			 
-				
+				$this->load->view('templates/header');
+				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_take_course');
-				
+				$this->load->view('templates/footer');
 			 }
 	
 	public function student_course_forums(){
 			 
-				
+				$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_course_forums');
-				
+				$this->load->view('templates/footer');
 			 }
 	
 	public function student_take_quiz(){
 			 
-				
+				$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_take_quiz');
-				
+				$this->load->view('templates/footer');
 			 }
 			 
 	
 	public function student_messages(){
 			 
-				
+				$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_messages');
-				
+				$this->load->view('templates/footer');
 			 }
 	public function student_private_profile(){
 			 
-				
+				$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_private_profile');
-				
+				$this->load->view('templates/footer');
 			 }
 			 
 			 

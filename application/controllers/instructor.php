@@ -39,42 +39,42 @@ class Instructor extends CI_Controller {
 	 public function index()
 	{
 		
-  				$this->load->view('templates/header');
-				
-				if ($this->session->userdata('admin')){ // if the user is admin load the admin navbar menu
-					$this->load->view('templates/admin_navbar');
-				}else{
-					$this->load->view('templates/instructor_navbar'); // else load the instructor menu
-					}
-				
-				$this->load->view('templates/footer');
+  				
 		}
 	 
 	 
 	 public function instructor_dashboard(){
-	
+		 
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_dashboard');
-			
+			$this->load->view('templates/footer');
 		 }
 		 
 		 
 		 
 	public function instructor_courses(){
-		 
+		
+		 	$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_courses');
-			
+			$this->load->view('templates/footer');
 		 }
 		 
 	public function instructor_profile(){
-		 
+			
+		 	$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_profile');
+			$this->load->view('templates/footer');
 		 }
 		 
 	public function instructor_edit_courses(){
 		 
-	
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_edit_courses');
-		
+			$this->load->view('templates/footer');
 		 }
 
 
