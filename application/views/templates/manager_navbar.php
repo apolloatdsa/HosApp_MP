@@ -1,5 +1,5 @@
 
-    <!-- Fixed navbar -->
+    <!-- Fixed MANAGER navbar -->
     <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -73,9 +73,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manager <span class="caret"></span></a>
                         <ul class="dropdown-menu active ">
-                            <li><a href="<?php echo base_url();?>online_training/directory_grid">Grid Directory</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/directory_list">List Directory</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/course">Single Course</a></li>
+                            <li><a href="<?php echo base_url();?>manager/manager_dashboard">Manager Dashboard</a></li>
+                            <li><a href="<?php echo base_url();?>manager/under_construction">Company Profile</a></li>
+                            <li><a href="<?php echo base_url();?>manager/under_construction">List Employees</a></li>
+                            <li><a href="<?php echo base_url();?>manager/under_construction">Employee Progress</a></li>
+                            <li><a href="<?php echo base_url();?>manager/under_construction">List Courses</a></li>
+                            <li><a href="<?php echo base_url();?>manager/under_construction">Completed projects</a></li>
+                            
+                            
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -90,18 +95,7 @@
                             <li><a href="<?php echo base_url();?>student/student_profile">Private Profile</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url();?>instructor/instructor_dashboard">Dashboard</a></li>
-                            <li><a href="<?php echo base_url();?>instructor/instructor_courses">My Courses</a></li>
-                            <li><a href="<?php echo base_url();?>instructor/instructor_profile">My Profile</a></li>
-                            <li><a href="<?php echo base_url();?>instructor/instructor_edit_courses">Edit courses</a></li>
-                            
-                            
-                            
-                        </ul>
-                    </li>
+                   
                     
                 </ul>
                 
@@ -128,7 +122,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 
                                 
-                                <li><a href="<?php echo base_url();?>auth/index"><i class="fa fa-user"></i> User Admin</a></li>
+                                <li><a href="<?php echo base_url();?>manager/manager_dashboard"><i class="fa fa-user"></i> Manager Dashboard</a></li>
                                 <li><a href="<?php echo base_url();?>auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                             </ul>
                         </li>

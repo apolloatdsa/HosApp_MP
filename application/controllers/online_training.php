@@ -161,7 +161,7 @@ class Online_training extends CI_Controller {
 			
 			$this->load->view('templates/header');
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('sign_up');
+			$this->load->view('sign_up_view');
 			$this->load->view('templates/footer');
 			
 			
@@ -175,7 +175,71 @@ class Online_training extends CI_Controller {
 			
 			
 			}		
-		
+		public function info(){
+			$error = array('error' => '');
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('info', $error);
+			$this->load->view('templates/footer');
+			
+			
+			}
+		public function user_image_upload(){
+			$config['upload_path'] = './images/members/';
+			$config['overwrite'] = TRUE;
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['max_size'] = '2048';
+   			//$config['encrypt_name'] = TRUE;
+			$filename = $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');
+			$config['file_name'] = $filename;
+			$this->load->library('upload', $config);
+			if($this->upload->do_upload())
+				{
+					
+					//echo "file upload success";
+					 $upload_data = $this->upload->data();
+
+					//resize:
+			
+					$config['image_library'] = 'gd2';
+					$config['source_image'] = $upload_data['full_path'];
+					$config['overwrite'] = TRUE;
+					$config['maintain_ratio'] = TRUE;
+					$config['width']     = 110;
+					$config['height']   = 110;
+					
+					$this->load->library('image_lib', $config); 
+			
+					$this->image_lib->resize();
+					
+					
+					$error = array('error' => 'Upload success');
+					 
+					// $error = array('error' => '');
+					$this->load->view('templates/header');
+					$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+					$this->load->view('student_private_profile', $error);
+					$this->load->view('templates/footer');
+					
+				}
+				else
+				{
+				  // here if upload failed
+				  //$upload_data = $this->upload->data();
+				 $error = array('error' => $this->upload->display_errors());
+				 // $data = array('upload_data' => $this->upload->data());
+				   //echo "file upload failed";
+				  
+				$this->load->view('templates/header');
+				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+				$this->load->view('student_private_profile', $error);
+				$this->load->view('templates/footer');
+						   
+				}
+							
+			
+			
+			}		
 			
 //#################################################################################################
 

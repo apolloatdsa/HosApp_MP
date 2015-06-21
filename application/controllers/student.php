@@ -23,7 +23,7 @@ class Student extends CI_Controller {
 					 
 					 };
 				
-               
+               $this->load->model('Student_card_update_model'); // calls the model class name //
 				$this->load->library(array('ion_auth','form_validation'));
 				$this->load->helper(array('url','language'));
 
@@ -92,13 +92,59 @@ class Student extends CI_Controller {
 				$this->load->view('templates/footer');
 			 }
 	public function student_private_profile(){
+		
 			 
+			   $error = array('error' => '');
 				$this->load->view('templates/header');
-			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-				$this->load->view('student_private_profile');
+				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+				$this->load->view('student_private_profile', $error);
 				$this->load->view('templates/footer');
 			 }
+		public function student_test_profile(){
 			 
+				$this->load->view('templates/header');
+				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+				$this->load->view('student_test_profile', $error);
+				$this->load->view('templates/footer');
+			 }
+		public function student_billing(){
+		
+			 $data['payment'] = $this->Student_card_update_model->getPayment();
+			
+				$this->load->view('templates/header');
+				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+				$this->load->view('student_billing', $data);
+				$this->load->view('templates/footer');
+			 }
+		public function user_billing_update(){
+			 
+				$this->load->view('templates/header');
+				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+				echo "<h1>Form submitted </h1>";
+				//$this->load->view('student_billing');
+				$this->load->view('templates/footer');
+			 }
+			public function credit_card_update(){
+			 
+				$this->load->view('templates/header');
+				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+				echo "<h1>Student Credit card updated </h1>";
+				//$this->load->view('student_billing');
+				$this->load->view('templates/footer');
+			 } 
+			function update_success(){
+	
+			$data['payment'] = $this->Student_card_update_model->getPayment();
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('student_billing_update_success', $data);
+			$this->load->view('templates/footer');
+	} 
+			 
+			 
+			 
+			 	 	 	 
 			 
 //#################################################################################################
 

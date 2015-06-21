@@ -1,4 +1,4 @@
-<body class="login">
+
     <div id="content">
         <div class="container-fluid">
             <div class="lock-container">
@@ -17,31 +17,31 @@
                             
                               <p>
                                 <?php echo lang('login_identity_label', 'identity');?><br>
-                                <?php echo form_input($identity);?>
+                                <?php echo form_input($identity, 'class="form-control"' );?>
                               </p>
                             
                               <p>
                                 <?php echo lang('login_password_label', 'password');?><br>
-                                <?php echo form_input($password);?>
+                                <?php echo form_input($password, 'class="form-control"');?>
                               </p>
                             
                               <p>
                                 <?php echo lang('login_remember_label', 'remember');?>
-                                <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
+                                <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"', 'class="checkbox checkbox-success"');?>
                               </p>
                             
-                            
-                              <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
+                              <p><?php echo form_submit('submit', lang('login_submit_btn'), "class='btn btn-primary'" );?></p>
                             
                             <?php echo form_close();?>
                             
 
-						<p><a href="auth/forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+						<h4><a href="auth/forgot_password"><?php echo lang('login_forgot_password');?></a></h4>
                         </div>
                         
                    <!-- <a href="../website-student-dashboard.html" class="btn btn-primary">Login <i class="fa fa-fw fa-unlock-alt"></i></a> -->
                         
-                        <a href="<?php echo base_url(); ?>online_training/sign_up" class="link-text-color">Create account</a>
+                       <h4> <a href="<?php echo base_url(); ?>online_training/sign_up" class="link-text-color">Create account</a> </h4>
+                        <p>&nbsp;</p>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 
-    <!-- Fixed navbar -->
+    <!-- Fixed NON ASSIGNED navbar -->
     <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
         <div class="container">
             <div class="navbar-header">

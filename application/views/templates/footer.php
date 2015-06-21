@@ -28,7 +28,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Enter email here...">
                             <span class="input-group-btn">
-								<button class="btn btn-grey-800" type="button">Subscribe</button>
+								<button class="btn btn-grey-800" type="button" onclick = "location.href='<?php echo base_url();?>online_training/info'" >Subscribe</button>
 							  </span>
                         </div>
                     </div>
@@ -40,8 +40,7 @@
                         <a href="#" class="btn btn-danger btn-circle"><i class="fa fa-google-plus"></i></a>
                     </p>
                     <p class="text-subhead">
-                        &copy; 2015 Learning and accreditation through HosApp.
-                    </p>
+                    &copy; 2015 Learning and accreditation through HosApp. </p>
                 </div>
             </div>
         </div>
@@ -50,7 +49,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        PHP | OOP | MVC | Javascript | Bootstrap | CodeIgniter | MySql |  &copy; Copyright HosApp & DSA 2015
+       This project was built using | PHP | OOP | MVC | JavaScript | JQuery | Bootstrap | CodeIgniter | MySql |  &copy; Copyright HosApp & DSA 2015
     </footer>
     <!-- // Footer -->
     <!-- Inline Script for colors and config objects; used by various external scripts; -->

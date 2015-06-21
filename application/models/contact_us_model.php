@@ -16,6 +16,7 @@ class Contact_us_model extends CI_Model {
        * insert form data
        * @param $form_data - array
        * @return Bool - TRUE or FALSE
+	   * inserted by Tom Delaney using formigniter form generator
        */
 
 	function SaveForm($form_data)

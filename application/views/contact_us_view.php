@@ -33,19 +33,19 @@
 							<p>
 									<label for="fname">First Name <span class="required">*</span></label>
 									<?php echo form_error('fname'); ?>
-									<br /><input id="fname" type="text" name="fname" maxlength="30" value="<?php echo set_value('fname'); ?>"  />
+									<br /><input class="form-control"  id="fname" type="text" name="fname" maxlength="30" value="<?php echo set_value('fname'); ?>"  />
 							</p>
 							
 							<p>
 									<label for="lname">Last Name <span class="required">*</span></label>
 									<?php echo form_error('lname'); ?>
-									<br /><input id="lname" type="text" name="lname" maxlength="30" value="<?php echo set_value('lname'); ?>"  />
+									<br /><input class="form-control"  id="lname" type="text" name="lname" maxlength="30" value="<?php echo set_value('lname'); ?>"  />
 							</p>
 							
 							<p>
 									<label for="subject">subject <span class="required">*</span></label>
 									<?php echo form_error('subject'); ?>
-									<br /><input id="subject" type="text" name="subject" maxlength="100" value="<?php echo set_value('subject'); ?>"  />
+									<br /><input class="form-control"  id="subject" type="text" name="subject" maxlength="100" value="<?php echo set_value('subject'); ?>"  />
 							</p>
 							
 							<p>
@@ -53,11 +53,11 @@
 								<?php echo form_error('message'); ?>
 								<br />
 														
-								<?php echo form_textarea( array( 'name' => 'message', 'rows' => '8', 'cols' => '48', 'value' => set_value('message') ) )?>
+								<?php echo form_textarea( array( 'name' => 'message', 'rows' => '8', 'cols' => '48', 'class'=> 'form-control ', 'value' => set_value('message')) )?>
 							</p>
 							
 							<p>
-									<?php echo form_submit( 'submit', 'Submit'); ?>
+									<?php echo form_submit( 'submit', 'Submit',"class='btn btn-primary'" ); ?>
 							</p>
 							
 							<?php echo form_close(); ?>

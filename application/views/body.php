@@ -363,11 +363,11 @@
                         </div>
                         <div class="media v-middle">
                             <div class="media-left">
-                                <img src="<?php echo base_url();?>images/people/50/guy-1.jpg" alt="People" class="img-circle width-40" />
+                                <img src="<?php echo base_url();?>images/members/2.jpg" alt="People" class="img-circle width-40" />
                             </div>
                             <div class="media-body">
                                 <p class="text-subhead margin-v-5-0">
-                                    <strong>Adrian D. <span class="text-muted">@ Mosaicpro Inc.</span></strong>
+                                    <strong>Tom D. <span class="text-muted">@ DSA academy.</span></strong>
                                 </p>
                                 <p class="small">
                                     <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -389,11 +389,11 @@
                         </div>
                         <div class="media v-middle">
                             <div class="media-left">
-                                <img src="<?php echo base_url();?>images/people/50/guy-8.jpg" alt="People" class="img-circle width-40" />
+                                <img src="<?php echo base_url();?>images/members/3.jpg" alt="People" class="img-circle width-40" />
                             </div>
                             <div class="media-body">
                                 <p class="text-subhead margin-v-5-0">
-                                    <strong>Adrian D. <span class="text-muted">@ Mosaicpro Inc.</span></strong>
+                                    <strong>Rose B. <span class="text-muted">@ McDonnels Ltd.</span></strong>
                                 </p>
                                 <p class="small">
                                     <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -415,11 +415,11 @@
                         </div>
                         <div class="media v-middle">
                             <div class="media-left">
-                                <img src="<?php echo base_url();?>images/people/50/guy-4.jpg" alt="People" class="img-circle width-40" />
+                                <img src="<?php echo base_url();?>images/members/4.jpg" alt="People" class="img-circle width-40" />
                             </div>
                             <div class="media-body">
                                 <p class="text-subhead margin-v-5-0">
-                                    <strong>Adrian D. <span class="text-muted">@ Mosaicpro Inc.</span></strong>
+                                    <strong>Sarah B. <span class="text-muted">@ Brother Hubbards Ltd.</span></strong>
                                 </p>
                                 <p class="small">
                                     <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -436,6 +436,9 @@
         </div>
         <br/>
     </div>
+    
+    
+    
     <div class="modal grow modal-overlay modal-backdrop-body fade" id="modal-overlay-signup">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <div class="modal-dialog">

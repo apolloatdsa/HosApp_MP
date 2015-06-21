@@ -87,7 +87,7 @@
                             <li><a href="<?php echo base_url();?>student/course_forums">Course Forums</a></li>
                             <li><a href="<?php echo base_url();?>student/take_quiz">Take Quiz</a></li>
                             <li><a href="<?php echo base_url();?>student/student_messages">Messages</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_profile">Private Profile</a></li>
+                            <li><a href="<?php echo base_url();?>student/student_private_profile">Private Profile</a></li>
                         </ul>
                     </li>
                     <li class="dropdown active ">

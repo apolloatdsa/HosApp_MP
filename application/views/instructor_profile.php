@@ -3,11 +3,11 @@
             <div class="media v-middle">
                 <div class="media-left text-center">
                     <a href="#">
-                        <img src="images/people/110/guy-1.jpg" alt="people" class="img-circle width-80" />
+                        <img src="<?php echo base_url();?>images/members/<?php echo $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');?>.jpg" alt="member" class="img-circle width-80" />
                     </a>
                 </div>
                 <div class="media-body">
-                    <h1 class="text-white text-display-1 margin-v-0">John Doe</h1>
+                    <h1 class="text-white text-display-1 margin-v-0"><?php echo " " . $this->session->userdata('user_first_name'). " ". $this->session->userdata('user_last_name')." " ; ?></h1>
                     <p class="text-subhead"><a class="link-white text-underline" href="website-instructor-public-profile.html">View public profile</a></p>
                 </div>
                 <div class="media-right">

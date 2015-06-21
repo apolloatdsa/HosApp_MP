@@ -1,13 +1,15 @@
+
+
  <div class="parallax overflow-hidden bg-blue-400 page-section third">
         <div class="container parallax-layer" data-opacity="true">
             <div class="media v-middle">
                 <div class="media-left text-center">
                     <a href="#">
-                        <img src="<?php echo base_url();?>images/people/110/guy-6.jpg" alt="people" class="img-circle width-80" />
+                        <img src="<?php echo base_url();?>images/members/<?php echo $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');?>.jpg" alt="people" class="img-circle width-80" />
                     </a>
                 </div>
                 <div class="media-body">
-                    <h1 class="text-white text-display-1 margin-v-0">Bill Smith</h1>
+                    <h1 class="text-white text-display-1 margin-v-0"><?php echo " " . $this->session->userdata('user_first_name'). " ". $this->session->userdata('user_last_name')." " ; ?></h1>
                     <p class="text-subhead"><a class="link-white text-underline" href="website-student-public-profile.html">View public profile</a></p>
                 </div>
                 <div class="media-right">
@@ -24,25 +26,57 @@
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                         <!-- Tabs -->
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="website-student-profile.html"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Manage Account</span></a></li>
-                            <li><a href="website-student-billing.html"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Billing Details</span></a></li>
+                            <li class="active"><a href="<?php  echo base_url(); ?>student/student_private_profile"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Manage Account</span></a></li>
+                            <li><a href="<?php  echo base_url(); ?>student/student_billing"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Billing Details</span></a></li>
                         </ul>
                         <!-- // END Tabs -->
                         <!-- Panes -->
                         <div class="tab-content">
                             <div id="account" class="tab-pane active">
+                            <?php echo form_open_multipart('online_training/user_image_upload');  ?>
+                            	
+                                <div class="col-md-6  page-section">
+                
+                                    <table class="table ">
+                                    
+                                            <thead>
+                                              <tr>
+                                                <th></th>
+                                                <th>Upload your photo </th>
+                                               
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                            
+                                              <tr>
+                                                <td> Select image to upload:</td>
+                                                <td><input type="file" name="userfile" class="btn btn-warning"  /></td>
+                                                
+                                              </tr>
+                                              <tr>
+                                                <td class="active"><?php  echo $error;  ?></td>
+                                                <td><input type="submit" name="submit" value="Upload image" class="btn btn-success" /></td>
+                                                
+                                              </tr>
+                                              </tbody>
+                                              </form>
+                                          </table>
+                                          
+                                        </div>	
+                                
+                                
+                                
                                 <form class="form-horizontal">
                                     <div class="form-group">
                                         <label for="inputEmail3" class="col-sm-2 control-label">Avatar</label>
                                         <div class="col-md-6">
                                             <div class="media v-middle">
-                                                <div class="media-left">
-                                                    <div class="icon-block width-100 bg-grey-100">
+                                  <div class="media-left">
+                                    <div class="icon-block width-100 bg-grey-100">
                                                         <i class="fa fa-photo text-light"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#" class="btn btn-white btn-sm paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated> Add Image<i class="fa fa-upl"></i></a>
+                                      </div>
+                                                     
+                    
                                                 </div>
                                             </div>
                                         </div>
@@ -52,51 +86,58 @@
                                         <div class="col-md-8">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <div class="form-control-material">
-                                                        <input type="email" class="form-control" id="exampleInputFirstName" placeholder="Your first name">
-                                                        <label for="exampleInputFirstName">First name</label>
+                                                    <div class="">
+                                                    	<label for="user_profile_fn">First name</label>
+                                                        <input type="text" class="form-control" id="user_profile_fn" placeholder="Your first name" value="<?php echo $this->session->userdata('user_first_name'); ?>">
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-control-material">
-                                                        <input type="email" class="form-control" id="exampleInputLastName" placeholder="Your last name">
-                                                        <label for="exampleInputLastName">Last name</label>
+                                                    <div class="">
+                                                   		<label for="user_profile_ln">Last name</label>
+                                                        <input type="text" class="form-control" id="user_profile_ln" placeholder="Your last name" value="<?php echo $this->session->userdata('user_last_name'); ?>">
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-md-2 control-label">Email</label>
+                                        <label for="user_profile_email" class="col-md-2 control-label">Email</label>
                                         <div class="col-md-6">
-                                            <div class="form-control-material">
+                                            <div class="">
                                                 <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                                    <label for="inputEmail3">Email address</label>
+                                                    <span class=""><i class="fa fa-envelope"> </i> </span>
+                                                    <input type="email" class="form-control" id="user_profile_email" placeholder="Email" value="<?php echo $this->session->userdata('email'); ?>">
+                                                    <label for="user_profile_email">Email address</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-md-2 control-label">Website</label>
+                                        <label for="user_profile_website" class="col-md-2 control-label">Website</label>
                                         <div class="col-md-6">
-                                            <div class="form-control-material">
+                                            <div class="">
                                                 <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                    <input type="text" class="form-control used" id="website" value="www.mosaicpro.biz">
-                                                    <label for="website">Website</label>
+                                                    <span class=""> <i class="fa fa-link"> </i> </span>
+                                                    <input type="text" class="form-control used" id="user_profile_website" value="www.your_web.com">
+                                                    <label for="user_profile_website">Website</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputPassword3" class="col-md-2 control-label">Change Password</label>
+                                        <label for="user_profile_password" class="col-md-2 control-label">Change Password</label>
                                         <div class="col-md-6">
-                                            <div class="form-control-material">
-                                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                                <label for="inputPassword3">Password</label>
+                                            <div class="">
+                                            	<label for="user_profile_password">Password</label>
+                                                <input type="password" class="form-control" id="user_profile_website" placeholder="Password">
+                                                
                                             </div>
+                                            
+                                            
+                                            
+                                            
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -109,10 +150,10 @@
                                     </div>
                                     <div class="form-group margin-none">
                                         <div class="col-md-offset-2 col-md-10">
-                                            <button type="submit" class="btn btn-primary paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated>Save Changes</button>
+                                            <?php echo form_submit( 'submit', 'Submit',"class='btn btn-primary'"); ?>
                                         </div>
                                     </div>
-                                </form>
+                                <?php echo form_close(); ?>
                             </div>
                         </div>
                         <!-- // END Panes -->
@@ -341,3 +382,19 @@
             </div>
         </div>
     </div>
+    
+    
+    
+     <div class="modal grow modal-overlay modal-backdrop-body fade" id="student_image_upload">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <div class="modal-dialog">
+            <div class="v-cell">
+                <div class="modal-content">
+                    <div class="modal-body">
+                    
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   

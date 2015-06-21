@@ -71,9 +71,10 @@ class Auth extends CI_Controller {
 		
 		
 	}
+##############################################################################################################################	
 ##############################################################################################################################
-	// start the user login check and redirect to the assigned user landing page
-
+	// start the user login 
+	// When a user logs in direct them to the assigned user landing page
 
 	//log the user in
 	function login()
@@ -97,46 +98,51 @@ class Auth extends CI_Controller {
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 				$this->add_to_session();
+				
+##############################################################################################################################	
+##############################################################################################################################
+			
 				//$level = $this->session->userdata('Group_5');
+				
 				if ($this->session->userdata('admin') == 'admin'){
 					
 					//redirect them to the home page because they must be an administrator to view this
 							
 							redirect('auth/index', 'refresh'); // go here if the user is an administrator
-							
-							
-					}
+						
+						}
 					
 			elseif($this->session->userdata('instructor') == 'instructor'){
 				
 							redirect('instructor/instructor_dashboard', 'refresh'); // go here if the user is an instructor
 				
-				}				
+						}				
 				
 			elseif($this->session->userdata('manager') == 'manager'){
 				
 							redirect('manager/manager_dashboard', 'refresh'); // go here if the user is an manager
 				
-				}			
+						}			
 					
 			elseif($this->session->userdata('student') == 'student'){
 				
 							redirect('student/student_dashboard', 'refresh'); // go here if the user is an student
 				
-				}		
+						}		
 					
 			elseif($this->session->userdata('member')){
 				
 							redirect('member/index', 'refresh'); // go here if the user is an student
 				
-				}				
+						}				
 			
 			else {
 				
 						redirect('online_training/index', 'refresh');// this is the home page redirect when successful - 
-					}
+						}
 				
-				
+##############################################################################################################################	
+##############################################################################################################################				
 				
 				
 			}
@@ -149,7 +155,7 @@ class Auth extends CI_Controller {
 				$this->load->view('templates/header');
 				$this->load->view('templates/public_navbar');
 				redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
-				//$this->load->view('templates/footer');
+				$this->load->view('templates/footer');
 			}
 		}
 		else

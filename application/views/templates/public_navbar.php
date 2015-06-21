@@ -68,6 +68,7 @@
                             <li><a href="<?php echo base_url();?>online_training/blog">Blog Listing</a></li>
                             <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Post</a></li>
                             <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
+                            <li><a href="<?php echo base_url();?>online_training/sign_up">Sign Up </a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -85,10 +86,12 @@
 					 <?php 
                         if ($this->ion_auth->logged_in()){
                             
-                            echo ' <a href="' . base_url() . 'auth/logout" class="navbar-btn btn btn-primary"> Log Out</a>';
+                            echo '<span> <a href="' . base_url() . 'auth/logout" class="navbar-btn btn btn-primary"> Log Out</a> </span>';
                             }else{
-                            echo '<a href="' .  base_url() .'auth/login" class="navbar-btn btn btn-primary"> Log In</a>';
+                            echo '<span> <a href="' .  base_url() .'auth/login" class="navbar-btn btn btn-primary"> Log In</a> </span>';
                             }
+							
+							 echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-primary"> Sign Up</a> </span>';
                         ?>
                 </div>
                 
