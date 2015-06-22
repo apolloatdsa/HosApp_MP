@@ -63,6 +63,8 @@ $payment_date = '';
 									$payment_date = $row->payment_date;
 									}
 								
+								$student_card_number = $this->Student_card_update_model->mask_cc($student_card_number, $mask_char='*');
+								
 								
 								//$this->session->set_userdata("student_card") = $student_card_numbe;
 								
@@ -130,15 +132,15 @@ $payment_date = '';
                                 <div class="list-group margin-none">
                                     <div class="list-group-item media v-middle">
                                         <div class="media-left">
-                                            <div class="icon-block half img-circle bg-primary">
+                                            <div class="icon-block half img-circle bg-success">
                                                 <i class="fa fa-credit-card"></i>
                                             </div>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="text-title media-heading">
-                                                <a href="#modal-update-credit-card" data-toggle="modal" class="link-text-color">**** **** **** 2422</a>
+                                                <a href="#modal-update-credit-card" data-toggle="modal" class="link-text-color"><?php echo	$student_card_number; ?></a>
                                             </h4>
-                                            <div class="text-caption">updated 1 month ago</div>
+                                            <div class="text-caption">Last updated  <span> <?php echo	$payment_date; ?> </span></div>
                                             
                                             <?php // echo var_dump($payment);  ?>
                                         </div>

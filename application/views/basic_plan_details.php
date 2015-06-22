@@ -27,11 +27,11 @@
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                         <!-- Tabs -->
                         <ul class="nav nav-tabs">
-                            <li class="active" ><a href="<?php echo base_url() ;?>online_training/pricing"></i> <span class="hidden-sm hidden-xs">Pricing Structure</span></a></li>
-                            <li   ><a href="<?php echo base_url() ;?>online_training/basic_plan"></i> <span class="hidden-sm hidden-xs">Basic Plan Features</span></a></li>
+                            <li><a href="<?php echo base_url() ;?>online_training/pricing"></i> <span class="hidden-sm hidden-xs">Pricing Structure</span></a></li>
+                            <li class="active"  ><a href="<?php echo base_url() ;?>online_training/basic_plan"></i> <span class="hidden-sm hidden-xs">Basic Plan Features</span></a></li>
                             <li><a href="<?php echo base_url() ;?>online_training/bronze_plan"></i> <span class="hidden-sm hidden-xs">Bronze Plan Features</span></a></li>
                             <li><a href="<?php echo base_url() ;?>online_training/silver_plan"></i> <span class="hidden-sm hidden-xs">Silver Plan Features</span></a></li>
-                            <li ><a href="<?php echo base_url() ;?>online_training/gold_plan"></i> <span class="hidden-sm hidden-xs">Gold Plan Features</span></a></li>
+                            <li><a href="<?php echo base_url() ;?>online_training/gold_plan"></i> <span class="hidden-sm hidden-xs">Gold Plan Features</span></a></li>
                         </ul>
                         <!-- // END Tabs -->
                         <!-- Panes -->
@@ -40,33 +40,25 @@
                             
                                         
               
-                    <h1 class="page-section-heading">HosApp Price levels</h1>
+                    <h1 class="page-section-heading">Basic Plan information here</h1>
                     <div class="table-responsive">
-                        <!-- Pricing table -->
+                         <!-- Pricing table -->
                         <table class="table panel panel-default table-pricing">
                             <!-- Table heading -->
                             <thead>
                                 <tr>
-                                    <th class="text-center">Choose your plan</th>
+                                    <th class="text-center">&nbsp;</th>
                                     <th class="text-center" style="width: 15%">
-                                        <span class="plan">Basic</span>
-                                        <span class="price">€125.00</span>
-                                      <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
+                                       &nbsp; 
                                     </th>
                                     <th class="text-center" style="width: 15%">
-                                        <span class="plan">Bronze</span>
-                                        <span class="price">€199.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
+                                       &nbsp; 
                                     </th>
                                     <th class="text-center" style="width: 15%">
-                                        <span class="plan">Silver</span>
-                                        <span class="price">€250.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
+                                       &nbsp; 
                                     </th>
                                     <th class="text-center" style="width: 15%">
-                                        <span class="plan">Gold</span>
-                                        <span class="price">€299.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
+                                        &nbsp;
                                     </th>
                                 </tr>
                             </thead>
@@ -75,47 +67,47 @@
                             <tbody>
                                 <!-- Table row -->
                                 <tr>
-                                    <td>Dedicated account manager</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
                                 </tr>
                                 <!-- // Table row END -->
                                 <!-- Table row -->
                                 <tr>
-                                    <td>More than 5 user accounts</td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-center text-danger">&nbsp;</td>
+                                    <td class="text-center text-danger">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
                                 </tr>
                                 <!-- // Table row END -->
                                 <!-- Table row -->
                                 <tr>
-                                    <td>Management reports</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
                                 </tr>
                                 <!-- // Table row END -->
                                 <!-- Table row -->
                                 <tr>
-                                    <td>Awarded certificates</td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-center text-danger">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
                                 </tr>
                                 <!-- // Table row END -->
                                 <!-- Table row -->
                                 <tr>
-                                    <td>Progress tracking</td>
-                                    <td class="text-center">Basic Tracking</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
+                                    <td class="text-center text-success">&nbsp;</td>
                                 </tr>
                                 <!-- // Table row END -->
                             </tbody>

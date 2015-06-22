@@ -26,7 +26,8 @@ class Student_card_update_controller extends CI_Controller {
 			
 			$this->load->view('templates/header');
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
-			echo 'Failed to validate ';//$this->load->view('student_card_update_view');
+			//echo 'Failed to validate ';//$this->load->view('student_card_update_view');
+			$this->load->view('student_billing_validate_failed');
 			$this->load->view('templates/footer');
 		}
 		else // passed validation proceed to post success logic

@@ -5,7 +5,7 @@
                     <h4 class="text-headline text-light">Corporate</h4>
                     <ul class="list-unstyled">
                         <li><a href="<?php echo base_url();?>online_training/about">About the company</a></li>
-                        <li><a href="<?php echo base_url();?>online_training/company_offices">Company offices</a></li>
+                        <li><a href="<?php echo base_url();?>map/location_map">Company offices</a></li>
                         <li><a href="<?php echo base_url();?>online_training/partners">Partners</a></li>
                         <li><a href="<?php echo base_url();?>online_training/terms_of_use">Terms of use</a></li>
                         <li><a href="<?php echo base_url();?>online_training/privacy">Privacy</a></li>

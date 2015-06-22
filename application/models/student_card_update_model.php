@@ -65,7 +65,11 @@ class Student_card_update_model extends CI_Model {
 		
 	}
 
-
+	// Mask credit card numbers in view
+	function mask_cc($student_card_number, $mask_char='*')
+									{
+										return preg_replace("/[^- ]/", $mask_char, substr($student_card_number,0,-4)) . substr($student_card_number,-4);
+									}
 
 
 }

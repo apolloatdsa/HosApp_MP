@@ -68,6 +68,7 @@
                             <li><a href="<?php echo base_url();?>online_training/blog">Blog Listing</a></li>
                             <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Post</a></li>
                             <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
+                            <li><a href="<?php echo base_url();?>map/location_map">Company offices</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

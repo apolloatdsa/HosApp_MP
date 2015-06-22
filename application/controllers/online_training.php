@@ -147,7 +147,43 @@ class Online_training extends CI_Controller {
 			$this->load->view('templates/footer');
 			
 			
-			}		
+			}
+		public function basic_plan(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('basic_plan_details');
+			$this->load->view('templates/footer');
+			
+			
+			}	
+		public function bronze_plan(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('bronze_plan_details');
+			$this->load->view('templates/footer');
+			
+			
+			}				
+		public function silver_plan(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('silver_plan_details');
+			$this->load->view('templates/footer');
+			
+			
+			}
+		public function gold_plan(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('gold_plan_details');
+			$this->load->view('templates/footer');
+			
+			
+			}												
 		public function courses(){
 			
 			$this->load->view('templates/header');
@@ -174,7 +210,16 @@ class Online_training extends CI_Controller {
 			$this->load->view('templates/footer');
 			
 			
-			}		
+			}
+		public function survey(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('blank_tabable_page');
+			$this->load->view('templates/footer');
+			
+			
+			}					
 		public function info(){
 			$error = array('error' => '');
 			$this->load->view('templates/header');

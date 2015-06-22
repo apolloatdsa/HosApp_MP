@@ -1,20 +1,7 @@
 
 
  <div class="parallax overflow-hidden bg-blue-400 page-section third">
-        <div class="container parallax-layer" data-opacity="true">
-            <div class="media v-middle">
-                <div class="media-left text-center">
-                    
-                </div>
-                <div class="media-body">
-                    <h1 class="text-white text-display-1 margin-v-0">Professional training for your staff from the best in the business.</h1>
-                    <h3 class="text-white margin-v-0">Up todate accreditation for your business</h3>
-                </div>
-                <div class="media-right">
-                    <span class="label bg-blue-500"><?php  echo '<span> <a href="' .  base_url() .'online_training/contact_us_view" class="navbar-btn btn btn-success"> Contact us</a> </span>'; ?></span>
-                </div>
-            </div>
-        </div>
+       
     </div>
     
     
@@ -27,112 +14,20 @@
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                         <!-- Tabs -->
                         <ul class="nav nav-tabs">
-                            <li class="active" ><a href="<?php echo base_url() ;?>online_training/pricing"></i> <span class="hidden-sm hidden-xs">Pricing Structure</span></a></li>
-                            <li   ><a href="<?php echo base_url() ;?>online_training/basic_plan"></i> <span class="hidden-sm hidden-xs">Basic Plan Features</span></a></li>
-                            <li><a href="<?php echo base_url() ;?>online_training/bronze_plan"></i> <span class="hidden-sm hidden-xs">Bronze Plan Features</span></a></li>
-                            <li><a href="<?php echo base_url() ;?>online_training/silver_plan"></i> <span class="hidden-sm hidden-xs">Silver Plan Features</span></a></li>
-                            <li ><a href="<?php echo base_url() ;?>online_training/gold_plan"></i> <span class="hidden-sm hidden-xs">Gold Plan Features</span></a></li>
+                            <li class="active"><a href="#"></i> <span class="hidden-sm hidden-xs">This ia a tab</span></a></li>
+                            <li><a href="#"></i> <span class="hidden-sm hidden-xs">Another page here</span></a></li>
                         </ul>
                         <!-- // END Tabs -->
                         <!-- Panes -->
                         <div class="tab-content">
                             <div id="account" class="tab-pane active">
                             
-                                        
-              
-                    <h1 class="page-section-heading">HosApp Price levels</h1>
-                    <div class="table-responsive">
-                        <!-- Pricing table -->
-                        <table class="table panel panel-default table-pricing">
-                            <!-- Table heading -->
-                            <thead>
-                                <tr>
-                                    <th class="text-center">Choose your plan</th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Basic</span>
-                                        <span class="price">€125.00</span>
-                                      <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Bronze</span>
-                                        <span class="price">€199.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Silver</span>
-                                        <span class="price">€250.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Gold</span>
-                                        <span class="price">€299.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <!-- // Table heading END -->
-                            <!-- Table body -->
-                            <tbody>
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Dedicated account manager</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>More than 5 user accounts</td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Management reports</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Awarded certificates</td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Progress tracking</td>
-                                    <td class="text-center">Basic Tracking</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                            </tbody>
-                            <!-- // Table body END -->
-                        </table>
-                        <!-- // Pricing table END -->
-                    </div>
-             
-                           
-                            	
+                            
                                 <div class="col-md-6  page-section">
+                                 <h1>Dublin office <h1>
+                            		<?php echo $map['html'];  ?>
                                 
-                                
-                                
-                
-                                    
-                                          
+                                   
                                 </div>	
                                 
                                 
@@ -152,14 +47,15 @@
                 <div class="col-md-3">
                     <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
                         <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">Meet Your Account Manager</h4>
+                            <h4 class="panel-title">My Account</h4>
                         </div>
                         <div class="panel-body list-group">
                             <ul class="list-group list-group-menu">
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-dashboard.html">Available courses</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-courses.html">How are courses delivered</a></li>
-                                <li class="list-group-item active"><a class="link-text-color" href="website-student-profile.html">Meet the Tutors</a></li>
-                                
+                                <li class="list-group-item"><a class="link-text-color" href="website-student-dashboard.html">Dashboard</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="website-student-courses.html">My Courses</a></li>
+                                <li class="list-group-item active"><a class="link-text-color" href="website-student-profile.html">Profile</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="website-student-messages.html">Messages</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="login.html"><span>Logout</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -185,7 +81,7 @@
                                             </div>
                                         </div>
                                         <div class="media-body">
-                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">food hygiene for busy restaurants</a></h4>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Github Webhooks for Beginners</a></h4>
                                             <p class="small margin-none">
                                                 <span class="fa fa-fw fa-star text-yellow-800"></span>
                                                 <span class="fa fa-fw fa-star text-yellow-800"></span>

@@ -1,23 +1,23 @@
-
-
  <div class="parallax overflow-hidden bg-blue-400 page-section third">
         <div class="container parallax-layer" data-opacity="true">
             <div class="media v-middle">
                 <div class="media-left text-center">
-                    
+                    <a href="#">
+                        <img src="<?php echo base_url();?>images/members/<?php echo $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');?>.jpg" alt="people" class="img-circle width-80" />
+                    </a>
                 </div>
                 <div class="media-body">
-                    <h1 class="text-white text-display-1 margin-v-0">Professional training for your staff from the best in the business.</h1>
-                    <h3 class="text-white margin-v-0">Up todate accreditation for your business</h3>
+                    <h1 class="text-white text-display-1 margin-v-0"><?php echo " " . $this->session->userdata('user_first_name'). " ". $this->session->userdata('user_last_name')." " ; ?></h1>
+                    <p class="text-subhead"><a class="link-white text-underline" href="website-student-public-profile.html">View public profile</a></p>
                 </div>
                 <div class="media-right">
-                    <span class="label bg-blue-500"><?php  echo '<span> <a href="' .  base_url() .'online_training/contact_us_view" class="navbar-btn btn btn-success"> Contact us</a> </span>'; ?></span>
+                    <span class="label bg-blue-500">Student</span>
                 </div>
             </div>
         </div>
     </div>
     
-    
+    <!-- Top blue bar with user image name and type -->
     
     <div class="container">
         <div class="page-section">
@@ -27,116 +27,69 @@
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                         <!-- Tabs -->
                         <ul class="nav nav-tabs">
-                            <li class="active" ><a href="<?php echo base_url() ;?>online_training/pricing"></i> <span class="hidden-sm hidden-xs">Pricing Structure</span></a></li>
-                            <li   ><a href="<?php echo base_url() ;?>online_training/basic_plan"></i> <span class="hidden-sm hidden-xs">Basic Plan Features</span></a></li>
-                            <li><a href="<?php echo base_url() ;?>online_training/bronze_plan"></i> <span class="hidden-sm hidden-xs">Bronze Plan Features</span></a></li>
-                            <li><a href="<?php echo base_url() ;?>online_training/silver_plan"></i> <span class="hidden-sm hidden-xs">Silver Plan Features</span></a></li>
-                            <li ><a href="<?php echo base_url() ;?>online_training/gold_plan"></i> <span class="hidden-sm hidden-xs">Gold Plan Features</span></a></li>
+                            <li><a href="<?php  echo base_url(); ?>student/student_private_profile"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Manage Account</span></a></li>
+                            <li><a href="<?php  echo base_url(); ?>student/student_billing"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Billing Details</span></a></li>
+                           <li class="active"><a href="<?php  echo base_url(); ?>student/student_card_upsate_failed"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Failed to validate the Credit Card Details - Please check and try again.</span></a></li>  
+                        
                         </ul>
                         <!-- // END Tabs -->
+                        
+                        
                         <!-- Panes -->
                         <div class="tab-content">
-                            <div id="account" class="tab-pane active">
+                            <div id="billing" class="tab-pane active">
                             
-                                        
-              
-                    <h1 class="page-section-heading">HosApp Price levels</h1>
-                    <div class="table-responsive">
-                        <!-- Pricing table -->
-                        <table class="table panel panel-default table-pricing">
-                            <!-- Table heading -->
-                            <thead>
-                                <tr>
-                                    <th class="text-center">Choose your plan</th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Basic</span>
-                                        <span class="price">€125.00</span>
-                                      <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Bronze</span>
-                                        <span class="price">€199.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Silver</span>
-                                        <span class="price">€250.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                    <th class="text-center" style="width: 15%">
-                                        <span class="plan">Gold</span>
-                                        <span class="price">€299.99</span>
-                                        <?php  echo '<span> <a href="' .  base_url() .'online_training/sign_up" class="navbar-btn btn btn-success"> Sign Up</a> </span>'; ?>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <!-- // Table heading END -->
-                            <!-- Table body -->
-                            <tbody>
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Dedicated account manager</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>More than 5 user accounts</td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Management reports</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Awarded certificates</td>
-                                    <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                                <!-- Table row -->
-                                <tr>
-                                    <td>Progress tracking</td>
-                                    <td class="text-center">Basic Tracking</td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                    <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
-                                </tr>
-                                <!-- // Table row END -->
-                            </tbody>
-                            <!-- // Table body END -->
-                        </table>
-                        <!-- // Pricing table END -->
-                    </div>
-             
-                           
-                            	
-                                <div class="col-md-6  page-section">
+                             <!--   <form action="#" class="form-horizontal"> -->
                                 
-                                
-                                
-                
+                                <hr/>
+                               
+                                <div class="media v-middle s-container success">
+                                    <div class="media-body ">
+                                        <h3 class="">Your account failed to updated</h3>
+                                    </div>
+                                    <div class="media-right">
+                                        <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white paper-shadow relative" data-animated data-z="0.5" data-hover-z="1" href="">Add Credit Card</a>
+                                    </div>
+                                </div>
+                                <div class="list-group margin-none">
+                                    <div class="list-group-item media v-middle"> 
                                     
-                                          
-                                </div>	
-                                
-                                
-
+                                    <div class="media-left">
+                                            <div class="icon-block half img-circle bg-danger">
+                                                <i class="fa fa-thumbs-o-down"></i>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="media-left">
+                                            <div class="icon-block half img-circle bg-danger">
+                                                <i class="fa fa-credit-card"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="text-title media-heading">
+                                                <a href="#modal-update-credit-card" data-toggle="modal" class="link-text-color">Update Failed</a>
+                                            </h4>
+                                            <div class="text-caption">Please check the CC numbers and try again</div>
+                                        </div>
+                                        <div class="media-right">
+                                            <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white btn-flat"><i class="fa fa-pencil fa-fw"></i> Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item media v-middle">
+                                        <div class="media-left">
+                                            
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="text-title media-heading">
+                                                Please check the Credit Card numbers and try again
+                                            </h4>
+                                            <div class="text-caption"></div>
+                                        </div>
+                                        <div class="media-right">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- // END Panes -->
@@ -144,22 +97,112 @@
                         
                     </div>
                     <!-- // END Tabbable Widget -->
-                    <br/>
-                    <br/>
                     
                     
+                    
+                    
+                    <div class="modal grow modal-backdrop-white fade" id="modal-update-credit-card">
+                        <div class="modal-dialog modal-sm">
+                            <div class="v-cell">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title">Update Credit Card</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php echo form_open_multipart('student_card_update_controller/index');  ?>
+                                        
+                                            <div class="form-group">
+                                            
+                                            	<label for="student_card_number">Card Number <span class="required">*</span></label>
+												<?php echo form_error('student_card_number'); ?>
+                                                <br /><input class="form-control"  id="student_card_number" type="number" name="student_card_number" maxlength="30" value="<?php echo set_value('student_card_number'); ?>"  />
+                                            
+                                                
+                                            </div>
+                                            
+                                            
+                                            <div class="form-group">
+                                               <label for="month">Year <span class="required">*</span></label>
+						<?php echo form_error('month'); ?>
+						
+						<?php // Change the values in this array to populate your dropdown as required ?>
+						<?php $options = array(
+																  ''  => 'Please Select',
+																  '01'    => 'January',
+																  '02'    => 'February',
+																  '03'    => 'March',
+																  '04'    => 'April',
+																  '05'    => 'May',
+																  '06'    => 'June',
+																  '07'    => 'July',
+																  '08'    => 'August',
+																  '09'    => 'September',
+																  '10'    => 'October',
+																  '11'    => 'November',
+																  '12'    => 'December'
+																  
+																); ?>
+				
+						<br /><?php echo form_dropdown('month',  $options, set_value('month'), 'class="btn dropdown-toggle form-control selectpicker btn-white"')?>
+                                            </div>
+                                            
+                                            
+                                             <div class="form-group">
+                                               <label for="year">Year <span class="required">*</span></label>
+						<?php echo form_error('year'); ?>
+						
+						<?php // Change the values in this array to populate your dropdown as required ?>
+						<?php $options = array(
+																  ''  => 'Please Select',
+																  '2015'    => '2015',
+																  '2016'    => '2016',
+																  '2017'    => '2017',
+																  '2018'    => '2018',
+																  '2019'    => '2019',
+																  '2020'   	=> '2020',
+																  '2021'    => '2021'
+																  
+																); ?>
+				
+						<br /><?php echo form_dropdown('year',  $options, set_value('year'), 'class="btn dropdown-toggle form-control selectpicker btn-white"')?>
+                                            </div>
+                                            
+                                            
+                                            
+                                            
+                                            <div class="form-group">
+                                               <label for="student_ccv_number">CCV <span class="required">*</span></label>
+												<?php echo form_error('student_ccv_number'); ?>
+                                                <br /><input class="form-control"  id="student_ccv_number" type="text" name="student_ccv_number" maxlength="3" value="<?php echo set_value('student_ccv_nunber'); ?>"  />
+                                            </div>
+                                            <?php echo form_submit( 'submit', 'Submit',"class='btn btn-primary'"); ?>
+                                        
+                                <?php echo form_close(); ?>
+                                            
+                                            
+                                         <!--   <button type="submit" class="btn btn-success paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated data-dismiss="modal">Update Credit Card</button>
+                                        </form> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
                         <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">Meet Your Account Manager</h4>
+                            <h4 class="panel-title">My Account</h4>
                         </div>
                         <div class="panel-body list-group">
                             <ul class="list-group list-group-menu">
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-dashboard.html">Available courses</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-courses.html">How are courses delivered</a></li>
-                                <li class="list-group-item active"><a class="link-text-color" href="website-student-profile.html">Meet the Tutors</a></li>
-                                
+                                <li class="list-group-item"><a class="link-text-color" href="website-student-dashboard.html">Dashboard</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="website-student-courses.html">My Courses</a></li>
+                                <li class="list-group-item active"><a class="link-text-color" href="website-student-profile.html">Profile</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="website-student-messages.html">Messages</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="login.html"><span>Logout</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -185,7 +228,7 @@
                                             </div>
                                         </div>
                                         <div class="media-body">
-                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">food hygiene for busy restaurants</a></h4>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Github Webhooks for Beginners</a></h4>
                                             <p class="small margin-none">
                                                 <span class="fa fa-fw fa-star text-yellow-800"></span>
                                                 <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -368,19 +411,3 @@
             </div>
         </div>
     </div>
-    
-    
-    
-     <div class="modal grow modal-overlay modal-backdrop-body fade" id="student_image_upload">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <div class="modal-dialog">
-            <div class="v-cell">
-                <div class="modal-content">
-                    <div class="modal-body">
-                    
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>   
