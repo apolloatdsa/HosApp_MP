@@ -1,9 +1,21 @@
 
 
- <div class="parallax overflow-hidden bg-blue-400 page-section third">
-       
+<div class="parallax overflow-hidden bg-blue-400 page-section third">
+        <div class="container parallax-layer" data-opacity="true">
+            <div class="media v-middle">
+                <div class="media-left text-center">
+                    
+                </div>
+                <div class="media-body">
+                    <h1 class="text-white text-display-1 margin-v-0">Professional training for your staff from the best in the business.</h1>
+                    <h3 class="text-white margin-v-0">Up todate accreditation for your business</h3>
+                </div>
+                <div class="media-right">
+                    <span class="label bg-blue-500"><?php  echo '<span> <a href="' .  base_url() .'online_training/contact_us_view" class="navbar-btn btn btn-success"> Contact us</a> </span>'; ?></span>
+                </div>
+            </div>
+        </div>
     </div>
-    
     
     
     <div class="container">
@@ -72,7 +84,7 @@
                     
                     
                     <address>
-                      <strong>Sharah Barrow : Technical Director</strong><br>
+                      <strong>Sarah Barrow : Technical Director</strong><br>
                       <a href="mailto:#">sarah.barrow@hosapp.com</a>
                     </address>
                     

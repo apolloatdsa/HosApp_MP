@@ -36,6 +36,7 @@ class Map extends CI_Controller {
 			
 			$marker = array();
 			$marker['position'] = 'Digital Exchange Building Crane St Dublin 8 , Ireland';
+			$marker['infowindow_content'] = 'HosApp Dublin office';
 			
 			$this->googlemaps->add_marker($marker);
 		 	$this->googlemaps->initialize($config);
@@ -60,6 +61,7 @@ class Map extends CI_Controller {
 			
 			$marker = array();
 			$marker['position'] = 'Galway Technology Centre Mervue Galway , Ireland';
+			$marker['infowindow_content'] = 'HosApp Galway office';
 			
 			$this->googlemaps->add_marker($marker);
 		 	$this->googlemaps->initialize($config);
