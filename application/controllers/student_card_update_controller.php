@@ -24,7 +24,8 @@ class Student_card_update_controller extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
 		{
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			//echo 'Failed to validate ';//$this->load->view('student_card_update_view');
 			$this->load->view('student_billing_validate_failed');
@@ -58,7 +59,8 @@ class Student_card_update_controller extends CI_Controller {
 			{
 			
 			// here id the db update failed
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			
 			$this->load->view('student_billing_update_failed');

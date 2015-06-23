@@ -51,7 +51,8 @@ class Contact_us_controller extends CI_Controller {
 	}
 	function success()
 	{
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('contact_us_success_view');
 			$this->load->view('templates/footer');

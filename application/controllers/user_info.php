@@ -23,7 +23,8 @@ class User_info extends CI_Controller {
 		if (!$this->ion_auth->logged_in()) // user not logged in 
 		{
 			//redirect them to the login page
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->load->view('templates/navbar');
 			redirect('auth/login', 'refresh'); // go back to login page if not logged on or unsuccessful log in
 			$this->load->view('templates/footer');
@@ -32,7 +33,8 @@ class User_info extends CI_Controller {
 		{
 			// do this if not administrator
 			//redirect them to the home page because they must be an administrator to view this
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->load->view('templates/navbar');
 			return show_error('You must be an administrator to view this page.');
 			$this->load->view('templates/footer');
@@ -51,7 +53,8 @@ class User_info extends CI_Controller {
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->load->view('templates/navbar');
 			$this->_render_page('auth/index', $this->data); // send users to the auth/index page if they are administrators
 			$this->load->view('templates/footer');

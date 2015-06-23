@@ -23,7 +23,8 @@ class Sign_up_controller extends CI_Controller {
 		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
 		{
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('sign_up_view');
 			$this->load->view('templates/footer');
@@ -61,7 +62,8 @@ class Sign_up_controller extends CI_Controller {
 			}
 			else
 			{
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('sign_up_view');
 			$this->load->view('templates/footer');
@@ -74,7 +76,8 @@ class Sign_up_controller extends CI_Controller {
 	{
 			
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('sign_up_success_view');
 			$this->load->view('templates/footer');

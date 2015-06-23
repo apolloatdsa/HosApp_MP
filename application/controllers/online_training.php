@@ -59,7 +59,8 @@ class Online_training extends CI_Controller {
 	{
    
 	 // executes the code in here first
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('body');
 			$this->load->view('templates/footer');
@@ -69,7 +70,8 @@ class Online_training extends CI_Controller {
 	 
 		public function contact_page(){
 		
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('contact');
 			$this->load->view('templates/footer');
@@ -78,7 +80,8 @@ class Online_training extends CI_Controller {
 		
 		public function contact_us_view(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('contact_us_view');
 			$this->load->view('templates/footer');
@@ -87,7 +90,8 @@ class Online_training extends CI_Controller {
 			}
 		public function about(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('about_us');
 			$this->load->view('templates/footer');
@@ -96,7 +100,8 @@ class Online_training extends CI_Controller {
 			}	
 		public function company_offices(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('company_offices');
 			$this->load->view('templates/footer');
@@ -105,7 +110,8 @@ class Online_training extends CI_Controller {
 			}	
 		public function partners(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('partners');
 			$this->load->view('templates/footer');
@@ -114,7 +120,8 @@ class Online_training extends CI_Controller {
 			}	
 		public function terms_of_use(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('terms_of_use');
 			$this->load->view('templates/footer');
@@ -123,7 +130,8 @@ class Online_training extends CI_Controller {
 			}		
 		public function privacy(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('privacy');
 			$this->load->view('templates/footer');
@@ -132,7 +140,8 @@ class Online_training extends CI_Controller {
 			}	
 		public function become_a_tutor(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('become_a_tutor');
 			$this->load->view('templates/footer');
@@ -141,7 +150,8 @@ class Online_training extends CI_Controller {
 			}		
 		public function pricing(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('pricing');
 			$this->load->view('templates/footer');
@@ -150,7 +160,8 @@ class Online_training extends CI_Controller {
 			}
 		public function basic_plan(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('basic_plan_details');
 			$this->load->view('templates/footer');
@@ -159,7 +170,8 @@ class Online_training extends CI_Controller {
 			}	
 		public function bronze_plan(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('bronze_plan_details');
 			$this->load->view('templates/footer');
@@ -168,7 +180,8 @@ class Online_training extends CI_Controller {
 			}				
 		public function silver_plan(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('silver_plan_details');
 			$this->load->view('templates/footer');
@@ -177,7 +190,8 @@ class Online_training extends CI_Controller {
 			}
 		public function gold_plan(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('gold_plan_details');
 			$this->load->view('templates/footer');
@@ -186,7 +200,8 @@ class Online_training extends CI_Controller {
 			}												
 		public function courses(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('courses');
 			$this->load->view('templates/footer');
@@ -195,7 +210,8 @@ class Online_training extends CI_Controller {
 			}		
 		public function sign_up(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('sign_up_view');
 			$this->load->view('templates/footer');
@@ -204,16 +220,18 @@ class Online_training extends CI_Controller {
 			}		
 		public function tutors(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('tutors');
+			$this->load->view('meet_the_tutors');
 			$this->load->view('templates/footer');
 			
 			
 			}
 		public function survey(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('blank_tabable_page');
 			$this->load->view('templates/footer');
@@ -222,7 +240,9 @@ class Online_training extends CI_Controller {
 			}					
 		public function info(){
 			$error = array('error' => '');
-			$this->load->view('templates/header');
+			
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('info', $error);
 			$this->load->view('templates/footer');
@@ -231,7 +251,8 @@ class Online_training extends CI_Controller {
 			}
 		public function how_is_training_delivered(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('how_is_training_delivered');
 			$this->load->view('templates/footer');
@@ -239,7 +260,8 @@ class Online_training extends CI_Controller {
 			}	
 		public function meet_the_tutors(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('meet_the_tutors');
 			$this->load->view('templates/footer');
@@ -247,7 +269,8 @@ class Online_training extends CI_Controller {
 			}		
 		public function meet_the_team(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('meet_the_team');
 			$this->load->view('templates/footer');
@@ -255,7 +278,8 @@ class Online_training extends CI_Controller {
 			}			
 		public function avaialble_courses(){
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('courses');
 			$this->load->view('templates/footer');
@@ -295,7 +319,9 @@ class Online_training extends CI_Controller {
 					$error = array('error' => 'Upload success');
 					 
 					// $error = array('error' => '');
-					$this->load->view('templates/header');
+					
+					$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 					$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 					$this->load->view('student_private_profile', $error);
 					$this->load->view('templates/footer');
@@ -309,7 +335,8 @@ class Online_training extends CI_Controller {
 				 // $data = array('upload_data' => $this->upload->data());
 				   //echo "file upload failed";
 				  
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+				$this->load->view('templates/header', $data );
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_private_profile', $error);
 				$this->load->view('templates/footer');

@@ -45,7 +45,8 @@ class Instructor extends CI_Controller {
 	 
 	 public function instructor_dashboard(){
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_dashboard');
 			$this->load->view('templates/footer');
@@ -55,7 +56,8 @@ class Instructor extends CI_Controller {
 		 
 	public function instructor_courses(){
 		
-		 	$this->load->view('templates/header');
+		 	$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_courses');
 			$this->load->view('templates/footer');
@@ -63,7 +65,8 @@ class Instructor extends CI_Controller {
 		 
 	public function instructor_profile(){
 			
-		 	$this->load->view('templates/header');
+		 	$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_profile');
 			$this->load->view('templates/footer');
@@ -71,7 +74,8 @@ class Instructor extends CI_Controller {
 		 
 	public function instructor_edit_courses(){
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('instructor_edit_courses');
 			$this->load->view('templates/footer');

@@ -9,7 +9,7 @@
     <div class="container">
         <div class="page-section">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-6 col-md-offset-2">
                     <!-- Tabbable Widget -->
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                        
@@ -17,19 +17,99 @@
                         <div class="tab-content">
                             <div id="account" class="tab-pane active">
                             
-                           <h1>We are the Tutors. </h1>
                             
-                          <p>  
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit. A accusamus adipisci autem beatae delectus enim et harum illo ipsa ipsam iste itaque labore nesciunt odio odit pariatur perspiciatis placeat provident quas quasi qui quo quos ratione reiciendis repudiandae soluta suscipit, tempore tenetur ut voluptas? Accusamus commodi culpa distinctio explicabo illo, laborum, nemo, nulla omnis tenetur unde ut!
-                            </p>
                             
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit. A accusamus adipisci autem beatae delectus enim et harum illo ipsa ipsam iste itaque labore nesciunt odio odit pariatur perspiciatis placeat provident quas quasi qui quo quos ratione reiciendis repudiandae soluta suscipit, tempore tenetur ut voluptas? Accusamus commodi culpa distinctio explicabo illo, laborum, nemo, nulla omnis tenetur unde ut!
-                            </p>
                             
-                                <div class="col-md-6  page-section">
-                                
-                                </div>	
+                           
+                             <div class="item">
+                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                                <div class="panel-body">
+                                    <div class="media media-clearfix-xs">
+                                        <div class="media-left">
+                                         
+                                        </div>
+                                        <div class="media-body">
+                                         <img src="<?php echo base_url();?>images/members/2-Delaney.JPG" alt="member" class="img-thumbnail" />
+                                        <br>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Joe Blog BSc MIEI</a></h4>
+                                            <p class="small margin-none">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit.  
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                          <div class="item">
+                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                                <div class="panel-body">
+                                    <div class="media media-clearfix-xs">
+                                        <div class="media-left">
+                                         
+                                        </div>
+                                        <div class="media-body">
+                                         <img src="<?php echo base_url();?>images/members/18.JPG" alt="member" class="img-thumbnail" />
+                                        <br>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Jane Blog MSc MIEI</a></h4>
+                                            <p class="small margin-none">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit.  
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                            
+                            
+                          
+                          
+                         <div class="item">
+                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                                <div class="panel-body">
+                                    <div class="media media-clearfix-xs">
+                                        <div class="media-left">
+                                         
+                                        </div>
+                                        <div class="media-body">
+                                         <img src="<?php echo base_url();?>images/members/20.JPG" alt="member" class="img-thumbnail" />
+                                        <br>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Janet Blog MSc DSAP</a></h4>
+                                            <p class="small margin-none">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit.  
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        
+                        
+                        
+                        <div class="item">
+                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                                <div class="panel-body">
+                                    <div class="media media-clearfix-xs">
+                                        <div class="media-left">
+                                         
+                                        </div>
+                                        <div class="media-body">
+                                         <img src="<?php echo base_url();?>images/members/13.JPG" alt="member" class="img-thumbnail" />
+                                        <br>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Marty Smith Phd DSPCA</a></h4>
+                                            <p class="small margin-none">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit.  
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        
+                        
+                        
+                         
                                 
                                 
 

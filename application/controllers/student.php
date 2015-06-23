@@ -45,14 +45,16 @@ class Student extends CI_Controller {
 	 
 	 public function student_dashboard(){
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('student_dashboard');
 			$this->load->view('templates/footer');
 		 }
 	 public function student_courses(){
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('student_courses');
 			$this->load->view('templates/footer');
@@ -61,7 +63,8 @@ class Student extends CI_Controller {
 	
 		public function student_take_course(){
 			 
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_take_course');
 				$this->load->view('templates/footer');
@@ -69,7 +72,8 @@ class Student extends CI_Controller {
 	
 	public function student_course_forums(){
 			 
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_course_forums');
 				$this->load->view('templates/footer');
@@ -77,7 +81,8 @@ class Student extends CI_Controller {
 	
 	public function student_take_quiz(){
 			 
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_take_quiz');
 				$this->load->view('templates/footer');
@@ -86,7 +91,8 @@ class Student extends CI_Controller {
 	
 	public function student_messages(){
 			 
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_messages');
 				$this->load->view('templates/footer');
@@ -95,14 +101,17 @@ class Student extends CI_Controller {
 		
 			 
 			   $error = array('error' => '');
-				$this->load->view('templates/header');
+			   
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_private_profile', $error);
 				$this->load->view('templates/footer');
 			 }
 		public function student_test_profile(){
 			 
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_test_profile', $error);
 				$this->load->view('templates/footer');
@@ -111,14 +120,16 @@ class Student extends CI_Controller {
 		
 			 $data['payment'] = $this->Student_card_update_model->getPayment();
 			
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				$this->load->view('student_billing', $data);
 				$this->load->view('templates/footer');
 			 }
 		public function user_billing_update(){
 			 
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				echo "<h1>Form submitted </h1>";
 				//$this->load->view('student_billing');
@@ -126,7 +137,8 @@ class Student extends CI_Controller {
 			 }
 			public function credit_card_update(){
 			 
-				$this->load->view('templates/header');
+				$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				echo "<h1>Student Credit card updated </h1>";
 				//$this->load->view('student_billing');
@@ -136,7 +148,8 @@ class Student extends CI_Controller {
 	
 			$data['payment'] = $this->Student_card_update_model->getPayment();
 			
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('student_billing_update_success', $data);
 			$this->load->view('templates/footer');

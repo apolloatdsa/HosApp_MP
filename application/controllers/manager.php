@@ -45,7 +45,8 @@ class Manager extends CI_Controller {
 	 
 	 public function manager_dashboard(){
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_dashboard');
 			$this->load->view('templates/footer');
@@ -55,7 +56,8 @@ class Manager extends CI_Controller {
 		 
 	public function manager_company_profile(){
 		
-		 	$this->load->view('templates/header');
+		 	$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_company_profile');
 			$this->load->view('templates/footer');
@@ -63,7 +65,8 @@ class Manager extends CI_Controller {
 		 
 	public function manager_list_employees(){
 			
-		 	$this->load->view('templates/header');
+		 	$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_list_employees');
 			$this->load->view('templates/footer');
@@ -71,7 +74,8 @@ class Manager extends CI_Controller {
 		 
 	public function manager_completed_projects(){
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_completed_projects');
 			$this->load->view('templates/footer');
@@ -79,7 +83,8 @@ class Manager extends CI_Controller {
 
 	public function under_construction(){
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('under_construction');
 			$this->load->view('templates/footer');

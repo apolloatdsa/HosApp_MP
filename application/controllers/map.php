@@ -45,7 +45,8 @@ class Map extends CI_Controller {
 		 
 		 
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('dublin_map_view',$data);
 			//$this->load->view('contact_address_email_view');
@@ -70,7 +71,8 @@ class Map extends CI_Controller {
 		 
 		 
 		 
-			$this->load->view('templates/header');
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('galway_map_view',$data);
 			//$this->load->view('contact_address_email_view');
