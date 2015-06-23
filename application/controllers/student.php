@@ -17,7 +17,7 @@ class Student extends CI_Controller {
                 parent::__construct();
 				//session_start();
 				
-				if (!$this->session->userdata('student') && !$this->session->userdata('admin') && !$this->session->userdata('instructor')){
+				if (!$this->session->userdata('student') && !$this->session->userdata('admin') && !$this->session->userdata('instructor') && !$this->session->userdata('manager')){
 					
 	 					redirect('online_training/index');
 					 

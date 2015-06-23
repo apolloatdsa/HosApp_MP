@@ -16,7 +16,7 @@
                     <h4 class="text-headline text-light">Explore</h4>
                     <ul class="list-unstyled">
                         <li><a href="<?php echo base_url();?>online_training/courses">Courses</a></li>
-                        <li><a href="<?php echo base_url();?>online_training/tutors">Tutors</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/meet_the_tutors">Tutors</a></li>
                         <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>
                         <li><a href="<?php echo base_url();?>online_training/become_a_tutor">Become Tutor</a></li>
                         <li><a href="<?php echo base_url();?>online_training/sign_up">Sign Up</a></li>
@@ -40,7 +40,7 @@
                         <a href="#" class="btn btn-danger btn-circle"><i class="fa fa-google-plus"></i></a>
                     </p>
                     <p class="text-subhead">
-                    &copy; 2015 Learning and accreditation through HosApp. </p>
+                    &copy; 2015 Learning and accreditation through Folio. </p>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-       This project was built using | PHP | OOP | MVC | JavaScript | JQuery | Bootstrap | CodeIgniter | MySql |  &copy; Copyright HosApp & DSA 2015
+       This project was built using | PHP | OOP | MVC | JavaScript | JQuery | Bootstrap | CodeIgniter | MySql |  &copy; Copyright Folio & DSA 2015
     </footer>
     <!-- // Footer -->
     <!-- Inline Script for colors and config objects; used by various external scripts; -->

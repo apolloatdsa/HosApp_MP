@@ -229,13 +229,47 @@ class Online_training extends CI_Controller {
 			
 			
 			}
+		public function how_is_training_delivered(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('how_is_training_delivered');
+			$this->load->view('templates/footer');
+			
+			}	
+		public function meet_the_tutors(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('meet_the_tutors');
+			$this->load->view('templates/footer');
+			
+			}		
+		public function meet_the_team(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('meet_the_team');
+			$this->load->view('templates/footer');
+			
+			}			
+		public function avaialble_courses(){
+			
+			$this->load->view('templates/header');
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('courses');
+			$this->load->view('templates/footer');
+			
+			}				
+			
+			
 		public function user_image_upload(){
 			$config['upload_path'] = './images/members/';
 			$config['overwrite'] = TRUE;
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
 			$config['max_size'] = '2048';
    			//$config['encrypt_name'] = TRUE;
-			$filename = $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');
+			$filename = $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name').'.JPG';
 			$config['file_name'] = $filename;
 			$this->load->library('upload', $config);
 			if($this->upload->do_upload())

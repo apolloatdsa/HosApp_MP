@@ -7,7 +7,7 @@
                     
                 </div>
                 <div class="media-body">
-                    <h1 class="text-white text-display-1 margin-v-0">Professional training for your staff from the best in the business.</h1>
+                    <h1 class="text-white text-display-1 margin-v-0">Professional training for your staff by the best in the business.</h1>
                     <h3 class="text-white margin-v-0">Up todate accreditation for your business</h3>
                 </div>
                 <div class="media-right">
@@ -27,8 +27,8 @@
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                         <!-- Tabs -->
                         <ul class="nav nav-tabs">
-                            <li><a href="<?php echo base_url() ;?>map/location_map"></i> <span class="hidden-sm hidden-xs"></i> <span class="hidden-sm hidden-xs">HosApp Dublin office</span></a></li>
-                            <li class="active" ><a href="<?php echo base_url() ;?>map/galway_location_map"></i> <span class="hidden-sm hidden-xs"></i> <span class="hidden-sm hidden-xs">HosApp Galway office</span></a></li>
+                            <li><a href="<?php echo base_url() ;?>map/location_map"></i> <span class="hidden-sm hidden-xs"></i> <span class="hidden-sm hidden-xs">Folio Dublin office</span></a></li>
+                            <li class="active" ><a href="<?php echo base_url() ;?>map/galway_location_map"></i> <span class="hidden-sm hidden-xs"></i> <span class="hidden-sm hidden-xs">Folio Galway office</span></a></li>
                         </ul>
                         <!-- // END Tabs -->
                         <!-- Panes -->
@@ -60,7 +60,7 @@
                 <div class="panel-body">
                 
                  <address>
-                      <strong>HosApp, Ltd.</strong><br>
+                      <strong>Folio, Ltd.</strong><br>
                      Galway Technology Centre, <br>
                      Mervue<br>
                      Galway, Ireland<br>
@@ -70,28 +70,28 @@
                     
                     <address>
                       <strong>Rose Barrett : Idea owner</strong><br>
-                      <a href="mailto:#">rose.barrett@hosapp.com</a>
+                      <a href="mailto:#">rose.barrett@folio.com</a>
                     </address>
                     
                 	<address>
                    <strong>Dec Dunne : Lead Designer</strong><br>
-                      <a href="mailto:#">dec.dunne@hosapp.com</a>
+                      <a href="mailto:#">dec.dunne@folio.com</a>
                     </address>
                     
                    <address>
                    <strong>Maggie Byrne : Designer</strong><br>
-                      <a href="mailto:#">maggie.byrne@hosapp.com</a>
+                      <a href="mailto:#">maggie.byrne@folio.com</a>
                     </address>
                     
                     
                     <address>
                       <strong>Sarah Barrow : Technical Director</strong><br>
-                      <a href="mailto:#">sarah.barrow@hosapp.com</a>
+                      <a href="mailto:#">sarah.barrow@folio.com</a>
                     </address>
                     
                     <address>
                     <strong>Tom Delaney : Technical Developer</strong><br>
-                      <a href="mailto:#">tom.delaney@hosapp.com</a>
+                      <a href="mailto:#">tom.delaney@folio.com</a>
                     </address>
                    
                 </div>

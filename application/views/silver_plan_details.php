@@ -7,7 +7,7 @@
                     
                 </div>
                 <div class="media-body">
-                    <h1 class="text-white text-display-1 margin-v-0">Professional training for your staff from the best in the business.</h1>
+                    <h1 class="text-white text-display-1 margin-v-0">Professional training for your staff by the best in the business.</h1>
                     <h3 class="text-white margin-v-0">Up todate accreditation for your business</h3>
                 </div>
                 <div class="media-right">
@@ -48,17 +48,17 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">&nbsp;</th>
-                                    <th class="text-center" style="width: 15%">
-                                       &nbsp; 
+                                    <th class="text-center" style="width: 15%">&nbsp;
+                                        
                                     </th>
-                                    <th class="text-center" style="width: 15%">
-                                       &nbsp; 
+                                    <th class="text-center" style="width: 15%">&nbsp;
+                                        
                                     </th>
-                                    <th class="text-center" style="width: 15%">
-                                       &nbsp; 
+                                    <th class="text-center" style="width: 15%">&nbsp;
+                                        
                                     </th>
-                                    <th class="text-center" style="width: 15%">
-                                        &nbsp;
+                                    <th class="text-center" style="width: 15%">&nbsp;
+                                        
                                     </th>
                                 </tr>
                             </thead>
@@ -148,9 +148,9 @@
                         </div>
                         <div class="panel-body list-group">
                             <ul class="list-group list-group-menu">
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-dashboard.html">Available courses</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-courses.html">How are courses delivered</a></li>
-                                <li class="list-group-item active"><a class="link-text-color" href="website-student-profile.html">Meet the Tutors</a></li>
+                                <li class="list-group-item"><a href="<?php echo base_url();?>online_training/courses">Available courses</a></li>
+                                <li class="list-group-item"><a href="<?php echo base_url();?>online_training/how_is_training_delivered">How are courses delivered</a></li>
+                                <li class="list-group-item active"><a href="<?php echo base_url();?>online_training/meet_the_tutors">Meet the Tutors</a></li>
                                 
                             </ul>
                         </div>

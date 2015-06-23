@@ -24,7 +24,7 @@
             
             
                 <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-                    <h1 class="page-section-heading">HosApp Price levels</h1>
+                    <h1 class="page-section-heading">Folio Price levels</h1>
                     <div class="table-responsive">
                         <!-- Pricing table -->
                         <table class="table panel panel-default table-pricing">

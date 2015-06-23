@@ -9,7 +9,7 @@
                 </div>
                 <div class="media-body">
                     <h3 class="text-display-2 text-white margin-none">Sign Up Success </h3>
-                    <p class="text-white text-subhead">Thank you for choosing HosApp.</p>
+                    <p class="text-white text-subhead">Thank you for choosing Folio.</p>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 
                  <h1>Success </h1>
                     <h4>
-                    A HosApp member will contact you shortly to discuss your requirements.
+                    A Folio member will contact you shortly to discuss your requirements.
                     
                     </h4>
                     

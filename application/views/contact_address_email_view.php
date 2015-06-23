@@ -14,7 +14,7 @@
                 <div class="panel-body">
                 
                  <address>
-                      <strong>HosApp, Ltd.</strong><br>
+                      <strong>Folio, Ltd.</strong><br>
                       Digital Exchange, Crane St, Suite 101<br>
                       Dublin 8, Ireland<br>
                       <abbr title="Phone">P:</abbr> (01) 456-7890 <br>
@@ -23,28 +23,28 @@
                     
                     <address>
                       <strong>Rose Barrett : Idea owner</strong><br>
-                      <a href="mailto:#">rose.barrett@hosapp.com</a>
+                      <a href="mailto:#">rose.barrett@folio.com</a>
                     </address>
                     
                 	<address>
                    <strong>Dec Dunne : Lead Designer</strong><br>
-                      <a href="mailto:#">dec.dunne@hosapp.com</a>
+                      <a href="mailto:#">dec.dunne@folio.com</a>
                     </address>
                     
                    <address>
                    <strong>Maggie Byrne : Designer</strong><br>
-                      <a href="mailto:#">maggie.byrne@hosapp.com</a>
+                      <a href="mailto:#">maggie.byrne@folio.com</a>
                     </address>
                     
                     
                     <address>
                       <strong>Sharah Barrow : Technical Director</strong><br>
-                      <a href="mailto:#">sarah.barrow@hosapp.com</a>
+                      <a href="mailto:#">sarah.barrow@folio.com</a>
                     </address>
                     
                     <address>
                     <strong>Tom Delaney : Technical Developer</strong><br>
-                      <a href="mailto:#">tom.delaney@hosapp.com</a>
+                      <a href="mailto:#">tom.delaney@folio.com</a>
                     </address>
                    
                 </div>

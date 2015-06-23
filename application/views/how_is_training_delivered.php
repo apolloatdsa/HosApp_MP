@@ -17,7 +17,7 @@
                         <div class="tab-content">
                             <div id="account" class="tab-pane active">
                             
-                           <h1>About Folio. </h1>
+                           <h1>How is training delivered. </h1>
                             
                           <p>  
                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit. A accusamus adipisci autem beatae delectus enim et harum illo ipsa ipsam iste itaque labore nesciunt odio odit pariatur perspiciatis placeat provident quas quasi qui quo quos ratione reiciendis repudiandae soluta suscipit, tempore tenetur ut voluptas? Accusamus commodi culpa distinctio explicabo illo, laborum, nemo, nulla omnis tenetur unde ut!

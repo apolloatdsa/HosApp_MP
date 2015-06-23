@@ -8,7 +8,7 @@
                     <h1 class="text-display-2 margin-v-0-15 display-inline-block">Training for the hospitality sector</h1>
                     <p class="text-subhead">Professionally Developed Web-Based Training Course Libraries.</p>
                     <p class="text-subhead">Automated training for staff in the hospitality business. Track staff progress as they learn through videos and quizzes.</p>
-                    <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="#modal-overlay-signup">Sign Up From- &euro;19.99/mo</a>
+                    <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="#modal-overlay-signup">Sign Up From- &euro;125.00/mo</a>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="page-section-heading">
             <h2 class="text-display-1">Butlers Chocolate Cafe</h2>
-            <p class="lead text-muted">Hosapp have provided us with a superior training resource. They have been a valuable asset and partner to our company.  They have provided practical methodologies for cultivating and expanding performance and productivity through improved skills, knowledge and attitudes.</p>
+            <p class="lead text-muted">Folio have provided us with a superior training resource. They have been a valuable asset and partner to our company.  They have provided practical methodologies for cultivating and expanding performance and productivity through improved skills, knowledge and attitudes.</p>
         </div>
         <div class="row" data-toggle="gridalicious">
             <div class="media">
@@ -343,9 +343,9 @@
         <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-opacity="true" data-speed="8">
             <div class="v-center">
                 <div class="page-section">
-                    <h1 class="text-display-2 overlay-bg-white margin-v-0-15 inline-block">Brother Hubbard Support HosApp</h1>
+                    <h1 class="text-display-2 overlay-bg-white margin-v-0-15 inline-block">Brother Hubbard Support Folio</h1>
                     <br/>
-                    <p class="lead text-overlay overlay-bg-white-strong inline-block">Since 2014, HosApp Training has earned a reputation for delivering high quality education and training to the Hospitality and Food Service industry. In 2015 over 12,000 students participated in study programs with Hospitality Training Ireland.
+                    <p class="lead text-overlay overlay-bg-white-strong inline-block">Since 2014, Folio Training has earned a reputation for delivering high quality education and training to the Hospitality and Food Service industry. In 2015 over 12,000 students participated in study programs with Hospitality Training Ireland.
 </p>
                 </div>
             </div>
