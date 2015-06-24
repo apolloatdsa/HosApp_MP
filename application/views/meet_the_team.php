@@ -9,8 +9,16 @@
     <div class="container">
         <div class="page-section">
             <div class="row">
-                <div class="col-md-6 col-md-offset-2">
+            
+            <div class="col-md-2 ">
+            <h4>Folio have a team of highly qualified specialist</h4>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit.
+            </p>
+           </div>
+                <div class="col-md-6 ">
                     <!-- Tabbable Widget -->
+                    
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                        
                         <!-- Panes -->
@@ -31,7 +39,7 @@
                                         <div class="media-body">
                                          <img src="<?php echo base_url();?>images/members/2-Delaney.JPG" alt="member" class="img-thumbnail" />
                                         <br>
-                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Joe Blog BSc MIEI</a></h4>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Joe Blog BSc EngTech MIEI</a></h4>
                                             <p class="small margin-none">
                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit.  
                                             </p>

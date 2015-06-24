@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+.width {
+	width: 1280 px !important;
+	
+	}
+
+.two_column_article {
+	background-color: #949494;
+	border-top-color: #2092A5;
+	border-top-width: thin;
+	}
+.column_content {
+	background-color: #CCCCCC;
+	border-top-width: thick;
+	border-top-color: #278AC1;
+	padding-left: 10px;
+	padding-right: 10px;
+	}

@@ -285,8 +285,22 @@ class Online_training extends CI_Controller {
 			$this->load->view('templates/footer');
 			
 			}				
+		public function frontend(){
+			
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('frontend_layout');
+			$this->load->view('templates/footer');
+			
+			}					
+		public function frontend_2(){
 			
 			
+			$this->load->view('frontend_2');
+			
+			
+			}						
 		public function user_image_upload(){
 			$config['upload_path'] = './images/members/';
 			$config['overwrite'] = TRUE;

@@ -10,12 +10,14 @@
                         <li><a href="<?php echo base_url();?>online_training/terms_of_use">Terms of use</a></li>
                         <li><a href="<?php echo base_url();?>online_training/privacy">Privacy</a></li>
                         <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact us</a></li>
+                        
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <h4 class="text-headline text-light">Explore</h4>
                     <ul class="list-unstyled">
                         <li><a href="<?php echo base_url();?>online_training/courses">Courses</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/meet_the_team">Meet The Team</a></li>
                         <li><a href="<?php echo base_url();?>online_training/meet_the_tutors">Tutors</a></li>
                         <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>
                         <li><a href="<?php echo base_url();?>online_training/become_a_tutor">Become Tutor</a></li>
