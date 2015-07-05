@@ -16,7 +16,7 @@ class Manager extends CI_Controller {
         {
                 parent::__construct();
 				//session_start();
-				
+				$this->load->library('listview');
 				if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
 					
 	 					redirect('auth/login');
@@ -31,20 +31,59 @@ class Manager extends CI_Controller {
 
 				$this->lang->load('auth');
 				//$this->login_index();
-				$this->index();
+				//$this->index();
         }
 		
 
 	 
-	 public function index()
-	{
+	function index($offset = 0) {
+		$limit = 10;
+		$this->load->library('listview');
+		$data = $this->listview->filter('users', $limit, $offset);
+		$company = $this->session->userdata('company');
 		
-  				
+		$config['table'] = array(
+			 'table_open'  => '<class="table table-striped table-hover">', 
+			'total_rows' => $data['total_rows'],
+			'per_page' => $limit,
+			'query' => $data['query'],
+			'numbering' => array('active' => false),
+			'p_key' => 'id',
+			
+			'action' => array('position' => 'last', 'merge' => false),
+			'fields' => array(
+				'first_name' => 'First Name',
+				 'last_name' => 'Last Name',
+				'email' => 'Email',
+				'department' => 'Department',
+				'phone' => 'Phone',
+				
+			)
+		);
+		
+		$this->listview->initialize($config);
+		echo $this->listview->render();
+	}
+	
+	private function get_users($options = array()) {
+		$company = $this->session->userdata('company');
+		$query = $this->db->get_where('users', array('company' => $company));
+		foreach ($query->result() as $row) {
+			$options[$row->department] = $row->department;
 		}
+		return $options;
+	}
+	
+
+
 	 
 	 
 	 public function manager_dashboard(){
-		 
+		 	
+			$company = $this->session->userdata('company');
+		 	$data['employees'] = $this->ion_auth->company_employees($company);
+		 	//echo var_dump($data['employees']);
+			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use

@@ -24,13 +24,8 @@ class Get_logged_in_user_info extends CI_Controller {
 			
 			$id = $this->session->userdata('user_id');
 			$current_user_name = $this->ion_auth->find_user_firstName($id); // get the user name
+			// function adds the user name and company name to the session use this function to add any user data to the session
 			
-			foreach($current_user_name as $name){ // one record will be returned
-				
-				$this->session->set_userdata('user_first_name' , $name->first_name); // add first name to session
-				$this->session->set_userdata('user_last_name' , $name->last_name); // add last name to session
-				
-				}
 			
 			$grpNames = $this->ion_auth->get_group_name(); // get all group names from db
 			$user_type=array(); // cereate array to store group names

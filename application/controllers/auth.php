@@ -99,7 +99,7 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				$this->add_to_session();
+				$this->add_to_session();  // gets user information and writes it to the session
 				
 ##############################################################################################################################	
 ##############################################################################################################################
@@ -946,17 +946,12 @@ class Auth extends CI_Controller {
 
 	public function add_to_session(){
 		
-		if ($this->ion_auth->logged_in()){ // if user is logged add the user level I.E. admin/ member / student / instructor .. ect to the session
+		if ($this->ion_auth->logged_in()){ // if user is logged add the user level I.E. admin/ member / student / instructor .. to the session
 			
 			$id = $this->session->userdata('user_id');
 			$current_user_name = $this->ion_auth->find_user_firstName($id); // get the user name
+			// function adds the user name and company name to the session use this function to add any user data to the session
 			
-			foreach($current_user_name as $name){ // one record will be returned
-				
-				$this->session->set_userdata('user_first_name' , $name->first_name); // add first name to session
-				$this->session->set_userdata('user_last_name' , $name->last_name); // add last name to session
-				
-				}
 			
 			$user_level = $this->ion_auth->user_level($id); // call function in the model
 			

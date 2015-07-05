@@ -1746,6 +1746,7 @@ class Ion_auth_model extends CI_Model
 		    'email'                => $user->email,
 		    'user_id'              => $user->id, //everyone likes to overwrite id so we'll use user_id
 		    'old_last_login'       => $user->last_login
+			
 		);
 
 		$this->session->set_userdata($session_data);
@@ -2285,10 +2286,17 @@ class Ion_auth_model extends CI_Model
 			return $qrpName->result();
 		
 		}
-	public function find_user_firstName($id){
+	public function find_user_firstName($id){ // returns all information on that user
 		
 		$current_user_name = $this->db->get_where('users', array('id' => $id));
-		
+		//echo var_dump($current_user_name->result());
+		foreach($current_user_name->result() as $name){ // one record will be returned
+				
+				$this->session->set_userdata('user_first_name' , $name->first_name); // add first name to session  // one
+				$this->session->set_userdata('user_last_name' , $name->last_name); // add last name to session
+				$this->session->set_userdata('company' , $name->company); // add company name to session
+				}
+			
 		return $current_user_name->result();
 		
 		
@@ -2304,6 +2312,20 @@ class Ion_auth_model extends CI_Model
 		
 		
 		}
+		
+	public function company_employees($company){
+		
+		//$user_level = 'SELECT * FROM `users_groups` INNER JOIN groups ON users_groups.group_id = groups.id WHERE user_id ='.$id;
+		
+		$employees = $this->db->get_where('users', array('company' => $company));
+
+		return $employees->result();
+		
+		
+		}
+			
+		
+		
 	
 	// function called by page loads in the online_training controller this will return the user level navbar to use 
 	
@@ -2333,6 +2355,9 @@ class Ion_auth_model extends CI_Model
 
 				}
 		
+
+
+
 
 	
 }
