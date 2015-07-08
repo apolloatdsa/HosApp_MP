@@ -45,30 +45,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="main-nav">
                 <ul class="nav navbar-nav navbar-nav-margin-left">
-                    <li class="dropdown ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a href="<?php echo base_url();?>">Home page</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/tutors">Tutors</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/survey">Survey</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/forum">Forum Home</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/category">Forum Category</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/forum-thread">Forum Thread</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/blog">Blog Listing</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Post</a></li>
-                           <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
-                           <li><a href="<?php echo base_url();?>map/location_map">Company offices</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Member options <span class="caret"></span></a>
-                        <ul class="dropdown-menu active ">
-                            <li><a href="<?php echo base_url();?>member/member_dashboard">Dashboard</a></li>
-                            <li><a href="<?php echo base_url();?>member/member_profile">My Profile</a></li>
-                            <li><a href="<?php echo base_url();?>member/member_forum">Members Forum</a></li>
-                        </ul>
-                    </li>
+                    
+                    <?php  include('top_nav_pages.php') ?> <!-- this is the page dropdown menu in the template folder -->
+                    
+                   <?php  include('top_nav_members_dropdown.php') ?> <!-- this is the members dropdown menu in the template folder -->
                    
                     
                     

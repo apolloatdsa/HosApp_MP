@@ -17,5 +17,7 @@
 <file name="demo.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130355669660000000" remote="130804699200000000" Dst="2" />
 <file name="index.html" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130782848400000000" remote="130804699200000000" Dst="2" />
 <file name="welcome.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130355669660000000" remote="130804699200000000" Dst="2" />
-<file name="manager_dashboard.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130805222035751160" remote="130804969800000000" Dst="2" />
+<file name="manager_dashboard.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130808187741738125" remote="130807935600000000" Dst="2" />
+<file name="edit_user_controller.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130806014834894963" remote="130805763000000000" Dst="2" />
+<file name="manager_edit_user_controller.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130806672730284427" remote="130806420600000000" Dst="2" />
 </dwsync>

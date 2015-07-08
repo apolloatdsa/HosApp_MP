@@ -2324,7 +2324,35 @@ class Ion_auth_model extends CI_Model
 		
 		}
 			
+	public function edit_employee($id)	{
 		
+		$employee = $this->db->get_where('users', array('id' => $id));
+
+		return $employee->result();
+		
+		}
+		
+	function manager_delete_user($id)
+	{
+		$this->db->delete('users', array('id' => $id));
+		
+		if ($this->db->affected_rows() == '1')
+		{
+			return TRUE;
+		}
+		
+		return FALSE;
+	}
+	
+	
+	function get_employee_list($company) {
+		
+		
+		$employee_list = $this->db->get_where('users', array('company' => $company));
+		
+    		return $employee_list;
+		
+		}
 		
 	
 	// function called by page loads in the online_training controller this will return the user level navbar to use 

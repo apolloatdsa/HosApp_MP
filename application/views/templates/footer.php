@@ -79,6 +79,7 @@
     };
     </script>
     <!-- Separate Vendor Script Bundles -->
+   	
     <script src="<?php echo base_url();?>js/vendor-core.min.js"></script>
     <script src="<?php echo base_url();?>js/vendor-countdown.min.js"></script>
     <script src="<?php echo base_url();?>js/vendor-tables.min.js"></script>

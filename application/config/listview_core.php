@@ -52,7 +52,7 @@ $config['core'] = array(
 			'label' => 'Action',
 			'links'	=> array(
 				'edit'      => array('link_point' => 'href', 'attr' => array('title' => 'Edit')),
-    			'delete'    => array('link_point' => 'href', 'attr' => array('title' => 'Delete', 'onclick' => "javascript:return confirm('Anda yakin akan menghapus data ini ?')"))
+    			'delete'    => array('link_point' => 'href', 'attr' => array('title' => 'Delete', 'onclick' => "javascript:return confirm('Are you sure you want to delete this user. The delete can not be undone ?')"))
 			)
 		),
 

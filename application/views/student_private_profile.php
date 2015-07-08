@@ -33,6 +33,8 @@
                         <!-- Panes -->
                         <div class="tab-content">
                             <div id="account" class="tab-pane active">
+                            
+                            
                             <?php echo form_open_multipart('online_training/user_image_upload');  ?>
                             	
                                 <div class="col-md-6  page-section">
@@ -154,6 +156,9 @@
                                         </div>
                                     </div>
                                 <?php echo form_close(); ?>
+                                
+                                
+                                
                             </div>
                         </div>
                         <!-- // END Panes -->

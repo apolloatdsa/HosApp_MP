@@ -301,6 +301,21 @@ $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
 
+/* Set csrf off for specific referrers */
+$csrf_off = array(
+    "http://d14126353-dsa.com/codeigniter_h/manager_dashboard/employee_report",
+    "http://d14126353-dsa.com/codeigniter_h/manager_dashboard/selected_employee_report"
+);
+
+if (isset($_SERVER["HTTP_REFERER"])) {
+    if (in_array($_SERVER["HTTP_REFERER"],$csrf_off)) {
+        $config['csrf_protection'] = false;
+    }
+}
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Output Compression

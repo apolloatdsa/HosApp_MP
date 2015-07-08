@@ -26,74 +26,16 @@
                 <div class="col-md-12">
                     <div class="row" data-toggle="isotope">
                     
-                        <div class="item col-xs-12 col-lg-9">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <div class="media v-middle">
-                                        <div class="media-body">
-                                            <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Employee List</h4>
-                                            <p class="text-subhead text-light"></p>
-                                        </div>
-                                        <div class="media-right">
-                                            <a class="btn btn-white btn-flat" href="website-instructor-earnings.html"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel-body"> 
-                                 
-                                    <!-- Table of employees here -->
-                                    <?php
-                               echo    '<h1>  Edit user with id  = ' . $id  . ' will be here </h1>'; 
-                                  
-                                  
-                                   
-                                    
-                                  ?>
-                                 
-                                </div>
-                                <hr/>
-                                <div class="panel-body">
-                                    <div class="row text-center">
-                                        <div class="col-md-6">
-                                            <h4 class="margin-none">Footer left</h4>
-                                            <p class="text-display-1 text-warning margin-none">Text here</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h4 class="margin-none">Footer right</h4>
-                                            <p class="text-display-1 text-success margin-none">Text here</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         
+                                 
+                                 <?php  include('manager_edit_user_form.php') ?> <!-- a form will display here -->
+                        
+                       
+                       
                         
                      <div class="col-md-3">
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">Actions</h4>
-                        </div>
-                        <div class="panel-body list-group">
-                            <ul class="list-group list-group-menu">
-                            	<li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/employee_list">List employees</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Add new employee</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Employee report</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Select course</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">View notifications</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Required list</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Logout</span></a></li>
-                                
-                                
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    
+                   
+                     <?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                     
                     
                     <h4>Featured</h4>

@@ -45,49 +45,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="main-nav">
                 <ul class="nav navbar-nav navbar-nav-margin-left">
-                    <li class="dropdown ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                         <ul class="dropdown-menu">
-                            <li class="active"><a href="<?php echo base_url();?>">Home page</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/tutors">Tutors</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/survey">Survey</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/forum">Forum Home</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/category">Forum Category</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/forum-thread">Forum Thread</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/blog">Blog Listing</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Post</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
-                            <li><a href="<?php echo base_url();?>map/location_map">Company offices</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manager <span class="caret"></span></a>
-                        <ul class="dropdown-menu active ">
-                            <li><a href="<?php echo base_url();?>manager_dashboard/employee_list">Manager Dashboard</a></li>
-                            <li><a href="<?php echo base_url();?>manager/under_construction">Company Profile</a></li>
-                            <li><a href="<?php echo base_url();?>manager/under_construction">List Employees</a></li>
-                            <li><a href="<?php echo base_url();?>manager/under_construction">Employee Progress</a></li>
-                            <li><a href="<?php echo base_url();?>manager/under_construction">List Courses</a></li>
-                            <li><a href="<?php echo base_url();?>manager/under_construction">Completed projects</a></li>
-                            
-                            
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url();?>student/student_dashboard">Dashboard</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_courses">My Courses</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_take_course">Take Course</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_course_forums">Course Forums</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_take_quiz">Take Quiz</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_messages">Messages</a></li>
-                            <li><a href="<?php echo base_url();?>student/student_private_profile">Private Profile</a></li>
-                            
-                        </ul>
-                    </li>
+                
+                    <?php  include('top_nav_pages.php') ?> <!-- this is the page dropdown menu in the template folder -->
                    
+                    <?php  include('top_nav_courses_dropdown.php') ?> <!-- this is the courses dropdown menu in the template folder -->
+                    
+                    <?php  include('top_nav_manager_dropdown.php') ?> <!-- this is the manager dropdown menu in the template folder -->
+                     
+                    <?php  include('top_nav_student_dropdown.php') ?> <!-- this is the student dropdown menu in the template folder -->
                     
                 </ul>
                 

@@ -45,31 +45,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="main-nav">
                 <ul class="nav navbar-nav navbar-nav-margin-left">
-                    <li class="dropdown ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a href="<?php echo base_url();?>">Home page</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/tutors">Tutors</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/survey">Survey</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/forum">Forum Home</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/category">Forum Category</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/forum-thread">Forum Thread</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/blog">Blog Listing</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Post</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/sign_up">Sign Up </a></li>
-                            <li><a href="<?php echo base_url();?>map/location_map">Company offices</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url();?>online_training/directory_grid">Grid Directory</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/directory_list">List Directory</a></li>
-                            <li><a href="<?php echo base_url();?>online_training/course">Single Course</a></li>
-                        </ul>
-                    </li>
+                    
+                    <?php  include('top_nav_pages.php') ?> <!-- this is the page dropdown menu in the template folder -->
+                    
+                    <?php  include('top_nav_courses_dropdown.php') ?> <!-- this is the courses dropdown menu in the template folder -->
                    
                 </ul>
                 

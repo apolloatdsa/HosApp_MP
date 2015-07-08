@@ -31,8 +31,20 @@
                                 <div class="panel-heading">
                                     <div class="media v-middle">
                                         <div class="media-body">
+                                          <div class="row ">
+                                        <div class="col-md-6 text-left">
+                                            
                                             <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Employee List</h4>
-                                            <p class="text-subhead text-light"></p>
+                                        </div>
+                                       <div class="col-md-6 text-right ">
+                                            
+								<?php echo '<a href="' .  base_url() .'manager_dashboard/create_user  "class="navbar-btn btn btn-info"> Add New Employee </a>';
+                                               
+                                            ?>
+                                        </div>
+                                    </div>  
+                                    
+                              <p class="text-subhead text-light"></p>
                                         </div>
                                         <div class="media-right">
                                             <a class="btn btn-white btn-flat" href="website-instructor-earnings.html"></a>
@@ -43,8 +55,8 @@
                                     <!-- Table of employees here -->
                                     
                                    <?php //$this->contacts->index(); 
-								   //$this->listview->initialize($config);
-									echo $this->listview->render();
+								   
+									echo $this->listview->render(); // creates the table
 								   
 								   ?> 
                                     
@@ -54,14 +66,11 @@
                                 <hr/>
                                 <div class="panel-body">
                                     <div class="row text-center">
-                                        <div class="col-md-6">
-                                            <h4 class="margin-none">Footer left</h4>
-                                            <p class="text-display-1 text-warning margin-none">Text here</p>
+                                        <div class="col-md-12">
+                                            
+                                            <h4 class="text-display-1 text-danger margin-none"><?php echo $this->session->flashdata('message'); ?></h4>
                                         </div>
-                                        <div class="col-md-6">
-                                            <h4 class="margin-none">Footer right</h4>
-                                            <p class="text-display-1 text-success margin-none">Text here</p>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -69,31 +78,8 @@
                         
                         
                      <div class="col-md-3">
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">Actions</h4>
-                        </div>
-                        <div class="panel-body list-group">
-                            <ul class="list-group list-group-menu">
-                            	<li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/employee_list">List employees</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Add new employee</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Employee report</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Select course</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">View notifications</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Required list</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Logout</span></a></li>
-                                
-                                
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    
+                   
+              <?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                     
                     
                     <h4>Featured</h4>
@@ -140,8 +126,8 @@
                         
                         <div class="item col-xs-12 col-lg-6">
                             <div class="s-container">
-                                <h4 class="text-headline margin-none">Employees</h4>
-                                <p class="text-subhead text-light">Go to employee dashboard.</p>
+                                <h4 class="text-headline margin-none"></h4>
+                                <p class="text-subhead text-light"></p>
                             </div>
                             <div class="panel panel-default">
                                 <ul class="list-group">
