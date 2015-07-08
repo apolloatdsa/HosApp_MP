@@ -84,29 +84,56 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/footer');
 			
 		}	
-	function selected_employee_report(){
+	function selected_employee_report($id = NULL){ // this method can be called by a form submit with a user ID in the POST or by a refresh call from another method in this controller
 			
+			if($this->input->post('selected_employee_ID')){ // if called by the form get the user ID from the POST
 			//Get the value from the form.
 			$selected_employee_ID = $this->input->post('selected_employee_ID');
 			$id = $selected_employee_ID;
-			
+			}
+			// if called by the refresh use the parameter as the user ID
 			$this->session->userdata('edit_id', $id);
-			
 			$data['employee'] = $this->ion_auth->edit_employee($id);
+			$data['courses'] = $this->ion_auth->get_courses();
+			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id);
+			
+			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard-selected_employee_report');
 			$this->load->view('templates/footer');
-			//echo var_dump($data['employee']);
-			//Put the value in an array to pass to the view. 
-			//$view_data['selected_employee_ID'] = $selected_employee_ID;
-		
-			//Pass to the value to the view. Access it as '$search' in the view.
-			//$this->load->view("about", $view_data);
-			//echo '<h1> ID ' . $selected_employee_ID . '  Is the selected employee ID report </h2>';
 			
+			
+		}
+	function add_course_to_employee($id){
+		
+		//Get the value from the form.
+			$selected_course = $this->input->post('selected_course_ID');
+			$course_id = $selected_course;
+			
+			if ($this->ion_auth->add_employee_to_course($course_id, $id) == TRUE){
+				
+				//echo '<h1>Course with ID ' .$course_id. ' has been assigned to employee with ID '.$id. '</h2>';
+				$this->session->set_flashdata('message', 'The selected course has been added');
+				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+				
+				
+				
+				}else{
+					
+					$this->session->set_flashdata('message', 'The user is already registered');
+					redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+					//echo '<h1>There was an error connection to the database </h1>';
+					//$this->session->set_flashdata('message', 'There was an error connection to the database ');
+					//redirect('/manager_dashboard/selected_employee_report', 'refresh');
+					
+					};
+			
+		
+		
+		
 		}
 		
 	function edit_employee_image(){

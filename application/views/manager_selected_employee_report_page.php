@@ -44,13 +44,15 @@
                                     <div class="icon-block width-150 bg-grey-150">
                       <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-80" />
                                       </div>
-                               <br> <label for="last_login">Last Login </label>
-                                <input class="form-control" id="last_login" type="text" name="last_login" maxlength="30"  value="<?php echo unix_to_human($last_login);   ?>" readonly="readonly" />
-                                 <br> <label for="created_on">Created on </label>
-                                 <input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo unix_to_human($created_on);   ?>" readonly="readonly" />           
-                    				
-                                                </div>
-                                      <p>
+                               		<br> <label for="last_login">Last Login </label>
+                                	<input class="form-control" id="last_login" type="text" name="last_login" maxlength="30"  value="<?php echo unix_to_human($last_login);   ?>" readonly="readonly" />
+                                 	<br> <label for="created_on">Created on </label>
+                                	 <input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo unix_to_human($created_on);   ?>" readonly="readonly" />           
+                    				<br> <label for="created_on">Folio user ID </label>
+                                 	<input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo $id;   ?>" readonly="readonly" />          	
+                                    
+                                   </div>
+                        <p>
 						
                         </p>          
                         <p>
@@ -101,13 +103,37 @@ echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
 </p>
 
 
-<p>
-        <?php echo form_submit( 'submit', 'Submit',"class='btn btn-primary'"); ?>
-</p>
-
 <?php echo form_close(); ?>
-						
-                        
+			<hr class="text-success">			
+      <p>
+         <!-- this dropdown of available courses --> 
+         <label for="selected_course_ID">Assign required courses </label>
+         <form  method="post" accept-charset="utf-8" action="<?php echo site_url("manager_dashboard/add_course_to_employee/$id"); ?>">
+          <select class="form-control" name="selected_course_ID" onchange="this.form.submit()">
+          <?php
+									    
+          foreach ($courses->result() as $row){
+			echo '<option value="'.$row->course_id.'">'.$row->course_name.'</option>';
+		};
+         ?>
+          </select>
+          </form>
+                   
+         </p>
+         
+          <p>
+         <!-- this dropdown of available courses --> 
+         <label for="registered_courses">Employee is registered on -  </label>
+         
+          <?php
+									    
+          foreach ($registered_courses->result() as $row){
+			echo '<input class="form-control"  type="text"  maxlength="30"   value="'. $row->course_id.'" readonly="readonly" /><br>';
+			};
+         ?>
+          
+                   
+         </p>             
                         
                         </div>
                                  
@@ -116,10 +142,11 @@ echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
                                 </div>
                                 <hr/>
                                 <div class="panel-body">
+                                <?php //echo var_dump($courses->result());  ?>
                                     <div class="row text-center">
                                         <div class="col-md-12">
                                             
-                                            <h2 class=" text-danger margin-none"><?php echo  $this->session->flashdata('val_error');    ?></h2>
+                                            <h2 class=" text-danger margin-none"><?php echo  $this->session->flashdata('message');    ?></h2>
                                         </div>
                                        
                                     </div>

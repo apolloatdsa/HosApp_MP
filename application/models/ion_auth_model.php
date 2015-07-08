@@ -2353,6 +2353,54 @@ class Ion_auth_model extends CI_Model
     		return $employee_list;
 		
 		}
+	
+	function get_courses() {
+		
+		$courses = $this->db->get('courses');
+		
+    		return $courses;
+		
+		}
+	function get_registered_courses($id){
+		
+			$this->db->where('user_id', $id );
+			$query = $this->db->get('employee_to_course');
+			return $query;
+		
+		}	
+		
+		
+		
+	function add_employee_to_course($course_id, $id){
+		
+		$data = array(
+			   'course_id' => $course_id ,
+			   'user_id' => $id 
+			   
+			);
+		
+			$this->db->where('user_id', $id );
+			$this->db->where('course_id', $course_id );
+			$query = $this->db->get('employee_to_course');
+			if ($query->num_rows() > 0){ // in here only if the user is already registered on the course
+				
+				//echo 'The employee is already registered on this course' ;
+				return false;
+				
+			}
+			else{ // do this if not already registered
+				$this->db->insert('employee_to_course', $data);
+				if ($this->db->affected_rows() == '1')
+				{
+					return TRUE; // success adding the course
+				}
+				
+				return FALSE; // if database connection failed
+		
+			}
+		
+		}
+	
 		
 	
 	// function called by page loads in the online_training controller this will return the user level navbar to use 
