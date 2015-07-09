@@ -22,6 +22,11 @@
 								$this->session->set_userdata($edit_employee);
 							
 							?>
+<?php 
+
+//echo var_dump($course_names->result());
+
+?>                            
 
 					<div class="item col-xs-12 col-lg-9">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
@@ -123,12 +128,12 @@ echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
          
           <p>
          <!-- this dropdown of available courses --> 
-         <label for="registered_courses">Employee is registered on -  </label>
+         <label for="registered_courses">Employee is registered on -  </label><br>
          
           <?php
 									    
-          foreach ($registered_courses->result() as $row){
-			echo '<input class="form-control"  type="text"  maxlength="30"   value="'. $row->course_id.'" readonly="readonly" /><br>';
+          foreach ($course_names->result() as $row){
+			echo '<a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Remove </a>   <br><input class="form-control"  type="text"  maxlength="30"   value="'. $row->course_name.'" readonly="readonly" /> <br> ';
 			};
          ?>
           

@@ -96,6 +96,8 @@ class Manager_dashboard extends CI_Controller {
 			$data['employee'] = $this->ion_auth->edit_employee($id);
 			$data['courses'] = $this->ion_auth->get_courses();
 			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id);
+			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id);
+			
 			
 			
 			$data['title'] = 'Set page title here';
@@ -107,6 +109,25 @@ class Manager_dashboard extends CI_Controller {
 			
 			
 		}
+		
+	function remove_course($course_id, $id){
+		
+		if($this->ion_auth->manager_remove_course($course_id, $id)){
+			
+				$this->session->set_flashdata('message', 'The selected course was removed');
+				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+			
+			}else{
+				
+				$this->session->set_flashdata('message', 'Failed to remove the selected course');
+				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+				
+				};
+		
+		
+		
+		}	
+	
 	function add_course_to_employee($id){
 		
 		//Get the value from the form.

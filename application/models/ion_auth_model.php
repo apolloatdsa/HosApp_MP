@@ -2361,10 +2361,30 @@ class Ion_auth_model extends CI_Model
     		return $courses;
 		
 		}
+	function get_registered_courses_names($id){
+			
+			$this->db->where('user_id', $id);
+			$query = $this->db->get('employee_to_course JOIN courses ON employee_to_course.course_id=courses.course_id' );
+		
+			return $query;
+		
+		}
+	function manager_remove_course($course_id, $id){
+		
+			$this->db->where('user_id', $id );
+			$this->db->where('course_id', $course_id );
+			$query = $this->db->delete('employee_to_course');
+			return true;
+			
+		}			
+		
+		
 	function get_registered_courses($id){
 		
 			$this->db->where('user_id', $id );
 			$query = $this->db->get('employee_to_course');
+			
+			
 			return $query;
 		
 		}	
