@@ -2412,6 +2412,7 @@ class Ion_auth_model extends CI_Model
 				$this->db->insert('employee_to_course', $data);
 				if ($this->db->affected_rows() == '1')
 				{
+					
 					return TRUE; // success adding the course
 				}
 				
@@ -2420,8 +2421,49 @@ class Ion_auth_model extends CI_Model
 			}
 		
 		}
-	
+	function add_to_employee_result_table($course_id, $id ){
 		
+		$data = array(
+			   'course_id' => $course_id ,
+			   'user_id' => $id 
+			   
+			);
+	
+			$this->db->where('user_id', $id );
+			$this->db->where('course_id', $course_id );
+			$query = $this->db->get('employee_results');
+			if ($query->num_rows() > 0){ // in here only if the user already has results on this course
+				
+				//echo 'The employee is already registered on this course' ;
+				return false;
+				
+			}
+			else{ // do this if there are no results for the user on this course
+				$this->db->insert('employee_results', $data);
+				if ($this->db->affected_rows() == '1')
+				{
+					
+					return TRUE; // success adding the course
+				}
+				
+				return FALSE; // if database connection failed
+		
+			}
+		
+		}	
+	
+	
+	
+	
+	
+	
+	function get_employee_results($id){
+		
+		$course_results = $this->db->get_where('employee_results', $id);
+		print_r($course_results);
+		return $course_results;
+		
+		}	
 	
 	// function called by page loads in the online_training controller this will return the user level navbar to use 
 	

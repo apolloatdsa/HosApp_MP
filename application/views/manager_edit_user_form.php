@@ -60,7 +60,19 @@
                            echo '<a href="' .  base_url() .'manager_dashboard/employee_list  "class="navbar-btn btn btn-info"> Back to list </a>';
                            
                         ?>
-                        </p>                                
+                        </p>
+                          <p>
+						<?php 
+                        
+                           echo "<a href='" .  base_url() ."manager_dashboard/selected_employee_report/$id  'class='navbar-btn btn btn-info'> Report page </a>";
+                           
+                        ?>
+                        </p>     
+                        
+                        
+                        
+                        
+                                                        
                                             </div>
                                         </div>
                                     <!-- Table of employees here -->

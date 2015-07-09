@@ -1,6 +1,30 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Manager_dashboard extends CI_Controller {
+	
+	 public function __construct()
+        {
+                parent::__construct();
+				//session_start();
+				$this->load->library('listview');
+				if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
+					
+	 					redirect('auth/login');
+					 
+					 };
+				
+               
+				$this->load->library(array('ion_auth','form_validation'));
+				$this->load->helper(array('url','language'));
+
+				$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
+
+				$this->lang->load('auth');
+				//$this->login_index();
+				//$this->index();
+        }
+		
+	
 
 	function employee_list($offset = 0) {
 		$limit = 10;
@@ -29,18 +53,14 @@ class Manager_dashboard extends CI_Controller {
 			)
 		);
 		
-		$this->listview->initialize($config);
+		    $this->listview->initialize($config);
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard');
 			$this->load->view('templates/footer');
-		
-		
-		//echo $this->listview->render();
-		
-		
+	
 	}
 	
 	private function get_users($options = array()) {
@@ -54,6 +74,15 @@ class Manager_dashboard extends CI_Controller {
 
 
 	function edit($id){
+			
+			if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
+			
 			
 			$data['employee'] = $this->ion_auth->edit_employee($id);
 			
@@ -69,6 +98,7 @@ class Manager_dashboard extends CI_Controller {
 		}
 		
 	function employee_report(){
+			
 			
 			$company = $this->session->userdata('company');
 			
@@ -86,31 +116,47 @@ class Manager_dashboard extends CI_Controller {
 		}	
 	function selected_employee_report($id = NULL){ // this method can be called by a form submit with a user ID in the POST or by a refresh call from another method in this controller
 			
+			
+			
 			if($this->input->post('selected_employee_ID')){ // if called by the form get the user ID from the POST
 			//Get the value from the form.
 			$selected_employee_ID = $this->input->post('selected_employee_ID');
 			$id = $selected_employee_ID;
 			}
+			
+			if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
+			
 			// if called by the refresh use the parameter as the user ID
 			$this->session->userdata('edit_id', $id);
-			$data['employee'] = $this->ion_auth->edit_employee($id);
-			$data['courses'] = $this->ion_auth->get_courses();
-			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id);
-			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id);
-			
-			
+			$data['employee'] = $this->ion_auth->edit_employee($id);// employee list
+			$data['courses'] = $this->ion_auth->get_courses(); // courses list
+			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id); // employee is registered on these courses
+			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
 			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-			//echo $this->listview->render();
 			$this->load->view('manager_dashboard-selected_employee_report');
 			$this->load->view('templates/footer');
-			
 			
 		}
 		
 	function remove_course($course_id, $id){
+		
+		if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
+		
 		
 		if($this->ion_auth->manager_remove_course($course_id, $id)){
 			
@@ -124,11 +170,80 @@ class Manager_dashboard extends CI_Controller {
 				
 				};
 		
+		}
+	function selected_next_employee($id, $company){ // this function will control the next employee button and keep the next selection within the company and within the range of employees
 		
+		if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
 		
-		}	
+		$emp_id_list = $this->ion_auth->get_employee_list($company); // get a complete list fo company employees from the db
+		$emp_id_array = array(); // create an array to store employee id
+		foreach($emp_id_list->result() as $row){ // loop through each result and push employee id into the array
+			array_push($emp_id_array, $row->id);
+			};
+			$number_of_employees = count($emp_id_array);	
+			$current_id_index = array_search($id, $emp_id_array); // find the array index of the current user
+			if($current_id_index < --$number_of_employees){
+			// next user is the index plus one 
+			$next_employee = ++$current_id_index;
+			$next_id = $emp_id_array[$next_employee];
+			$this->session->set_userdata('edit_id' ,$next_id );
+			redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+			
+			}else{
+				
+				$next_id = $this->session->userdata('edit_id');
+				$this->session->set_flashdata('message', 'You have reached the end of the employee list ');
+				redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+				};
 	
+		}		
+	function selected_previous_employee($id, $company){// this function will control the previous employee button and keep the next selection within the company and within the range of employees
+		if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
+		
+		
+		$emp_id_list = $this->ion_auth->get_employee_list($company); // get a complete list fo company employees from the db
+		$emp_id_array = array(); // create an array to store employee id
+		foreach($emp_id_list->result() as $row){ // loop through each result and push employee id into the array
+			array_push($emp_id_array, $row->id);
+			};
+			$number_of_employees = count($emp_id_array);	
+			$current_id_index = array_search($id, $emp_id_array); // find the array index of the current user
+			if($current_id_index > 0 && $current_id_index <=  --$number_of_employees){// keep within the range of employees
+			// next user is the index minus one 
+			$next_employee = --$current_id_index;
+			$next_id = $emp_id_array[$next_employee];
+			$this->session->set_userdata('edit_id' ,$next_id ); // save the user id being edited to the session 
+			redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+			
+			}else{
+				
+				$next_id = $this->session->userdata('edit_id');
+				$this->session->set_flashdata('message', 'You have reached the end of the employee list ');
+				redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+				};
+	
+		}		
 	function add_course_to_employee($id){
+		
+		if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
 		
 		//Get the value from the form.
 			$selected_course = $this->input->post('selected_course_ID');
@@ -137,6 +252,8 @@ class Manager_dashboard extends CI_Controller {
 			if ($this->ion_auth->add_employee_to_course($course_id, $id) == TRUE){
 				
 				//echo '<h1>Course with ID ' .$course_id. ' has been assigned to employee with ID '.$id. '</h2>';
+				$this->ion_auth->add_to_employee_result_table($course_id, $id ); // add same course to the result table 
+				
 				$this->session->set_flashdata('message', 'The selected course has been added');
 				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
 				
@@ -151,14 +268,10 @@ class Manager_dashboard extends CI_Controller {
 					//redirect('/manager_dashboard/selected_employee_report', 'refresh');
 					
 					};
-			
-		
-		
-		
+
 		}
 		
 	function edit_employee_image(){
-			
 			
 			$id =  $this->session->userdata('edit_id');
 			$data['employee'] = $this->ion_auth->edit_employee($id);
@@ -176,8 +289,6 @@ class Manager_dashboard extends CI_Controller {
 		
 		
 	function create_new_user(){
-			
-			
 			
 			$data['message'] = '';
 			$data['error'] = '';
@@ -288,6 +399,13 @@ class Manager_dashboard extends CI_Controller {
 
 	function delete($id){
 		
+		if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
 		
 		if($this->ion_auth->manager_delete_user($id)){
 			
@@ -305,18 +423,74 @@ class Manager_dashboard extends CI_Controller {
 			
 			}
 		
-		
 		}
+
+	function valid_id($id){ // checks to see if the supplied id is in the employee list
 		
-		
-		
-		
+		$company = $this->session->userdata('company');
+		$emp_id_list = $this->ion_auth->get_employee_list($company); // get a complete list fo company employees from the db
+		$emp_id_array = array(); // create an array to store employee id
+		foreach($emp_id_list->result() as $row){ // loop through each result and push employee id into the array
+			array_push($emp_id_array, $row->id);
+			};
+			$number_of_employees = count($emp_id_array);
+			if (in_array($id, $emp_id_array)){
+				return true;
+				}else{
+					return false;
+					
+					}
+		}
+
+  function course_progress($id){
+	  
+	  	//echo '<h1>Employee with ID '.$id.' registered on course  with ID '.$course_id.' progress page ';
+	  		if($this->input->post('course_report')){ // if called by the form get the user ID from the POST
+			//Get the value from the form.
+			$course_report = $this->input->post('course_report');
+			//$id = $selected_employee_ID;
+			}
+			
+			if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
+				
+				
+			
+			// if called by the refresh use the parameter as the user ID
+			$this->session->userdata('edit_id', $id);
+			$data['employee'] = $this->ion_auth->edit_employee($id);// employee list
+			$data['courses'] = $this->ion_auth->get_courses(); // courses list
+			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id); // employee is registered on these courses
+			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
+			$data['course_results'] = $this->ion_auth->get_employee_results($id); // used to match course names
+			
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('manager_dashboard_employee_progress_report');
+			$this->load->view('templates/footer');
+	  
+	  }
+
+
 //##################################################################################################################################
 //#################################################################################################################################
 
-	
-	
 	public function user_image_edit($id, $last_name){
+		
+		if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
+		
 			$config['upload_path'] = './images/members/';
 			$config['overwrite'] = TRUE;
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -375,14 +549,9 @@ class Manager_dashboard extends CI_Controller {
 				$this->load->view('templates/footer');
 					   
 				}
-							
-			
 			
 			}		
-	
-	
-	
-	
+
 }
 
 /* End of file manager_dashboard.php */
