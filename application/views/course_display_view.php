@@ -50,7 +50,7 @@
                             
                                           <!-- 16:9 aspect ratio -->
                         <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RH3i7qONrT4?rel=0"></iframe>
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3wtUr3iVVIw?rel=0"></iframe>
                         </div>
 
                 
@@ -62,10 +62,12 @@
                                 <span class="icon-block half bg-blue-300 text-white">1</span>
                             </div>
                             <div class="media-body">
+                            
                                 <h1 class="text-display-1 margin-none"><?php echo $course_name  ?></h1>
                             </div>
                         </div>
                         <br/>
+                        <p class="text-body-2">OK not a course video but maybe something interesting to watch.</p>
                         <p class="text-body-2"><?php echo $course_desc  ?></p>
                     </div>
                     <h5 class="text-subhead-2 text-light">Curriculum</h5>
@@ -77,6 +79,8 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="text-headline"><?php echo $course_name  ?> Module 1</h4>
+                                    
+                                    
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque minima nemo repudiandae rerum! Aspernatur at, autem expedita id illum laudantium molestias officiis quaerat, rem sapiente sint totam velit. Enim.</p>
                                 </div>
                             </div>
