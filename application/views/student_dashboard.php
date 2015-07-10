@@ -1,3 +1,6 @@
+<?php // print_r ($course_list->result()) ?>
+
+<?php  $id = $this->session->userdata('user_id');  ?>
   <div class="parallax overflow-hidden bg-blue-400 page-section third">
         <div class="container parallax-layer" data-opacity="true">
             <div class="media v-middle">
@@ -30,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                                Your subscription ends on <span class="text-body-2">25 February 2015</span>
+                                Your subscription ends on <span class="text-body-2">25 February 2016</span>
                             </div>
                             <div class="media-right media-padding">
                                 <a class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated href="#">
@@ -44,43 +47,34 @@
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Courses</h4>
-                                    <p class="text-subhead text-light">Your recent courses</p>
+                                    <p class="text-subhead text-light">My list of courses</p>
                                 </div>
+                                
                                 <ul class="list-group">
-                                    <li class="list-group-item media v-middle">
+                                	<?php // print_r($course_list->result());   
+								
+								foreach($course_list->result() as $row){
+									
+									echo '<li class="list-group-item media v-middle">
                                         <div class="media-body">
-                                            <a href="website-take-course.html" class="text-subhead list-group-link">Basics of HTML</a>
+                                            <a href="'.  base_url() .'course_access/select/'.$row->course_id.'/'.$row->user_id.'" class="text-subhead list-group-link">'.$row->course_name.'</a>
                                         </div>
                                         <div class="media-right">
                                             <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%;">
+                                                <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
-                                    <li class="list-group-item media v-middle">
-                                        <div class="media-body">
-                                            <a href="website-take-course.html" class="text-subhead list-group-link">Angular in Steps</a>
-                                        </div>
-                                        <div class="media-right">
-                                            <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item media v-middle">
-                                        <div class="media-body">
-                                            <a href="website-take-course.html" class="text-subhead list-group-link">Bootstrap Foundations</a>
-                                        </div>
-                                        <div class="media-right">
-                                            <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    </li>';
+									
+									
+									}
+								
+								
+								?>
                                 </ul>
+                                
+                                
                                 <div class="panel-footer text-right">
                                     <a href="website-student-courses.html" class="btn btn-white paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> View all</a>
                                 </div>

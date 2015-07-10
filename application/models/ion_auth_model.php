@@ -2365,10 +2365,22 @@ class Ion_auth_model extends CI_Model
 			
 			$this->db->where('user_id', $id);
 			$query = $this->db->get('employee_to_course JOIN courses ON employee_to_course.course_id=courses.course_id' );
-		
+			
 			return $query;
 		
 		}
+		
+	function get_display_course($course_id){
+		
+			$this->db->where('course_id', $course_id);
+			$query = $this->db->get('courses');
+			
+			return $query;
+		
+		}
+		
+		
+		
 	function manager_remove_course($course_id, $id){
 		
 			$this->db->where('user_id', $id );
@@ -2391,13 +2403,21 @@ class Ion_auth_model extends CI_Model
 		
 		
 		
-	function add_employee_to_course($course_id, $id){
-		
+	function add_employee_to_course($course_id, $id){ 
+	// This will check the table first to prevent duplicate entries	
+		$course = $this->db->get('courses', $course_id ); // get details on the course - number_of_modules  & number_of_quizs
+		foreach($course->result() as $row){
+			$number_of_modules = $row->course_no_modules;
+			$number_of_quizs = $row->number_of_quizs;
+			}
+	
 		$data = array(
 			   'course_id' => $course_id ,
-			   'user_id' => $id 
-			   
+			   'user_id' => $id,
+			   'number_of_modules' =>  $number_of_modules,
+			   'number_of_quizs' => $number_of_quizs
 			);
+		
 		
 			$this->db->where('user_id', $id );
 			$this->db->where('course_id', $course_id );
@@ -2422,11 +2442,19 @@ class Ion_auth_model extends CI_Model
 		
 		}
 	function add_to_employee_result_table($course_id, $id ){
+	// This will add a record to the result table- It adds the employee ID and the course ID - the results will be built when the employee has avtivity through the modules.
+		$course = $this->db->get('courses', $course_id ); // get details on the course - number_of_modules  & number_of_quizs
+		foreach($course->result() as $row){
+			$number_of_modules = $row->course_no_modules;
+			$number_of_quizs = $row->number_of_quizs;
+			}
+		
 		
 		$data = array(
 			   'course_id' => $course_id ,
-			   'user_id' => $id 
-			   
+			   'user_id' => $id,
+			   'number_of_modules' =>  $number_of_modules,
+			   'number_of_quizs' => $number_of_quizs
 			);
 	
 			$this->db->where('user_id', $id );
@@ -2464,6 +2492,17 @@ class Ion_auth_model extends CI_Model
 		return $course_results;
 		
 		}	
+
+//#############################################################################################//
+
+	
+
+
+
+ 
+
+
+
 	
 	// function called by page loads in the online_training controller this will return the user level navbar to use 
 	

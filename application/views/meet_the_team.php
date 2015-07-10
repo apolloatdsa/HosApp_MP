@@ -39,7 +39,7 @@
                                         <div class="media-body">
                                          <img src="<?php echo base_url();?>images/members/2-Delaney.JPG" alt="member" class="img-thumbnail" />
                                         <br>
-                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Joe Blog BSc EngTech MIEI</a></h4>
+                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Tom Delaney BSc EngTech MIEI</a></h4>
                                             <p class="small margin-none">
                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam aut, commodi consectetur cumque est exercitationem hic minima nulla officia perferendis quam quas repellendus rerum tempora totam voluptates! Aut et facere impedit inventore iure, magni vitae. Blanditiis, deserunt doloremque dolores in laborum magni minus nesciunt officiis pariatur quas qui, suscipit.  
                                             </p>

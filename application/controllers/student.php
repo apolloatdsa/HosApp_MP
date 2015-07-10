@@ -43,12 +43,17 @@ class Student extends CI_Controller {
 		}
 	 
 	 
-	 public function student_dashboard(){
+	 public function student_dashboard($id = NULL){
 		 
+		 	if($id == NULL){ $id = $this->session->userdata('user_id');}
+			
+			
+			$data['course_list'] = $this->ion_auth->get_registered_courses_names($id); // get list of courses - This joins the employee_to_course and course tables so course ID and names are included
+				 
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('student_dashboard');
+			$this->load->view('student_dashboard', $data);
 			$this->load->view('templates/footer');
 		 }
 	 public function student_courses(){
