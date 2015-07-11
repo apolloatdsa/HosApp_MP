@@ -165,7 +165,7 @@ echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
           foreach ($course_names->result() as $row){
 			echo '<a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Remove </a>  
 			<a href="' .  base_url() .'manager_dashboard/course_progress/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-info"> View Progress </a>
-			
+			<a href="' .  base_url() .'manager_dashboard/save_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-success"> Save completed </a>
 			 <br><input class="form-control"  type="text"  maxlength="30"   value="'. $row->course_name.'" readonly="readonly" /> <br> ';
 			};
          ?>

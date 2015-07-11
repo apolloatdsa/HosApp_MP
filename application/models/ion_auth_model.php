@@ -199,6 +199,8 @@ class Ion_auth_model extends CI_Model
 		$this->messages    = array();
 		$this->errors      = array();
 		$delimiters_source = $this->config->item('delimiters_source', 'ion_auth');
+		
+		
 
 		//load the error delimeters either from the config file or use what's been supplied to form validation
 		if ($delimiters_source === 'form_validation')
@@ -2482,13 +2484,14 @@ class Ion_auth_model extends CI_Model
 	
 	
 	
-	
-	
-	
-	function get_employee_results($id){
+	function get_employee_results($id, $course_id){
 		
-		$course_results = $this->db->get_where('employee_results', $id);
-		print_r($course_results);
+		
+		$this->db->where('user_id' , $id);
+		//$this->db->where('course_id' ,$course_id );
+		$this->db->select('employee_results.number_of_quizs,employee_results.number_of_modules,employee_results.current_module, employee_results.current_quiz, courses.course_name, courses.course_id');
+		$course_results = $this->db->get('employee_results JOIN courses ON employee_results.course_id=courses.course_id');
+		//print_r($course_results->result());
 		return $course_results;
 		
 		}	

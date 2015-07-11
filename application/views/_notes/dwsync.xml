@@ -12,7 +12,7 @@
 <file name="instructor_courses.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130795239402372729" remote="130794988200000000" Dst="2" />
 <file name="instructor_profile.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130795239395132315" remote="130794988200000000" Dst="2" />
 <file name="student_messages.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130795239387501879" remote="130794987600000000" Dst="2" />
-<file name="student_dashboard.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130810091445443749" remote="130809839400000000" Dst="2" />
+<file name="student_dashboard.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130810288071610122" remote="130810036200000000" Dst="2" />
 <file name="student_courses.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130795239392862185" remote="130794988200000000" Dst="2" />
 <file name="instructor_dashboard.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130795239400052596" remote="130794988200000000" Dst="2" />
 <file name="become_a_tutor.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130795374130538739" remote="130795122000000000" Dst="2" />
@@ -29,10 +29,10 @@
 <file name="sign_up_failed_view.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130789383776245634" remote="130789131600000000" Dst="2" />
 <file name="manager_dashboard.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130807489026693911" remote="130807236600000000" Dst="2" />
 <file name="under_construction.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130790023417151002" remote="130789801800000000" Dst="2" />
-<file name="info.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130792050256170393" remote="130791798000000000" Dst="2" />
+<file name="info.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130810806814300507" remote="130810554600000000" Dst="2" />
 <file name="upload.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130790508712678318" remote="130790256600000000" Dst="2" />
 <file name="student_test_profile.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130791143801004123" remote="130790891400000000" Dst="2" />
-<file name="student_billing.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130794480151036037" remote="130794228000000000" Dst="2" />
+<file name="student_billing.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130810880644713365" remote="130810628400000000" Dst="2" />
 <file name="student_billing_update_success.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130793082366684299" remote="130792830000000000" Dst="2" />
 <file name="student_billing_update_failed.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130791745083995543" remote="130791492600000000" Dst="2" />
 <file name="blank_tabable_page.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130794588129382045" remote="130794336000000000" Dst="2" />
@@ -70,8 +70,9 @@
 <file name="manager_dashboard_employee_report.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130808162424760077" remote="130807911600000000" Dst="2" />
 <file name="manager_dashboard-selected_employee_report.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130808196350970545" remote="130807944600000000" Dst="2" />
 <file name="manager_selected_user_report.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130809159308568569" remote="130808907600000000" Dst="2" />
-<file name="manager_selected_employee_report_page.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130809361066938488" remote="130809109200000000" Dst="2" />
-<file name="manager_employee_progress_report.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130809467022148779" remote="130809214800000000" Dst="2" />
+<file name="manager_selected_employee_report_page.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130810363795971308" remote="130810111800000000" Dst="2" />
+<file name="manager_employee_progress_report.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130811090269173199" remote="130810838400000000" Dst="2" />
 <file name="manager_dashboard_employee_progress_report.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130809387767485672" remote="130809135600000000" Dst="2" />
 <file name="course_display_view.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130810176173549919" remote="130809924000000000" Dst="2" />
+<file name="manager_dashboard_company_profile.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130810877682883958" remote="130810625400000000" Dst="2" />
 </dwsync>

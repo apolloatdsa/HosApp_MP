@@ -57,6 +57,11 @@
                                  	<input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo $id;   ?>" readonly />          	
                                     
                                    </div>
+                                   
+                                   
+                                   
+                                   
+                                   
                         <p>
 						
                         </p>          
@@ -102,28 +107,49 @@
                                     <!-- Table of employees here -->
                                   <div class="col-md-7">  
 
-		
-      <p>
-         <!-- this dropdown of available courses --> 
-         <label for="course_report">Employee is registered on the fillowing courses -  </label>
-         <form  method="post" accept-charset="utf-8" action="<?php echo site_url("manager_dashboard/course_progress/$id"); ?>">
-          <select class="form-control" name="course_report" onchange="this.form.submit()">
-          <?php
-									    
-          foreach ($course_names->result() as $row){
-			echo '<option value="'.$row->course_id.'">'.$row->course_name.'</option>';
-		};
-         ?>
-          </select>
-          </form>
-            
-            
-                   
-         </p>
          
           <p>
          <!-- this dropdown of available courses --> 
-        <?php  print_r($course_results);   ?>
+         <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Course Name</th>
+                            <th>Number of Modules</th>
+                           <th>Completed Modules</th>
+                            <th>Number of quizs</th>
+                            <th>Completed quizs</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+         
+         
+        <?php  foreach($course_results->result() as $row){
+			
+			$rand_1 = (rand(1,$row->number_of_modules));
+			$rand_2 = $rand_1 / $row->number_of_modules * 100;
+			$rand_3 = $rand_1 - 1;
+		echo	'<tr>
+                            <td>'. $row->course_name . '</td>
+                            <td>'. $row->number_of_modules . '</td>
+							<td>'. $rand_1 . '</td>
+                            <td>'. $row->number_of_quizs . '</td>
+                            <td>'. $rand_3 . '</td>
+                          </tr>
+				<tr>		  
+						  <td colspan="5"><div class="progress progress  margin-none">
+                                                <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="'.$rand_2.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+                                                </div>
+                                            </div> </td>
+				
+				</tr>';
+				
+			};   
+			?>
+            
+        </tbody>
+        </table>     
+            
+            
                    
          </p>             
                         

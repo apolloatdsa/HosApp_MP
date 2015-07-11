@@ -1,4 +1,8 @@
-<?php // print_r ($course_list->result()) ?>
+<?php // print_r ($course_list->result()) 
+
+
+?>
+
 
 <?php  $id = $this->session->userdata('user_id');  ?>
   <div class="parallax overflow-hidden bg-blue-400 page-section third">
@@ -61,7 +65,7 @@
                                         </div>
                                         <div class="media-right">
                                             <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+                                                <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="'.(rand(10,100)).'" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
                                                 </div>
                                             </div>
                                         </div>
@@ -142,8 +146,8 @@
                                             </div>
                                         </div>
                                         <div class="media-right text-center">
-                                            <div class="text-display-1">5.8</div>
-                                            <span class="caption text-light">Good</span>
+                                            <div class="text-display-1 text-green-300""><?php echo (rand(60,100)) ?>%</div>
+                                            <span class="caption text-light"></span>
                                         </div>
                                     </li>
                                     <li class="list-group-item media v-middle">
@@ -157,8 +161,8 @@
                                             </div>
                                         </div>
                                         <div class="media-right text-center">
-                                            <div class="text-display-1 text-green-300">9.8</div>
-                                            <span class="caption text-light">Great</span>
+                                            <div class="text-display-1 text-green-300"><?php echo (rand(55,100)) ?>%</div>
+                                            <span class="caption text-light"></span>
                                         </div>
                                     </li>
                                     <li class="list-group-item media v-middle">
@@ -172,8 +176,8 @@
                                             </div>
                                         </div>
                                         <div class="media-right text-center">
-                                            <div class="text-display-1 text-red-300">3.4</div>
-                                            <span class="caption text-light">Failed</span>
+                                            <div class="text-display-1 text-green-300"><?php echo (rand(64,100)) ?>%</div>
+                                            <span class="caption text-light"></span>
                                         </div>
                                     </li>
                                 </ul>

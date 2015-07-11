@@ -442,8 +442,9 @@ class Manager_dashboard extends CI_Controller {
 					}
 		}
 
-  function course_progress($id){
+  function course_progress($id, $course_id){
 	  
+	  		//echo $course_id;
 	  	//echo '<h1>Employee with ID '.$id.' registered on course  with ID '.$course_id.' progress page ';
 	  		if($this->input->post('course_report')){ // if called by the form get the user ID from the POST
 			//Get the value from the form.
@@ -467,7 +468,7 @@ class Manager_dashboard extends CI_Controller {
 			$data['courses'] = $this->ion_auth->get_courses(); // courses list
 			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id); // employee is registered on these courses
 			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
-			$data['course_results'] = $this->ion_auth->get_employee_results($id); // used to match course names
+			$data['course_results'] = $this->ion_auth->get_employee_results($id, $course_id); // used to match course names
 			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );

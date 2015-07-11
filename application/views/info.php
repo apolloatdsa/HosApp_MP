@@ -5,42 +5,20 @@
         
         <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-opacity="true" data-speed="8">
             <div >
-                <div class="col-md-6  page-section">
-                <?php 	echo var_dump($this->session->all_userdata());  ?> 
-               
+                <div class="col-md-12  page-section">
+               <h4> Session variables used by this project</h4>
+                <hr>
                 
-                <table class="table ">
-                <?php echo form_open_multipart('online_training/user_image_upload');  ?>
-                        <thead>
-                          <tr>
-                            <th>Upload image</th>
-                            <th> <?php echo form_open_multipart('online_training/user_image_upload');  ?></th>
-                           
-                          </tr>
-                        </thead>
-                        <tbody>
-                        
-                          <tr>
-                            <td> Select File To Upload:</td>
-                            <td><input type="file" name="userfile"  /></td>
-                            
-                          </tr>
-                          <tr>
-                            <td><?php echo $error;  ?></td>
-                            <td><input type="submit" name="submit" value="Upload image" class="btn btn-success" /></td>
-                            
-                          </tr>
-                		  </tbody>
-                          </form>
-                      </table>
-                      
-                      
-                      
-                      
+                <?php 	echo var_dump($this->session->all_userdata());  ?> 
+                
+               <hr>
+                
+               
                 
 				<?php 	$sess = ($this->session->all_userdata());  ?> 
 					
 					<div class="container">
+                    <div class="col-md-6 ">
                       <h2>Your session info</h2>
                                 
                       <table class="table table-striped">
@@ -61,7 +39,7 @@
                           <tr>
                             <td>Identity</td>
                             <td>
-                            <?php 	if($this->session->userdata('ip_address')){echo " " . $sess['ip_address']. " <br>" ;};?></td>
+                            <?php 	if($this->session->userdata('identity')){echo " " . $sess['identity']. " <br>" ;};?></td>
 							
                             
                           </tr>
@@ -125,6 +103,49 @@
                           
                         </tbody>
                       </table>
+                      </div>	
+                      
+                <div class="col-md-6 ">
+                    <hr>
+                    <h4>Database table</h4>
+                    <hr>
+                
+                      
+                      
+                </div>    
+               <div class="col-md-6 ">
+                    <hr>
+                    <h4>Database table</h4>
+                    <hr>
+                
+                      
+                      
+                </div>           
+                <div class="col-md-6 ">
+                    <hr>
+                    <h4>Database table</h4>
+                    <hr>
+                
+                      
+                      
+                </div>          
+                <div class="col-md-6 ">
+                    <hr>
+                    <h4>Database table</h4>
+                    <hr>
+                
+                      
+                      
+                </div>          
+                <div class="col-md-6 ">
+                    <hr>
+                    <h4>Database table</h4>
+                    <hr>
+                
+                      
+                      
+                </div>
+                          
                     </div>	
                     
                     

@@ -98,7 +98,7 @@ class Manager extends CI_Controller {
 		 	$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('manager_company_profile');
+			$this->load->view('manager_dashboard_company_profile');
 			$this->load->view('templates/footer');
 		 }
 		 

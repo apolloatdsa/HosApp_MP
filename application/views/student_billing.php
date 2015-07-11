@@ -16,7 +16,7 @@ $payment_date = '';
             <div class="media v-middle">
                 <div class="media-left text-center">
                     <a href="#">
-                        <img src="<?php echo base_url();?>images/members/<?php echo $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');?>.jpg" alt="people" class="img-circle width-80" />
+                        <img src="<?php echo base_url();?>images/members/<?php echo $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');?>.JPG" alt="people" class="img-circle width-80" />
                     </a>
                 </div>
                 <div class="media-body">
