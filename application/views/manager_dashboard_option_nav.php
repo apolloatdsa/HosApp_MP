@@ -7,10 +7,10 @@
                             	<li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/employee_list">List employees</a></li>
                                 
                                 <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/create_user">Add new employee</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/employee_report">Employee report</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/employee_report">Employee report assign courses</a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#">Select course</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">View notifications</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Required list</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>

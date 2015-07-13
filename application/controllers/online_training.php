@@ -279,12 +279,13 @@ class Online_training extends CI_Controller {
 			$this->load->view('templates/footer');
 			
 			}				
-		public function frontend(){
+		public function courses_list_view(){
 			
+			$data['courses'] = $this->ion_auth->get_courses_list();
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('frontend_layout');
+			$this->load->view('courses_list_view' , $data);
 			$this->load->view('templates/footer');
 			
 			}					

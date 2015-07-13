@@ -173,6 +173,7 @@ class Manager_dashboard extends CI_Controller {
 		}
 	function selected_next_employee($id, $company){ // this function will control the next employee button and keep the next selection within the company and within the range of employees
 		
+		
 		if(!$this->valid_id($id)){
 				
 				$this->session->set_flashdata('message', ' An INVALID ID was detected');
@@ -234,7 +235,70 @@ class Manager_dashboard extends CI_Controller {
 				redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
 				};
 	
+		}
+		
+	
+	
+	
+	
+		
+	function selected_first_employee($id, $company){ // this function will control the next employee button and keep the next selection within the company and within the range of employees
+		
+		$emp_id_list = $this->ion_auth->get_employee_list($company); // get a complete list fo company employees from the db
+		$emp_id_array = array(); // create an array to store employee id
+		foreach($emp_id_list->result() as $row){ // loop through each result and push employee id into the array
+			array_push($emp_id_array, $row->id);
+			};
+			$number_of_employees = count($emp_id_array);	
+			$current_id_index = array_search($id, $emp_id_array); // find the array index of the current user
+			if($current_id_index < --$number_of_employees){
+			// next user is the index plus one 
+			
+			$next_id = $emp_id_array[0];
+			$this->session->set_userdata('edit_id' ,$next_id );
+			redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+			
+			}else{
+				
+				$next_id = $this->session->userdata('edit_id');
+				$this->session->set_flashdata('message', 'You have reached the end of the employee list ');
+				redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+				};
+	
 		}		
+	function selected_last_employee($id, $company){// this function will control the previous employee button and keep the next selection within the company and within the range of employees
+		
+		
+		$emp_id_list = $this->ion_auth->get_employee_list($company); // get a complete list fo company employees from the db
+		$emp_id_array = array(); // create an array to store employee id
+		foreach($emp_id_list->result() as $row){ // loop through each result and push employee id into the array
+			array_push($emp_id_array, $row->id);
+			};
+			$number_of_employees = count($emp_id_array);	
+			$current_id_index = array_search($id, $emp_id_array); // find the array index of the current user
+			if($current_id_index < --$number_of_employees){
+			// next user is the index plus one 
+			
+			$next_id = $emp_id_array[$number_of_employees];
+			$this->session->set_userdata('edit_id' ,$next_id );
+			redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+			
+			}else{
+				
+				$next_id = $this->session->userdata('edit_id');
+				$this->session->set_flashdata('message', 'You have reached the end of the employee list ');
+				redirect("/manager_dashboard/selected_employee_report/$next_id", 'refresh');
+				};
+	
+		}			
+		
+		
+		
+		
+		
+		
+		
+				
 	function add_course_to_employee($id){
 		
 		if(!$this->valid_id($id)){

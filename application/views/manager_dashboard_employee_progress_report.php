@@ -28,7 +28,7 @@
                     
                         
                                  
-                                 <?php  include('manager_employee_progress_report.php') ?> <!-- a form will display here -->
+                     <?php  include('manager_employee_progress_report.php') ?> <!-- a form will display here -->
                         
                        
                        
@@ -48,14 +48,14 @@
                                             <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
                                                 <span class="img icon-block s90 bg-default"></span>
                                                 <span class="overlay overlay-full padding-none icon-block s90 bg-default">
-                        <span class="v-center">
-                            <i class="fa fa-github"></i>
-                        </span>
+                                                    <span class="v-center">
+                                                        <i class="fa fa-github"></i>
+                                                    </span>
                                                 </span>
                                                 <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
                                                     <span class="v-center">
-                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                                    </span>
+                                                    <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                                     </span>
                                                 </a>
                                             </div>
                                         </div>

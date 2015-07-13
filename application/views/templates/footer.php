@@ -88,6 +88,8 @@
     <script src="<?php echo base_url();?>js/vendor-player.min.js"></script>
     <script src="<?php echo base_url();?>js/vendor-charts-flot.min.js"></script>
     <script src="<?php echo base_url();?>js/vendor-nestable.min.js"></script>
+   
+    
     <!-- <script src="js/vendor-angular.min.js"></script> -->
     <!-- Compressed Vendor Scripts Bundle
     Includes all of the 3rd party JavaScript libraries above.

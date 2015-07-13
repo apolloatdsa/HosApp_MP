@@ -2371,7 +2371,14 @@ class Ion_auth_model extends CI_Model
 			return $query;
 		
 		}
+	function get_courses_list(){
+			
+			
+			$query = $this->db->get('courses' );
+			
+			return $query;
 		
+		}	
 	function get_display_course($course_id){
 		
 			$this->db->where('course_id', $course_id);

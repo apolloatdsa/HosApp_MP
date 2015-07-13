@@ -70,28 +70,28 @@
                     
                     <address>
                       <strong>Rose Barrett : Idea owner</strong><br>
-                      <a href="mailto:#">rose.barrett@folio.com</a>
+                      <a href="mailto:rose.barrett@folio.com?Subject=Contact from Folio website">rose.barrett@folio.com</a>
                     </address>
                     
                 	<address>
                    <strong>Dec Dunne : Lead Designer</strong><br>
-                      <a href="mailto:#">dec.dunne@folio.com</a>
+                      <a href="mailto:dec.dunne@folio.com?Subject=Contact from Folio website">dec.dunne@folio.com</a>
                     </address>
                     
                    <address>
                    <strong>Maggie Byrne : Designer</strong><br>
-                      <a href="mailto:#">maggie.byrne@folio.com</a>
+                      <a href="mailto:maggie.byrne@folio.com?Subject=Contact from Folio website">maggie.byrne@folio.com</a>
                     </address>
                     
                     
                     <address>
                       <strong>Sarah Barrow : Technical Director</strong><br>
-                      <a href="mailto:#">sarah.barrow@folio.com</a>
+                      <a href="mailto:sarah.barrow@folio.com?Subject=Contact from Folio website">sarah.barrow@folio.com</a>
                     </address>
                     
                     <address>
                     <strong>Tom Delaney : Technical Developer</strong><br>
-                      <a href="mailto:#">tom.delaney@folio.com</a>
+                      <a href="mailto:tom.delaney@folio.com?Subject=Contact from Folio website">tom.delaney@folio.com</a>
                     </address>
                    
                 </div>
