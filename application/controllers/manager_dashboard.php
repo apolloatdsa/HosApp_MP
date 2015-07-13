@@ -366,6 +366,19 @@ class Manager_dashboard extends CI_Controller {
 			
 		}
 		
+	function md_test(){
+			
+			$data['message'] = '';
+			$data['error'] = '';
+			
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			//echo $this->listview->render();
+			$this->load->view('manager_dashboard_test');
+			$this->load->view('templates/footer');
+			
+		}	
 	//create a new user
 	function create_user()
 	{
