@@ -2409,7 +2409,12 @@ class Ion_auth_model extends CI_Model
 			return $query;
 		
 		}	
+	function get_selected_courses_public($course_id){
 		
+		$this->db->where('course_id', $course_id );
+		$query = $this->db->get('courses');
+		return $query;
+		}	
 		
 		
 	function add_employee_to_course($course_id, $id, $company){ 

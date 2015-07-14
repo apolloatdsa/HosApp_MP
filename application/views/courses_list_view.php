@@ -40,7 +40,7 @@
                             <i class="fa fa-eye"></i>
                         </span>
                                         </span>
-                                        <a href="course_id'.$row->course_id.'" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                        <a href="display_selected_course/'.$row->course_id.'" class="overlay overlay-full overlay-hover overlay-bg-white">
                                             <span class="v-center">
                             <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
                                             </span>
@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="text-headline margin-v-5-0"><a href="course_id'.$row->course_id.'">'.$row->course_name.'</a></h4>
+                                    <h4 class="text-headline margin-v-5-0"><a href="'.base_url().'online_training/display_selected_course/'.$row->course_id.'">'.$row->course_name.'</a></h4>
                                     <p class="small">
                                         <span class="fa fa-fw fa-star text-yellow-800"></span>
                                         <span class="fa fa-fw fa-star text-yellow-800"></span>
