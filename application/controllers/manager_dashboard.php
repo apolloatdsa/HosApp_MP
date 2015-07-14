@@ -25,6 +25,7 @@ class Manager_dashboard extends CI_Controller {
         }
 		
 	
+	
 
 	function employee_list($offset = 0) {
 		$limit = 10;
@@ -96,7 +97,31 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/footer');
 			
 		}
+	
+	
+	function get_employee_count_for_course_id($course_id){
 		
+		$data['count_empolyees_on_course'] = $this->ion_auth->count_empolyees_on_course($course_id);
+		return $employee_on_course_count;
+		
+		}	
+		
+	function manager_login_dashboard(){
+		
+			$company = $this->session->userdata('company');
+		 	$data['employee_list'] = $this->ion_auth->get_employee_list($company);
+			$data['employee_count'] = $this->ion_auth->employee_count($company);
+			$data['courses'] = $this->ion_auth->get_courses(); // courses list
+			//$data['count_empolyees_on_course'] = $this->ion_auth->count_empolyees_on_course($course_id); // courses the number of employees on a course
+		 	//echo var_dump($data['employees']);
+			
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('manager_login_dashboard' ,$data);
+			$this->load->view('templates/footer');
+		
+		}	
 	function employee_report(){
 			
 			
@@ -142,7 +167,7 @@ class Manager_dashboard extends CI_Controller {
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('manager_dashboard-selected_employee_report');
+			$this->load->view('manager_dashboard_selected_employee_report');
 			$this->load->view('templates/footer');
 			
 		}
@@ -312,8 +337,8 @@ class Manager_dashboard extends CI_Controller {
 		//Get the value from the form.
 			$selected_course = $this->input->post('selected_course_ID');
 			$course_id = $selected_course;
-			
-			if ($this->ion_auth->add_employee_to_course($course_id, $id) == TRUE){
+			$company = $this->session->userdata('company');
+			if ($this->ion_auth->add_employee_to_course($course_id, $id, $company) == TRUE){
 				
 				//echo '<h1>Course with ID ' .$course_id. ' has been assigned to employee with ID '.$id. '</h2>';
 				$this->ion_auth->add_to_employee_result_table($course_id, $id ); // add same course to the result table 
@@ -366,16 +391,45 @@ class Manager_dashboard extends CI_Controller {
 			
 		}
 		
-	function md_test(){
+	function md_test($id){
+				//echo $course_id;
+	  	//echo '<h1>Employee with ID '.$id.' registered on course  with ID '.$course_id.' progress page ';
+	  		if($this->input->post('course_report')){ // if called by the form get the user ID from the POST
+			//Get the value from the form.
+			$course_report = $this->input->post('course_report');
+			//$id = $selected_employee_ID;
+			}
+			
+			if(!$this->valid_id($id)){
+				
+				$this->session->set_flashdata('message', ' An INVALID ID was detected');
+				redirect("/manager_dashboard/employee_report", 'refresh');
+				//echo '<h1> An invalid id was detected </h2>';
+				return false;
+				}; // check to see if the employee id is valid
+				
+				
+			
+			// if called by the refresh use the parameter as the user ID
+			$this->session->userdata('edit_id', $id);
+			$data['employee'] = $this->ion_auth->edit_employee($id);// employee list
+			$data['courses'] = $this->ion_auth->get_courses(); // courses list
+			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id); // employee is registered on these courses
+			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
+			$data['course_results'] = $this->ion_auth->get_employee_results($id, 2); // used to match course names
 			
 			$data['message'] = '';
 			$data['error'] = '';
+			$company = $this->session->userdata('company');
+			
+			$data['employee_list'] = $this->ion_auth->get_employee_list($company);
+			
 			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
-			$this->load->view('manager_dashboard_test');
+			$this->load->view('manager_dashboard_employee_report_test', $data);
 			$this->load->view('templates/footer');
 			
 		}	
@@ -550,7 +604,7 @@ class Manager_dashboard extends CI_Controller {
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('manager_dashboard_employee_progress_report');
+			$this->load->view('manager_dashboard_employee_course_progress_report_page');
 			$this->load->view('templates/footer');
 	  
 	  }

@@ -122,7 +122,7 @@ class Auth extends CI_Controller {
 				
 			elseif($this->session->userdata('manager') == 'manager'){
 				
-							redirect('manager/manager_dashboard', 'refresh'); // go here if the user is an manager
+							redirect('manager_dashboard/manager_login_dashboard', 'refresh'); // go here if the user is an manager
 				
 						}			
 					

@@ -26,12 +26,9 @@
                 <div class="col-md-12">
                     <div class="row" data-toggle="isotope">
                     
-                        
-                                 
-                     <?php  include('manager_employee_progress_report.php') ?> <!-- a form will display here -->
-                        
-                       
-                       
+                              
+                               <?php include('manager_employee_progress_report.php') ?> <!-- a form will display here -->  
+                          
                         
                      <div class="col-md-3">
                    

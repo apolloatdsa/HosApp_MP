@@ -159,7 +159,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 	
  <!-- Footer -->
     <footer class="footer">
-        PHP | OOP | MVC | Javascript | Bootstrap | CodeIgniter | MySql |  &copy; Copyright HosApp & DSA 2015
+        PHP | OOP | MVC | Javascript | Bootstrap | CodeIgniter | MySql |  &copy; Copyright Folio & DSA 2015
     </footer>
     <!-- // Footer -->
     <!-- Inline Script for colors and config objects; used by various external scripts; -->

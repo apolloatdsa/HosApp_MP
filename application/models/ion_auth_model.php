@@ -2412,7 +2412,7 @@ class Ion_auth_model extends CI_Model
 		
 		
 		
-	function add_employee_to_course($course_id, $id){ 
+	function add_employee_to_course($course_id, $id, $company){ 
 	// This will check the table first to prevent duplicate entries	
 		$course = $this->db->get('courses', $course_id ); // get details on the course - number_of_modules  & number_of_quizs
 		foreach($course->result() as $row){
@@ -2423,6 +2423,7 @@ class Ion_auth_model extends CI_Model
 		$data = array(
 			   'course_id' => $course_id ,
 			   'user_id' => $id,
+			   'company' => $company,
 			   'number_of_modules' =>  $number_of_modules,
 			   'number_of_quizs' => $number_of_quizs
 			);
@@ -2488,8 +2489,19 @@ class Ion_auth_model extends CI_Model
 			}
 		
 		}	
-	
-	
+	function count_empolyees_on_course($course_id, $company){
+		
+		$this->db->where('course_id', $course_id);
+		$this->db->where('company', $company);
+		$query = $this->db->count_all_results('employee_to_course');
+		return $query;
+		}
+	function employee_count($company) {
+		
+		$this->db->where('company', $company);
+		$query = $this->db->count_all_results('users');
+		return $query;
+		}
 	
 	function get_employee_results($id, $course_id){
 		

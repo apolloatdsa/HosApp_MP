@@ -23,29 +23,27 @@
 							
 							?>
 <script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script>
-<script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script>                            
+<script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script> 
 
-					<div class="item col-xs-12 col-md-9 col-lg-9"> <!-- div 1 -->
-                            <div class="panel panel-default paper-shadow" data-z="0.5"> <!-- div 2 -->
-                                <div class="panel-heading"> <!-- div 3 -->
-                                    <div class="media v-middle"> <!-- div 4 -->
-                                        <div class="media-body"> <!-- div 5 -->
-                                            <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Employee Report for - <?php echo $first_name . ' ' . $last_name  ?></h4>
+
+    <div class="container">
+        <div class="page-section">
+            <div class="row">
+                <div class="col-md-8 col-lg-9">
+                   
+                   
+                    <div class="media s-container">
+                        
+                        <div class="media-body">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                 <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Employee Report for - <?php echo $first_name . ' ' . $last_name  ?></h4>
                                             <p class="text-subhead text-light"></p>
-                                        </div> <!-- div 5 -->
-                                        <div class="media-right"> <!-- div 6 -->
-                                            <a class="btn btn-white btn-flat" href="website-instructor-earnings.html"></a>
-                                        </div> <!-- div 2 -->
-                                    </div> <!-- div 6 -->
-                                </div> <!-- div 3 -->
-                                <div class="panel-body"> <!-- div panel body -->
-                                
+                                 <hr>
                                  
-                                    <!-- Table of employees here -->
-                                  <div class="col-md-7">  <!-- div 7 -->
+            <div class="col-md-7 col-lg-7"> 
+                                                                   
                                   
-                                  
-
          
           <p>
          <!-- this dropdown of available courses --> 
@@ -132,11 +130,19 @@
         </table>      
             
                    
-         </p>             
-                        
-                        </div> <!-- div 7 -->
-                        
-             <div class="col-md-4 col-md-offset-1"> <!-- div 8 -->
+         </p>
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                                      
+         
+           </div>
+                                 
+                                 
+              <div class="col-md-4 col-md-offset-1"> <!-- div 8 -->
                                             <div class="media v-middle"> <!-- div 11 -->
                                   <div class="media-right"> <!-- div 9 -->
                                     <div class="icon-block width-150 bg-grey-150"> <!-- div 10 -->
@@ -160,23 +166,31 @@
                               
                                                        
                                             </div> <!-- div 11 -->
-                                        </div>   <!-- div 8 -->         
-                        
+                                        </div>   <!-- div 8 -->                            
                                  
                                  
                                  
-                                </div> <!-- div panel body -->
-                                <hr/>
-                                <div class="panel-body">
-                                <?php //echo var_dump($courses->result());  ?>
-                                    <div class="row text-center">
-                                        <div class="col-md-12">
-                                            
-                                            <h2 class=" text-danger margin-none"><?php echo  $this->session->flashdata('message');    ?></h2>
-                                        </div>
-                                       
-                                    </div>
+                                 
+                                 
+                                 
+                                 
+                                    
+                                    
                                 </div>
-                            </div> <!-- div 2 --> 
-                        </div> <!-- div 1 --> 
-                        
+                            </div>
+                        </div>
+                    </div>
+                  
+                   
+                </div>
+                
+                
+                <div class="col-md-4 col-lg-3">
+                
+                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+               
+                </div>
+            </div>
+        </div>
+    </div>
+    

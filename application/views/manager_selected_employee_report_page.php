@@ -72,6 +72,9 @@
                                         </div> <!-- div col-md-5 -->
                                     <!-- Table of employees here -->
                                   <div class="col-md-7">  <!-- div class="col-md-7" -->
+                                  
+                                  
+                                  
 
 		<?php // Change the css classes to suit your needs    
         //echo $this->session->userdata('edit_id');
@@ -143,6 +146,10 @@
           
                    
          </p>             
+         
+         
+         
+         
                         
                         </div> <!-- div class="col-md-7" -->
                                  

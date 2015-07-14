@@ -1,159 +1,178 @@
-<?php //print_r($courses->result()); ?>
+<?php 
 
- <div class="parallax bg-white page-section">
-        <div class="container parallax-layer" data-opacity="true">
-            <div class="media v-middle">
-                <div class="media-body">
-                    <h1 class="text-display-2 margin-none">Library</h1>
-                    <p class="text-light lead">Browse through courses currently available from Folio.</p>
-                </div>
-                <div class="media-right">
-                    <div class="width-100 text-right">
-                        <div class="btn-group">
-                            <a class="btn btn-white" href="website-directory-grid.html"><i class="fa fa-th"></i></a>
-                            <a class="btn btn-grey-900" href="website-directory-list.html"><i class="fa fa-list"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+include('blue_bar_user_header.php');
+$company = $this->session->userdata('company');
+
+
+?>
+
+
     <div class="container">
         <div class="page-section">
             <div class="row">
                 <div class="col-md-9">
-                
-                <?php 
-                    
-					foreach($courses->result() as $row){
-						
-			if($row->course_name != 'Select course to add'){			
-                    
-              echo     ' <div class="panel panel-default paper-shadow" data-z="0.5">
-                        <div class="panel-body">
-                            <div class="media media-clearfix-xs">
-                                <div class="media-left text-center">
-                                    <div class="cover width-150 width-100pc-xs overlay cover-image-full hover margin-v-0-10">
-                                        <span class="img icon-block height-130 bg-default"></span>
-                                        <span class="overlay overlay-full padding-none icon-block bg-default">
-                        <span class="v-center">
-                            <i class="fa fa-eye"></i>
-                        </span>
-                                        </span>
-                                        <a href="course_id'.$row->course_id.'" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                            <span class="v-center">
-                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="text-headline margin-v-5-0"><a href="course_id'.$row->course_id.'">'.$row->course_name.'</a></h4>
-                                    <p class="small">
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                    </p>
-                                    <p>'.$row->course_desc.'</p>
-                                    <hr class="margin-v-8" />
-                                    <div class="media v-middle">
-                                        <div class="media-left">
-                                            <img src="'.base_url().'images/people/50/guy-9.jpg" alt="People" class="img-circle width-40" />
-                                        </div>
-                                        <div class="media-body">
-                                            <h4><a href="">'.$row->couses_provider.'</a>
-                                                <br/>
-                                            </h4>
-                                            Instructor
-                                        </div>
+                    <div class="panel panel-default">
+                        <div class="media v-middle">
+                            <div class="media-left">
+                                <div class="bg-green-400 text-white">
+                                    <div class="panel-body">
+                                        <i class="fa fa-credit-card fa-fw fa-2x"></i>
                                     </div>
                                 </div>
                             </div>
+                            <div class="media-body">
+                                Your subscription ends on <span class="text-body-2">25 February 2015</span>
+                            </div>
+                          
                         </div>
-                    </div> ';
-					}
-					
-					};
-                    
-                    ?>;
-                    
-                    
-                    
-
-                    <ul class="pagination margin-top-none">
-                        <li class="disabled"><a href="#">&laquo;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
+                    </div>
+                    <div class="row" data-toggle="isotope">
+                        <div class="item col-xs-12 col-lg-6">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-heading">
+                                    <h4 class="text-headline margin-none">Courses</h4>
+                                    <p class="text-subhead text-light">Available to <?php echo $company ?> | No# of Employees <?php echo $employee_count; ?> | No# on Course</p>
+                                </div>
+                                <ul class="list-group">
+                                
+                                
+                                <?php 
+								
+								foreach($courses->result() as $row){
+								// a direct call to the model from the view which I know breaks the MVC rules
+								$employee_on_course =  $this->ion_auth->count_empolyees_on_course($row->course_id, $company);
+                             
+							 if($row->course_name != 'Select course to add'){
+                             echo   '<li class="list-group-item media v-middle">
+                                        <div class="media-body">
+                                            <a href="course_id'.$row->course_id.'" class="text-subhead list-group-link">'.$row->course_name.'</a>
+                                        </div>
+                                        <div class="media-right">
+                                            
+                                                <div > <h4>'.$employee_on_course.'</h4>
+                                                
+                                            </div>
+                                        </div>
+                                    </li>';
+                                   
+                                
+                                }
+								}
+                                ?>
+                                
+                                </ul>
+                                <div class="panel-footer text-right">
+                                    <a href="website-student-courses.html" class="btn btn-white paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> View all</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        <div class="item col-xs-12 col-lg-6">
+                            <h4 class="text-headline margin-none"><?php   echo $company ?> Registered Employees </h4>
+                            <p class="text-subhead text-light">Last login </p>
+                            
+                            
+                            <ul class="list-group relative paper-shadow" data-hover-z="0.5" data-animated>
+                            
+                            <?php 
+							
+							foreach($employee_list->result() as $row){
+							$id = 	$row->id;
+							$first_name = $row->first_name;
+							$last_name = $row->last_name;
+							$image = base_url().'images/members/'.$id.'-'.$last_name;
+							$last_login = unix_to_human($row->last_login);	
+                            echo    '<li class="list-group-item paper-shadow">
+                                    <div class="media v-middle">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img src="'.$image.'.JPG" alt="person" class="img-circle width-40" />
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <p>'.$first_name.' '.$last_name.'</p>
+                                            
+                                        </div>
+                                        <div class="media-right">
+                                            <div class="width-60 text-right">
+                                                <span class="text-caption text-light">'.$last_login.'</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>';
+                                
+                                }
+                               ?>
+                               
+                            </ul>
+                        </div>
+                        
+                        <div class="item col-xs-12 col-lg-6">
+                            
+                         <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-body">
+                                    <h4 class="text-headline margin-none">Rewards</h4>
+                                    <p class="text-subhead text-light">Your latest achievements</p>
+                                    <div class="icon-block half img-circle bg-purple-300">
+                                        <i class="fa fa-star text-white"></i>
+                                    </div>
+                                    <div class="icon-block half img-circle bg-indigo-300">
+                                        <i class="fa fa-trophy text-white"></i>
+                                    </div>
+                                    <div class="icon-block half img-circle bg-green-300">
+                                        <i class="fa fa-mortar-board text-white"></i>
+                                    </div>
+                                    <div class="icon-block half img-circle bg-orange-300">
+                                        <i class="fa fa-code-fork text-white"></i>
+                                    </div>
+                                    <div class="icon-block half img-circle bg-red-300">
+                                        <i class="fa fa-diamond text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-heading">
+                                    <h4 class="text-headline">Certificates
+                                        <small>(4)</small>
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                        <i class="fa fa-file-text"></i>
+                                    </a>
+                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                        <i class="fa fa-file-text"></i>
+                                    </a>
+                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                        <i class="fa fa-file-text"></i>
+                                    </a>
+                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                        <i class="fa fa-file-text"></i>
+                                    </a>
+                                </div>
+                            </div>   
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
                     <br/>
                     <br/>
                 </div>
                 <div class="col-md-3">
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">Category</h4>
-                        </div>
-                        <div class="panel-body list-group">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <span class="badge pull-right">120+</span>
-                                    <a class="list-group-link" href="index.html">Design</a>
-                                </li>
-                                <li class="list-group-item active">
-                                    <span class="badge pull-right">30+</span>
-                                    <a class="list-group-link" href="index.html">Programming</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge pull-right">40+</span>
-                                    <a class="list-group-link" href="index.html">WordPress</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge pull-right">60+</span>
-                                    <a class="list-group-link" href="index.html">Workflow</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge pull-right">15+</span>
-                                    <a class="list-group-link" href="index.html">HTML</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge pull-right">25+</span>
-                                    <a class="list-group-link" href="index.html">CSS</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge pull-right">35+</span>
-                                    <a class="list-group-link" href="index.html">iOS</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge pull-right">20+</span>
-                                    <a class="list-group-link" href="index.html">Free</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="false">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">Price</h4>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group input-group margin-none">
-                                <div class="row margin-none">
-                                    <div class="col-xs-6 padding-none">
-                                        <input class="form-control" type="text" placeholder="Min .." />
-                                    </div>
-                                    <div class="col-xs-6 padding-none">
-                                        <input class="form-control" type="text" placeholder="Max .." />
-                                    </div>
-                                </div>
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
+                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                   
                     <h4>Featured</h4>
                     <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
                         <div class="item">
@@ -359,52 +378,3 @@
             </div>
         </div>
     </div>
-    <section class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3">
-                    <h4 class="text-headline text-light">Corporate</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#">About the company</a></li>
-                        <li><a href="#">Company offices</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Terms of use</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <h4 class="text-headline text-light">Explore</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="">Courses</a></li>
-                        <li><a href="">Tutors</a></li>
-                        <li><a href="">Pricing</a></li>
-                        <li><a href="">Become Tutor</a></li>
-                        <li><a href="">Sign Up</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <h4 class="text-headline text-light">Newsletter</h4>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter email here...">
-                            <span class="input-group-btn">
-								<button class="btn btn-grey-800" type="button">Subscribe</button>
-							  </span>
-                        </div>
-                    </div>
-                    <br/>
-                    <p>
-                        <a href="#" class="btn btn-indigo-500 btn-circle"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="btn btn-pink-500 btn-circle"><i class="fa fa-dribbble"></i></a>
-                        <a href="#" class="btn btn-blue-500 btn-circle"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fa fa-google-plus"></i></a>
-                    </p>
-                    <p class="text-subhead">
-                        &copy; 2015 Learning App by mosaicpro.
-                    </p>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>

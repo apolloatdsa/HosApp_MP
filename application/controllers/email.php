@@ -29,7 +29,7 @@ class Email extends CI_Controller {
 	 
 	 $this->email->from('thomas.delaney@webinnovate.com','Tom Delaney');
 	 $this->email->to('hosappdsa@gmail.com');
-	 $this->email->subject('This is a test email from HosApp website');
+	 $this->email->subject('This is a test email from Folio website');
 	 $this->email->message('This is never going to pass for a Major Project. Attachment');
 	 
 	 $path = $this->config->item('server_root');

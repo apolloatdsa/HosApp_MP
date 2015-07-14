@@ -11,7 +11,32 @@
                     <p class="text-subhead"><a class="link-white text-underline" href="website-student-public-profile.html">View public profile</a></p>
                 </div>
                 <div class="media-right">
-                    <span class="label bg-blue-500">Student</span>
+                    <span class="label bg-blue-500">
+					
+					
+					<?php if ($this->session->userdata('admin')){// if user is also admin load the admin navbar menu 
+				echo	'ADMINISTRATOR';
+					}
+				
+				elseif ($this->session->userdata('instructor')){// if user is also instructor load the admin navbar menu 
+					echo	'INSTRUCTOR';
+					}
+					elseif ($this->session->userdata('manager')){// if user is also instructor load the admin navbar menu 
+					echo	'MANAGER';
+					}
+						
+					elseif ($this->session->userdata('student')){// if user is also instructor load the admin navbar menu 
+						echo	'STUDENT';
+						}
+							elseif ($this->session->userdata('member')){// if user is also instructor load the admin navbar menu 
+								echo	'MEMBER';
+							}
+								else{
+									echo	'PUBLIC';
+									
+									} ?>
+                    
+                    </span>
                 </div>
             </div>
         </div>
