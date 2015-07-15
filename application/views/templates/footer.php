@@ -16,7 +16,7 @@
                 <div class="col-sm-6 col-md-3">
                     <h4 class="text-headline text-light">Explore</h4>
                     <ul class="list-unstyled">
-                        <li><a href="<?php echo base_url();?>online_training/courses">Courses</a></li>
+                        <li><a href="<?php echo base_url();?>online_training/courses_list_view">Courses</a></li>
                         <li><a href="<?php echo base_url();?>online_training/meet_the_team">Meet The Team</a></li>
                         <li><a href="<?php echo base_url();?>online_training/meet_the_tutors">Tutors</a></li>
                         <li><a href="<?php echo base_url();?>online_training/pricing">Pricing</a></li>

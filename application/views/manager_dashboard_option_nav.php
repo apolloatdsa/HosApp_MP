@@ -17,7 +17,7 @@
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/md_test/"<?php echo $id ?>><span>Logout</span></a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/company_billing_form_view"><span>Logout</span></a></li>
                                 
                                 
                                 

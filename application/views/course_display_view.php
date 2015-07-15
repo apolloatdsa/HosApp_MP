@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <br/>
-                        <p class="text-body-2">OK not a course video but maybe something interesting to watch.</p>
+                        <p class="text-body-2">Video and content here will be streamed from a Content Distribution Network .</p>
                         <p class="text-body-2"><?php echo $course_desc  ?></p>
                     </div>
                     <h5 class="text-subhead-2 text-light">Curriculum</h5>

@@ -35,7 +35,9 @@
                     </p>
                 </div>
                 <div class="media-right">
-                    <a class="btn btn-white" href="website-directory-grid.html">Library</a>
+                
+                <?php  echo'<a href="' .  base_url() .'online_training/courses_list_view" class="navbar-btn btn btn-warning"> Library</a>' ?>
+                    
                 </div>
             </div>
         </div>
@@ -50,10 +52,11 @@
                         </div>
                     </div>
                     <p>
-                        <strong><?php echo $course_desc ?></strong> dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur cupiditate deleniti dicta dolore dolorem
+                        <strong><?php echo $course_desc ?></strong></p>
+                        <p> Dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur cupiditate deleniti dicta dolore dolorem
                         <strong>dolores enim </strong>eos hic illo inventore iure libero magnam minima minus obcaecati optio pariatur porro quibusdam quos reiciendis, sapiente sint veritatis. Eveniet in magni sunt?</p>
                     <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur cupiditate deleniti dicta dolore dolorem
+                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur tom delaney is good at this adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur cupiditate deleniti dicta dolore dolorem
                         <strong>dolores enim </strong>eos hic illo inventore iure libero.
                     </p>
                     <br/>
@@ -63,8 +66,8 @@
                     <br/>
                     <p class="margin-none">
                         <span class="label bg-gray-dark">New</span>
-                        <span class="label label-grey-200">WordPress</span>
-                        <span class="label label-grey-200">Beginner</span>
+                        <span class="label label-grey-200">Some information here</span>
+                        <span class="label label-grey-200">More information here</span>
                     </p>
                 </div>
                 <div class="page-section">
@@ -81,7 +84,7 @@
                                             </div>
                                         </div>
                                         <div class="media-body text-body-2">
-                                            Basics of GIT and how to become a STAR.
+                                            A minus obcaecati optio pariatur porro.
                                         </div>
                                     </div>
                                 </li>
@@ -93,7 +96,7 @@
                                             </div>
                                         </div>
                                         <div class="media-body text-body-2">
-                                            Database connections & some other nice features.
+                                            A minus obcaecati optio pariatur porro.
                                         </div>
                                     </div>
                                 </li>
@@ -319,205 +322,9 @@
     <div class="bg-white page-section">
         <div class="container">
             <h4>Featured</h4>
-            <div class="slick-basic slick-slider" data-items="4" data-items-lg="3" data-items-md="2" data-items-sm="1" data-items-xs="1">
-                <div class="item">
-                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                        <div class="panel-body">
-                            <div class="media media-clearfix-xs">
-                                <div class="media-left">
-                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                                        <span class="img icon-block s90 bg-default"></span>
-                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
-                        <span class="v-center">
-                            <i class="fa fa-github"></i>
-                        </span>
-                                        </span>
-                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                            <span class="v-center">
-                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Github Webhooks for Beginners</a></h4>
-                                    <p class="small margin-none">
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                        <div class="panel-body">
-                            <div class="media media-clearfix-xs">
-                                <div class="media-left">
-                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                                        <span class="img icon-block s90 bg-primary"></span>
-                                        <span class="overlay overlay-full padding-none icon-block s90 bg-primary">
-                        <span class="v-center">
-                            <i class="fa fa-css3"></i>
-                        </span>
-                                        </span>
-                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                            <span class="v-center">
-                            <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Awesome CSS with LESS Processing</a></h4>
-                                    <p class="small margin-none">
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                        <div class="panel-body">
-                            <div class="media media-clearfix-xs">
-                                <div class="media-left">
-                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                                        <span class="img icon-block s90 bg-lightred"></span>
-                                        <span class="overlay overlay-full padding-none icon-block s90 bg-lightred">
-                        <span class="v-center">
-                            <i class="fa fa-windows"></i>
-                        </span>
-                                        </span>
-                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                            <span class="v-center">
-                            <span class="btn btn-circle btn-red-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Portable Environments with Vagrant</a></h4>
-                                    <p class="small margin-none">
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                        <div class="panel-body">
-                            <div class="media media-clearfix-xs">
-                                <div class="media-left">
-                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                                        <span class="img icon-block s90 bg-brown"></span>
-                                        <span class="overlay overlay-full padding-none icon-block s90 bg-brown">
-                        <span class="v-center">
-                            <i class="fa fa-wordpress"></i>
-                        </span>
-                                        </span>
-                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                            <span class="v-center">
-                            <span class="btn btn-circle btn-orange-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">WordPress Theme Development</a></h4>
-                                    <p class="small margin-none">
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                        <div class="panel-body">
-                            <div class="media media-clearfix-xs">
-                                <div class="media-left">
-                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                                        <span class="img icon-block s90 bg-purple"></span>
-                                        <span class="overlay overlay-full padding-none icon-block s90 bg-purple">
-                        <span class="v-center">
-                            <i class="fa fa-jsfiddle"></i>
-                        </span>
-                                        </span>
-                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                            <span class="v-center">
-                            <span class="btn btn-circle btn-purple-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Modular JavaScript with Browserify</a></h4>
-                                    <p class="small margin-none">
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                        <div class="panel-body">
-                            <div class="media media-clearfix-xs">
-                                <div class="media-left">
-                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                                        <span class="img icon-block s90 bg-default"></span>
-                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
-                        <span class="v-center">
-                            <i class="fa fa-cc-visa"></i>
-                        </span>
-                                        </span>
-                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                            <span class="v-center">
-                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Easy Online Payments with Stripe</a></h4>
-                                    <p class="small margin-none">
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+             <?php  include('footer_slider.php') ?>
+            
+
         </div>
     </div>

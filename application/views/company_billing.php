@@ -1,8 +1,34 @@
+<?php //echo  var_dump($this->session->all_userdata());?>
+<?php //echo  var_dump($payment);
+
+$student_card_number = '';
+$student_ccv_number = '';
+$expiry = '';
+$active = '';
+$payment_processed = '';
+$payment_date = '';
+
+?>
 
 
-<?php include('blue_bar_user_header.php');?>
-    
-    
+ <div class="parallax overflow-hidden bg-blue-400 page-section third">
+        <div class="container parallax-layer" data-opacity="true">
+            <div class="media v-middle">
+                <div class="media-left text-center">
+                    <a href="#">
+                        <img src="<?php echo base_url();?>images/members/<?php echo $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');?>.JPG" alt="people" class="img-circle width-80" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h1 class="text-white text-display-1 margin-v-0"><?php echo " " . $this->session->userdata('user_first_name'). " ". $this->session->userdata('user_last_name')." " ; ?></h1>
+                    <p class="text-subhead"><a class="link-white text-underline" href="website-student-public-profile.html">View public profile</a></p>
+                </div>
+                <div class="media-right">
+                    <span class="label bg-blue-500">Student</span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="page-section">
             <div class="row">
@@ -11,184 +37,288 @@
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                         <!-- Tabs -->
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="<?php  echo base_url(); ?>manager_dashboard/company_profile"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Manage Account</span></a></li>
-                            <li><a href="<?php  echo base_url(); ?>manager_dashboard/company_billing"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Billing Details</span></a></li>
+                            <li ><a href="<?php  echo base_url(); ?>manager_dashboard/company_profile"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Manage Account</span></a></li>
+                            <li class="active"><a href="<?php  echo base_url(); ?>manager_dashboard/company_billing"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Billing Details</span></a></li>
                         </ul>
                         <!-- // END Tabs -->
                         <!-- Panes -->
                         <div class="tab-content">
-                            <div id="account" class="tab-pane active">
+                        
+                        
+       
+                            <div id="billing" class="tab-pane active">
                             
+                            <div>
+                            <?php 
+
+								foreach ($payment as $row){
+									
+									$student_card_number = $row->student_card_number;
+									$student_ccv_number = $row->student_ccv_number;
+									$month = $row->month;
+									$year = $row->year;
+									$expiry = $row->month. '/'. $row->year;
+									$active = $row->active;
+									$payment_processed = $row->payment_processed;
+									$payment_date = $row->payment_date;
+									}
+								
+								$student_card_number = $this->Student_card_update_model->mask_cc($student_card_number, $mask_char='*');
+								
+								
+								//$this->session->set_userdata("student_card") = $student_card_numbe;
+								
+								
+								?>
+								<?php // echo $this->session->userdata("student_card_number"); ?>
+
+                          
+                           
+                           
                             
-                            <?php echo form_open_multipart('online_training/user_image_upload');  ?>
-                            	
-                                <div class="col-md-6  page-section">
-                
-                                    <table class="table ">
-                                    
-                                            <thead>
-                                              <tr>
-                                                <th></th>
-                                                <th>Upload your photo </th>
-                                               
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                            
-                                              <tr>
-                                                <td> Select image to upload:</td>
-                                                <td><input type="file" name="userfile" class="btn btn-warning"  /></td>
-                                                
-                                              </tr>
-                                              <tr>
-                                                <td class="active"><?php  echo $error;  ?></td>
-                                                <td><input type="submit" name="submit" value="Upload image" class="btn btn-success" /></td>
-                                                
-                                              </tr>
-                                              </tbody>
-                                              </form>
-                                          </table>
-                                          
-                                        </div>	
+                            </div>
+                            
+                             <!--   <form action="#" class="form-horizontal"> -->
                                 
+                                <?php echo form_open_multipart('student/user_billing_update', 'class="form-horizontal"' );  ?>
                                 
-                                
-                                
-                                
-                                
-                                <form class="form-horizontal">
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label">Avatar</label>
+                                        <label for="name" class="col-md-2 control-label">Name on Invoice</label>
                                         <div class="col-md-6">
-                                            <div class="media v-middle">
-                                  <div class="media-left">
-                                    <div class="icon-block width-100 bg-grey-100">
-                                                        <i class="fa fa-photo text-light"></i>
-                                      </div>
-                                                     
-                    
-                                                </div>
+                                            <div class="form-control-material">
+                                                <input type="text" class="form-control used" id="name" value="<?php echo " " . $this->session->userdata('company') ; ?>">
+                                                <label for="name">Name on Invoice</label>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <p></p>
-                                    
                                     <div class="form-group">
+                                        <label for="address" class="col-md-2 control-label">Address</label>
+                                        <div class="col-md-6">
+                                            <div class="form-control-material">
+                                                <textarea class="form-control used" id="address"></textarea>
+                                                <label for="address">Address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country" class="col-md-2 control-label">Country</label>
+                                        <div class="col-md-6">
+                                            <select id="country" data-toggle="select2" class="width-100">
+                                                <option value="1" selected>Ireland</option>
+                                                <option value="2">Country</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group margin-bottom-none">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <?php echo form_submit( 'submit', 'Submit',"class='btn btn-primary'"); ?>
+                                        </div>
+                                    </div>
+                                <?php echo form_close(); ?>
+                                <hr/>
+                                <div class="media v-middle s-container">
+                                    <div class="media-body">
+                                        <h5 class="text-subhead">Payment details </h5>
+                                    </div>
                                     
-                                        <div class="col-md-8">
-                                             <div class="row">
-                                             <div class="col-md-10 ">
-                                                    <div class="">
-                                                    
-                                                    	 <?php // include('company_profile_form_view.php');  ?>
-                                                       <?php // Change the css classes to suit your needs    
-
-$attributes = array('class' => 'form-group form-inline', 'id' => 'company_profile');
-echo form_open('company_profile_controller', $attributes); ?>
-
-<p>
-        <label for="company_name">Company Name <span class="required">*</span></label>
-        <?php echo form_error('company_name'); ?>
-        <br /><input id="company_name" type="text" class="form-control form-horizontal" name="company_name" maxlength="30" value="<?php echo set_value('company_name'); ?>"  />
-</p>
-
-<p>
-        <label for="address_1">Address  <span class="required">*</span></label>
-        <?php echo form_error('address_1'); ?>
-        <br /><input id="address_1" type="text" class="form-control"  name="address_1" maxlength="30" value="<?php echo set_value('address_1'); ?>"  />
-</p>
-
-<p>
-        <label for="address_2">Town </label>
-        <?php echo form_error('address_2'); ?>
-        <br /><input id="address_2" type="text" class="form-control"  name="address_2" maxlength="30" value="<?php echo set_value('address_2'); ?>"  />
-</p>
-
-<p>
-        <label for="company_city">City <span class="required">*</span></label>
-        <?php echo form_error('company_city'); ?>
-        <br /><input id="company_city" type="text" class="form-control"  name="company_city" maxlength="30" value="<?php echo set_value('company_city'); ?>"  />
-</p>
-
-<p>
-        <label for="company_country">Country <span class="required">*</span></label>
-        <?php echo form_error('company_country'); ?>
-        <br /><input id="company_country" type="text" class="form-control"  name="company_country" maxlength="30" value="<?php echo set_value('company_country'); ?>"  />
-</p>
-
-<p>
-        <label for="company_phone">Phone No# <span class="required">*</span></label>
-        <?php echo form_error('company_phone'); ?>
-        <br /><input id="company_phone" type="text" class="form-control"  name="company_phone" maxlength="15" value="<?php echo set_value('company_phone'); ?>"  />
-</p>
-
-<p>
-        <label for="company_email">Contact Email <span class="required">*</span></label>
-        <?php echo form_error('company_email'); ?>
-        <br /><input id="company_email" type="text" class="form-control"  name="company_email" maxlength="30" value="<?php echo set_value('company_email'); ?>"  />
-</p>
-
-<p>
-        <label for="company_contact">Contact person <span class="required">*</span></label>
-        <?php echo form_error('company_contact'); ?>
-        <br /><input id="company_contact" type="text" class="form-control"  name="company_contact" maxlength="30" value="<?php echo set_value('company_contact'); ?>"  />
-</p>
-
-<p>
-        <label for="company_vat">Vat No# <span class="required">*</span></label>
-        <?php echo form_error('company_vat'); ?>
-        <br /><input id="company_vat" type="text" class="form-control"  name="company_vat" maxlength="15" value="<?php echo set_value('company_vat'); ?>"  />
-</p>
-
-<p>
-        <label for="company_reg">Co Reg No# <span class="required">*</span></label>
-        <?php echo form_error('company_reg'); ?>
-        <br /><input id="company_reg" type="text" class="form-control"  name="company_reg" maxlength="15" value="<?php echo set_value('company_reg'); ?>"  />
-</p>
-
-<p>
-        <label for="company_position">Your roll / position <span class="required">*</span></label>
-        <?php echo form_error('company_position'); ?>
-        <br /><input id="company_position" type="text" class="form-control"  name="company_position" maxlength="30" value="<?php echo set_value('company_position'); ?>"  />
-</p>
-
-<p>
-        <label for="company_num_emp">The number of employees <span class="required">*</span></label>
-        <?php echo form_error('company_num_emp'); ?>
-        <br /><input id="company_num_emp" type="text"  class="form-control" name="company_num_emp" maxlength="11" value="<?php echo set_value('company_num_emp'); ?>"  />
-</p>
-
-
-<p>
-        <?php echo form_submit( 'submit', 'Submit'); ?>
-</p>
-
-<?php echo form_close(); ?>
-  
-                                                         
-                                                         
-                                                         
-                                                         
-                                                      
-                                                    </div>
-                                                </div>
-                                              </div>  
+                                    
+                                    <div class="media-right">
+                                        <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white paper-shadow relative" data-animated data-z="0.5" data-hover-z="1" href="">Add / Edit Credit Card</a>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="list-group margin-none">
+                                    <div class="list-group-item media v-middle">
+                                        <div class="media-left">
+                                            <div class="icon-block half img-circle bg-success">
+                                                <i class="fa fa-credit-card"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="text-title media-heading">
+                                                <a href="#modal-update-credit-card" data-toggle="modal" class="link-text-color"><?php echo	$student_card_number; ?></a>
+                                            </h4>
+                                            <div class="text-caption">Last updated  <span> <?php echo	$payment_date; ?> </span></div>
+                                            
+                                            <?php // echo var_dump($payment);  ?>
+                                        </div>
+                                        <div class="media-right">
+                                            <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white btn-flat"><i class="fa fa-pencil fa-fw"></i> Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item media v-middle">
+                                        
+                                        <div class="media-body">
+                                        
+                                         <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Student card details from DataBase</th>
+                            <th><div class="media-left">
+                                            <div class="icon-block half img-circle bg-grey-100 text-light">
+                                                <i class="fa fa-credit-card"></i>
+                                            </div>
+                                        </div></th>
+                           
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Credit Card Number</td>
+                            <td><?php echo	$student_card_number; ?></td>
+							
+                            
+                          </tr>
+                          <tr>
+                            <td>CCV</td>
+                            <td>
+                            <?php echo $student_ccv_number; ?></td>
+							
+                            
+                          </tr>
+                          <tr>
+                            <td>Expiry date </td>
+                            <td>
+							<?php echo	$expiry; ?></td>
+							
+                            
+                          </tr>
+                          <tr>
+                            <td>Card active </td>
+                           
+                            <td> <?php echo	$active; ?></td>
+                            
+                          </tr>
+                          <tr>
+                            <td>Is payment processed</td>
+                            <td><?php echo	$payment_processed; ?></td>
+							
+                            
+                          </tr>
+                          <tr>
+                            <td>Payment Date</td>
+                            <td><?php echo	$payment_date; ?></td>
+							
+                            <td>
+                            
+                            </td>
+                            
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                                        
+                                          
                                             
                                         </div>
+                                        <div class="media-right">
+                                            <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white btn-flat"><i class="fa fa-pencil fa-fw"></i> Edit</a>
+                                        </div>
+                                        <hr>
+                                        <br>
+                                         
+                           
                                         
                                     </div>
-                                  
-                                
-                            </div> <!-- account tab pane open -->
-                            
-                            
-                            
-                            
+                                </div>
+                            </div>
                         </div>
                         <!-- // END Panes -->
                     </div>
                     <!-- // END Tabbable Widget -->
+                    
+                    
+                    
+                    
+                    <div class="modal grow modal-backdrop-white fade" id="modal-update-credit-card">
+                        <div class="modal-dialog modal-sm">
+                            <div class="v-cell">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title">Update Credit Card</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php echo form_open_multipart('student_card_update_controller/index');  ?>
+                                        
+                                            <div class="form-group">
+                                            
+                                            	<label for="student_card_number">Card Number <span class="required">*</span></label>
+												<?php echo form_error('student_card_number'); ?>
+                                                <br /><input class="form-control"  id="student_card_number" type="text" name="student_card_number" maxlength="30" value="<?php echo	$student_card_number; ?>"  />
+                                            
+                                                
+                                            </div>
+                                            
+                                            
+                                            <div class="form-group">
+                                               <label for="month">Year <span class="required">*</span></label>
+						<?php echo form_error('month'); ?>
+						
+						<?php // Change the values in this array to populate your dropdown as required ?>
+						<?php $options = array(
+																  ''  => 'Please Select',
+																  '01'    => 'January',
+																  '02'    => 'February',
+																  '03'    => 'March',
+																  '04'    => 'April',
+																  '05'    => 'May',
+																  '06'    => 'June',
+																  '07'    => 'July',
+																  '08'    => 'August',
+																  '09'    => 'September',
+																  '10'    => 'October',
+																  '11'    => 'November',
+																  '12'    => 'December'
+																  
+																); ?>
+				
+						<br /><?php echo form_dropdown('month',  $options, set_value('month'), 'class="btn dropdown-toggle form-control selectpicker btn-white"')?>
+                                            </div>
+                                            
+                                            
+                                             <div class="form-group">
+                                               <label for="year">Year <span class="required">*</span></label>
+						<?php echo form_error('year'); ?>
+						
+						<?php // Change the values in this array to populate your dropdown as required ?>
+						<?php $options = array(
+																  ''  => 'Please Select',
+																  '2015'    => '2015',
+																  '2016'    => '2016',
+																  '2017'    => '2017',
+																  '2018'    => '2018',
+																  '2019'    => '2019',
+																  '2020'   	=> '2020',
+																  '2021'    => '2021'
+																  
+																); ?>
+				
+						<br /><?php echo form_dropdown('year',  $options, set_value('year'), 'class="btn dropdown-toggle form-control selectpicker btn-white"')?>
+                                            </div>
+                                            
+                                            
+                                            
+                                            
+                                            <div class="form-group">
+                                               <label for="student_ccv_number">CCV <span class="required">*</span></label>
+												<?php echo form_error('student_ccv_number'); ?>
+                                                <br /><input class="form-control"  id="student_ccv_number" type="number" name="student_ccv_number" maxlength="3" value="<?php echo $student_ccv_number; ?>"  />
+                                            </div>
+                                            <?php echo form_submit( 'submit', 'Submit',"class='btn btn-primary'"); ?>
+                                        
+                                <?php echo form_close(); ?>
+                                            
+                                            
+                                         <!--   <button type="submit" class="btn btn-success paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated data-dismiss="modal">Update Credit Card</button>
+                                        </form> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <br/>
                     <br/>
                 </div>
@@ -412,19 +542,3 @@ echo form_open('company_profile_controller', $attributes); ?>
             </div>
         </div>
     </div>
-    
-    
-    
-     <div class="modal grow modal-overlay modal-backdrop-body fade" id="student_image_upload">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <div class="modal-dialog">
-            <div class="v-cell">
-                <div class="modal-content">
-                    <div class="modal-body">
-                    
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>   

@@ -13,7 +13,7 @@ class Manager_dashboard extends CI_Controller {
 					 
 					 };
 				
-               
+               $this->load->model('Student_card_update_model'); // calls the model class name //
 				$this->load->library(array('ion_auth','form_validation'));
 				$this->load->helper(array('url','language'));
 
@@ -121,7 +121,42 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('manager_login_dashboard' ,$data);
 			$this->load->view('templates/footer');
 		
-		}	
+		}
+	function company_profile(){
+		
+			$data['error'] = '';
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('company_profile_view' ,$data);
+			$this->load->view('templates/footer');
+		
+		
+		}
+	function company_billing(){
+		
+			$data['payment'] = $this->Student_card_update_model->getPayment();
+			$data['error'] = '';
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('company_billing' ,$data);
+			$this->load->view('templates/footer');
+		
+		
+		}
+	function company_billing_form_view(){
+		
+			$data['payment'] = $this->Student_card_update_model->getPayment();
+			$data['error'] = '';
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('company_profile_form_view' ,$data);
+			$this->load->view('templates/footer');
+		
+		
+		}											
 	function employee_report(){
 			
 			
