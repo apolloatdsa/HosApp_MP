@@ -45,5 +45,9 @@
                                                                    echo "<a href='" .  base_url() ."manager_dashboard/edit/$id  'class='navbar-btn btn btn-info'> Edit employee </a>";
                                                                    
                                                                 ?>
+                                                                 <?php 
                                                                 
+                                                      echo"<a href='" .  base_url() ."manager_dashboard/manager_login_dashboard' class='navbar-btn btn btn-success'> <i class='fa fa-fw fa-arrow-left'> </i> Return to Dashboard </a>";
+                                                                   
+                                                                ?>
 						

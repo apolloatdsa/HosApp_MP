@@ -37,7 +37,6 @@ $payment_date = '';
                     <div class="tabbable paper-shadow relative" data-z="0.5">
                         <!-- Tabs -->
                         <ul class="nav nav-tabs">
-                            <li ><a href="<?php  echo base_url(); ?>manager_dashboard/company_profile"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Manage Account</span></a></li>
                             <li class="active"><a href="<?php  echo base_url(); ?>manager_dashboard/company_billing"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Billing Details</span></a></li>
                         </ul>
                         <!-- // END Tabs -->

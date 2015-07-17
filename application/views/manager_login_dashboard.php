@@ -45,7 +45,7 @@ $company = $this->session->userdata('company');
 							 if($row->course_name != 'Select course to add'){
                              echo   '<li class="list-group-item media v-middle">
                                         <div class="media-body">
-                                            <a href="course_id'.$row->course_id.'" class="text-subhead list-group-link">'.$row->course_name.'</a>
+                                            <a href="employees_on_selected_course/'.$row->course_id.'" class="text-subhead list-group-link">'.$row->course_name.'</a>
                                         </div>
                                         <div class="media-right">
                                             
@@ -94,11 +94,12 @@ $company = $this->session->userdata('company');
                                             </a>
                                         </div>
                                         <div class="media-body">
-                                            <p>'.$first_name.' '.$last_name.'</p>
-                                            
+										
+								<a href=' .  base_url() .'manager_dashboard/selected_employee_report/'.$id.' class="">'.$first_name.' '.$last_name.'</a>			
+									
                                         </div>
                                         <div class="media-right">
-                                            <div class="width-60 text-right">
+                                            <div class="width-120 text-right">
                                                 <span class="text-caption text-light">'.$last_login.'</span>
                                             </div>
                                         </div>

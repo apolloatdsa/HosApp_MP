@@ -23,12 +23,12 @@
 							
 							?>
 
-					<div class="item col-xs-12 col-lg-9">
+					<div class="item col-xs-12 col-lg-12">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <div class="media v-middle">
                                         <div class="media-body">
-                                            <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Edit user</h4>
+                                            <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Edit - <?php echo $first_name .' '. $last_name   ?></h4>
                                             <p class="text-subhead text-light"></p>
                                         </div>
                                         <div class="media-right">
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="panel-body"> 
                                 
-                                  <div class="col-md-5">
+                                  <div class="col-md-10">
                                             <div class="media v-middle">
                                   <div class="media-left">
                                     <div class="icon-block width-150 bg-grey-150">
@@ -50,23 +50,30 @@
                                       <p>
 						<?php 
                         
-                           echo '<a href="' .  base_url() .'manager_dashboard/edit_employee_image  "class="navbar-btn btn btn-success"> Edit employee photo </a>';
+                         echo '<a href="' .  base_url() .'manager_dashboard/edit_employee_image  "class="navbar-btn btn btn-success"> Edit employee photo </a>';
                            
                         ?>
                         </p>          
                         <p>
 						<?php 
                         
-                           echo '<a href="' .  base_url() .'manager_dashboard/employee_list  "class="navbar-btn btn btn-info"> Back to list </a>';
+                         echo '<a href="' .  base_url() .'manager_dashboard/employee_list  "class="navbar-btn btn btn-info"> Back to list </a>';
                            
                         ?>
                         </p>
                           <p>
 						<?php 
                         
-                           echo "<a href='" .  base_url() ."manager_dashboard/selected_employee_report/$id  'class='navbar-btn btn btn-info'> Report page </a>";
+                         echo "<a href='" .  base_url() ."manager_dashboard/selected_employee_report/$id  'class='navbar-btn btn btn-info'> Report page </a>";
                            
                         ?>
+                        <?php 
+                                                                
+                        echo "<a href='" .  base_url() ."manager_dashboard/manager_login_dashboard' class='navbar-btn btn btn-success'> <i class='fa fa-fw fa-arrow-left'> </i> Return to Dashboard </a>";
+                                                                   
+                         ?>
+                        
+                        
                         </p>     
                         
                         

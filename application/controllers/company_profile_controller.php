@@ -16,7 +16,7 @@ class Company_profile_controller extends CI_Controller {
 			
 		$this->form_validation->set_rules('company_name', 'company_name', 'required|trim|xss_clean|max_length[30]');			
 		$this->form_validation->set_rules('address_1', 'address_1', 'required|trim|xss_clean|max_length[30]');			
-		$this->form_validation->set_rules('address_2', 'address_2', 'trim|xss_clean|valid_email|max_length[30]');			
+		$this->form_validation->set_rules('address_2', 'address_2', 'trim|xss_clean|max_length[30]');			
 		$this->form_validation->set_rules('company_city', 'company_city', 'required|trim|xss_clean|max_length[30]');			
 		$this->form_validation->set_rules('company_country', 'company_country', 'required|trim|xss_clean|max_length[30]');			
 		$this->form_validation->set_rules('company_phone', 'company_phone', 'required|trim|xss_clean|max_length[15]');			
@@ -31,9 +31,11 @@ class Company_profile_controller extends CI_Controller {
 	
 		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
 		{
-			echo '<h1>Failed to validate  </h1>';
-			echo $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
-			//$this->load->view('company_profile_form_view');
+			//echo '<h1>Failed to validate  </h1>';
+			//print_r($this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>'));
+			//$data['error'] = 'The from failed to Validate';
+			$this->session->set_flashdata('company_profile_update', 'The form failed to validate ');
+			redirect('manager_dashboard/company_billing_form_view');
 		}
 		else // passed validation proceed to post success logic
 		{
@@ -62,15 +64,23 @@ class Company_profile_controller extends CI_Controller {
 			}
 			else
 			{
-			echo 'An error occurred saving your information. Please try again later';
+			
+			$this->session->set_flashdata('company_profile_update', '<i class=" fa fa-arrows-alt"  ></i><br>Nothing has changed.<br> OR an error occurred saving your information.<br> Please try again later ');
+			redirect('manager_dashboard/company_billing_form_view');	
+				
+			//echo 'An error occurred saving your information. Please try again later';
 			// Or whatever error handling is necessary
 			}
 		}
 	}
 	function success()
 	{
-			echo 'this form has been successfully submitted with all validation being passed. All messages or logic here. Please note
-			sessions have not been used and would need to be added in to suit your app';
+			
+			//echo 'success';
+			$this->session->set_flashdata('company_profile_update', '<i class="fa fa-check"></i><br>Success The data has been updated ');
+			
+			redirect('manager_dashboard/company_billing_form_view');
+			//$this->load->view('manager_dashboard/company_profile', $data);
 	}
 }
 ?>

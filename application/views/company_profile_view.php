@@ -79,10 +79,12 @@
                                         <div class="col-md-8">
                                              <div class="row">
                                              <div class="col-md-10 ">
+                                             <div>Result here <?php  echo $this->session->flashdata('company_profile_update');  ?></div>
+                                             
                                                     <div class="">
                                                     
                                                     	 <?php // include('company_profile_form_view.php');  ?>
-                                                       <?php // Change the css classes to suit your needs    
+                                                      <?php // Change the css classes to suit your needs    
 
 $attributes = array('class' => 'form-group form-inline', 'id' => 'company_profile');
 echo form_open('company_profile_controller', $attributes); ?>
@@ -165,11 +167,7 @@ echo form_open('company_profile_controller', $attributes); ?>
 </p>
 
 <?php echo form_close(); ?>
-  
-                                                         
-                                                         
-                                                         
-                                                         
+ 
                                                       
                                                     </div>
                                                 </div>

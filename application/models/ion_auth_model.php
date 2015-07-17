@@ -2456,6 +2456,13 @@ class Ion_auth_model extends CI_Model
 			}
 		
 		}
+	function get_company_info($company_name){
+		
+		$query = $this->db->get_where('companies', array('company_name' => $company_name));
+		return $query;
+		}		
+			
+		
 	function add_to_employee_result_table($course_id, $id ){
 	// This will add a record to the result table- It adds the employee ID and the course ID - the results will be built when the employee has avtivity through the modules.
 		$course = $this->db->get('courses', $course_id ); // get details on the course - number_of_modules  & number_of_quizs
@@ -2493,7 +2500,20 @@ class Ion_auth_model extends CI_Model
 		
 			}
 		
-		}	
+		}
+	
+	function get_employee_on_course($course_id, $company){
+			
+		 	$this->db->from('employee_to_course');
+		 	$this->db->join('users', 'users.id = employee_to_course.user_id');
+			$this->db->join('courses', 'courses.course_id = employee_to_course.course_id');
+			$this->db->where('users.company', $company);
+			$this->db->where('employee_to_course.course_id', $course_id);
+			$query = $this->db->get();
+		
+			return $query;
+		
+		}
 	function count_empolyees_on_course($course_id, $company){
 		
 		$this->db->where('course_id', $course_id);

@@ -124,6 +124,7 @@ class Manager_dashboard extends CI_Controller {
 		}
 	function company_profile(){
 		
+			
 			$data['error'] = '';
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
@@ -147,6 +148,9 @@ class Manager_dashboard extends CI_Controller {
 		}
 	function company_billing_form_view(){
 		
+			$company_name = $this->session->userdata('company');
+			//echo $company_name;
+			$data['company_info'] = $this->ion_auth->get_company_info($company_name);
 			$data['payment'] = $this->Student_card_update_model->getPayment();
 			$data['error'] = '';
 			$data['title'] = 'Set page title here';
@@ -156,7 +160,23 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/footer');
 		
 		
-		}											
+		}
+		
+	function employees_on_selected_course($course_id){
+		
+			$company = $this->session->userdata('company');
+			$data['employee_on_course'] = $this->ion_auth->get_employee_on_course($course_id, $company);
+			$data['error'] = '';
+			//$data['id'] = $id;
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			//echo $this->listview->render();
+			$this->load->view('manager_dashboard_employee_on_course');
+			$this->load->view('templates/footer');
+		
+		
+		}												
 	function employee_report(){
 			
 			
@@ -236,6 +256,7 @@ class Manager_dashboard extends CI_Controller {
 		
 		if(!$this->valid_id($id)){
 				
+				
 				$this->session->set_flashdata('message', ' An INVALID ID was detected');
 				redirect("/manager_dashboard/employee_report", 'refresh');
 				//echo '<h1> An invalid id was detected </h2>';
@@ -244,10 +265,13 @@ class Manager_dashboard extends CI_Controller {
 		
 		$emp_id_list = $this->ion_auth->get_employee_list($company); // get a complete list fo company employees from the db
 		$emp_id_array = array(); // create an array to store employee id
+		
+		
 		foreach($emp_id_list->result() as $row){ // loop through each result and push employee id into the array
 			array_push($emp_id_array, $row->id);
 			};
-			$number_of_employees = count($emp_id_array);	
+			$number_of_employees = count($emp_id_array);
+			//echo $number_of_employees;	
 			$current_id_index = array_search($id, $emp_id_array); // find the array index of the current user
 			if($current_id_index < --$number_of_employees){
 			// next user is the index plus one 
