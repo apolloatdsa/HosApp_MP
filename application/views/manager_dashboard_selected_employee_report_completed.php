@@ -68,10 +68,14 @@ $company = $this->session->userdata('company');
                                             echo '<div class="col-md-12">
 											
 											<p>
-							<a href="' .  base_url() .'manager_dashboard/remove_course/#  "class="navbar-btn btn-sm btn-success"> Completed </a>  
+							<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Started  '. $row->start_date .' </a>  
                             
                                              
-											<br>
+											
+								<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-success"> Completed  '. $row->end_date .' </a>  
+                            
+                                             
+											<br>			
 												<input type="text" class="form-control input-lg" id="inputSuccess_'.$row->course_id.'" value="'. $row->course_name.'" readonly="readonly" >';
 											// if the course is completed add the check mark set in the employee_to_course table
 											// when saved set the employee_results completed to 1

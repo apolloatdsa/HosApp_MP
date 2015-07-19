@@ -69,9 +69,9 @@
 		$time_on = 0;
 		foreach($course_names->result() as $row){
 			
-			$rand_1 = (rand(1,$row->number_of_modules));
+			$rand_1 = (rand(1,($row->number_of_modules))-1);
 			$rand_2 = $rand_1 / $row->number_of_modules * 100;
-			$rand_3 = $rand_1 - 1;
+			$rand_3 = $rand_1 ;
 			
 			
 			

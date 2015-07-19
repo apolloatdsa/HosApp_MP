@@ -102,7 +102,7 @@ $company = $this->session->userdata('company');
                                           <?php
                                                                         
                                           foreach ($courses->result() as $row){
-                                            echo '<option value="'.$row->course_id.'">'.$row->course_name.'</option>';
+                                            echo '<option style=" background-color:#0FFFF0;" value="'.$row->course_id.'">'.$row->course_name.'</option>';
                                         };
                                          ?>
                                           </select>
@@ -124,7 +124,7 @@ $company = $this->session->userdata('company');
 							<a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Remove </a>  
                              <a href="' .  base_url() .'manager_dashboard/course_progress/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-info"> View Progress </a>
 							 <a href="' .  base_url() .'manager_dashboard/mark_as_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-danger"> Add / Remove check </a>
-                             <a href="' .  base_url() .'manager_dashboard/save_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-success"> Save completed </a>
+                             <a href="' .  base_url() .'manager_dashboard/save_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-success"> Archive completed </a>
                                              
 											<br>
 												<input type="text" class="form-control input-lg" id="inputSuccess_'.$row->course_id.'" value="'. $row->course_name.'" readonly="readonly" >';

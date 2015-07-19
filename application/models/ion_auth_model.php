@@ -2578,7 +2578,7 @@ class Ion_auth_model extends CI_Model
 				$this->db->insert('employee_to_course', $data);
 				if ($this->db->affected_rows() == '1')
 				{
-					
+				
 					return TRUE; // success adding the course
 				}
 				
@@ -2607,7 +2607,8 @@ class Ion_auth_model extends CI_Model
 			   'course_id' => $course_id ,
 			   'user_id' => $id,
 			   'number_of_modules' =>  $number_of_modules,
-			   'number_of_quizs' => $number_of_quizs
+			   'number_of_quizs' => $number_of_quizs,
+			   'start_date' => date('Y-m-d H:i:s',now())
 			);
 	
 			$this->db->where('user_id', $id );
