@@ -2388,8 +2388,75 @@ class Ion_auth_model extends CI_Model
 		
 		}
 		
+	function set_remove_completed($id, $course_id){
 		
+			$this->db->select('completed');
+			$this->db->where('user_id' , $id);
+			$this->db->where('course_id' , $course_id);
+			$query = $this->db->get('employee_to_course');
+			//echo print_r($query->result());
+			
+			foreach($query->result() as $row){
+				
+				$completed = $row->completed;
+				
+				};
+				
+				if($completed == 1){
+					
+					
+					$this->db->where('user_id' , $id);
+					$this->db->where('course_id' , $course_id);
+					$this->db->update('employee_to_course' , array('completed' => 0));
+					$this->session->set_flashdata('message','Completed has been REMOVED');
+					return TRUE;
+					
+					}else{
+						$this->db->where('user_id' , $id);
+						$this->db->where('course_id' , $course_id);
+						$this->db->update('employee_to_course' , array('completed' => 1));
+						$this->session->set_flashdata('message','Completed has been SET');
+						return TRUE;
+						
+						}
+				
+			
+		}	
+	function set_couses_as_completed($id, $course_id){
 		
+			$this->db->select('completed');
+			$this->db->where('user_id' , $id);
+			$this->db->where('course_id' , $course_id);
+			$query = $this->db->get('employee_to_course');
+			//echo print_r($query->result());
+			
+			foreach($query->result() as $row){
+				
+				$completed = $row->completed;
+				
+				};
+				
+				if($completed == 1){
+					
+					
+					$this->db->where('user_id' , $id);
+					$this->db->where('course_id' , $course_id);
+					$this->db->update('employee_results' , array('completed' => 1));
+					//$this->session->set_flashdata('message','Employee has completed the course');
+					return TRUE;
+					
+					}else{
+						
+						//$this->session->set_flashdata('message','The course has not been completed');
+						return FALSE;
+						
+						}
+				
+			
+			
+		
+		}	
+			
 	function manager_remove_course($course_id, $id){
 		
 			$this->db->where('user_id', $id );
@@ -2398,7 +2465,71 @@ class Ion_auth_model extends CI_Model
 			return true;
 			
 		}			
+	function archive_completed_course($course_id, $id){
 		
+			$this->db->where('user_id', $id );
+			$this->db->where('course_id', $course_id );
+			$query = $this->db->get('employee_to_course');
+			
+			foreach($query->result() as $row){
+				
+				$completed = $row->completed;
+				}
+			
+			if($completed ==1){
+				
+				$data = array(
+				
+					'completed' => 1,
+					'end_date' => date('Y-m-d H:i:s',now())
+					
+					);
+				
+				$this->db->where('user_id', $id );
+				$this->db->where('course_id', $course_id );
+				$this->db->update('employee_results', $data);
+				// now remove the course from the employee_to_course
+				$this->manager_remove_course($course_id, $id); // call function to remove from table
+				
+				
+				}
+			
+			
+			
+		}				
+	function check_if_already_completed($course_id, $id){
+		
+				$this->db->where('user_id', $id );
+				$this->db->where('course_id', $course_id );
+				$query = $this->db->get('employee_results');
+				
+				if ($query->num_rows() > 0){ // in here only if the user has already done the course
+				
+				//echo 'The employee is already registered on this course' ;
+				$this->session->set_flashdata('message', 'The user has already completed this course');
+				return TRUE;
+				
+			}else{
+				$this->session->set_flashdata('message', 'The user is new to this course');
+				return FALSE;
+				
+				}
+			
+				
+		
+		}
+	function get_completed_courses($id){
+		
+		$this->db->select('*');
+		$this->db->from('employee_results');
+		
+		$this->db->join('courses', 'courses.course_id = employee_results.course_id');
+		$this->db->where('completed', 1 );
+		$this->db->where('user_id', $id );
+		$query = $this->db->get();
+		return $query;
+		}
+	
 		
 	function get_registered_courses($id){
 		

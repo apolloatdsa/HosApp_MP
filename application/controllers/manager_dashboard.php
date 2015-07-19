@@ -228,6 +228,23 @@ class Manager_dashboard extends CI_Controller {
 			
 		}
 		
+	function 	selected_employee_report_completed($id){
+		
+			$this->session->userdata('edit_id', $id);
+			$data['employee'] = $this->ion_auth->edit_employee($id);// employee list
+			$data['courses'] = $this->ion_auth->get_courses(); // courses list
+			$data['completed_courses'] = $this->ion_auth->get_completed_courses($id); // employee is registered on these courses
+			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
+		
+		
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('manager_dashboard_selected_employee_report_completed');
+			$this->load->view('templates/footer');
+		
+		}
+		
 	function remove_course($course_id, $id){
 		
 		if(!$this->valid_id($id)){
@@ -398,6 +415,18 @@ class Manager_dashboard extends CI_Controller {
 			$selected_course = $this->input->post('selected_course_ID');
 			$course_id = $selected_course;
 			$company = $this->session->userdata('company');
+			// first check if the employee has done this corse before
+			
+			if($this->ion_auth->check_if_already_completed($course_id, $id)){
+				
+				$this->session->set_flashdata('message', 'The user has ALREADY completed this course');
+				
+				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+				
+				};
+			
+			
+			
 			if ($this->ion_auth->add_employee_to_course($course_id, $id, $company) == TRUE){
 				
 				//echo '<h1>Course with ID ' .$course_id. ' has been assigned to employee with ID '.$id. '</h2>';
@@ -669,7 +698,39 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/footer');
 	  
 	  }
-
+	function mark_as_completed($id, $course_id){
+		
+		// add or remove the completed flag in employee_to_coursed
+		if($this->ion_auth->set_remove_completed($id, $course_id)){
+			
+			//$this->session->set_flashdata('message', ' Completed has been changed');
+			 
+			redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+			
+			}; // courses list
+		
+		
+		}
+	function save_completed($id, $course_id){
+		
+		// add or remove the completed flag in employee_to_coursed
+		if($this->ion_auth->set_couses_as_completed($id, $course_id)){
+			
+			$this->session->set_flashdata('message', 'The employee has sucessfully completed the course');
+			 
+			 $this->ion_auth->archive_completed_course($course_id, $id);
+			 
+			 
+			redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+			
+			}else{
+				
+				$this->session->set_flashdata('message', 'The employee has not completed the course');
+				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
+				}; // courses list
+		
+		
+		}
 
 //##################################################################################################################################
 //#################################################################################################################################

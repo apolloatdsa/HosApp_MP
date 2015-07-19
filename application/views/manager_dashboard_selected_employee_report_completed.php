@@ -4,7 +4,7 @@
 
 include('blue_bar_user_header.php');
 $company = $this->session->userdata('company');
-
+//print_r($completed_courses->result());
 
 ?>
  <?php 
@@ -48,83 +48,28 @@ $company = $this->session->userdata('company');
                         <div class="media-body">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                 <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Employee Report for - <?php echo $first_name . ' ' . $last_name  ?></h4>
-                                            <p class="text-subhead text-light">
-                                            <?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn btn-success"> Show completed courses </a>'   ?></p>
-                                            
+                                 <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Completed Report for - <?php echo $first_name . ' ' . $last_name  ?></h4>
+                                            <p class="text-subhead text-light"></p>
                                  <hr>
                                  
             <div class="col-md-7 col-lg-7">                                                        
                                   
-										<?php // Change the css classes to suit your needs    
-                                        //echo $this->session->userdata('edit_id');
-                                        $attributes = array('class' => '', 'id' => '');
-                                        echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
-                                
-                                <p>
-                                        <label for="first_name">First Name <span class="required">*</span></label>
-                                        <?php echo form_error('first_name'); ?>
-                                        <br /><input class="form-control" id="first_name" type="text" name="first_name" maxlength="30" placeholder = "<?php echo $first_name ?>" value="<?php echo $first_name;   ?>" readonly />
-                                </p>
-                                
-                                <p>
-                                        <label for="last_name">Last Name <span class="required">*</span></label>
-                                        <?php echo form_error('last_name'); ?>
-                                        <br /><input class="form-control" id="last_name" type="text" name="last_name" maxlength="30" placeholder = "<?php echo $last_name ?>"  value="<?php echo $last_name; set_value('last_name'); ?>" readonly />
-                                </p>
-                                
-                                <p>
-                                        <label for="email">Email <span class="required">*</span></label>
-                                        <?php echo form_error('email'); ?>
-                                        <br /><input class="form-control" id="email" type="text" name="email" maxlength="30" placeholder = "<?php echo $email ?>"  value="<?php echo $email; set_value('email'); ?>" readonly />
-                                </p>
-                                
-                                <p>
-                                        <label for="department">Department <span class="required">*</span></label>
-                                        <?php echo form_error('department'); ?>
-                                        <br /><input class="form-control" id="department" type="text" name="department" maxlength="30" placeholder = "<?php echo $department ?>"  value="<?php echo $department;  set_value('department'); ?>" readonly />
-                                </p>
-                                
-                                <p>
-                                        <label for="phone">Phone <span class="required">*</span></label>
-                                        <?php echo form_error('phone'); ?>
-                                        <br /><input class="form-control" id="phone" type="text" name="phone" maxlength="30" placeholder = "<?php echo $phone ?>"  value="<?php echo $phone; set_value('phone'); ?>" readonly />
-                                </p>
-                                
-                                
-                                <?php echo form_close(); ?>
-                                            <hr class="text-success">			
-                                      <p>
-                                         <!-- this dropdown of available courses --> 
-                                         <label for="selected_course_ID">Assign required courses </label>
-                                         <form  method="post" accept-charset="utf-8" action="<?php echo site_url("manager_dashboard/add_course_to_employee/$id"); ?>">
-                                          <select class="form-control" name="selected_course_ID" onchange="this.form.submit()">
-                                          <?php
-                                                                        
-                                          foreach ($courses->result() as $row){
-                                            echo '<option value="'.$row->course_id.'">'.$row->course_name.'</option>';
-                                        };
-                                         ?>
-                                          </select>
-                                          </form>
-                                                   
-                                         </p>
+									
+                                     
                                          
                                           <p>
                                          <!-- this dropdown of available courses --> 
-                                         <label for="registered_courses">Employee is registered on -  </label><br>
+                                         <label for="registered_courses">Employee has completed  -  </label><br>
                                          
                                           <?php
                                             // List out the courses which ajve been assigned to the employee - includes buttons to remove progress and save 						    										
-                                          foreach ($course_names->result() as $row){
+                                          foreach ($completed_courses->result() as $row){
 											  
                                             echo '<div class="col-md-12">
 											
 											<p>
-							<a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Remove </a>  
-                             <a href="' .  base_url() .'manager_dashboard/course_progress/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-info"> View Progress </a>
-							 <a href="' .  base_url() .'manager_dashboard/mark_as_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-danger"> Add / Remove check </a>
-                             <a href="' .  base_url() .'manager_dashboard/save_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-success"> Save completed </a>
+							<a href="' .  base_url() .'manager_dashboard/remove_course/#  "class="navbar-btn btn-sm btn-success"> Completed </a>  
+                            
                                              
 											<br>
 												<input type="text" class="form-control input-lg" id="inputSuccess_'.$row->course_id.'" value="'. $row->course_name.'" readonly="readonly" >';
