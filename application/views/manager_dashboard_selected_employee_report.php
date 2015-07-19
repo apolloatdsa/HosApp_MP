@@ -1,6 +1,7 @@
 
 <?php 
 
+
 include('blue_bar_user_header.php');
 $company = $this->session->userdata('company');
 
@@ -27,7 +28,9 @@ $company = $this->session->userdata('company');
 							$edit_employee = array(
 							   'edit_id'  => $id
 						   );
-			
+						   
+						   
+						   
 								$this->session->set_userdata($edit_employee);
 								
 							
@@ -110,17 +113,35 @@ $company = $this->session->userdata('company');
                                          <label for="registered_courses">Employee is registered on -  </label><br>
                                          
                                           <?php
-                                            // List out the courses which ajve been assigned to the employee - includes buttons to remove progress and save 						    
+                                            // List out the courses which ajve been assigned to the employee - includes buttons to remove progress and save 						    										
                                           foreach ($course_names->result() as $row){
-                                            echo '<a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Remove </a>  
+											  
+                                            echo '<div class="col-md-12">
+											
+											<p>
+											<a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Remove </a>  
                                             <a href="' .  base_url() .'manager_dashboard/course_progress/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-info"> View Progress </a>
                                             <a href="' .  base_url() .'manager_dashboard/save_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-success"> Save completed </a>
-                                             <br><input class="form-control"  type="text"  maxlength="30"   value="'. $row->course_name.'" readonly="readonly" /> <br> ';
+                                             
+											<br>
+												<input type="text" class="form-control" id="inputSuccess_'.$row->course_id.'" value="'. $row->course_name.'" readonly="readonly" >';
+											// if the course is completed add the check mark set in the employee_to_course table
+											// when saved set the employee_results completed to 1
+											if($row->completed == 1){
+												
+											echo	'<h1 style="color:green"  class="glyphicon glyphicon-ok form-control-feedback"></h1>';
+												}
+												
+											echo 	'</p>
+											  
+											 <br> </div>';
                                             };
                                          ?>
                                           
                                                    
-                                         </p>             
+                                         </p> 
+                                         <div class="col-md-12"><h4 style="color:green" ><?php echo $this->session->flashdata('message');   ?><h4></div>
+                                                     
          
            </div>
                                  

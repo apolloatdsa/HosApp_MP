@@ -95,7 +95,7 @@ $company = $this->session->userdata('company');
                                         </div>
                                         <div class="media-body">
 										
-								<a href=' .  base_url() .'manager_dashboard/selected_employee_report/'.$id.' class="">'.$first_name.' '.$last_name.'</a>			
+								<a class="link-text-color"  href=' .  base_url() .'manager_dashboard/selected_employee_report/'.$id.' class="">'.$first_name.' '.$last_name.'</a>			
 									
                                         </div>
                                         <div class="media-right">

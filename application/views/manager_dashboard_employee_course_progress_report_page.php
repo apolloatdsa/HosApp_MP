@@ -1,5 +1,7 @@
  <?php 
-							
+//print_r($course_names->result());	
+
+						
 							foreach($employee as $row){
 								
 								$first_name = $row->first_name;
@@ -24,7 +26,7 @@
 							?>
 <script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script>
 <script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script> 
-
+<?php include('blue_bar_user_header.php');?>
 
     <div class="container">
         <div class="page-section">
@@ -65,7 +67,7 @@
 		$number_ofLogins = 0;
 		$total_modules = 0;
 		$time_on = 0;
-		foreach($course_results->result() as $row){
+		foreach($course_names->result() as $row){
 			
 			$rand_1 = (rand(1,$row->number_of_modules));
 			$rand_2 = $rand_1 / $row->number_of_modules * 100;
@@ -85,11 +87,13 @@
 				<tr>		  
 						  <td colspan="5"><div class="progress progress  margin-none">';
 						  // if course is completed display green progress bar
-						  if($rand_1  ==  $row->number_of_modules){
+						  if($rand_1  ==  $row->number_of_modules ||  $row->completed == 1){
+							 $rand_2 =  100; // if the course is marked as completed display full width green bar
+							 
                        echo   	'<div class="progress-bar progress-bar-success progress-bar-green-300" role="progressbar" aria-valuenow="'.$rand_2.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;">';
 							}else{
 								
-							echo   	'<div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="'.$rand_2.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;">';	
+						echo   	'<div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="'.$rand_2.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;">';	
 								
 								};
 							

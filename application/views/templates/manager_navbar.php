@@ -62,7 +62,7 @@
                             
                             echo ' <a href="' . base_url() . 'auth/logout" class="navbar-btn btn btn-primary"> Log Out</a>';
                             }else{
-                            echo '<a href="' .  base_url() .'auth/login" class="navbar-btn btn btn-primary"> Log In</a>';
+                            echo '<a href="' .  base_url() .'auth/login" class="navbar-btn btn btn-primary"> Login Page </a>';
                             }
                         ?>
                 </div>

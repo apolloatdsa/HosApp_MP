@@ -219,6 +219,7 @@ class Manager_dashboard extends CI_Controller {
 			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id); // employee is registered on these courses
 			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
 			
+			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
@@ -403,6 +404,7 @@ class Manager_dashboard extends CI_Controller {
 				$this->ion_auth->add_to_employee_result_table($course_id, $id ); // add same course to the result table 
 				
 				$this->session->set_flashdata('message', 'The selected course has been added');
+				
 				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
 				
 				
