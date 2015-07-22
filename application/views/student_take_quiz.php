@@ -28,10 +28,10 @@
             </div>
         </div>
         <div class="split-vertical-body">
-            <div class="split-vertical-cell">
-                <div class="container height-100pc">
-                    <div class="page-section height-100pc">
-                        <div class="row height-100pc">
+            <div class="">
+                <div class="container ">
+                    <div class="page-section ">
+                        <div class="row ">
                             <div class="col-md-9">
                                 <div class="text-subhead-2 text-light">Question 2 of 25</div>
                                 <div class="panel panel-default paper-shadow" data-z="0.5">
@@ -70,20 +70,20 @@
                                 <br/>
                             </div>
                             <div class="col-md-3 height-100pc">
-                                <div class="split-vertical">
+                                <div class="">
                                     <div class="s-container">
                                         <div class="text-subhead-2 text-light">Time to complete</div>
                                         <div class="tk-countdown"></div>
                                     </div>
-                                    <div class="split-vertical-body">
-                                        <div class="split-vertical-cell">
+                                    <div class="">
+                                        <div class="">
                                             <div class="panel panel-default margin-none">
-                                                <div class="split-vertical">
+                                                <div class="">
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title">Questions</h4>
                                                     </div>
-                                                    <div class="split-vertical-body">
-                                                        <div class="split-vertical-cell">
+                                                    <div class="">
+                                                        <div class="">
                                                             <div data-scrollable class="panel-body list-group">
                                                                 <ul class="list-group">
                                                                     <li class="list-group-item">

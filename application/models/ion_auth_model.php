@@ -2518,7 +2518,9 @@ class Ion_auth_model extends CI_Model
 				
 		
 		}
-	function get_completed_courses($id){
+		
+		
+	function count_completed_courses($id){
 		
 		$this->db->select('*');
 		$this->db->from('employee_results');
@@ -2526,10 +2528,82 @@ class Ion_auth_model extends CI_Model
 		$this->db->join('courses', 'courses.course_id = employee_results.course_id');
 		$this->db->where('completed', 1 );
 		$this->db->where('user_id', $id );
-		$query = $this->db->get();
+		$query = $this->db->count_all_results();
 		return $query;
 		}
-	
+		
+	function get_all_completed_courses(){
+		
+		$company = $this->session->userdata('company');
+		
+		$this->db->from('employee_results');
+		$this->db->join('courses', 'courses.course_id = employee_results.course_id');
+		$this->db->join('users', 'users.id = employee_results.user_id');
+		$this->db->where('completed', 1 );
+		$this->db->where('company', $company );
+		$query = $this->db->get();
+		
+		//$query->num_rows();
+		
+		return $query;
+		}
+		
+		function count_registered_courses_names($id){
+			
+		$company = $this->session->userdata('company');
+		
+		$this->db->from('employee_results');
+		$this->db->join('courses', 'courses.course_id = employee_results.course_id');
+		$this->db->join('users', 'users.id = employee_results.user_id');
+		$this->db->where('company', $company );
+		$this->db->where('user_id', $id );
+		$query = $this->db->count_all_results();
+		
+		return $query;
+			
+			
+			}
+		function get_completed_courses($id){
+		
+		$company = $this->session->userdata('company');
+		
+		$this->db->from('employee_results');
+		$this->db->join('courses', 'courses.course_id = employee_results.course_id');
+		$this->db->join('users', 'users.id = employee_results.user_id');
+		$this->db->where('completed', 1 );
+		$this->db->where('user_id', $id );
+		$query = $this->db->get();
+		//print_r($query->result());
+		return $query;
+		}
+		function print_completed_course($id, $course_id){
+		
+		$company = $this->session->userdata('company');
+		
+		$this->db->from('employee_results');
+		$this->db->join('courses', 'courses.course_id = employee_results.course_id');
+		$this->db->join('users', 'users.id = employee_results.user_id');
+		$this->db->where('completed', 1 );
+		$this->db->where('employee_results.course_id', $course_id );
+		$this->db->where('user_id', $id );
+		$query = $this->db->get();
+		//print_r($query->result());
+		return $query;
+		}
+		
+		function count_all_completed_courses(){
+		
+		$company = $this->session->userdata('company');
+		
+		$this->db->from('employee_results');
+		$this->db->join('courses', 'courses.course_id = employee_results.course_id');
+		$this->db->join('users', 'users.id = employee_results.user_id');
+		$this->db->where('completed', 1 );
+		$this->db->where('company', $company );
+		$query = $this->db->count_all_results();
+		
+		return $query;
+		}
 		
 	function get_registered_courses($id){
 		
@@ -2550,7 +2624,9 @@ class Ion_auth_model extends CI_Model
 		
 	function add_employee_to_course($course_id, $id, $company){ 
 	// This will check the table first to prevent duplicate entries	
-		$course = $this->db->get('courses', $course_id ); // get details on the course - number_of_modules  & number_of_quizs
+	//print_r($course_id. '<br>' .$id. ' <br>' . $company);
+		$course = $this->db->get_where('courses', array('course_id' => $course_id) ); // get details on the course - number_of_modules  & number_of_quizs
+		
 		foreach($course->result() as $row){
 			$number_of_modules = $row->course_no_modules;
 			$number_of_quizs = $row->number_of_quizs;

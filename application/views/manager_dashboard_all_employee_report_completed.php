@@ -6,35 +6,9 @@ include('blue_bar_user_header.php');
 $company = $this->session->userdata('company');
 //print_r($completed_courses->result());
 
-?>
- <?php 
 
-							
-							foreach($employee as $row){
-								
-								$first_name = $row->first_name;
-								$last_name = $row->last_name;
-								$email = $row->email;
-								$username = $row->username;
-								$last_login = $row->last_login;
-								$company = $row->company;
-								$phone = $row->phone;
-								$department = $row->department;
-								$active = $row->active;
-								$created_on = $row->created_on;
-								$id = $row->id;
-								}
-								
-							$edit_employee = array(
-							   'edit_id'  => $id
-						   );
-						   
-						   
-						   
-								$this->session->set_userdata($edit_employee);
-								
-							
-							?>
+?>
+ <?php  ?>
 
 
     <div class="container">
@@ -48,11 +22,13 @@ $company = $this->session->userdata('company');
                         <div class="media-body">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                 <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Completed Report for - <?php echo $first_name . ' ' . $last_name  ?></h4>
-                                            <p class="text-subhead text-light"><?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn btn-success"> Show Completed </a>'   ?><spsn> </span><?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report/'.$id.'  "class="navbar-btn btn btn-success"> Add New </a>'   ?> </p>
+                                 <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Completed Report for all employees - </h4>
+                                 
+                                            <h4 class="text-subhead text-light">Displaying <?php echo $number_of_results ?> results</h4>
+                                         
                                  <hr>
                                  
-            <div class="col-md-7 col-lg-7">                                                        
+            <div class="col-md-7 col-lg-12">                                                        
                                   
 									
                                      
@@ -68,11 +44,12 @@ $company = $this->session->userdata('company');
                                             echo '<div class="col-md-12">
 											
 											<p>
-							<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Started  '. $row->start_date .' </a>  
+											<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$row->id.'  "class="navbar-btn btn-sm btn-primary">'. $row->first_name .' '.$row->last_name.' </a>  
+							<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$row->id.'  "class="navbar-btn btn-sm btn-warning"> Started  '. $row->start_date .' </a>  
                             
                                              
 											
-								<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-success"> Completed  '. $row->end_date .' </a>  
+								<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$row->id.'  "class="navbar-btn btn-sm btn-success"> Completed  '. $row->end_date .' </a>  
                             
                                              
 											<br>			
@@ -92,29 +69,24 @@ $company = $this->session->userdata('company');
                                           
                                                    
                                          </p> 
-                                         <div class="col-md-12"><h4 style="color:green" ><?php echo $this->session->flashdata('message');   ?><h4></div>
+                                         <div class="col-md-12"><h4 style="color:green" ><h4></div>
                                                      
          
            </div>
                                  
                                  
-              <div class="col-md-4 col-md-offset-1"> <!-- div 8 -->
+               <div class="col-md-4 col-md-offset-1"> <!-- div 8 -->
                                             <div class="media v-middle"> <!-- div 11 -->
                                   <div class="media-right"> <!-- div 9 -->
                                     <div class="icon-block width-150 bg-grey-150"> <!-- div 10 -->
-                      <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-80" />
+                     
                                       </div> <!-- div 10 -->
-                               		<br> <label for="last_login">Last Login </label>
-                                	<input class="form-control" id="last_login" type="text" name="last_login" maxlength="30"  value="<?php echo unix_to_human($last_login);   ?>" readonly />
-                                 	<br> <label for="created_on">Created on </label>
-                                	 <input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo unix_to_human($created_on);   ?>" readonly />           
-                    				<br> <label for="created_on">Folio user ID </label>
-                                 	<input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo $id;   ?>" readonly />          	
+                               		        	
                                     
                                    </div> <!-- div 9 -->
                                    <p></p>   
                                    
-                                   <p>  <?php  include('employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
+                                   <p>  <?php // include('employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
                          
 							
                         			
@@ -122,7 +94,7 @@ $company = $this->session->userdata('company');
                               
                                                        
                                             </div> <!-- div 11 -->
-                                        </div>   <!-- div 8 -->                            
+                                        </div>   <!-- div 8 -->                      
                                  
                                  
                                  

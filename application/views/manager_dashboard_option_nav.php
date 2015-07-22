@@ -11,8 +11,11 @@
                                 <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/create_user">Add new employee</a></li>
                                 <li class="list-group-item"><a class="link-text-color"  href="<?php echo base_url();?>manager_dashboard/company_billing_form_view">Company Profile</a></li>
                                 <li class="list-group-item"><a class="link-text-color"  href="<?php echo base_url();?>manager_dashboard/company_billing">Company payment</a></li>
-                                <li class="list-group-item"><a class="link-text-color"  href="<?php echo base_url();?>manager_dashboard/under_construction">Completed projects</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
+                                <li class="list-group-item"><a class="link-text-color"  href="<?php echo base_url();?>manager_dashboard/all_employee_report_completed">List Completed Courses </a></li>
+                                
+                                
+                                
+                                <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/list_completed">List Completed - Table view</a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a  class="link-text-color" href="<?php echo base_url();?>auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>

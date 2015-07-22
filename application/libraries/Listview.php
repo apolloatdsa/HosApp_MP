@@ -53,7 +53,27 @@ class Listview {
 
 		return $data;
 	}
-	
+	function completed_filter($table, $limit, $offset, $where)
+	{
+		lvw_db_filter();
+		
+		$data['query'] 		= $company = $this->session->userdata('company');
+								$this->db->from('employee_results');
+								$this->db->join('courses', 'courses.course_id = employee_results.course_id');
+								$this->db->join('users', 'users.id = employee_results.user_id');
+								$this->db->where('completed', 1 );
+								$this->db->where('company', $company );
+								$query = $this->db->get();
+		
+		
+		
+		$this->ci->db->select("SQL_CALC_FOUND_ROWS *", false)->from($table)->limit($limit, $offset)->where(array('company' => $where))->get();
+		
+				
+		$data['total_rows'] = $this->ci->db->query("SELECT FOUND_ROWS() total_rows")->row()->total_rows;
+
+		return $data;
+	}
     public function initialize($param = array()) 
 	{
     	// load config

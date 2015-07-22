@@ -50,7 +50,7 @@ $company = $this->session->userdata('company');
                                 <div class="panel-body">
                                  <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Employee Report for - <?php echo $first_name . ' ' . $last_name  ?></h4>
                                             <p class="text-subhead text-light">
-                                            <?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn btn-success"> Show completed courses </a>'   ?></p>
+                                            <?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn btn-success"> Show Completed </a>'   ?><spsn> </span><?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report/'.$id.'  "class="navbar-btn btn btn-success"> Add New </a>'   ?></p>
                                             
                                  <hr>
                                  
@@ -102,7 +102,7 @@ $company = $this->session->userdata('company');
                                           <?php
                                                                         
                                           foreach ($courses->result() as $row){
-                                            echo '<option style=" background-color:#0FFFF0;" value="'.$row->course_id.'">'.$row->course_name.'</option>';
+                                            echo '<option   value="'.$row->course_id.'">'.$row->course_name.'</option>';
                                         };
                                          ?>
                                           </select>

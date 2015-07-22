@@ -1,6 +1,12 @@
 
 
-<?php  $id = $this->session->userdata('user_id');  ?>
+<?php  $id = $this->session->userdata('user_id'); 
+
+//print_r($completed_courses->result());
+//print_r($number_of_results);
+
+
+ ?>
 <?php include('blue_bar_user_header.php');?>
 
     <div class="container">
@@ -88,84 +94,84 @@
                             </div>
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
-                                    <h4 class="text-headline">Certificates
-                                        <small>(4)</small>
+                                    <h4 class="text-headline"> Completed Courses and Certificates
+                                        <small>(<?php print_r($number_of_results)  ?>)</small>
                                     </h4>
                                 </div>
                                 <div class="panel-body">
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                <h4>My completed courses </h4>
+                                <div class="table" id="container" >
+								<?php echo $this->table->generate($completed_courses);  ?>
+                                <?php echo $this->pagination->create_links();  ?>
+                                </div>
+                                
+                                
+                                <hr>
+                                
+                                </div>
+                                <div class="panel-body">
+                                
+                                <?php 
+								
+								foreach($completed_courses->result() as $row){
+                                
+             echo   '<a class="btn btn-default text-green-400 btn-lg btn-circle paper-shadow relative  " href="'.base_url().'student/print_certificate/'.$this->session->userdata('user_id').'/'.$row->course_id.'" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="'.$row->course_name.'">
                                         <i class="fa fa-file-text"></i>
-                                    </a>
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
+                                    </a><span> </span>';
+									
+									}
+                                    ?>
                                 </div>
                             </div>
                         </div>
+                        
+                        
                         <div class="item col-xs-12 col-lg-6">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                        
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Quizzes</h4>
                                     <p class="text-subhead text-light">Your recent performance</p>
                                 </div>
                                 <ul class="list-group">
-                                    <li class="list-group-item media v-middle">
+                                
+                                <?php
+                                
+								foreach($course_list->result() as $row){
+								
+                                 echo   '<li class="list-group-item media v-middle">
                                         <div class="media-body">
                                             <h4 class="text-subhead margin-none">
-                                                <a href="website-take-quiz.html" class="list-group-link">Title of quiz goes here?</a>
+                                                <a class="link-text-color" href="#" class="list-group-link">Module No# '.(rand(1,$row->number_of_modules)).' of '.$row->number_of_modules.'</a>
                                             </h4>
                                             <div class="caption">
                                                 <span class="text-light">Course:</span>
-                                                <a href="website-take-course.html">Basics of HTML</a>
+                                                <a class="link-text-color" href="#">'.$row->course_name.'</a>
                                             </div>
                                         </div>
                                         <div class="media-right text-center">
-                                            <div class="text-display-1 text-green-300""><?php echo (rand(60,100)) ?>%</div>
+                                            <div class="text-headline text-green-300">' .(rand(60,100)). '%</div>
                                             <span class="caption text-light"></span>
                                         </div>
-                                    </li>
-                                    <li class="list-group-item media v-middle">
-                                        <div class="media-body">
-                                            <h4 class="text-subhead margin-none">
-                                                <a href="website-take-quiz.html" class="list-group-link">Directives & Routing</a>
-                                            </h4>
-                                            <div class="caption">
-                                                <span class="text-light">Course:</span>
-                                                <a href="website-take-course.html">Angular in Steps</a>
-                                            </div>
-                                        </div>
-                                        <div class="media-right text-center">
-                                            <div class="text-display-1 text-green-300"><?php echo (rand(55,100)) ?>%</div>
-                                            <span class="caption text-light"></span>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item media v-middle">
-                                        <div class="media-body">
-                                            <h4 class="text-subhead margin-none">
-                                                <a href="website-take-quiz.html" class="list-group-link">Responsive & Retina</a>
-                                            </h4>
-                                            <div class="caption">
-                                                <span class="text-light">Course:</span>
-                                                <a href="website-take-course.html">Bootstrap Foundations</a>
-                                            </div>
-                                        </div>
-                                        <div class="media-right text-center">
-                                            <div class="text-display-1 text-green-300"><?php echo (rand(64,100)) ?>%</div>
-                                            <span class="caption text-light"></span>
-                                        </div>
-                                    </li>
+                                    </li>';
+									
+                               			}
+							   		?>
+							   
                                 </ul>
                                 <div class="panel-footer">
-                                    <a href="website-student-quizzes.html" class="btn btn-primary paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> Go to Results</a>
+                                    <a href="#" class="btn btn-primary paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> Go to Results</a>
                                 </div>
                             </div>
+                            
+                            
                         </div>
+                        
+                        
+                        
+                        
+                        
+                        
                         <div class="item col-xs-12 col-lg-6">
                             <h4 class="text-headline margin-none">Forum Activity</h4>
                             <p class="text-subhead text-light">Latest forum topics & comments</p>
@@ -257,20 +263,10 @@
                     <br/>
                 </div>
                 <div class="col-md-3">
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">My Account</h4>
-                        </div>
-                        <div class="panel-body list-group">
-                            <ul class="list-group list-group-menu">
-                                <li class="list-group-item active"><a class="link-text-color" href="website-student-dashboard.html">Dashboard</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-courses.html">My Courses</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-profile.html">Profile</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-messages.html">Messages</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="login.html"><span>Logout</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                
+                     <?php include('student_nav_bar_options.php')?>
+                    
+                   
                     <h4>Featured</h4>
                     <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
                         <div class="item">

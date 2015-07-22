@@ -155,20 +155,10 @@
                     <br/>
                 </div>
                 <div class="col-md-3">
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">My Account</h4>
-                        </div>
-                        <div class="panel-body list-group">
-                            <ul class="list-group list-group-menu">
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-dashboard.html">Dashboard</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-courses.html">My Courses</a></li>
-                                <li class="list-group-item active"><a class="link-text-color" href="website-student-profile.html">Profile</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-messages.html">Messages</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="login.html"><span>Logout</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                
+                    <?php include('student_nav_bar_options.php')?>
+                    
+                    
                     <h4>Featured</h4>
                     <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
                         <div class="item">

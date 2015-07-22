@@ -1,232 +1,89 @@
 <?php include('blue_bar_user_header.php');?>
 
+<?php 
+//print_r($course_list->result());
+
+
+?>
+
     <div class="container">
         <div class="page-section">
             <div class="row">
                 <div class="col-md-9">
                     <div class="row" data-toggle="isotope">
-                        <div class="item col-xs-12 col-sm-6 col-lg-4">
+                    
+                    <?php 
+					foreach($course_list->result() as $key=>$row){
+
+
+
+                    
+                  echo      '<div class="item col-xs-12 col-sm-6 col-lg-4">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <div class="media media-clearfix-xs-min v-middle">
                                         <div class="media-body text-caption text-light">
-                                            Lessons 1 of 10
+                                            Lessons '.++$key.' of '.$course_num_rows.'
                                         </div>
                                         <div class="media-right">
                                             <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-grey-600" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
+                                                <div class="progress-bar progress-bar-grey-600" role="progressbar" aria-valuenow="'.rand(5, 90).'" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cover overlay cover-image-full hover">
-                                    <span class="img icon-block height-100 bg-default"></span>
-                                    <a href="website-take-course.html" class="padding-none overlay overlay-full icon-block bg-default">
-                                        <span class="v-center">
-                <i class="fa fa-github"></i>
-            </span>
-                                    </a>
-                                    <a href="website-take-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                        <span class="v-center">
-                <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="panel-body">
-                                    <h4 class="text-headline margin-v-0-10"><a href="website-take-course.html">Github Webhooks for Beginners</a></h4>
-                                </div>
-                                <hr class="margin-none" />
-                                <div class="panel-body">
-                                    <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="website-take-course.html">Go to course</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item col-xs-12 col-sm-6 col-lg-4">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <div class="media media-clearfix-xs-min v-middle">
-                                        <div class="media-body text-caption text-light">
-                                            Lessons 3 of 12
-                                        </div>
-                                        <div class="media-right">
-                                            <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-blue-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cover overlay cover-image-full hover">
-                                    <span class="img icon-block height-100 bg-primary"></span>
-                                    <a href="website-take-course.html" class="padding-none overlay overlay-full icon-block bg-primary">
-                                        <span class="v-center">
-                <i class="fa fa-css3"></i>
-            </span>
-                                    </a>
-                                    <a href="website-take-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                        <span class="v-center">
-                <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="panel-body">
-                                    <h4 class="text-headline margin-v-0-10"><a href="website-take-course.html">Awesome CSS with LESS Processing</a></h4>
+								
+								
+                                <div class="embed-responsive embed-responsive-16by9">';
+								
+							if($key == 1){
+								
+                                 	echo   '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-yrjzPAqnmM?rel=0"></iframe>';
+								}
+							elseif($key == 2){
+								
+									echo   '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RH3i7qONrT4?rel=0"></iframe>';
+								}	
+								elseif($key == 3){
+								
+									echo   '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3wtUr3iVVIw?rel=0"></iframe>';
+								}
+								elseif($key == 4){
+								
+									echo   '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nsslZav9v4w?rel=0"></iframe>';
+								}
+								elseif($key == 5){
+								
+									echo   '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kRAI9_MkmBM?rel=0"></iframe>';
+								}
+								elseif($key == 6){
+								
+									echo   '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-tJZ5Tvy_kM?rel=0"></iframe>';
+								}
+								else{
+									echo   '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9y-taUYJTCI?rel=0"></iframe>';
+									
+									}				
+                              echo  '</div>
+								
+								
+								
+                                <div class="panel-body" style="min-height: 150px; max-height: 150px; " >
+                                    <h5 class="text-headline margin-v-0-10"><a href="' .  base_url() .'course_access/select/'.$row->course_id.'/'.$row->user_id.'  " class=""> Completed  ' .$row->course_name .' </a></h5>
                                 </div>
                                 <hr class="margin-none" />
                                 <div class="panel-body">
-                                    <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="website-take-course.html">Go to course</a>
+                                    <a href="' .  base_url() .'course_access/select/'.$row->course_id.'/'.$row->user_id.'  " class="navbar-btn btn-sm btn-warning"> Go To Course </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item col-xs-12 col-sm-6 col-lg-4">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <div class="media media-clearfix-xs-min v-middle">
-                                        <div class="media-body text-caption text-light">
-                                            Lessons 3 of 17
-                                        </div>
-                                        <div class="media-right">
-                                            <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-red-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cover overlay cover-image-full hover">
-                                    <span class="img icon-block height-100 bg-lightred"></span>
-                                    <a href="website-take-course.html" class="padding-none overlay overlay-full icon-block bg-lightred">
-                                        <span class="v-center">
-                <i class="fa fa-windows"></i>
-            </span>
-                                    </a>
-                                    <a href="website-take-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                        <span class="v-center">
-                <span class="btn btn-circle btn-red-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="panel-body">
-                                    <h4 class="text-headline margin-v-0-10"><a href="website-take-course.html">Vagrant Portable Environments</a></h4>
-                                </div>
-                                <hr class="margin-none" />
-                                <div class="panel-body">
-                                    <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="website-take-course.html">Go to course</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item col-xs-12 col-sm-6 col-lg-4">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <div class="media media-clearfix-xs-min v-middle">
-                                        <div class="media-body text-caption text-light">
-                                            Lessons 5 of 15
-                                        </div>
-                                        <div class="media-right">
-                                            <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-orange-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cover overlay cover-image-full hover">
-                                    <span class="img icon-block height-100 bg-brown"></span>
-                                    <a href="website-take-course.html" class="padding-none overlay overlay-full icon-block bg-brown">
-                                        <span class="v-center">
-                <i class="fa fa-wordpress"></i>
-            </span>
-                                    </a>
-                                    <a href="website-take-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                        <span class="v-center">
-                <span class="btn btn-circle btn-orange-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="panel-body">
-                                    <h4 class="text-headline margin-v-0-10"><a href="website-take-course.html">WordPress Theme Development</a></h4>
-                                </div>
-                                <hr class="margin-none" />
-                                <div class="panel-body">
-                                    <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="website-take-course.html">Go to course</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item col-xs-12 col-sm-6 col-lg-4">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <div class="media media-clearfix-xs-min v-middle">
-                                        <div class="media-body text-caption text-light">
-                                            Lessons 2 of 17
-                                        </div>
-                                        <div class="media-right">
-                                            <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-deep-purple-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cover overlay cover-image-full hover">
-                                    <span class="img icon-block height-100 bg-purple"></span>
-                                    <a href="website-take-course.html" class="padding-none overlay overlay-full icon-block bg-purple">
-                                        <span class="v-center">
-                <i class="fa fa-jsfiddle"></i>
-            </span>
-                                    </a>
-                                    <a href="website-take-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                        <span class="v-center">
-                <span class="btn btn-circle btn-purple-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="panel-body">
-                                    <h4 class="text-headline margin-v-0-10"><a href="website-take-course.html">Browserify: Writing Modular JavaScript</a></h4>
-                                </div>
-                                <hr class="margin-none" />
-                                <div class="panel-body">
-                                    <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="website-take-course.html">Go to course</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item col-xs-12 col-sm-6 col-lg-4">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <div class="media media-clearfix-xs-min v-middle">
-                                        <div class="media-body text-caption text-light">
-                                            Lessons 5 of 14
-                                        </div>
-                                        <div class="media-right">
-                                            <div class="progress progress-mini width-100 margin-none">
-                                                <div class="progress-bar progress-bar-pink-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cover overlay cover-image-full hover">
-                                    <span class="img icon-block height-100 bg-pink-400 text-white"></span>
-                                    <a href="website-take-course.html" class="padding-none overlay overlay-full icon-block bg-pink-400 text-white">
-                                        <span class="v-center">
-                <i class="fa fa-cc-visa"></i>
-            </span>
-                                    </a>
-                                    <a href="website-take-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                        <span class="v-center">
-                <span class="btn btn-circle btn-pink-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="panel-body">
-                                    <h4 class="text-headline margin-v-0-10"><a href="website-take-course.html">Online Payments with Stripe</a></h4>
-                                </div>
-                                <hr class="margin-none" />
-                                <div class="panel-body">
-                                    <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="website-take-course.html">Go to course</a>
-                                </div>
-                            </div>
-                        </div>
+                        </div>';
+						
+						
+                        }
+                   ?>
+                        
+                        
                     </div>
                     <ul class="pagination margin-top-none">
                         <li class="disabled"><a href="#">&laquo;</a></li>
@@ -239,20 +96,10 @@
                     <br/>
                 </div>
                 <div class="col-md-3">
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">My Account</h4>
-                        </div>
-                        <div class="panel-body list-group">
-                            <ul class="list-group list-group-menu">
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-dashboard.html">Dashboard</a></li>
-                                <li class="list-group-item active"><a class="link-text-color" href="website-student-courses.html">My Courses</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-profile.html">Profile</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="website-student-messages.html">Messages</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="login.html"><span>Logout</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                
+                    <?php include('student_nav_bar_options.php')?>
+                    
+                    
                     <h4>Featured</h4>
                     <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
                         <div class="item">
