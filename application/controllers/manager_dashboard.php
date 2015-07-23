@@ -748,12 +748,129 @@ class Manager_dashboard extends CI_Controller {
 		
 		}		
 		
-	function list_completed(){
+	function list_completed($sort_by = NULL, $sort_order = NULL){
+		
+		if($this->input->post('sort_list')){ // if called by the form get the user ID from the POST
+			//Get the value from the form.
+			$sort_by = $this->input->post('sort_list');
+			
+			}
+		
+		
+		$sort_order = ($sort_order == NULL) ? 'asc' : $sort_order;
+		$sort_by = ($sort_by == NULL) ? 'last_name' : $sort_by;
+		$sort_columns = array(' First Name ', 'last_name', 'course_name', 'start_date', 'end_date');
+		$sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'last_name';
+		
 		
 		$company = $this->session->userdata('company');
 		$this->load->library('pagination');
 		$this->load->library('table');
-		$this->table->set_heading(array(' First Name ', ' Last Name ', ' Course ', ' Start Date ', ' End Date '));
+		$this->table->set_heading(
+		
+								array(
+		
+								' First Name ', 
+								' Last Name ',
+								' Course Name ', 
+								' Start Date ', 
+								' End Date '
+								
+								));
+								
+		$tmpl = array (
+                    'table_open'          => '<table  class="table table-striped ">',
+
+                    'heading_row_start'   => '<tr>',
+                    'heading_row_end'     => '</tr>',
+                    'heading_cell_start'  => '<th>',
+                    'heading_cell_end'    => '</th>',
+
+                    'row_start'           => '<tr>',
+                    'row_end'             => '</tr>',
+                    'cell_start'          => '<td>',
+                    'cell_end'            => '</td>',
+
+                    'row_alt_start'       => '<tr>',
+                    'row_alt_end'         => '</tr>',
+                    'cell_alt_start'      => '<td>',
+                    'cell_alt_end'        => '</td>',
+
+                    'table_close'         => '</table>'
+              );
+
+		$this->table->set_template($tmpl);
+		
+		$config['base_url'] = base_url().'/manager_dashboard/list_completed';
+		$config['total_rows'] = $this->db
+								->join('courses', 'courses.course_id = employee_results.course_id')
+								->join('users', 'users.id = employee_results.user_id')
+								->where('completed', 1)
+								->where('company', $company)
+								->get('employee_results')
+								->num_rows();
+								
+		$config['per_page'] = 10;
+		$config['num_links'] = 20;
+		$config['full_tag_open'] = '<div class="h4 " id="pagination">';
+		$config['full_tag_close'] = '</div>';
+		
+		
+		$this->pagination->initialize($config);
+		
+		$data['completed_courses'] =  $this->db
+										->select('first_name, last_name , course_name , start_date , end_date,  ')
+										->join('courses', 'courses.course_id = employee_results.course_id')
+										->join('users', 'users.id = employee_results.user_id')
+										->where('completed', 1)
+										->where('company', $company)
+										->order_by($sort_by, $sort_order)
+										->get('employee_results' ,$config['per_page'], $this->uri->segment(3));
+							
+								
+		$data['sort_by'] = 'last_name';
+		$data['sort_order'] = 'asc';
+		$data['title'] = 'Set page title here';
+		$this->load->view('templates/header', $data );
+		$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+		$this->load->view('manager_dashboard_all_employee_report_completed_test' , $data);
+		$this->load->view('templates/footer');
+		
+		
+		
+		
+		}
+		
+		
+		
+		
+		
+		function list_completed_test($sort_by ,$sort_order ){
+		
+		//$sort_order = ($sort_order == NULL) ? 'desc' : 'asc';
+		
+		$sort_order = ($sort_order == 'desc') ? 'desc' : 'asc';
+		
+		
+		$sort_columns = array(' First Name ', 'last_name', 'course_name', 'start_date', 'end_date');
+		$sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'last_name';
+		
+		
+		$company = $this->session->userdata('company');
+		$this->load->library('pagination');
+		$this->load->library('table');
+		$this->table->set_heading(
+		
+								array(
+		
+								'<a href="' .  base_url() .'manager_dashboard/list_completed/first_name/'.(($sort_order == 'asc') ? 'desc' : 'asc').' " class="link-text-color"  > First Name </a>', 
+								'<a href="' .  base_url() .'manager_dashboard/list_completed/last_name/'.(($sort_order == 'asc') ? 'desc' : 'asc').'" class="link-text-color" > Last Name </a>',
+								'<a href="' .  base_url() .'manager_dashboard/list_completed/course_name/'.(($sort_order == 'asc') ? 'desc' : 'asc').'" class="link-text-color" > Course Name </a>', 
+								'<a href="' .  base_url() .'manager_dashboard/list_completed/start_date/'.(($sort_order == 'asc') ? 'desc' : 'asc').'" class="link-text-color" > Start Date </a>', 
+								'<a href="' .  base_url() .'manager_dashboard/list_completed/end_date/'.(($sort_order == 'asc') ? 'desc' : 'asc').'" class="link-text-color" > End Date </a>'
+								
+								));
+								
 		$tmpl = array (
                     'table_open'          => '<table  class="table table-striped ">',
 
@@ -778,7 +895,8 @@ class Manager_dashboard extends CI_Controller {
 		$this->table->set_template($tmpl);
 		
 		
-		$config['base_url'] = base_url().'/manager_dashboard/list_completed';
+		
+		$config['base_url'] = base_url().'/manager_dashboard/list_completed/'.$sort_by.'/'.$sort_order;
 		$config['total_rows'] = $this->db
 								->join('courses', 'courses.course_id = employee_results.course_id')
 								->join('users', 'users.id = employee_results.user_id')
@@ -802,8 +920,12 @@ class Manager_dashboard extends CI_Controller {
 										->join('users', 'users.id = employee_results.user_id')
 										->where('completed', 1)
 										->where('company', $company)
-										->get('employee_results' ,$config['per_page'], $this->uri->segment(3));
+										->order_by($sort_by, $sort_order)
+										->get('employee_results' ,$config['per_page'], $this->uri->segment(5));
 		
+		
+		$data['sort_by'] = 'last_name';
+		$data['sort_order'] = 'asc';
 		$data['title'] = 'Set page title here';
 		$this->load->view('templates/header', $data );
 		$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
@@ -813,7 +935,8 @@ class Manager_dashboard extends CI_Controller {
 		
 		
 		
-		}
+		}		
+		
 //##################################################################################################################################
 //#################################################################################################################################
 

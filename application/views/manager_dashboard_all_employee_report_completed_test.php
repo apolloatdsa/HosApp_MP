@@ -34,12 +34,12 @@ $company = $this->session->userdata('company');
 							<div class="col-md-12"><h4 style="color:green" ><h4></div>
                             
                             <div class="table" id="container" >
+                           
+                            
                             <?php echo $this->table->generate($completed_courses);  ?>
                             <?php echo $this->pagination->create_links();  ?>
                             </div>
-                            
-                                                     
-         
+                    
            </div>
                                  
                                  

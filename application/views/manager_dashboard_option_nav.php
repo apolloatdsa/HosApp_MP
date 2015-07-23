@@ -1,4 +1,9 @@
-<?php $id = $this->session->userdata('user_id');?>
+<?php $id = $this->session->userdata('user_id');
+$sort_by = 'last_name';
+$sort_order = 'asc';
+
+
+?>
  <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
                         <div class="panel-heading panel-collapse-trigger">
                             <h4 class="panel-title">Actions</h4>
@@ -15,7 +20,7 @@
                                 
                                 
                                 
-                                <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/list_completed">List Completed - Table view</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/list_completed/<?php echo $sort_by ?>/<?php echo $sort_order ?>">List Completed - Table view</a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a  class="link-text-color" href="<?php echo base_url();?>auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>

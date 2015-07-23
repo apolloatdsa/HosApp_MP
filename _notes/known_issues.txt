@@ -1,0 +1,8 @@
+Known issues / problems
+
+Company name with spaces will break URI. Problem is caused by using the 
+company name in the users table. This will need to change to company_id and
+and queries using the company name will need to be changed to company_id
+with a join the companies table in the query.
+
+ 

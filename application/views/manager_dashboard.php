@@ -29,26 +29,12 @@
 									echo $this->listview->render(); // creates the table
 								   
 								   ?> 
-                                               
-                                      
-                                         
-                                                   
-                                         
+                                    
                                          <div class="col-md-12"><h4 style="color:green" ><?php echo $this->session->flashdata('message');   ?><h4></div>
                                                      
          
                                    </div>
-                                                         
-                                                         
-                                   
-                                 
-                                 
-                                 
-                                 
-                                 
-                                 
-                                 
-                                    
+                                  
                                     
                                 </div>
                             </div>

@@ -59,7 +59,13 @@ foreach($print_course_certificate->result() as $row){
                                     </div>
                                 </div>
                                 <div class="media-right">
-                                    <a href="#" class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> well done </a>
+                                <span> <?php 
+                                                                
+                                                      echo"<a href='" .  base_url() ."student/student_dashboard' class='navbar-btn btn btn-success'> <i class='fa fa-fw fa-arrow-left'> </i> Return to Dashboard </a>";
+                                                                   
+                                                                ?></span>
+                                
+                                    
                                 </div>
                             </li>
                           

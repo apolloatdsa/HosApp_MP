@@ -7,8 +7,6 @@ $company = $this->session->userdata('company');
 
 ?>
 
-
-
     <div class="container">
         <div class="page-section">
             <div class="row">

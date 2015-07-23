@@ -6,6 +6,51 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="row" data-toggle="isotope">
+                    
+                    
+                    <div class="item col-xs-12 col-lg-6">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-heading">
+                                    <div class="media v-middle">
+                                        <div class="media-body">
+                                            <h4 class="text-headline margin-none">For future development</h4>
+                                            <p class="text-subhead text-light"></p>
+                                        </div>
+                                        <div class="media-right">
+                                            <a class="btn btn-white btn-flat" href="website-instructor-earnings.html"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                  <h4 class="">
+                                   This instructors admin area will be developed to interface with course providers.  
+                                  On initial start-up Folio will utilise content from a distribution network but 
+                                  at some later stage in their development Folio might use content from directly employed instructors or use content from affiliated colleges.
+                                  
+                                  
+                                  
+                                  </h4> 
+                                   
+                                   
+                                </div>
+                                <hr/>
+                                <div class="panel-body">
+                                    <div class="row text-center">
+                                        <div class="col-md-6">
+                                            <h4 class="margin-none"></h4>
+                                            <p class="text-display-1 text-warning margin-none"></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h4 class="margin-none"></h4>
+                                            <p class="text-display-1 text-success margin-none"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                    
                         <div class="item col-xs-12 col-lg-6">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
@@ -37,6 +82,9 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         <div class="item col-xs-12 col-lg-6">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
