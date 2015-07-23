@@ -58,6 +58,7 @@
                     
                     <?php  include('top_nav_instructor_dropdown.php') ?> <!-- this is the instructor dropdown menu in the template folder -->
                   
+                    <?php  include('top_nav_content_dropdown.php') ?> <!-- this is the instructor dropdown menu in the template folder -->
                     
                 </ul>
                 

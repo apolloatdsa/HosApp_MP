@@ -4,12 +4,22 @@ class Company_profile_controller extends CI_Controller {
                
 	function __construct()
 	{
- 		parent::__construct();
+ 		
+		
+		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->database();
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('company_profile_model');
+		
+		if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
+					
+	 					redirect('auth/logout');
+					 
+					 };
+		
+		
 	}	
 	function index()
 	{	

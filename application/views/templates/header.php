@@ -38,6 +38,7 @@ This variant is to be used when loading the separate styling modules -->
     As a convenience, we provide the entire UI framework broke down in separate modules
     Some of the standalone modules may have not been used with the current theme/module
     but ALL modules are 100% compatible -->
+    <link href="<?php echo base_url();?>css/certificate.css" rel="stylesheet" type="text/css" >
     <link href="<?php echo base_url();?>css/module-essentials.min.css" rel="stylesheet" />
     <link href="<?php echo base_url();?>css/module-material.min.css" rel="stylesheet" />
     <link href="<?php echo base_url();?>css/module-layout.min.css" rel="stylesheet" />

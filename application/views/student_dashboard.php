@@ -94,7 +94,7 @@
                             </div>
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
-                                    <h4 class="text-headline"> Completed Courses and Certificates
+                                    <h4 class="text-headline"> Completed Courses 
                                         <small>(<?php print_r($number_of_results)  ?>)</small>
                                     </h4>
                                 </div>
@@ -106,11 +106,14 @@
                                 </div>
                                 
                                 
-                                <hr>
+                               
                                 
                                 </div>
                                 <div class="panel-body">
-                                
+                                <h4 class="text-headline"> Print Certificates
+                                        <small>(<?php print_r($number_of_results)  ?>)</small>
+                                    </h4>
+                                <hr>
                                 <?php 
 								
 								foreach($completed_courses->result() as $row){

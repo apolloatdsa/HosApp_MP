@@ -34,7 +34,15 @@ foreach($company_info->result() as $row){
 
  <div ><h2>Update company information</h2> 
  <h4>Please contact us if you wish to change your company name.</h4> 
- <button class="btn btn-success">  <?php  echo $this->session->flashdata('company_profile_update');  ?></button> </div>
+ <?php 
+ 
+ if ($this->session->flashdata('company_profile_update')) {
+    echo  "<button class='btn btn-success'>  ".$this->session->flashdata('company_profile_update')."</button>";
+}
+
+ ?>
+ 
+ </div>
   <hr>
                     
 <?php // Change the css classes to suit your needs    

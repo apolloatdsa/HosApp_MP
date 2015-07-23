@@ -10,6 +10,13 @@ class Edit_user_controller extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('sign_up_model');
+		
+		if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
+					
+	 					redirect('auth/logout');
+					 
+					 };
+		
 	}
 		
 	function index()

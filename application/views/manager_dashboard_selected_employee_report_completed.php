@@ -35,7 +35,7 @@ $company = $this->session->userdata('company');
 								
 							
 							?>
-
+ 
 
     <div class="container">
         <div class="page-section">
@@ -54,9 +54,6 @@ $company = $this->session->userdata('company');
                                  
             <div class="col-md-7 col-lg-7">                                                        
                                   
-									
-                                     
-                                         
                                           <p>
                                          <!-- this dropdown of available courses --> 
                                          <label for="registered_courses">Employee has completed  -  </label><br>

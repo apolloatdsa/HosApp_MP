@@ -129,7 +129,11 @@
 		<td colspan="5">&nbsp; </tr> 
           <tr>
          	<!-- the No# of hours gauge -->		  
-		<td colspan="5"><?php  include('gauge_2.php') ?> </tr>  
+		<td colspan="5"><?php  include('gauge_2.php') ?> </tr> 
+        
+        
+        
+         
         </tbody>
         </table>      
             

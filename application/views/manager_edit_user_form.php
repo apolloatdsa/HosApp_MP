@@ -139,7 +139,7 @@ echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
                                     <div class="row text-center">
                                         <div class="col-md-12">
                                             
-                                            <h2 class=" text-danger margin-none"><?php echo  $this->session->flashdata('val_error');    ?></h2>
+                                            <h4 class=" text-danger margin-none"><?php echo  $this->session->flashdata('val_error');    ?></h4>
                                         </div>
                                        
                                     </div>

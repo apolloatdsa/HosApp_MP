@@ -40,7 +40,7 @@ foreach($print_course_certificate->result() as $row){
                            
                         </div>
                     </div>
-                    <div class="panel panel-default paper-shadow" style="height: 900px;" data-z="0.5">
+                    <div class="panel panel-default paper-shadow"  data-z="0.5">
                         <ul class="list-group">
                             <li class="list-group-item media v-middle">
                                 <div class="media-left">
@@ -59,17 +59,80 @@ foreach($print_course_certificate->result() as $row){
                                     </div>
                                 </div>
                                 <div class="media-right">
-                                    <a href="website-course-forum-thread.html" class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 8</a>
+                                    <a href="#" class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> well done </a>
                                 </div>
                             </li>
                           
                         </ul>
-                        <h4 class="text-subhead margin-none">
-                                        Certificate in here.
-                                    </h4>
+                        
+                        
+                        <div class="" style="height: 1648px;   background-size: cover; background:url('http://d14126353-dsa.com/codeigniter_h/images/blank_certificate-1024.png'); background-size: cover; " >
+                        
+                        <div class="col-md-12 col-lg-12">
+                         <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                        <h1><?php echo $course_name  ?></h1>
+						
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						
+                        </div>
+                        
+                        <div class="col-md-9 col-md-offset-1">
+                         <h2>&nbsp;</h2>
+						<h2>&nbsp;</h2>
+                        </div>
+                        
+                         <div class="col-md-9 col-md-offset-3" id="cert_user_name">
+                        <h1><?php echo $first_name. ' ' .$last_name  ?></h1>
+						
+                        </div>
+                        
+                        <div class="col-md-6 col-md-offset-4 text-headline"  id="cert_user_name">
+                        	Has successfully completed the course requirements for <?php echo $course_name  ?> acheiving a destinction grade.				
+                        </div>
                         
                         
                         
+                        
+                        
+                        </div>
+                        
+                        
+                            </div>
+                        
+                        
+                        
+                       
                         
                         
                     </div>

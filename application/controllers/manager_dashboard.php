@@ -9,7 +9,7 @@ class Manager_dashboard extends CI_Controller {
 				$this->load->library('listview');
 				if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
 					
-	 					redirect('auth/login');
+	 					redirect('auth/logout');
 					 
 					 };
 				
@@ -63,6 +63,8 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/footer');
 	
 	}
+	
+	
 	
 	private function get_users($options = array()) {
 		$company = $this->session->userdata('company');

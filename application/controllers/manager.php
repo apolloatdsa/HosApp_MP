@@ -19,7 +19,7 @@ class Manager extends CI_Controller {
 				$this->load->library('listview');
 				if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
 					
-	 					redirect('auth/login');
+	 					redirect('auth/logout');
 					 
 					 };
 				

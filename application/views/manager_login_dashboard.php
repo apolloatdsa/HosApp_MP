@@ -86,6 +86,9 @@ $company = $this->session->userdata('company');
 							$last_name = $row->last_name;
 							$image = base_url().'images/members/'.$id.'-'.$last_name;
 							$last_login = unix_to_human($row->last_login);	
+							
+							
+							
                             echo    '<li class="list-group-item paper-shadow">
                                     <div class="media v-middle">
                                         <div class="media-left">
