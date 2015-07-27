@@ -2408,6 +2408,10 @@ class Ion_auth_model extends CI_Model
 					$this->db->where('user_id' , $id);
 					$this->db->where('course_id' , $course_id);
 					$this->db->update('employee_to_course' , array('completed' => 0));
+					
+					$this->db->where('user_id' , $id);
+					$this->db->where('course_id' , $course_id);
+					$this->db->update('employee_results' , array('completed' => 0));
 					$this->session->set_flashdata('message','Completed has been REMOVED');
 					return TRUE;
 					
@@ -2415,6 +2419,10 @@ class Ion_auth_model extends CI_Model
 						$this->db->where('user_id' , $id);
 						$this->db->where('course_id' , $course_id);
 						$this->db->update('employee_to_course' , array('completed' => 1));
+						
+						$this->db->where('user_id' , $id);
+						$this->db->where('course_id' , $course_id);
+						$this->db->update('employee_results' , array('completed' => 1));
 						$this->session->set_flashdata('message','Completed has been SET');
 						return TRUE;
 						
@@ -2462,9 +2470,20 @@ class Ion_auth_model extends CI_Model
 			$this->db->where('user_id', $id );
 			$this->db->where('course_id', $course_id );
 			$query = $this->db->delete('employee_to_course');
+			$this->manager_remove_course_results($course_id, $id);
 			return true;
 			
-		}			
+		}
+	function manager_remove_course_results($course_id, $id){
+		
+			$this->db->where('user_id', $id );
+			$this->db->where('course_id', $course_id );
+			$query = $this->db->delete('employee_results');
+			return true;
+			
+		}	
+		
+					
 	function archive_completed_course($course_id, $id){
 		
 			$this->db->where('user_id', $id );
@@ -2489,7 +2508,11 @@ class Ion_auth_model extends CI_Model
 				$this->db->where('course_id', $course_id );
 				$this->db->update('employee_results', $data);
 				// now remove the course from the employee_to_course
-				$this->manager_remove_course($course_id, $id); // call function to remove from table
+				
+				$this->db->where('user_id', $id );
+				$this->db->where('course_id', $course_id );
+				$this->db->delete('employee_to_course');
+				//$this->manager_remove_course($course_id, $id); // call function to remove from table
 				
 				
 				}
@@ -2506,7 +2529,7 @@ class Ion_auth_model extends CI_Model
 				if ($query->num_rows() > 0){ // in here only if the user has already done the course
 				
 				//echo 'The employee is already registered on this course' ;
-				$this->session->set_flashdata('message', 'The user has already completed this course');
+				$this->session->set_flashdata('message', 'ERROR. The user has already registered on this course');
 				return TRUE;
 				
 			}else{
@@ -2514,8 +2537,6 @@ class Ion_auth_model extends CI_Model
 				return FALSE;
 				
 				}
-			
-				
 		
 		}
 		
@@ -2541,6 +2562,7 @@ class Ion_auth_model extends CI_Model
 		$this->db->join('users', 'users.id = employee_results.user_id');
 		$this->db->where('completed', 1 );
 		$this->db->where('company', $company );
+		$this->db->order_by('course_name', 'asc');
 		$query = $this->db->get();
 		
 		//$query->num_rows();
@@ -2600,6 +2622,7 @@ class Ion_auth_model extends CI_Model
 		$this->db->join('users', 'users.id = employee_results.user_id');
 		$this->db->where('completed', 1 );
 		$this->db->where('company', $company );
+		
 		$query = $this->db->count_all_results();
 		
 		return $query;
@@ -2710,16 +2733,32 @@ class Ion_auth_model extends CI_Model
 		
 		}
 	
-	function get_employee_on_course($course_id, $company){
-			
+	function get_employee_on_course($course_id, $company){ // will return
+			//echo 'Course '.$course_id.' Company '. $company;
 		 	$this->db->from('employee_to_course');
 		 	$this->db->join('users', 'users.id = employee_to_course.user_id');
 			$this->db->join('courses', 'courses.course_id = employee_to_course.course_id');
 			$this->db->where('users.company', $company);
 			$this->db->where('employee_to_course.course_id', $course_id);
 			$query = $this->db->get();
-		
-			return $query;
+			if ($query->num_rows() > 0){ 
+				
+				// return the results ;
+				return $query;
+				
+			}
+			else{ // do this if there are no results for the user on this course
+					$this->db->from('courses');
+					//$this->db->join('users', 'users.id = employee_to_course.user_id');
+					//$this->db->join('courses', 'courses.course_id = employee_to_course.course_id');
+					//$this->db->where('users.company', $company);
+					$this->db->where('course_id', $course_id);
+					$query = $this->db->get();
+							
+					return $query;
+				// if here is no result then there are no employees from this company on this course
+			}
+			
 		
 		}
 	function count_empolyees_on_course($course_id, $company){

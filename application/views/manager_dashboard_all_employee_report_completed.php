@@ -50,7 +50,7 @@ $company = $this->session->userdata('company');
                                              
 											
 								<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$row->id.'  "class="navbar-btn btn-sm btn-success"> Completed  '. $row->end_date .' </a>  
-                            
+                            <a  href="'.base_url().'manager_dashboard/manager_print_certificate/'.$row->user_id.'/'.$row->course_id.'" class="navbar-btn btn-sm btn-primary"> Completed  '. $row->end_date .' </a>  
                                              
 											<br>			
 												<input type="text" class="form-control input-lg" id="inputSuccess_'.$row->course_id.'" value="'. $row->course_name.'" readonly="readonly" >';

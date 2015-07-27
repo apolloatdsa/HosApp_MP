@@ -1,3 +1,16 @@
+<?php 
+
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// Large blue bar displayed to logged in users - will display user image and user level 
+// A section of template with content modified to suit Folio and used as an include where required
+
+?> 
+ 
  <div class="parallax overflow-hidden bg-blue-400 page-section third">
         <div class="container parallax-layer" data-opacity="true">
             <div class="media v-middle">

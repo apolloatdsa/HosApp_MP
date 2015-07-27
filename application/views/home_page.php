@@ -1,4 +1,20 @@
-<?php // var_dump ($this->session->all_userdata()) ?> 
+
+<?php // var_dump ($this->session->all_userdata()) 
+//click in the SUBSCRIBE button in the website footer to view session data
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// This is the home page of the website
+// it is a partials taken from the body of Bootstrap LMS template home page 
+// The content has been modified to suit the Folio website. 
+
+
+?> 
+
+
  
     <div class="parallax cover overlay cover-image-full home">
         <img class="parallax-layer" src="<?php echo base_url();?>images/online_staff_training.jpg" alt="Learning Cover" />
@@ -8,7 +24,7 @@
                     <h1 class="text-display-2 margin-v-0-15 display-inline-block">Training for the hospitality sector</h1>
                     <p class="text-subhead">Professionally Developed Web-Based Training Course Libraries.</p>
                     <p class="text-subhead">Automated training for staff in the hospitality business. Track staff progress as they learn through videos and quizzes.</p>
-                    <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="#modal-overlay-signup">Sign Up From- &euro;125.00/mo</a>
+                    <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="<?php echo base_url() ?>online_training/sign_up">Sign Up From- &euro;125.00/mo</a>
                 </div>
             </div>
         </div>

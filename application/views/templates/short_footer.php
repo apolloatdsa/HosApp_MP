@@ -1,4 +1,15 @@
+<?php 
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// This is the short footer without the fotter links 
+// This section is used on some admin pages
+ 
 
+?>
 
     <!-- Footer -->
     <footer class="footer">

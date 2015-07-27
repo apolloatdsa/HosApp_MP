@@ -51,6 +51,8 @@ $company = $this->session->userdata('company');
                                  <h4 class="text-headline margin-none"><?php echo $this->session->userdata('company'); ?> Employee Report for - <?php echo $first_name . ' ' . $last_name  ?></h4>
                                             <p class="text-subhead text-light">
                                             <?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn btn-success"> Show Completed </a>'   ?><spsn> </span><?php echo '<a href="' .  base_url() .'manager_dashboard/selected_employee_report/'.$id.'  "class="navbar-btn btn btn-success"> Add New </a>'   ?></p>
+                                          
+                                 
                                             
                                  <hr>
                                  
@@ -109,7 +111,35 @@ $company = $this->session->userdata('company');
                                           </form>
                                                    
                                          </p>
-                                         
+                                          <?php 
+                        
+						 $message = $this->session->flashdata('message');
+						
+						 if (strpos($message,'ERROR') !== false ) {
+						
+                       echo '
+                                <div class="panel panel-danger">
+                                 <div class="panel-heading text-headline text-white "><span class="text-white text-display-1"> <i class=" fa fa-arrows-alt"  ></i> Error</div>
+                                  <div class="panel-body"><h4>'.  $message .'</h4></div>
+                                </div>
+                        		';
+								
+						 }else{
+							 
+							if($message){ 
+							 echo '
+                                <div class="panel panel-success">
+                                 <div class="panel-heading text-headline"><span class="text-white text-display-1"><i class="fa fa-check"></i> Success</span></div>
+                                  <div class="panel-body"><h4>'.  $message .'</h4></div>
+                                </div>
+                        		';
+										}
+							 
+							 
+							 }
+						
+                        ?>  
+                                   
                                           <p>
                                          <!-- this dropdown of available courses --> 
                                          <label for="registered_courses">Employee is registered on -  </label><br>
@@ -121,7 +151,9 @@ $company = $this->session->userdata('company');
                                             echo '<div class="col-md-12">
 											
 											<p>
-							<a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Remove </a>  
+							<a href="#modal-remove_course" data-toggle="modal" class="navbar-btn btn-sm btn-warning paper-shadow relative" data-animated data-z="0.5" data-hover-z="1" href=""> Remove </a>				
+											
+							  
                              <a href="' .  base_url() .'manager_dashboard/course_progress/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-info"> View Progress </a>
 							 <a href="' .  base_url() .'manager_dashboard/mark_as_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-danger"> Add / Remove check </a>
                              <a href="' .  base_url() .'manager_dashboard/save_completed/'.$id. '/'.$row->course_id.'  "class="navbar-btn btn-sm btn-success"> Archive completed </a>
@@ -143,7 +175,7 @@ $company = $this->session->userdata('company');
                                           
                                                    
                                          </p> 
-                                         <div class="col-md-12"><h4 style="color:green" ><?php echo $this->session->flashdata('message');   ?><h4></div>
+                                         
                                                      
          
            </div>
@@ -199,5 +231,78 @@ $company = $this->session->userdata('company');
                 </div>
             </div>
         </div>
+        
+        
+        
+        
+        
+                            
+                    <div class="modal grow modal-backdrop-white fade" id="modal-remove_course">
+                        <div class="modal-dialog modal-sm">
+                            <div class="v-cell">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title">Remove course</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                     
+                                            <div class="text-headline">
+                                          
+                                            <p>
+                                               Are you sure you want to remove this course. 
+											</p>
+                                            
+                                            <p>
+                                            This action can not be undone.
+                                            </p>
+                                            
+                                            </div>
+                                           
+                                             <div class="form-group">
+                                             
+                                             <p>
+                                           
+                                               <button type="button" class="navbar-btn btn btn-warning" data-dismiss="modal"><span aria-hidden="true">&times; No cancel and return</span> </span><span class="sr-only"></button>
+                                            </p>   
+                                             <p>
+                                             
+                                             
+                                              <?php 
+                                               foreach ($course_names->result() as $row){
+											  
+                                            echo  ' <p><a href="' .  base_url() .'manager_dashboard/remove_course/'.$row->course_id.'/'.$row->user_id.'  "class="navbar-btn btn btn-danger">Remove  '.$row->course_name.'</a> </p>' ;
+											
+											
+                                              }
+                                              ?>
+                                              </p>
+                                            </div>
+                                            
+                                            
+                                            
+                                            
+                                            <div class="form-group">
+                                            
+                                            </div>
+                                            
+                                            
+                                         <!--   <button type="submit" class="btn btn-success paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated data-dismiss="modal">Update Credit Card</button>
+                                        </form> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </div>
     

@@ -1,4 +1,14 @@
-<?php // Change the css classes to suit your needs    
+<?php 
+
+
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// Used in manager dashboard to edit users information 
+ 
 					
 				$attributes = array('class' => '', 'id' => '');
 				echo form_open("edit_user_controller/index/", $attributes); ?>

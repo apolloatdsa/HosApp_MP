@@ -1,3 +1,15 @@
+<?php 
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// This is the fat footer with all the links 
+
+?>
+
+
     <section class="footer-section">
         <div class="container">
             <div class="row">

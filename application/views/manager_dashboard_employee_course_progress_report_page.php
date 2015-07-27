@@ -1,5 +1,17 @@
  <?php 
-//print_r($course_names->result());	
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// This is the employee progress page which shows the progress through each course
+// It will use PHP rand() to generate results based on the number of modules in each course
+// Some courses can be marked as completed so the results will show all modules and quizes completed and display a full green progress bar below the table row
+// When the site has real life data the results will be populated from the data base. 
+ 
+
 
 						
 							foreach($employee as $row){
@@ -24,9 +36,10 @@
 								$this->session->set_userdata($edit_employee);
 							
 							?>
-<script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script>
-<script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script> 
-<?php include('blue_bar_user_header.php');?>
+<script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script> <!-- required to display the graphs --> 
+<script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script> <!-- required to display the graphs -->
+
+<?php include('blue_bar_user_header.php');?><!-- blue bar with user image and level -->
 
     <div class="container">
         <div class="page-section">
@@ -63,95 +76,106 @@
          
          
         <?php  
+		// use rendom numbers to simulate results 
 		
-		$number_ofLogins = 0;
-		$total_modules = 0;
-		$time_on = 0;
-		foreach($course_names->result() as $row){
+			$number_ofLogins = 0;
+			$total_modules = 0;
+			$time_on = 0;
 			
-			$rand_1 = (rand(1,($row->number_of_modules))-1);
-			$rand_2 = $rand_1 / $row->number_of_modules * 100;
-			$rand_3 = $rand_1 ;
+			foreach($course_names->result() as $row){
 			
+			$completed_modules = (rand(1,($row->number_of_modules))-1);
+			$completed_quizs = ($completed_modules == 0) ? 0 : ($completed_modules - 1);
+			$bar = $completed_modules / $row->number_of_modules * 100;
 			
-			
-		// on a live system the values would be taken from the db 
+			//$rand_3 = $rand_1 ;
 		
-		echo	'<tr>
+			
+			// on a live system the values would be taken from the db 
+		 	if($completed_modules  ==  $row->number_of_modules ||  $row->completed == 1){
+			 
+			 // if course is marked as completed display modules and quizes as completed
+		   			echo	'<tr>
                             <td>'. $row->course_name . '</td>
                             <td>'. $row->number_of_modules . '</td>
-							<td>'. $rand_1 . '</td>
+							<td>'. $row->number_of_modules  . '</td>
                             <td>'. $row->number_of_quizs . '</td>
-                            <td>'. $rand_3 . '</td>
-                          </tr>
-				<tr>		  
-						  <td colspan="5"><div class="progress progress  margin-none">';
-						  // if course is completed display green progress bar
-						  if($rand_1  ==  $row->number_of_modules ||  $row->completed == 1){
-							 $rand_2 =  100; // if the course is marked as completed display full width green bar
-							 
-                       echo   	'<div class="progress-bar progress-bar-success progress-bar-green-300" role="progressbar" aria-valuenow="'.$rand_2.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;">';
-							}else{
-								
-						echo   	'<div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="'.$rand_2.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;">';	
-								
-								};
-							
-          echo       '</div>
-                     </div> 
-				</td>
-				</tr>';
+                            <td>'. $row->number_of_quizs . '</td>
+                          	</tr>
+		
+						  
+							<tr>		  
+						 	 <td colspan="5"><div class="progress progress  margin-none">';
+						  	// if course is completed display green progress bar
 				
-				$number_ofLogins = ($number_ofLogins + $rand_1);
-				$total_modules = $total_modules + $row->number_of_modules;
-				$time_on = $time_on + $rand_1 * 1.75;
+        		echo   	'<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:0%;">'; 
+						  
+				
+					}else{
+				
+					echo	'<tr>
+                            <td>'. $row->course_name . '</td>
+                            <td>'. $row->number_of_modules . '</td>
+							<td>'. $completed_modules . '</td>
+                            <td>'. $row->number_of_quizs . '</td>
+                            <td>'. $completed_quizs . '</td>
+                          	</tr>
+		  
+							<tr>		  
+									  <td colspan="5"><div class="progress progress  margin-none">';
+								if($completed_modules  ==  0 ){	  
+								// if there are no modules started then display a warning bar 	 
+						echo   	'<div class="progress-bar progress-bar-warning progress-bar-striped " role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:0%;">';	
+								}else{
+									
+						echo   	'<div class="progress-bar  " role="progressbar" aria-valuenow="'. $bar . '" aria-valuemin="0" aria-valuemax="100" style="width:0%;">';			
+									
+									}
+							
+						  }
+					
+          		echo 	'</div>
+                     	</div> 
+						</td>
+						</tr>';
+				
+						// on a live site this data will be taken from the database
+						// for demo purpose we will just use random numbers based on the user courses and the number of modules on the course.
+						
+						$number_ofLogins = ($number_ofLogins + $completed_modules);
+						$total_modules = $total_modules + $row->number_of_modules;
+						$time_on = $time_on + $completed_modules * 1.75;
 			};   
 			?>
           	<!-- spacer -->		  
 		
          
-        </tbody>
-        </table>
-         
-         
-          <table class="table table-striped">
-                        <thead>
-                          <tr >
-                            <th colspan="5" >Employee metrics gauge</th>
-                            
-                          </tr>
-            
-            <tr>
-         	<!-- the No# of logins / modules -->	  
-		<td colspan="5"><?php  include('gauge_1.php') ?> </tr> 
-          <tr>
-         	<!-- spacer -->		  
-		<td colspan="5">&nbsp; </tr> 
-          <tr>
-         	<!-- the No# of hours gauge -->		  
-		<td colspan="5"><?php  include('gauge_2.php') ?> </tr> 
-        
-        
-        
-         
-        </tbody>
-        </table>      
+                    </tbody>
+                    </table>
+         			<table class="table table-striped">
+                    <thead>
+                    <tr >
+                   <th colspan="5" >Employee metrics gauge</th>    
+                   </tr>
+           		  <tr>
+                   
+                  <td colspan="5"><?php  include('gauge_1.php') ?> </tr> <!-- the No# of logins / modules -->	  
+                   <tr>
+                   <!-- spacer -->		  
+                   <td colspan="5">&nbsp; </tr> 
+                   <tr>
+                  		  
+                   <td colspan="5"><?php  include('gauge_2.php') ?> </tr> <!-- the No# of hours gauge -->
+                	</tbody>
+                	</table>      
             
                    
          </p>
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                                      
-         
+       
            </div>
-                                 
-                                 
+                               
               <div class="col-md-4 col-md-offset-1"> <!-- div 8 -->
-                                            <div class="media v-middle"> <!-- div 11 -->
+                               <div class="media v-middle"> <!-- div 11 -->
                                   <div class="media-right"> <!-- div 9 -->
                                     <div class="icon-block width-150 bg-grey-150"> <!-- div 10 -->
                       <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-80" />
@@ -164,26 +188,18 @@
                                  	<input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo $id;   ?>" readonly />          	
                                     
                                    </div> <!-- div 9 -->
-                                   <p></p>   
-                                   
-                                   <p>  <?php  include('employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
+                                       <p></p>   
+                                       
+                                       <p>  <?php  include('employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
                          
 							
                         			
 									 <!-- the No# of hours gauge -->      
                               
                                                        
-                                            </div> <!-- div 11 -->
-                                        </div>   <!-- div 8 -->                            
+                              </div> <!-- div 11 -->
+                     </div>   <!-- div 8 -->                            
                                  
-                                 
-                                 
-                                 
-                                 
-                                 
-                                 
-                                    
-                                    
                                 </div>
                             </div>
                         </div>

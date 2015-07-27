@@ -34,13 +34,37 @@ foreach($company_info->result() as $row){
 
  <div ><h2>Update company information</h2> 
  <h4>Please contact us if you wish to change your company name.</h4> 
- <?php 
- 
- if ($this->session->flashdata('company_profile_update')) {
-    echo  "<button class='btn btn-success'>  ".$this->session->flashdata('company_profile_update')."</button>";
-}
 
- ?>
+
+ <?php 
+                        
+						 $message = $this->session->flashdata('company_profile_update');
+						
+						 if (strpos($message,'error') !== false) {
+						
+                       echo '
+                                <div class="panel panel-danger">
+                                 <div class="panel-heading text-headline text-white "><span class="text-white text-display-1"> <i class=" fa fa-arrows-alt"  ></i> Error</div>
+                                  <div class="panel-body"><h4>'.  $message .'</h4></div>
+                                </div>
+                        		';
+								
+						 }else{
+							 
+							if($message){ 
+							 echo '
+                                <div class="panel panel-success">
+                                 <div class="panel-heading text-headline"><span class="text-white text-display-1"><i class="fa fa-check"></i> Success</span></div>
+                                  <div class="panel-body"><h4>'.  $message .'</h4></div>
+                                </div>
+                        		';
+										}
+							 
+							 
+							 }
+						
+                        ?>
+
  
  </div>
   <hr>

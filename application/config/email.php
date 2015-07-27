@@ -4,7 +4,7 @@ $config['protocol'] = 'smpt';
 $config['smtp_host'] = 'ssl://smpt.googlemail.com';
 $config['smtp_port'] = 465;
 $config['smtp_user'] = 'hosappdsa@gmail.com';
-$config['smtp_pass'] = 'MajorProject';
+$config['smtp_pass'] = 'majorproject2015';
 
 
 	 

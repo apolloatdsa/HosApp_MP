@@ -1,3 +1,17 @@
+<?php 
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// This is the header section of pages used as a view where required
+// This is header is used once for the administrator when logged in
+
+?> 
+
+
+
 <!DOCTYPE html>
 <html class="transition-navbar-scroll top-navbar-xlarge bottom-footer" lang="en">
 <head>

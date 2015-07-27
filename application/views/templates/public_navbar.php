@@ -1,4 +1,13 @@
+<?php 
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// This navbar is displayed to the publin before login 
 
+?>
     <!-- Fixed PUBLIC navbar -->
  <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
         <div class="container">

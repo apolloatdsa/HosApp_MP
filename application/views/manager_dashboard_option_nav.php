@@ -1,5 +1,15 @@
-<?php $id = $this->session->userdata('user_id');
-$sort_by = 'last_name';
+<?php 
+
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// Used in the manager dashboard as the right side menu / nav block
+
+$id = $this->session->userdata('user_id');
+$sort_by = 'course_name';
 $sort_order = 'asc';
 
 

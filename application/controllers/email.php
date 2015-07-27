@@ -1,14 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 // Author: Thomas Delaney
-// Workshop: CodeIgniter MVC Webservice Assignment
 // Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Workshop: CodeIgniter MVC Webservice Assignment
+
 // Date:2015/06/09
 // Ref: Examples from the following web pages were used in this assignment
 // https://ellislab.com/codeigniter/user-guide/libraries/output.html
 // https://ellislab.com/codeigniter/user-guide/database/queries.html
 // https://ellislab.com/codeigniter/user-guide/database/active_record.html
-
+// http://code.tutsplus.com/articles/30-awesome-codeigniter-tutorials-for-all-skill-levels--net-16915
 
 class Email extends CI_Controller {
 	 
@@ -29,8 +32,8 @@ class Email extends CI_Controller {
 	 
 	 $this->email->from('thomas.delaney@webinnovate.com','Tom Delaney');
 	 $this->email->to('hosappdsa@gmail.com');
-	 $this->email->subject('This is a test email from Folio website');
-	 $this->email->message('This is never going to pass for a Major Project. Attachment');
+	 $this->email->subject('Test');
+	 $this->email->message('Test');
 	 
 	 $path = $this->config->item('server_root');
 	// $file = $path . '/codeigniter_h/images/learning-logo.png'; 
@@ -45,7 +48,7 @@ class Email extends CI_Controller {
 	
 	 if($this->email->send())
 	 {
-		 echo '<h1> Your email was sent </h1>';
+		 echo '<h1> Your email was sent again </h1>';
 		 
 		 }else{
 			 

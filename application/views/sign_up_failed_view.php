@@ -1,4 +1,14 @@
+<?php 
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// A template section - content modified to suit Folio and used as a view
 
+
+?> 
         </div>
     </div>
     <div class="parallax page-section bg-blue-300">

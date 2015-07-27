@@ -1,3 +1,15 @@
+<?php 
+ 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// This is the top nav bar section of the page used as a view where required
+// The dropdown menuse are displayed by PHP includes
+// An function navbar() in the ion_auth_model controlls which navbar is displayed depending on the user level of the logged in user session data
+?>
+
 
     <!-- Fixed INSTRUCTOR navbar -->
     <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">

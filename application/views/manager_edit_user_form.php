@@ -74,14 +74,48 @@
                          ?>
                         
                         
-                        </p>     
+                        </p>  
                         
+                        
+                        <?php 
+                        
+						 $message = $this->session->flashdata('val_error');
+						
+						 if (strpos($message,'error') !== false) {
+						
+                       echo '
+                                <div class="panel panel-danger">
+                                 <div class="panel-heading text-headline text-white "><span class="text-white text-display-1"> <i class=" fa fa-arrows-alt"  ></i> Error</span></div>
+                                  <div class="panel-body"><h4>'.  $message .'</h4></div>
+                                </div>
+                        		';
+								
+						 }else{
+							 
+							if($message){ 
+							 echo '
+                                <div class="panel panel-success">
+                                 <div class="panel-heading text-headline"><span class="text-white text-display-1"> <i class="fa fa-check"></i> Success</span></div>
+                                  <div class="panel-body"><h4>'.  $message .'</h4></div>
+                                </div>
+                        		';
+										}
+							 
+							 
+							 }
+						
+                        ?>
+                           
                         
                         
                         
                                                         
                                             </div>
                                         </div>
+                                        
+                                        
+                                        
+                                        
                                     <!-- Table of employees here -->
                                   <div class="col-md-7">  
 
@@ -135,15 +169,7 @@ echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
                                  
                                 </div>
                                 <hr/>
-                                <div class="panel-body">
-                                    <div class="row text-center">
-                                        <div class="col-md-12">
-                                            
-                                            <h4 class=" text-danger margin-none"><?php echo  $this->session->flashdata('val_error');    ?></h4>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
                         

@@ -4,7 +4,7 @@
 include('blue_bar_user_header.php');
 $company = $this->session->userdata('company');
 
-//print_r($employee_on_course->result());
+// print_r($employee_on_course);
 
 ?>
  <?php 
@@ -12,17 +12,17 @@ $company = $this->session->userdata('company');
 							
 							foreach($employee_on_course->result() as $row){
 								
-								$first_name = $row->first_name;
-								$last_name = $row->last_name;
-								$email = $row->email;
+								$first_name = $row->first_name ;
+								$last_name = $row->last_name ;
+								$email = $row->email ;
 								$department = $row->department;
-								$last_login = $row->last_login;
+								$last_login = $row->last_login ;
 								$company = $row->company;
-								$phone = $row->phone;
-								$department = $row->department;
+								$phone = $row->phone ;
+								$department = $row->department ;
 								$course = $row->course_name;
-								$course_desc = $row->course_desc;
-								$number_of_modules = $row->course_no_modules;
+								$course_desc = $row->course_desc ;
+								$number_of_modules = $row->course_no_modules ;
 								
 								
 								//$id = $row->id;
@@ -59,13 +59,30 @@ $company = $this->session->userdata('company');
                             <?php 
 							
 							foreach($employee_on_course->result() as $row){
-							$id = 	$row->id;
-							$first_name = $row->first_name;
-							$last_name = $row->last_name;
-							$image = base_url().'images/members/'.$id.'-'.$last_name;
-							$last_login = unix_to_human($row->last_login);
-							$department = $row->department;
-							$course_id = $row->course_id;
+								
+								$first_name = $row->first_name ;
+								$last_name = $row->last_name ;
+								$email = $row->email ;
+								$department = $row->department ;
+								$last_login = unix_to_human($row->last_login) ;
+								$company = $row->company;
+								$phone = $row->phone;
+								$department = $row->department  ;
+								$course = $row->course_name;
+								$course_desc = $row->course_desc ;
+								$number_of_modules = $row->course_no_modules ;
+								$course_id = $row->course_id;	
+								$id = 	$row->id ;
+								
+								
+								$image = base_url().'images/members/'.$id.'-'.$last_name;
+							
+							
+							
+							
+							
+							
+							
 								
                             echo    '<li class="list-group-item paper-shadow">
                                     <div class="media v-middle">

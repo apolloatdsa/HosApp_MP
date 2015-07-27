@@ -214,6 +214,9 @@ $payment_date = '';
                     
                     
                     
+                    
+                    
+                    
                     <div class="modal grow modal-backdrop-white fade" id="modal-update-credit-card">
                         <div class="modal-dialog modal-sm">
                             <div class="v-cell">
@@ -301,6 +304,9 @@ $payment_date = '';
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
                     <br/>
                     <br/>
                 </div>

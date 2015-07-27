@@ -1,4 +1,14 @@
+<?php 
 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// A section of template with content modified to suit Folio and used as a view where required
+
+?>
         </div>
     </div>
     <div class="parallax page-section bg-blue-300">

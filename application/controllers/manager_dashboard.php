@@ -1,5 +1,22 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// The project utilizes a bootstrap template - http://themeforest.net/item/learning-app-learning-management-system-template/10759166 
+// Ion Auth authentication library http://benedmunds.com/ion_auth/ was added to Codeigniter   
+
+// Ref: Examples from the following web pages were used in this assignment
+// https://ellislab.com/codeigniter/user-guide/libraries/output.html
+// https://ellislab.com/codeigniter/user-guide/database/queries.html
+// https://ellislab.com/codeigniter/user-guide/database/active_record.html
+// http://code.tutsplus.com/articles/30-awesome-codeigniter-tutorials-for-all-skill-levels--net-16915
+// https://github.com/edomaru/codeigniter-listview was added for table list views 
+// Formigniter was used to generate forms used in the project. http://formigniter.org/app/
+
 class Manager_dashboard extends CI_Controller {
 	
 	 public function __construct()
@@ -114,6 +131,8 @@ class Manager_dashboard extends CI_Controller {
 		 	$data['employee_list'] = $this->ion_auth->get_employee_list($company);
 			$data['employee_count'] = $this->ion_auth->employee_count($company);
 			$data['courses'] = $this->ion_auth->get_courses(); // courses list
+			$data['completed_courses'] = $this->ion_auth->get_all_completed_courses();
+			$data['count_completed'] = $this->ion_auth->count_all_completed_courses();
 			//$data['count_empolyees_on_course'] = $this->ion_auth->count_empolyees_on_course($course_id); // courses the number of employees on a course
 		 	//echo var_dump($data['employees']);
 			
@@ -247,6 +266,9 @@ class Manager_dashboard extends CI_Controller {
 		
 		}
 	
+	
+	
+	
 	function remove_course($course_id, $id){
 		
 		if(!$this->valid_id($id)){
@@ -256,6 +278,8 @@ class Manager_dashboard extends CI_Controller {
 				//echo '<h1> An invalid id was detected </h2>';
 				return false;
 				}; // check to see if the employee id is valid
+		
+		
 		
 		
 		if($this->ion_auth->manager_remove_course($course_id, $id)){
@@ -421,7 +445,7 @@ class Manager_dashboard extends CI_Controller {
 			
 			if($this->ion_auth->check_if_already_completed($course_id, $id)){
 				
-				$this->session->set_flashdata('message', 'The user has ALREADY completed this course');
+				//$this->session->set_flashdata('message', 'The user has ALREADY completed this course');
 				
 				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
 				
@@ -442,7 +466,7 @@ class Manager_dashboard extends CI_Controller {
 				
 				}else{
 					
-					$this->session->set_flashdata('message', 'The user is already registered');
+					$this->session->set_flashdata('message', 'The user is already registered or completed this course');
 					redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
 					//echo '<h1>There was an error connection to the database </h1>';
 					//$this->session->set_flashdata('message', 'There was an error connection to the database ');
@@ -727,7 +751,7 @@ class Manager_dashboard extends CI_Controller {
 			
 			}else{
 				
-				$this->session->set_flashdata('message', 'The employee has not completed the course');
+				$this->session->set_flashdata('message', 'ERROR. The employee has not completed the course');
 				redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
 				}; // courses list
 		
@@ -760,7 +784,7 @@ class Manager_dashboard extends CI_Controller {
 		$sort_order = ($sort_order == NULL) ? 'asc' : $sort_order;
 		$sort_by = ($sort_by == NULL) ? 'last_name' : $sort_by;
 		$sort_columns = array(' First Name ', 'last_name', 'course_name', 'start_date', 'end_date');
-		$sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'last_name';
+		$sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'course_name';
 		
 		
 		$company = $this->session->userdata('company');
@@ -841,7 +865,21 @@ class Manager_dashboard extends CI_Controller {
 		
 		}
 		
+		function 	manager_print_certificate($id, $course_id){
 		
+			
+			$data['print_course_certificate'] = $this->ion_auth->print_completed_course($id , $course_id); // employee is registered on these courses
+			$data['number_of_results'] = $this->ion_auth->count_completed_courses($id); // used to match course names
+			
+		
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('manager_print_certificate');
+			$this->load->view('templates/short_footer');
+		
+		}		
+			 
 		
 		
 		

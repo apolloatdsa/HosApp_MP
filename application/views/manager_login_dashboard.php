@@ -43,11 +43,23 @@ $company = $this->session->userdata('company');
 								$employee_on_course =  $this->ion_auth->count_empolyees_on_course($row->course_id, $company);
                              
 							 if($row->course_name != 'Select course to add'){
-                             echo   '<li class="list-group-item media v-middle">
-                                        <div class="media-body">
-                                            <a href="employees_on_selected_course/'.$row->course_id.'" class="text-subhead list-group-link">'.$row->course_name.'</a>
-                                        </div>
-                                        <div class="media-right">
+                             echo   '<li class="list-group-item media v-middle">';
+							 
+							 if ($employee_on_course > 0){
+							 
+                               echo        ' <div class="media-body  ">
+                                            <a href="employees_on_selected_course/'.$row->course_id.'" class="text-subhead list-group-link ">'.$row->course_name.'</a>
+                                        </div> ';
+									
+									}else{
+										
+									 echo        ' <div class="media-body text-subhead text-danger"><strong>'
+                                            .$row->course_name.
+                                        '</strong></div> ';	
+										
+										}	
+										
+                                echo        '<div class="media-right">
                                             
                                                 <div > <h4>'.$employee_on_course.'</h4>
                                                 
@@ -61,15 +73,9 @@ $company = $this->session->userdata('company');
                                 ?>
                                 
                                 </ul>
-                                <div class="panel-footer text-right">
-                                    <a href="website-student-courses.html" class="btn btn-white paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> View all</a>
-                                </div>
+                               
                             </div>
                         </div>
-                        
-                        
-                        
-                        
                         
                         <div class="item col-xs-12 col-lg-6">
                             <h4 class="text-headline margin-none"><?php   echo $company ?> Registered Employees </h4>
@@ -119,56 +125,31 @@ $company = $this->session->userdata('company');
                             
                          <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-body">
-                                    <h4 class="text-headline margin-none">Rewards</h4>
-                                    <p class="text-subhead text-light">Your latest achievements</p>
-                                    <div class="icon-block half img-circle bg-purple-300">
-                                        <i class="fa fa-star text-white"></i>
-                                    </div>
-                                    <div class="icon-block half img-circle bg-indigo-300">
-                                        <i class="fa fa-trophy text-white"></i>
-                                    </div>
-                                    <div class="icon-block half img-circle bg-green-300">
+                                    <h4 class="text-headline margin-none">Employees have completed 
+                                        
+                                        <?php print_r($count_completed)  ?> courses </h4>
+                                        
+                                    <p class="text-subhead text-light">Print Certificates</p>
+                                    
+                                     <hr>
+                                <?php 
+								
+								foreach($completed_courses->result() as $row){
+                                
+             echo   '<a class="icon-block half img-circle bg-green-300 paper-shadow relative  " href="'.base_url().'manager_dashboard/manager_print_certificate/'.$row->user_id.'/'.$row->course_id.'"    data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="'.$row->course_name.' completed by '.$row->first_name.' '.$row->last_name.'">
                                         <i class="fa fa-mortar-board text-white"></i>
-                                    </div>
-                                    <div class="icon-block half img-circle bg-orange-300">
-                                        <i class="fa fa-code-fork text-white"></i>
-                                    </div>
-                                    <div class="icon-block half img-circle bg-red-300">
-                                        <i class="fa fa-diamond text-white"></i>
-                                    </div>
+                                    </a><span> </span>';
+									
+									}
+                                    ?>
+                                    
+                                    
+                                   
                                 </div>
                             </div>
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <h4 class="text-headline">Certificates
-                                        <small>(4)</small>
-                                    </h4>
-                                </div>
-                                <div class="panel-body">
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
-                                    <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
-                                </div>
-                            </div>   
-                            
-                            
-                            
-                            
                             
                         </div>
-                        
-                        
-                        
-                        
+                       
                     </div>
                     <br/>
                     <br/>

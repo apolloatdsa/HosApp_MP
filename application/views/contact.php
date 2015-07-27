@@ -28,8 +28,6 @@
                     <?php echo form_open(base_url().'email'); ?>
                         <div class="form-group form-control-material">
                         
-                    
-                        
                             <input class="form-control" type="text" id="fname" placeholder="First name" />
                             <label for="fname"></label>
                         </div>

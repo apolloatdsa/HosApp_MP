@@ -1,5 +1,15 @@
+<?php 
 
-<?php include('blue_bar_user_header.php');?>
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// Used in manager dashboard as the list users page
+
+?>
+<?php include('blue_bar_user_header.php'  );?> <!-- includes the large blue bar with user image and level -->
 
     <div class="container">
         <div class="page-section">
@@ -26,7 +36,7 @@
                                                                                          
                                      <?php //$this->contacts->index(); 
 								   
-									echo $this->listview->render(); // creates the table
+									echo $this->listview->render(); // creates the user list table with edit links 
 								   
 								   ?> 
                                     
@@ -47,7 +57,7 @@
                 
                 <div class="col-md-4 col-lg-3">
                 
-                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
                
                 </div>
             </div>
