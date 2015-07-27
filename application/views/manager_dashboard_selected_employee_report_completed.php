@@ -56,7 +56,7 @@ $company = $this->session->userdata('company');
                                   
                                           <p>
                                          <!-- this dropdown of available courses --> 
-                                         <label for="registered_courses">Employee has completed  -  </label><br>
+                                         <label for="registered_courses"><?php echo $first_name ?> has completed  -  </label><br>
                                          
                                           <?php
                                             // List out the courses which ajve been assigned to the employee - includes buttons to remove progress and save 						    										
@@ -65,20 +65,21 @@ $company = $this->session->userdata('company');
                                             echo '<div class="col-md-12">
 											
 											<p>
-							<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Started  '. $row->start_date .' </a>  
+						 <a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-warning"> Started  '. $row->start_date .' </a>  
+                        			
+						   <a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-success"> Completed  '. $row->end_date .' </a>  
                             
-                                             
-											
-								<a href="' .  base_url() .'manager_dashboard/selected_employee_report_completed/'.$id.'  "class="navbar-btn btn-sm btn-success"> Completed  '. $row->end_date .' </a>  
-                            
-                                             
+                                       
 											<br>			
 												<input type="text" class="form-control input-lg" id="inputSuccess_'.$row->course_id.'" value="'. $row->course_name.'" readonly="readonly" >';
 											// if the course is completed add the check mark set in the employee_to_course table
 											// when saved set the employee_results completed to 1
 											if($row->completed == 1){
 												
-											echo	'<h1 style="color:green"  class="glyphicon glyphicon-ok form-control-feedback"></h1>';
+											echo	'<h1 style="color:green"  class="glyphicon glyphicon-ok form-control-feedback"></h1> 
+											<br> 
+											<a  href="'.base_url().'manager_dashboard/manager_print_certificate/'.$row->user_id.'/'.$row->course_id.'" class="navbar-btn btn-sm btn-primary"> Print Certificate</a>
+											';
 												}
 												
 											echo 	'</p>

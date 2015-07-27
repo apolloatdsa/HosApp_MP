@@ -99,4 +99,6 @@
 <file name="cdn_do_something_view.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130821134263600780" remote="130820882400000000" Dst="2" />
 <file name="home_page.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822058295972408" remote="130821806400000000" Dst="2" />
 <file name="manager_print_certificate.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130824664764547897" remote="130824412800000000" Dst="2" />
+<file name="manager_dashboard_all_employee_report_completed.php" server="siteground182.com/codeigniter_h/" local="130824971534754149" remote="130824719400000000" Dst="2" />
+<file name="manager_dashboard_selected_employee_report_completed.php" server="siteground182.com/codeigniter_h/" local="130825103061217033" remote="130824850800000000" Dst="2" />
 </dwsync>
