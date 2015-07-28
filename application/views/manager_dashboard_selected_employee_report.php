@@ -122,24 +122,20 @@ $company = $this->session->userdata('company');
 										} 
 											   
 											                            
-                                          foreach ($courses->result() as $row){
-											  
-											  
-											if (in_array($row->course_id, $registered)){ 
+                                          foreach ($courses->result() as $row){ // loop through the available courses
+										
+											if (in_array($row->course_id, $registered)){ // is employee already on the course
 											
-											 if (in_array($row->course_id.'-1', $completed)){
-											 
-													echo '<option class="text-danger h4 "  value="'.$row->course_id.'"><strong>'.$row->course_name.'<strong></option>';
-													 }else{
-														 
-														  echo '<option class="text-success h4 "  value="'.$row->course_id.'"><strong>'.$row->course_name.'<strong></option>';
-														 
-														 }
-											
+												 if (in_array($row->course_id.'-1', $completed)){ // if on the course have they completed
+												 
+													echo '<option class="text-danger h4 "  value="'.$row->course_id.'"><strong>'.$row->course_name.'<strong></option>'; // red text is completed
+													}else{
+															echo '<option class="text-success h4 "  value="'.$row->course_id.'"><strong>'.$row->course_name.'<strong></option>'; // green for registered
+														}
 											
 											}else{
 												
-												echo '<option  class=" h4 " value="'.$row->course_id.'">'.$row->course_name.'</option>';
+												echo '<option  class=" h4 " value="'.$row->course_id.'">'.$row->course_name.'</option>'; // black text if not previously registered on the course
 												}
 											
                                         };

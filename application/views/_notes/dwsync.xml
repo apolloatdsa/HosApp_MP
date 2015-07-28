@@ -101,5 +101,6 @@
 <file name="manager_print_certificate.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130824664764547897" remote="130824412800000000" Dst="2" />
 <file name="manager_dashboard_all_employee_report_completed.php" server="siteground182.com/codeigniter_h/" local="130824971534754149" remote="130824719400000000" Dst="2" />
 <file name="manager_dashboard_selected_employee_report_completed.php" server="siteground182.com/codeigniter_h/" local="130825103061217033" remote="130824850800000000" Dst="2" />
-<file name="manager_dashboard_selected_employee_report.php" server="siteground182.com/codeigniter_h/" local="130825581043106033" remote="130825329000000000" Dst="2" />
+<file name="manager_dashboard_selected_employee_report.php" server="siteground182.com/codeigniter_h/" local="130825619413790711" remote="130825367400000000" Dst="2" />
+<file name="course_display_view.php" server="siteground182.com/codeigniter_h/" local="130825630509745363" remote="130825378800000000" Dst="2" />
 </dwsync>

@@ -332,10 +332,10 @@
                         </div>
                         <div class="panel-body list-group">
                             <ul class="list-group list-group-menu">
-                                <li class="list-group-item active"><a class="link-text-color" href="../controllers/website-take-course.html">Curriculum</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="../controllers/website-course-forums.html">Course Forums</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="../controllers/website-take-quiz.html">Take Quiz</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="../controllers/website-quiz-results.html">Quiz Results</a></li>
+                                <li class="list-group-item active"><a class="link-text-color" href="#">Curriculum</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="#">Course Forums</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="#">Take Quiz</a></li>
+                                <li class="list-group-item"><a class="link-text-color" href="#">Quiz Results</a></li>
                             </ul>
                         </div>
                     </div>
