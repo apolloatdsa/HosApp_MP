@@ -18,69 +18,147 @@
     <section id="admin_page_2">
         <div class="container">
             <div class="row">
-            
-            
-            
-                <div class="col-lg-8  col-lg-offset-2 text-center">
-                    <h3 class="section-heading"></h3>
-
-            <h1><?php echo lang('create_user_heading');?></h1>
-            <p><?php echo lang('create_user_subheading');?></p>
+                <div class="col-lg-8   text-center">
+                
+                <div class="media s-container">
+                        
+                        <div class="media-body">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                
+                
+                
+                 <h3 class="section-heading"></h3>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                <h1><?php echo lang('edit_user_heading');?></h1>
+            <p><?php echo lang('edit_user_subheading');?></p>
             
             <div id="infoMessage"><?php echo $message;?></div>
             
-            <?php echo form_open("auth/create_user");?>
+            <?php echo form_open(uri_string());?>
             
                   <p>
-                        <?php echo 'first_name';?> <br />
+                        <?php echo lang('edit_user_fname_label', 'first_name');?> <br />
                         <?php echo form_input($first_name);?>
                   </p>
             
                   <p>
-                        <?php echo lang('create_user_lname_label', 'last_name');?> <br />
+                        <?php echo lang('edit_user_lname_label', 'last_name');?> <br />
                         <?php echo form_input($last_name);?>
                   </p>
             
                   <p>
-                        <?php echo lang('create_user_company_label', 'company');?> <br />
+                        <?php echo lang('edit_user_company_label', 'company');?> <br />
                         <?php echo form_input($company);?>
                   </p>
             
                   <p>
-                        <?php echo lang('create_user_email_label', 'email');?> <br />
-                        <?php echo form_input($email);?>
-                  </p>
-            
-                  <p>
-                        <?php echo lang('create_user_phone_label', 'phone');?> <br />
+                        <?php echo lang('edit_user_phone_label', 'phone');?> <br />
                         <?php echo form_input($phone);?>
                   </p>
             
                   <p>
-                        <?php echo lang('create_user_password_label', 'password');?> <br />
+                        <?php echo lang('edit_user_password_label', 'password');?> <br />
                         <?php echo form_input($password);?>
                   </p>
             
                   <p>
-                        <?php echo lang('create_user_password_confirm_label', 'password_confirm');?> <br />
+                        <?php echo lang('edit_user_password_confirm_label', 'password_confirm');?><br />
                         <?php echo form_input($password_confirm);?>
                   </p>
             
-            
-                  <p><?php echo form_submit('submit', lang('create_user_submit_btn'));?></p>
-            
-            <?php echo form_close();?>
-            
-            <p> | <?php echo anchor('auth/index', lang('back_to_index'))?> |</p>
+                  <?php if ($this->ion_auth->is_admin()): ?>
 
+
+			
+           <div class="panel panel-default">
+          <div class="panel-heading"><h3><?php echo lang('edit_user_groups_heading');?></h3></div>
+          <?php foreach ($groups as $group):?>
+              <label class="checkbox">
+              <?php
+                  $gID=$group['id'];
+                  $checked = null;
+                  $item = null;
+                  foreach($currentGroups as $grp) {
+                      if ($gID == $grp->id) {
+                          $checked= ' checked="checked"';
+                      break;
+                      }
+                  }
+              ?>
+              
+             
+              <div class="panel-body">
+              <div class="checkbox">
+              <p>
+              <input type="checkbox" name="groups[]" value="<?php echo $group['id'];?>"<?php echo $checked;?>>
+              <?php echo htmlspecialchars($group['name'],ENT_QUOTES,'UTF-8');?>
+              </label>
+             </p>
+               </div>
+             
+          <?php endforeach?>
+          
+              <p class="bg-info">
+              </div>
+            </div>
+
+					  <?php endif ?>
+                
+                
+                
+                
+                      <?php echo form_hidden('id', $user->id);?>
+                      <?php echo form_hidden($csrf); ?>
+                
+                      <p><?php echo form_submit('submit', lang('edit_user_submit_btn'));?></p>
+                
+                <?php echo form_close();?>
+                
+                <p> | <?php echo anchor('auth/index', lang('back_to_index'))?> |</p> 
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+               					</div>
+                            </div>
+                        </div>
+                    </div>
+              
+              
+              
+              
+              
+              
+                </div>
+                
+                
+                <div class="col-md-4 col-lg-3">
+                
+                	<?php  include('admin_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
+               
                 </div>
                 
                 
                 
                 
-                
-                
-            </div>
+            </div> <!-- end of row -->
            
         </div>
         

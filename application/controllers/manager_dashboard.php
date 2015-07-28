@@ -238,6 +238,7 @@ class Manager_dashboard extends CI_Controller {
 			$data['employee'] = $this->ion_auth->edit_employee($id);// employee list
 			$data['courses'] = $this->ion_auth->get_courses(); // courses list
 			$data['registered_courses'] = $this->ion_auth->get_registered_courses($id); // employee is registered on these courses
+			$data['registered_check'] = $this->ion_auth->check_registered_courses($id);
 			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
 			
 			
@@ -443,7 +444,7 @@ class Manager_dashboard extends CI_Controller {
 			$company = $this->session->userdata('company');
 			// first check if the employee has done this corse before
 			
-			if($this->ion_auth->check_if_already_completed($course_id, $id)){
+			if($this->ion_auth->check_if_already_finished($course_id, $id)){
 				
 				//$this->session->set_flashdata('message', 'The user has ALREADY completed this course');
 				
@@ -466,7 +467,7 @@ class Manager_dashboard extends CI_Controller {
 				
 				}else{
 					
-					$this->session->set_flashdata('message', 'The user is already registered or completed this course');
+					$this->session->set_flashdata('message', 'ERROR The user is already registered this course');
 					redirect("/manager_dashboard/selected_employee_report/$id", 'refresh');
 					//echo '<h1>There was an error connection to the database </h1>';
 					//$this->session->set_flashdata('message', 'There was an error connection to the database ');

@@ -1,6 +1,7 @@
 
 <?php 
 
+//print_r($course_names->result());
 
 include('blue_bar_user_header.php');
 $company = $this->session->userdata('company');
@@ -102,9 +103,45 @@ $company = $this->session->userdata('company');
                                          <form  method="post" accept-charset="utf-8" action="<?php echo site_url("manager_dashboard/add_course_to_employee/$id"); ?>">
                                           <select class="form-control" name="selected_course_ID" onchange="this.form.submit()">
                                           <?php
-                                                                        
+                                               
+										$registered = array();
+										foreach ($registered_check->result() as $row){ 
+										
+										$course_id = $row->course_id; 
+										array_push($registered, $course_id); // build array of courses which the employee is already registered for.
+										
+										
+										} 
+										
+										$completed = array();
+										foreach ($registered_check->result() as $row){ 
+										
+										$course_id = $row->course_id; 
+										array_push($completed, $course_id.'-'.$row->completed); // build array of courses which the employee is already registered for.
+										
+										} 
+											   
+											                            
                                           foreach ($courses->result() as $row){
-                                            echo '<option   value="'.$row->course_id.'">'.$row->course_name.'</option>';
+											  
+											  
+											if (in_array($row->course_id, $registered)){ 
+											
+											 if (in_array($row->course_id.'-1', $completed)){
+											 
+													echo '<option class="text-danger h4 "  value="'.$row->course_id.'"><strong>'.$row->course_name.'<strong></option>';
+													 }else{
+														 
+														  echo '<option class="text-success h4 "  value="'.$row->course_id.'"><strong>'.$row->course_name.'<strong></option>';
+														 
+														 }
+											
+											
+											}else{
+												
+												echo '<option  class=" h4 " value="'.$row->course_id.'">'.$row->course_name.'</option>';
+												}
+											
                                         };
                                          ?>
                                           </select>
@@ -142,10 +179,15 @@ $company = $this->session->userdata('company');
                                    
                                           <p>
                                          <!-- this dropdown of available courses --> 
+                                         
+                                       <?php // print_r ($completed)    ?>
+                                       
                                          <label for="registered_courses">Employee is registered on -  </label><br>
                                          
                                           <?php
-                                            // List out the courses which ajve been assigned to the employee - includes buttons to remove progress and save 						    										
+                                            // List out the courses which ajve been assigned to the employee - includes buttons to remove progress and save
+											
+											 						    										
                                           foreach ($course_names->result() as $row){
 											  
                                             echo '<div class="col-md-12">

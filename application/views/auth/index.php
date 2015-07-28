@@ -18,9 +18,17 @@
     <section id="admin_page_2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8  col-lg-offset-2 text-center">
-                    <h3 class="section-heading"></h3>
-
+                <div class="col-lg-8   text-center">
+                
+                <div class="media s-container">
+                        
+                        <div class="media-body">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                
+                
+                
+                 <h3 class="section-heading"></h3>
                 <h1><?php echo lang('index_heading');?></h1>
                 <p><?php echo lang('index_subheading');?></p>
                 
@@ -53,10 +61,29 @@
                 </div>
                 <p><?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
 
+               					</div>
+                            </div>
+                        </div>
+                    </div>
+              
+              
+              
+              
+              
               
                 </div>
                 
-            </div>
+                
+                <div class="col-md-4 col-lg-3">
+                
+                	<?php  include('admin_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
+               
+                </div>
+                
+                
+                
+                
+            </div> <!-- end of row -->
            
         </div>
         

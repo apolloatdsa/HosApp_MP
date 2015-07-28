@@ -18,11 +18,20 @@
     <section id="admin_page_2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8  col-lg-offset-2 text-center">
-                    <h3 class="section-heading"></h3>
-
-
-            <h1><?php echo lang('edit_user_heading');?></h1>
+                <div class="col-lg-8  "> 
+                
+                <div class="media s-container"> <!-- container -->
+              
+                        <div class="media-body">
+                            <div class="panel panel-default">
+                                <div class="panel-body text-center">
+                
+                
+                
+                 <h3 class="section-heading"></h3>
+                 
+                 
+                <h1><?php echo lang('edit_user_heading');?></h1>
             <p><?php echo lang('edit_user_subheading');?></p>
             
             <div id="infoMessage"><?php echo $message;?></div>
@@ -63,8 +72,8 @@
 
 
 			
-           <div class="panel panel-default">
-          <div class="panel-heading"><h3><?php echo lang('edit_user_groups_heading');?></h3></div>
+           
+          <h3><?php echo lang('edit_user_groups_heading');?></h3>
           <?php foreach ($groups as $group):?>
               <label class="checkbox">
               <?php
@@ -80,7 +89,7 @@
               ?>
               
              
-              <div class="panel-body">
+              
               <div class="checkbox">
               <p>
               <input type="checkbox" name="groups[]" value="<?php echo $group['id'];?>"<?php echo $checked;?>>
@@ -92,8 +101,8 @@
           <?php endforeach?>
           
               <p class="bg-info">
-              </div>
-            </div>
+             
+            
 
 					  <?php endif ?>
                 
@@ -108,12 +117,31 @@
                 <?php echo form_close();?>
                 
                 <p> | <?php echo anchor('auth/index', lang('back_to_index'))?> |</p> 
+                
+                
+                
 
- </div>
+               					</div> <!-- panel body end -->
+                            </div> <!-- panel body default end -->
+                        </div> <!-- media body end -->
+                    </div> <!-- container end -->
+              
+            
+                </div> <!-- col-lg-8 end -->
+                
+                
+                <div class="col-md-4 col-lg-3">
+                
+                	<?php  include('admin_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
                
-            </div>
+                </div>
+                
+                
+                
+                
+            </div> <!-- end of row -->
            
-        </div>
+        </div> <!-- end container -->
         
     </section>
     

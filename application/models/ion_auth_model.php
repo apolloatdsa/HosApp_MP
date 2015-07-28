@@ -2539,7 +2539,26 @@ class Ion_auth_model extends CI_Model
 				}
 		
 		}
+	function check_if_already_finished($course_id, $id){
 		
+				$this->db->where('user_id', $id );
+				$this->db->where('course_id', $course_id );
+				$this->db->where('completed', 1 );
+				$query = $this->db->get('employee_results');
+				
+				if ($query->num_rows() > 0){ // in here only if the user has already done the course
+				
+				//echo 'The employee is already registered on this course' ;
+				$this->session->set_flashdata('message', 'ERROR. The user has already COMPLETED this course');
+				return TRUE;
+				
+			}else{
+				$this->session->set_flashdata('message', 'The user is new to this course');
+				return FALSE;
+				
+				}
+		
+		}	
 		
 	function count_completed_courses($id){
 		
@@ -2636,7 +2655,17 @@ class Ion_auth_model extends CI_Model
 			
 			return $query;
 		
-		}	
+		}
+	function check_registered_courses($id){
+		
+			$this->db->where('user_id', $id );
+			$query = $this->db->get('employee_results');
+			
+			
+			return $query;
+		
+		}		
+			
 	function get_selected_courses_public($course_id){
 		
 		$this->db->where('course_id', $course_id );

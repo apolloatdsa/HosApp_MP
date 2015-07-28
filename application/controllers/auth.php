@@ -35,7 +35,7 @@ class Auth extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->load->view('templates/public_navbar');
 			redirect('auth/login', 'refresh'); // go back to login page if not logged on or unsuccessful log in
-			//$this->load->view('templates/footer');
+			//$this->load->view('templates/short_footer');
 		}
 		elseif (!$this->ion_auth->is_admin()) //remove this elseif if you want to enable this for non-admins
 		{
@@ -44,7 +44,7 @@ class Auth extends CI_Controller {
 			$this->load->view('templates/header');
 			$this->load->view('templates/public_navbar');
 			return show_error('You must be an administrator to view this page.');
-			//$this->load->view('templates/footer');
+			//$this->load->view('templates/short_footer');
 		}
 		
 		
@@ -64,7 +64,7 @@ class Auth extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->load->view('templates/admin_navbar');
 			$this->_render_page('auth/index', $this->data); // send users to the auth/index page if they are administrators
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 			
 		}
 		
@@ -158,7 +158,7 @@ class Auth extends CI_Controller {
 			$this->load->view('templates/header', $data );
 				$this->load->view('templates/public_navbar');
 				redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
-				$this->load->view('templates/footer');
+				$this->load->view('templates/short_footer');
 			}
 		}
 		else
@@ -181,7 +181,7 @@ class Auth extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->load->view('templates/public_navbar');
 			$this->_render_page('auth/login', $this->data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		}
 		
 		
@@ -251,9 +251,9 @@ class Auth extends CI_Controller {
 			//render
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
-			$this->load->view('templates/navbar');
+			$this->ion_auth->navbar();
 			$this->_render_page('auth/change_password', $this->data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		}
 		else
 		{
@@ -308,10 +308,10 @@ class Auth extends CI_Controller {
 			$data['title'] = 'Set page title here';
 			
 			$this->load->view('templates/header_login', $data );
-			$this->load->view('templates/navbar');
+			$this->ion_auth->navbar();
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 			$this->_render_page('auth/forgot_password', $this->data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		}
 		else
 		{
@@ -404,9 +404,9 @@ class Auth extends CI_Controller {
 				//render
 				$data['title'] = 'Set page title here';
 				$this->load->view('templates/header', $data );
-				$this->load->view('templates/navbar');
+				$this->ion_auth->navbar();
 				$this->_render_page('auth/reset_password', $this->data);
-				$this->load->view('templates/footer');
+				$this->load->view('templates/short_footer');
 			}
 			else
 			{
@@ -502,9 +502,9 @@ class Auth extends CI_Controller {
 			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
-			$this->load->view('templates/navbar');
+			$this->ion_auth->navbar();
 			$this->_render_page('auth/deactivate_user', $this->data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		}
 		else
 		{
@@ -625,9 +625,9 @@ class Auth extends CI_Controller {
 
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
-			$this->load->view('templates/navbar');
+			$this->ion_auth->navbar();
 			$this->_render_page('auth/create_user', $this->data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		}
 	}
 
@@ -782,9 +782,9 @@ class Auth extends CI_Controller {
 		$data['title'] = 'Set page title here';
 			
 		$this->load->view('templates/header_login',$data);
-		$this->load->view('templates/navbar');
+		$this->ion_auth->navbar();
 		$this->_render_page('auth/edit_user', $this->data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/short_footer');
 	}
 
 	// create a new group
@@ -832,9 +832,9 @@ class Auth extends CI_Controller {
 
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
-			$this->load->view('templates/navbar');
+			$this->ion_auth->navbar();
 			$this->_render_page('auth/create_group', $this->data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		}
 	}
 
@@ -901,9 +901,9 @@ class Auth extends CI_Controller {
 
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
-			$this->load->view('templates/navbar');
+			$this->ion_auth->navbar();
 			$this->_render_page('auth/edit_group', $this->data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 
 
 		

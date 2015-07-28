@@ -23,4 +23,6 @@
 <file name="course_access.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822046132816715" remote="130821797400000000" Dst="2" />
 <file name="company_profile_controller.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130823944345602290" remote="130823692200000000" Dst="2" />
 <file name="cdn.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822046128506469" remote="130821797400000000" Dst="2" />
+<file name="auth.php" server="siteground182.com/codeigniter_h/" local="130825474719824689" remote="130825222800000000" Dst="2" />
+<file name="manager_dashboard.php" server="siteground182.com/codeigniter_h/" local="130825601710148120" remote="130825350000000000" Dst="2" />
 </dwsync>
