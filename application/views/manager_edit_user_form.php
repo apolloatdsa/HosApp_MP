@@ -1,5 +1,14 @@
  <?php 
-							
+ 
+// print_r($user_group->result());	
+
+							foreach($user_group->result() as $row){
+								
+								$group = $row->name;
+								
+								}
+
+						
 							foreach($employee as $row){
 								
 								$first_name = $row->first_name;
@@ -20,7 +29,8 @@
 						   );
 			
 								$this->session->set_userdata($edit_employee);
-							
+								
+								include('check_image.php');
 							?>
 
 					<div class="item col-xs-12 col-lg-12">
@@ -42,7 +52,7 @@
                                             <div class="media v-middle">
                                   <div class="media-left">
                                     <div class="icon-block width-150 bg-grey-150">
-                      <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-80" />
+                      <img src="<?php echo $image ;?>" alt="member" class="img-circle width-80" />
                                       </div>
                                     <h4>Last login    <?php echo unix_to_human($last_login)     ?>  </h4>            
                     				<h4>Created on    <?php echo  unix_to_human($created_on)   ?>  </h4>
@@ -154,13 +164,46 @@ echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
         <br /><input class="form-control" id="phone" type="text" name="phone" maxlength="30" placeholder = "<?php echo $phone ?>"  value="<?php echo $phone; set_value('phone'); ?>"  />
 </p>
 
-
 <p>
         <?php echo form_submit( 'submit', 'Submit',"class='btn btn-primary'"); ?>
 </p>
 
 <?php echo form_close(); ?>
+
 						
+                                    <p>
+                    <label for="group">The user type is  </label>
+                    
+                    <br /><input class="form-control" id="user_group" type="text" name="group" maxlength="30" placeholder = "<?php echo $group ?>"  value="<?php echo $group ?> " readonly />
+            </p>
+                        
+                        
+                       
+						
+                       <p>
+                                         <!-- this dropdown of available courses --> 
+                                         <label for="selected_group" class="text-danger">Change user type </label>
+                                         <form  method="post" accept-charset="utf-8" action="<?php echo site_url("manager_edit_user_controller/set_group/$id"); ?>">
+                                          <select class="form-control  " name="selected_group" onchange="this.form.submit()">
+                                          <?php
+                                          
+											    echo '<option  class=" h4 " value="'.$group.'">'.$group.'</option>';
+												                        
+                                          foreach ($groups->result() as $row){ // loop through the available courses
+										
+											if ($row->name != 'admin'){
+												
+												echo '<option  class=" h4 " value="'.$row->id.'">'.$row->name.'</option>'; 
+											}
+											
+                                        };
+                                         ?>
+                                          </select>
+                                          </form>
+                                                   
+                                         </p>
+
+
                         
                         
                         </div>

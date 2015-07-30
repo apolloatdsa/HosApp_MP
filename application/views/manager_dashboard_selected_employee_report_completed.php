@@ -32,7 +32,7 @@ $company = $this->session->userdata('company');
 						   
 						   
 								$this->session->set_userdata($edit_employee);
-								
+								include('check_image.php');
 							
 							?>
  
@@ -100,7 +100,7 @@ $company = $this->session->userdata('company');
                                             <div class="media v-middle"> <!-- div 11 -->
                                   <div class="media-right"> <!-- div 9 -->
                                     <div class="icon-block width-150 bg-grey-150"> <!-- div 10 -->
-                      <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-80" />
+                      <img src="<?php echo $image ;?>" alt="member" class="img-circle width-80" />
                                       </div> <!-- div 10 -->
                                		<br> <label for="last_login">Last Login </label>
                                 	<input class="form-control" id="last_login" type="text" name="last_login" maxlength="30"  value="<?php echo unix_to_human($last_login);   ?>" readonly />

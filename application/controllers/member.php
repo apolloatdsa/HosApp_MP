@@ -49,7 +49,7 @@ class Member extends CI_Controller {
   			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('body');
+			$this->load->view('home_page');
 			$this->load->view('templates/footer');
 		}
 	 

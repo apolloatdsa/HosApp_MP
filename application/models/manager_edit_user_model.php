@@ -47,5 +47,25 @@ class Manager_edit_user_model extends CI_Model {
 		
 		return FALSE;
 	}
+	
+	function SaveGroup($form_data, $id)
+	{
+		//print_r($form_data);
+		
+		$this->db->where('user_id', $id);
+		$this->db->update('users_groups', $form_data);
+		
+		if ($this->db->affected_rows() == '1')
+		{
+			return TRUE;
+		}
+		
+		return FALSE;
+	}
+	
+	
+	
+	
+	
 }
 ?>

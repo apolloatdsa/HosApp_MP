@@ -33,7 +33,7 @@ class Manager_dashboard extends CI_Controller {
                $this->load->model('Student_card_update_model'); // calls the model class name //
 				$this->load->library(array('ion_auth','form_validation'));
 				$this->load->helper(array('url','language'));
-
+				$this->load->helper('file');
 				$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
 				$this->lang->load('auth');
@@ -77,7 +77,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 	
 	}
 	
@@ -104,7 +104,12 @@ class Manager_dashboard extends CI_Controller {
 				}; // check to see if the employee id is valid
 			
 			
+			
 			$data['employee'] = $this->ion_auth->edit_employee($id);
+			$data['user_group'] = $this->ion_auth->get_user_group($id);
+			
+			
+			$data['groups'] = $this->ion_auth->get_groups();
 			
 			$data['error'] = '';
 			$data['id'] = $id;
@@ -113,7 +118,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard_edit_user');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 			
 		}
 	
@@ -140,7 +145,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_login_dashboard' ,$data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		
 		}
 	function company_profile(){
@@ -151,7 +156,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('company_profile_view' ,$data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		
 		
 		}
@@ -163,7 +168,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('company_billing' ,$data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		
 		
 		}
@@ -178,7 +183,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('company_profile_form_view' ,$data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		
 		
 		}
@@ -194,7 +199,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard_employee_on_course');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		
 		
 		}												
@@ -212,12 +217,10 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard_employee_report');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 			
 		}	
 	function selected_employee_report($id = NULL){ // this method can be called by a form submit with a user ID in the POST or by a refresh call from another method in this controller
-			
-			
 			
 			if($this->input->post('selected_employee_ID')){ // if called by the form get the user ID from the POST
 			//Get the value from the form.
@@ -246,7 +249,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_dashboard_selected_employee_report');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 			
 		}
 		
@@ -263,7 +266,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_dashboard_selected_employee_report_completed');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		
 		}
 	
@@ -489,7 +492,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard_edit_user_image');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 			
 		}
 		
@@ -504,7 +507,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard_add_new_user');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 			
 		}
 		
@@ -547,9 +550,13 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//echo $this->listview->render();
 			$this->load->view('manager_dashboard_employee_report_test', $data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 			
-		}	
+		}
+		
+		
+		
+			
 	//create a new user
 	function create_user()
 	{
@@ -571,7 +578,11 @@ class Manager_dashboard extends CI_Controller {
 			$username = strtolower($this->input->post('first_name')) . ' ' . strtolower($this->input->post('last_name'));
 			$email    = strtolower($this->input->post('email'));
 			$password = $this->input->post('password');
-
+			
+			// $first_name = $this->input->post('first_name');
+			// $last_name = $this->input->post('last_name');
+			
+			
 			$additional_data = array(
 				'first_name' => $this->input->post('first_name'),
 				'last_name'  => $this->input->post('last_name'),
@@ -640,9 +651,14 @@ class Manager_dashboard extends CI_Controller {
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			//$this->_render_page('manager_dashboard/create_user', $this->data);
 			$this->load->view('manager_dashboard_add_new_user',$this->data );
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		}
 	}
+	
+	
+	
+	
+	
 	
 
 	function delete($id){
@@ -722,7 +738,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_dashboard_employee_course_progress_report_page');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 	  
 	  }
 	function mark_as_completed($id, $course_id){
@@ -769,7 +785,7 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 			$this->load->view('manager_dashboard_all_employee_report_completed');
-			$this->load->view('templates/footer');
+			$this->load->view('templates/short_footer');
 		
 		}		
 		
@@ -859,7 +875,7 @@ class Manager_dashboard extends CI_Controller {
 		$this->load->view('templates/header', $data );
 		$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 		$this->load->view('manager_dashboard_all_employee_report_completed_test' , $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/short_footer');
 		
 		
 		
@@ -969,7 +985,7 @@ class Manager_dashboard extends CI_Controller {
 		$this->load->view('templates/header', $data );
 		$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 		$this->load->view('manager_dashboard_all_employee_report_completed_test' , $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/short_footer');
 		
 		
 		
@@ -1026,7 +1042,7 @@ class Manager_dashboard extends CI_Controller {
 					$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 					//echo $this->listview->render();
 					$this->load->view('manager_dashboard_edit_user_image');
-					$this->load->view('templates/footer');
+					$this->load->view('templates/short_footer');
 					
 				}
 				else
@@ -1044,7 +1060,7 @@ class Manager_dashboard extends CI_Controller {
 				$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
 				//echo $this->listview->render();
 				$this->load->view('manager_dashboard_edit_user_image');
-				$this->load->view('templates/footer');
+				$this->load->view('templates/short_footer');
 					   
 				}
 			

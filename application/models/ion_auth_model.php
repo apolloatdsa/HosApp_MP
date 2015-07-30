@@ -2814,7 +2814,21 @@ class Ion_auth_model extends CI_Model
 		return $course_results;
 		
 		}	
-
+	function get_groups(){
+		
+		$query = $this->db->get('groups');
+		return $query;
+		
+		}
+	function get_user_group($id){
+		
+		$this->db->from('users_groups');
+		$this->db->join('groups', 'groups.id = users_groups.group_id');
+		$this->db->where('users_groups.user_id', $id);
+		$query = $this->db->get();
+		return $query;
+		
+		}	
 //#############################################################################################//
 
 	

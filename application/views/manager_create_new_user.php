@@ -8,7 +8,6 @@
 // Major Project: CodeIgniter MVC framework for Folio LMS website. 
 // Used in the manager dashboard to create a new user 
 
-
 ?>
  
  

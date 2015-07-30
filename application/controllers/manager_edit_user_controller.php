@@ -49,7 +49,7 @@ class Manager_edit_user_controller extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
 		{
 		
-			$val_error = array('val_error'  => 'The form failed to validate' ); // error will be displayed when redirected to the edit page
+			$val_error = array('val_error'  => 'ERROR The form failed to validate' ); // error will be displayed when redirected to the edit page
             
 			$this->session->set_flashdata($val_error);
 			
@@ -67,6 +67,7 @@ class Manager_edit_user_controller extends CI_Controller {
 					       	'email' => set_value('email'),
 					       	'department' => set_value('department'),
 					       	'phone' => set_value('phone')
+							
 						);
 					
 			// run insert model to write data to db
@@ -80,7 +81,7 @@ class Manager_edit_user_controller extends CI_Controller {
 			//echo 'An error occurred saving your information. Please try again later';
 			// Or whatever error handling is necessary
 			
-			$val_error = array('val_error'  => 'An error occurred saving your information or nothing has changed. Please try again later' ); // message will be displayed when redirected to the edit page
+			$val_error = array('val_error'  => 'ERROR An error occurred saving your information or nothing has changed. Please try again later' ); // message will be displayed when redirected to the edit page
             
 			$this->session->set_flashdata($val_error);
 			
@@ -109,6 +110,41 @@ class Manager_edit_user_controller extends CI_Controller {
 			
 	}
 	
+	
+	function set_group($id){
+		
+		// build array for the model
+		
+			$selected_group = $this->input->post('selected_group');
+			
+			
+			$form_data = array(
+			
+					       	'user_id' => $id,
+					       	'group_id' => $selected_group
+					       	
+						);
+					
+			// run insert model to write data to db
+		if ($this->manager_edit_user_model->SaveGroup($form_data, $id) == TRUE) // the information has therefore been successfully saved in the db
+			{
+				redirect("manager_edit_user_controller/success/$id");   // or whatever logic needs to occur
+			}
+			else
+			{
+			//echo 'An error occurred saving your information. Please try again later';
+			// Or whatever error handling is necessary
+			
+			$val_error = array('val_error'  => 'An error occurred saving your information or nothing has changed. Please try again later' ); // message will be displayed when redirected to the edit page
+            
+			$this->session->set_flashdata($val_error);
+			
+			redirect("manager_dashboard/edit/$id");
+			
+			
+			}
+		
+		}
 	
 }
 ?>

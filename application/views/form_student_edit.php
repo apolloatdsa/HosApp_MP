@@ -17,6 +17,13 @@
 								$id = $row->id;
 								}
 							
+								include('check_image.php');
+							
+							
+							
+							
+							
+							
 							
 							?>
                             <div class="item col-xs-12 col-lg-9">
@@ -77,7 +84,7 @@
                                             <div class="media v-middle">
                                   <div class="media-left">
                                     <div class="icon-block width-150 bg-grey-150">
-                      <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-80" />
+                      <img src="<?php echo $image ;?>" alt="member" class="img-circle width-80" />
                                       </div>
                                                      
                     

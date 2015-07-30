@@ -9,19 +9,35 @@
 // Large blue bar displayed to logged in users - will display user image and user level 
 // A section of template with content modified to suit Folio and used as an include where required
 
+
+	$image_id 		= $this->session->userdata('user_id');
+	$image_last_name 		= $this->session->userdata('user_last_name');
+	$url			=base_url();
+	$filename 		= "./images/members/$image_id-$image_last_name.JPG";
+	
+								//echo $filename;
+								
+								if (file_exists($filename)){
+									
+							$image =	"$url/images/members/$image_id-$image_last_name.JPG" ;
+								
+								}else{
+									$image =	"$url/images/people/110/user-placeholder.png" ;
+									}
+
 ?> 
  
  <div class="parallax overflow-hidden bg-blue-400 page-section third">
         <div class="container parallax-layer" data-opacity="true">
             <div class="media v-middle">
                 <div class="media-left text-center">
-                    <a href="#">
-                        <img src="<?php echo base_url();?>images/members/<?php echo $this->session->userdata('user_id').'-'.$this->session->userdata('user_last_name');?>.JPG" alt="member" class="img-circle width-80" />
-                    </a>
+                    
+                        <img src="<?php echo $image ;?>" alt="member" class="img-circle width-80" />
+                    
                 </div>
                 <div class="media-body">
                     <h1 class="text-white text-display-1 margin-v-0"><?php echo " " . $this->session->userdata('user_first_name'). " ". $this->session->userdata('user_last_name')." " ; ?></h1>
-                    <p class="text-subhead"><a class="link-white text-underline" href="website-student-public-profile.html">View public profile</a></p>
+                    <p class="text-subhead"><a class="link-white text-underline" href="#"></a></p>
                 </div>
                 <div class="media-right">
                     <span class="label bg-blue-500">

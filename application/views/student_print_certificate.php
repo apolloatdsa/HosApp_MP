@@ -7,9 +7,10 @@ foreach($print_course_certificate->result() as $row){
 	$last_name = $row->last_name;
 	$id = $row->user_id;
 	}
+	
+	include('check_image.php');
 
-
-
+	
 ?>
 
     <div class="parallax bg-white page-section third">
@@ -50,12 +51,12 @@ foreach($print_course_certificate->result() as $row){
                                 </div>
                                 <div class="media-body">
                                     <h4 class="text-subhead margin-none">
-                                        <a href="website-course-forum-thread.html" class="link-text-color">Well earned certificate below?</a>
+                                        <a href="#" class="link-text-color">Well earned certificate below?</a>
                                     </h4>
                                     <div class="text-light text-caption">
                                         Course completed by <?php echo $first_name. ' '. $last_name    ?>
                                         <a href="#">
-                                            <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-40" /> </a> &nbsp; | 
+                                            <img src="<?php echo $image ;?>" alt="member" class="img-circle width-40" /> </a> 
                                     </div>
                                 </div>
                                 <div class="media-right">

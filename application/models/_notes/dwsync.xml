@@ -8,5 +8,6 @@
 <file name="edit_user_model.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822052441157532" remote="130821801000000000" Dst="2" />
 <file name="manager_edit_user_model.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822052440507495" remote="130821801000000000" Dst="2" />
 <file name="company_profile_model.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822052444387717" remote="130821801000000000" Dst="2" />
-<file name="ion_auth_model.php" server="siteground182.com/codeigniter_h/" local="130825597269134109" remote="130825348200000000" Dst="2" />
+<file name="ion_auth_model.php" server="siteground182.com/codeigniter_h/" local="130826400170467438" remote="130826148000000000" Dst="2" />
+<file name="manager_edit_user_model.php" server="siteground182.com/codeigniter_h/" local="130826375828675167" remote="130826124000000000" Dst="2" />
 </dwsync>

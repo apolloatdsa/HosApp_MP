@@ -14,7 +14,15 @@
 
 
 						
-							foreach($employee as $row){
+							
+							?>
+<script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script> <!-- required to display the graphs --> 
+<script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script> <!-- required to display the graphs -->
+
+<?php include('blue_bar_user_header.php');?><!-- blue bar with user image and level -->
+
+
+<?php foreach($employee as $row){
 								
 								$first_name = $row->first_name;
 								$last_name = $row->last_name;
@@ -34,12 +42,9 @@
 						   );
 			
 								$this->session->set_userdata($edit_employee);
-							
-							?>
-<script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script> <!-- required to display the graphs --> 
-<script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script> <!-- required to display the graphs -->
-
-<?php include('blue_bar_user_header.php');?><!-- blue bar with user image and level -->
+								include('check_image.php');
+								
+?>
 
     <div class="container">
         <div class="page-section">
@@ -178,7 +183,8 @@
                                <div class="media v-middle"> <!-- div 11 -->
                                   <div class="media-right"> <!-- div 9 -->
                                     <div class="icon-block width-150 bg-grey-150"> <!-- div 10 -->
-                      <img src="<?php echo base_url();?>images/members/<?php echo $id.'-'.$last_name;?>.JPG" alt="member" class="img-circle width-80" />
+                                 
+                      <img src="<?php echo $image ;?>" alt="member" class="img-circle width-80" />
                                       </div> <!-- div 10 -->
                                		<br> <label for="last_login">Last Login </label>
                                 	<input class="form-control" id="last_login" type="text" name="last_login" maxlength="30"  value="<?php echo unix_to_human($last_login);   ?>" readonly />

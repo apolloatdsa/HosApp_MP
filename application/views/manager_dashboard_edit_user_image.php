@@ -1,4 +1,31 @@
-<?php include('blue_bar_user_header.php');?>
+<?php include('blue_bar_user_header.php');
+
+foreach($employee as $row){
+								
+								$first_name = $row->first_name;
+								$last_name = $row->last_name;
+								$email = $row->email;
+								$username = $row->username;
+								$last_login = $row->last_login;
+								$company = $row->company;
+								$phone = $row->phone;
+								$department = $row->department;
+								$active = $row->active;
+								$created_on = $row->created_on;
+								$id = $row->id;
+								}
+								
+							$edit_employee = array(
+							   'edit_id'  => $id
+						   );						
+						
+						
+								include('check_image.php');
+							
+
+
+
+?>
 
 
     <div class="container">
@@ -27,134 +54,16 @@
                         
                      <div class="col-md-3">
                    
-                     <?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                     <?php // include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                     
+           
                     
-                    <h4>Featured</h4>
-                    <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
-                        <div class="item">
-                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                                <div class="panel-body">
-                                    <div class="media media-clearfix-xs">
-                                        <div class="media-left">
-                                            <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                                                <span class="img icon-block s90 bg-default"></span>
-                                                <span class="overlay overlay-full padding-none icon-block s90 bg-default">
-                        <span class="v-center">
-                            <i class="fa fa-github"></i>
-                        </span>
-                                                </span>
-                                                <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
-                                                    <span class="v-center">
-                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Github Webhooks for Beginners</a></h4>
-                                            <p class="small margin-none">
-                                                <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                                <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                                <span class="fa fa-fw fa-star text-yellow-800"></span>
-                                                <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                                <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                    
-                </div>
+                	</div>
                         
                   
-                        
-                        <div class="item col-xs-12 col-lg-6">
-                            <div class="s-container">
-                                <h4 class="text-headline margin-none">Employees</h4>
-                                <p class="text-subhead text-light">Go to employee dashboard.</p>
-                            </div>
-                            <div class="panel panel-default">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <div class="media v-middle margin-v-0-10">
-                                            <div class="media-body">
-                                                <p class="text-subhead">
-                                                    Text sub head
-                                                </p>
-                                            </div>
-                                            <div class="media-right">
-                                                <div class="width-50 text-right">
-                                                    <a href="#" class="btn btn-white btn-xs"><i class="fa fa-reply"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, blanditiis eligendi expedita ipsam minus non numquam quidem reiciendis ut?</p>
-                                        <p class="text-light"><span class="caption">Course:</span> <a href="app-student-course.html">Basics Of HTML</a></p>
-                                    </li>
-                                
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item col-xs-12 col-lg-6">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <div class="media v-middle">
-                                        <div class="media-body">
-                                            <h4 class="text-headline margin-none">Transactions</h4>
-                                            <p class="text-subhead text-light">Latest from statement</p>
-                                        </div>
-                                        <div class="media-right">
-                                            <a class="btn btn-white btn-flat" href="website-instructor-statement.html">Statement</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table text-subhead v-middle">
-                                        <tbody>
-                                            <tr>
-                                                <td class="width-100 text-caption">
-                                                    <div class="label label-grey-200 label-xs">12 Jan 2015</div>
-                                                </td>
-                                                <td>Adrian Demian</td>
-                                                <td class="width-80 text-center"><a href="#">#1261</a></td>
-                                                <td class="width-50 text-center">&dollar;70</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="width-100 text-caption">
-                                                    <div class="label label-grey-200 label-xs">12 Jan 2015</div>
-                                                </td>
-                                                <td>Adrian Demian</td>
-                                                <td class="width-80 text-center"><a href="#">#4631</a></td>
-                                                <td class="width-50 text-center">&dollar;28</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="width-100 text-caption">
-                                                    <div class="label label-grey-200 label-xs">12 Jan 2015</div>
-                                                </td>
-                                                <td>Adrian Demian</td>
-                                                <td class="width-80 text-center"><a href="#">#7396</a></td>
-                                                <td class="width-50 text-center">&dollar;100</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="width-100 text-caption">
-                                                    <div class="label label-grey-200 label-xs">12 Jan 2015</div>
-                                                </td>
-                                                <td>Adrian Demian</td>
-                                                <td class="width-80 text-center"><a href="#">#14247</a></td>
-                                                <td class="width-50 text-center">&dollar;88</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
-                    <br/>
-                    <br/>
+                    
                 </div>
                 
                 
