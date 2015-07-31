@@ -2,7 +2,7 @@
 <?php 
 
 
-include('blue_bar_user_header.php');
+include('includes/blue_bar_user_header.php');
 $company = $this->session->userdata('company');
 //print_r($completed_courses->result());
 
@@ -83,7 +83,7 @@ $company = $this->session->userdata('company');
                 
                 <div class="col-md-4 col-lg-3">
                 
-                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                	<?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                
                 </div>
             </div>

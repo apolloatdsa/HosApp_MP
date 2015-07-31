@@ -19,4 +19,21 @@
 <file name="short_footer.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822151228427841" remote="130821901200000000" Dst="2" />
 <file name="top_nav_content_dropdown.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822151226207714" remote="130821901200000000" Dst="2" />
 <file name="top_nav_student_dropdown.php" server="siteground182.com/codeigniter_h/" local="130825633010688409" remote="130825381200000000" Dst="2" />
+<file name="admin_navbar.php" server="siteground182.com/codeigniter_h/" local="130828261111967204" remote="130828010400000000" Dst="2" />
+<file name="footer.php" server="siteground182.com/codeigniter_h/" local="130822152260246857" remote="130828010400000000" Dst="2" />
+<file name="header.php" server="siteground182.com/codeigniter_h/" local="130822151230087936" remote="130828010400000000" Dst="2" />
+<file name="header_login.php" server="siteground182.com/codeigniter_h/" local="130822151230897982" remote="130828010400000000" Dst="2" />
+<file name="instructor_navbar.php" server="siteground182.com/codeigniter_h/" local="130822151218927297" remote="130828010400000000" Dst="2" />
+<file name="manager_navbar.php" server="siteground182.com/codeigniter_h/" local="130822151222167483" remote="130828010400000000" Dst="2" />
+<file name="member_navbar.php" server="siteground182.com/codeigniter_h/" local="130822151201496300" remote="130828010400000000" Dst="2" />
+<file name="navbar.php" server="siteground182.com/codeigniter_h/" local="130822152760035444" remote="130828010400000000" Dst="2" />
+<file name="public_navbar.php" server="siteground182.com/codeigniter_h/" local="130822151229287890" remote="130828010400000000" Dst="2" />
+<file name="short_footer.php" server="siteground182.com/codeigniter_h/" local="130822151228427841" remote="130828010400000000" Dst="2" />
+<file name="student_navbar.php" server="siteground182.com/codeigniter_h/" local="130822151209046732" remote="130828010400000000" Dst="2" />
+<file name="top_nav_content_dropdown.php" server="siteground182.com/codeigniter_h/" local="130822151226207714" remote="130828010400000000" Dst="2" />
+<file name="top_nav_courses_dropdown.php" server="siteground182.com/codeigniter_h/" local="130822151209976785" remote="130828010400000000" Dst="2" />
+<file name="top_nav_instructor_dropdown.php" server="siteground182.com/codeigniter_h/" local="130822151219777346" remote="130828010400000000" Dst="2" />
+<file name="top_nav_manager_dropdown.php" server="siteground182.com/codeigniter_h/" local="130822151223007531" remote="130828010400000000" Dst="2" />
+<file name="top_nav_members_dropdown.php" server="siteground182.com/codeigniter_h/" local="130822151207666653" remote="130828010400000000" Dst="2" />
+<file name="top_nav_pages.php" server="siteground182.com/codeigniter_h/" local="130822151202116336" remote="130828010400000000" Dst="2" />
 </dwsync>

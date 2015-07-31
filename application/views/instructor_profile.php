@@ -1,4 +1,4 @@
-<?php include('blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');?>
 
     <div class="container">
         <div class="page-section">

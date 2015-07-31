@@ -1,6 +1,6 @@
 <?php 
 
-include('blue_bar_user_header.php');
+include('includes/blue_bar_user_header.php');
 $company = $this->session->userdata('company');
 
 
@@ -91,7 +91,7 @@ $company = $this->session->userdata('company');
 							$first_name = $row->first_name;
 							$last_name = $row->last_name;
 							
-							include('check_image.php');
+							include('includes/check_image.php');
 							
 							$last_login = unix_to_human($row->last_login);	
 							
@@ -158,7 +158,7 @@ $company = $this->session->userdata('company');
                 </div>
                 <div class="col-md-3">
                 
-                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                	<?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                    
                     <h4>Featured</h4>
                     <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">

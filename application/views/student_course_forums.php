@@ -251,7 +251,7 @@
                 </div>
                 <div class="col-md-3">
                 
-                     <?php include('student_nav_bar_options.php')?>
+                     <?php include('includes/student_nav_bar_options.php')?>
                     
                     <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
                         <div class="panel-heading panel-collapse-trigger">

@@ -9,7 +9,7 @@
 // Used in manager dashboard as the list users page
 
 ?>
-<?php include('blue_bar_user_header.php'  );?> <!-- includes the large blue bar with user image and level -->
+<?php include('includes/blue_bar_user_header.php'  );?> <!-- includes the large blue bar with user image and level -->
 
     <div class="container">
         <div class="page-section">
@@ -57,7 +57,7 @@
                 
                 <div class="col-md-4 col-lg-3">
                 
-                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
+                	<?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
                
                 </div>
             </div>

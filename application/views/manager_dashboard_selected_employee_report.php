@@ -3,7 +3,7 @@
 
 //print_r($course_names->result());
 
-include('blue_bar_user_header.php');
+include('includes/blue_bar_user_header.php');
 $company = $this->session->userdata('company');
 
 
@@ -32,7 +32,7 @@ $company = $this->session->userdata('company');
 						   
 								$this->session->set_userdata($edit_employee);
 								
-								include('check_image.php');
+								include('includes/check_image.php');
 							
 								
 							?>
@@ -233,7 +233,7 @@ $company = $this->session->userdata('company');
                                    </div> <!-- div 9 -->
                                    <p></p>   
                                    
-                                   <p>  <?php  include('employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
+                                   <p>  <?php  include('includes/employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
                          
 							
                         			
@@ -262,7 +262,7 @@ $company = $this->session->userdata('company');
                 
                 <div class="col-md-4 col-lg-3">
                 
-                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                	<?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                
                 </div>
             </div>

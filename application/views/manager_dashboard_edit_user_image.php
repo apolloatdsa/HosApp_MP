@@ -1,4 +1,4 @@
-<?php include('blue_bar_user_header.php');
+<?php include('includes/blue_bar_user_header.php');
 
 foreach($employee as $row){
 								
@@ -20,7 +20,7 @@ foreach($employee as $row){
 						   );						
 						
 						
-								include('check_image.php');
+								include('includes/check_image.php');
 							
 
 
@@ -35,7 +35,7 @@ foreach($employee as $row){
                     <div class="row" data-toggle="isotope">
                     
                         
-                                 <?php  include('form_student_edit.php') ?> <!-- This is the student photo edit form -->
+                                 <?php  include('includes/form_student_edit.php') ?> <!-- This is the student photo edit form -->
                                  
                               
                                 
@@ -54,10 +54,6 @@ foreach($employee as $row){
                         
                      <div class="col-md-3">
                    
-                     <?php // include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
-                    
-           
-                    
                 	</div>
                         
                   

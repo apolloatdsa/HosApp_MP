@@ -30,16 +30,9 @@
                 
                  <h3 class="section-heading"></h3>
                  
+             
                  
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                <h1><?php echo lang('edit_user_heading');?></h1>
+             <h1><?php echo lang('edit_user_heading');?></h1>
             <p><?php echo lang('edit_user_subheading');?></p>
             
             <div id="infoMessage"><?php echo $message;?></div>
@@ -55,7 +48,12 @@
                         <?php echo lang('edit_user_lname_label', 'last_name');?> <br />
                         <?php echo form_input($last_name);?>
                   </p>
-            
+                  
+            		 <p>
+                        <?php echo lang('edit_user_email_label', 'email');?> <br />
+                        <?php echo form_input($email);?>
+                  </p>
+                  
                   <p>
                         <?php echo lang('edit_user_company_label', 'company');?> <br />
                         <?php echo form_input($company);?>
@@ -76,49 +74,7 @@
                         <?php echo form_input($password_confirm);?>
                   </p>
             
-                  <?php if ($this->ion_auth->is_admin()): ?>
-
-
-			
-           <div class="panel panel-default">
-          <div class="panel-heading"><h3><?php echo lang('edit_user_groups_heading');?></h3></div>
-          <?php foreach ($groups as $group):?>
-              <label class="checkbox">
-              <?php
-                  $gID=$group['id'];
-                  $checked = null;
-                  $item = null;
-                  foreach($currentGroups as $grp) {
-                      if ($gID == $grp->id) {
-                          $checked= ' checked="checked"';
-                      break;
-                      }
-                  }
-              ?>
-              
-             
-              <div class="panel-body">
-              <div class="checkbox">
-              <p>
-              <input type="checkbox" name="groups[]" value="<?php echo $group['id'];?>"<?php echo $checked;?>>
-              <?php echo htmlspecialchars($group['name'],ENT_QUOTES,'UTF-8');?>
-              </label>
-             </p>
-               </div>
-             
-          <?php endforeach?>
-          
-              <p class="bg-info">
-              </div>
-            </div>
-
-					  <?php endif ?>
-                
-                
-                
-                
-                      <?php echo form_hidden('id', $user->id);?>
-                      <?php echo form_hidden($csrf); ?>
+                 
                 
                       <p><?php echo form_submit('submit', lang('edit_user_submit_btn'));?></p>
                 
@@ -128,30 +84,18 @@
 
                 
                 
-                
-                
-                
-                
-                
-                
-                
 
                					</div>
                             </div>
                         </div>
                     </div>
               
-              
-              
-              
-              
-              
                 </div>
                 
                 
                 <div class="col-md-4 col-lg-3">
                 
-                	<?php  include('admin_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
+                	<?php  include('includes/admin_dashboard_option_nav.php') ?> <!-- this is the right side option nav block menu -->
                
                 </div>
                 

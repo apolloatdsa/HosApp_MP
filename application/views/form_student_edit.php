@@ -17,7 +17,7 @@
 								$id = $row->id;
 								}
 							
-								include('check_image.php');
+								include('includes/check_image.php');
 							
 							
 							

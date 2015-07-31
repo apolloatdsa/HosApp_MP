@@ -1,4 +1,4 @@
-<?php include('blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');?>
 <?php 
 //print_r($company_info->result()); 
 $session_company_name = $this->session->userdata('company');
@@ -160,7 +160,7 @@ echo form_open('company_profile_controller', $attributes); ?>
                                 
                                             <div class="col-md-3">
                    
-                     <?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                     <?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                     
                     
                     <h4>Featured</h4>

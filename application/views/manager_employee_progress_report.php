@@ -121,13 +121,13 @@
             
             <tr>
          	<!-- the No# of logins / modules -->	  
-		<td colspan="5"><?php  include('gauge_1.php') ?> </tr> 
+		<td colspan="5"><?php  include('includes/gauge_1.php') ?> </tr> 
           <tr>
          	<!-- spacer -->		  
 		<td colspan="5">&nbsp; </tr> 
           <tr>
          	<!-- the No# of hours gauge -->		  
-		<td colspan="5"><?php  include('gauge_2.php') ?> </tr>  
+		<td colspan="5"><?php  include('includes/gauge_2.php') ?> </tr>  
         </tbody>
         </table>      
             
@@ -152,7 +152,7 @@
                                    </div> <!-- div 9 -->
                                    <p></p>   
                                    
-                                   <p>  <?php  include('employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
+                                   <p>  <?php  include('includes/employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
                          
 							
                         			

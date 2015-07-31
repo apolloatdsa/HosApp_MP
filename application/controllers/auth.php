@@ -624,6 +624,9 @@ class Auth extends CI_Controller {
 			);
 
 			$data['title'] = 'Set page title here';
+			
+			//$data['groups']=$this->ion_auth->groups()->result_array();
+			//$data['currentGroups'] = $this->ion_auth->get_users_groups($id)->result();
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar();
 			$this->_render_page('auth/create_user', $this->data);

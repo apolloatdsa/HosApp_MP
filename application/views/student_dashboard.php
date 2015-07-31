@@ -7,7 +7,7 @@
 
 
  ?>
-<?php include('blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');?>
 
     <div class="container">
         <div class="page-section">
@@ -267,7 +267,7 @@
                 </div>
                 <div class="col-md-3">
                 
-                     <?php include('student_nav_bar_options.php')?>
+                     <?php include('includes/student_nav_bar_options.php')?>
                     
                    
                     <h4>Featured</h4>

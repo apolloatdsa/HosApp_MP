@@ -152,7 +152,7 @@
             </div>
             <br/>
             
-            <?php  include('footer_slider.php') ?>
+            <?php  include('includes/footer_slider.php') ?>
  
             <div class="text-center">
                 <br/>

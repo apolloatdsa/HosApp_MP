@@ -30,7 +30,7 @@
 			
 								$this->session->set_userdata($edit_employee);
 								
-								include('check_image.php');
+								include('includes/check_image.php');
 							?>
 
 					<div class="item col-xs-12 col-lg-12">

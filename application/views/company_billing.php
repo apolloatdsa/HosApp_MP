@@ -11,7 +11,7 @@ $payment_date = '';
 ?>
 
 
-<?php include('blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');?>
     <div class="container">
         <div class="page-section">
             <div class="row">
@@ -312,7 +312,7 @@ $payment_date = '';
                 </div>
                 <div class="col-md-3">
                 
-                    <?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                    <?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                     
                     <h4>Featured</h4>
                     <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">

@@ -1,5 +1,5 @@
 
-<?php include('blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');?>
 
 
 
@@ -10,12 +10,12 @@
                     <div class="row" data-toggle="isotope">
                     
                               
-                               <?php include('manager_employee_progress_report.php') ?> <!-- a form will display here -->  
+                               <?php include('includes/manager_employee_progress_report.php') ?> <!-- a form will display here -->  
                           
                         
                      <div class="col-md-3">
                    
-                     <?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                     <?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                     
                     
                     <h4>Featured</h4>

@@ -19,7 +19,7 @@
 <script src="http://cdn.jsdelivr.net/raphael/2.1.2/raphael-min.js"></script> <!-- required to display the graphs --> 
 <script src="http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"></script> <!-- required to display the graphs -->
 
-<?php include('blue_bar_user_header.php');?><!-- blue bar with user image and level -->
+<?php include('includes/blue_bar_user_header.php');?><!-- blue bar with user image and level -->
 
 
 <?php foreach($employee as $row){
@@ -42,7 +42,7 @@
 						   );
 			
 								$this->session->set_userdata($edit_employee);
-								include('check_image.php');
+								include('includes/check_image.php');
 								
 ?>
 
@@ -164,13 +164,13 @@
                    </tr>
            		  <tr>
                    
-                  <td colspan="5"><?php  include('gauge_1.php') ?> </tr> <!-- the No# of logins / modules -->	  
+                  <td colspan="5"><?php  include('includes/gauge_1.php') ?> </tr> <!-- the No# of logins / modules -->	  
                    <tr>
                    <!-- spacer -->		  
                    <td colspan="5">&nbsp; </tr> 
                    <tr>
                   		  
-                   <td colspan="5"><?php  include('gauge_2.php') ?> </tr> <!-- the No# of hours gauge -->
+                   <td colspan="5"><?php  include('includes/gauge_2.php') ?> </tr> <!-- the No# of hours gauge -->
                 	</tbody>
                 	</table>      
             
@@ -196,7 +196,7 @@
                                    </div> <!-- div 9 -->
                                        <p></p>   
                                        
-                                       <p>  <?php  include('employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
+                                       <p>  <?php  include('includes/employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>
                          
 							
                         			
@@ -217,7 +217,7 @@
                 
                 <div class="col-md-4 col-lg-3">
                 
-                	<?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                	<?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                
                 </div>
             </div>

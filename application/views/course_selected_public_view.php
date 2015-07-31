@@ -323,7 +323,7 @@
         <div class="container">
             <h4>Featured</h4>
             
-             <?php  include('footer_slider.php') ?>
+             <?php  include('includes/footer_slider.php') ?>
             
 
         </div>

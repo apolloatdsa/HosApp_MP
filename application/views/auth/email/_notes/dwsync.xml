@@ -3,4 +3,7 @@
 <file name="new_password.tpl.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130772332080000000" remote="130783074600000000" Dst="2" />
 <file name="activate.tpl.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130772332080000000" remote="130783074600000000" Dst="2" />
 <file name="forgot_password.tpl.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130772332080000000" remote="130783074600000000" Dst="2" />
+<file name="activate.tpl.php" server="siteground182.com/codeigniter_h/" local="130772332080000000" remote="130828009800000000" Dst="2" />
+<file name="forgot_password.tpl.php" server="siteground182.com/codeigniter_h/" local="130772332080000000" remote="130828009800000000" Dst="2" />
+<file name="new_password.tpl.php" server="siteground182.com/codeigniter_h/" local="130772332080000000" remote="130828009800000000" Dst="2" />
 </dwsync>

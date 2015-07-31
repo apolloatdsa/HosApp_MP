@@ -8,7 +8,7 @@ foreach($print_course_certificate->result() as $row){
 	$id = $row->user_id;
 	}
 	
-	include('check_image.php');
+	include('includes/check_image.php');
 
 	
 ?>

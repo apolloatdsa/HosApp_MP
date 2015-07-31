@@ -1,4 +1,4 @@
-<?php include('blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');?>
 <?php  
 
 ?>
@@ -15,7 +15,7 @@
  
   <hr>
    
-    <?php  include('manager_edit_user_form.php') ?> <!-- a form will display here -->                 
+    <?php  include('includes/manager_edit_user_form.php') ?> <!-- a form will display here -->                 
 
 <p>
 </p>
@@ -29,7 +29,7 @@
                             
                 <div class="col-md-3">
                    
-                     <?php  include('manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
+                     <?php  include('includes/manager_dashboard_option_nav.php') ?> <!-- this is the left side option nav block menu -->
                     
                     
                     <h4>Featured</h4>
