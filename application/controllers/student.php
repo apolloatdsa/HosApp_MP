@@ -165,12 +165,18 @@ class Student extends CI_Controller {
 			 
 	
 	public function student_messages(){
-			 
-				$data['title'] = 'Set page title here';
+		
+		$user_id = $this->session->userdata('user_id');
+		$data['messages'] = $this->ion_auth->get_messages($user_id);
+		
+		$company = $this->session->userdata('company');
+		$data['employee_list'] = $this->ion_auth->get_employee_list($company);
+				 
+			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-				$this->load->view('student_messages');
-				$this->load->view('templates/footer');
+			$this->load->view('student_messages');
+			$this->load->view('templates/footer');
 			 }
 	public function student_private_profile(){
 		

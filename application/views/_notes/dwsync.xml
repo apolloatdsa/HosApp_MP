@@ -149,7 +149,7 @@
 <file name="how_is_training_delivered.php" server="siteground182.com/codeigniter_h/" local="130795320020713834" remote="130828009800000000" Dst="2" />
 <file name="image_upload.php" server="siteground182.com/codeigniter_h/" local="130810914394503743" remote="130828009800000000" Dst="2" />
 <file name="index.html" server="siteground182.com/codeigniter_h/" local="130782848400000000" remote="130828009800000000" Dst="2" />
-<file name="info.php" server="siteground182.com/codeigniter_h/" local="130810814098737153" remote="130828009800000000" Dst="2" />
+<file name="info.php" server="siteground182.com/codeigniter_h/" local="130831115497886409" remote="130830863400000000" Dst="2" />
 <file name="instructor_courses.php" server="siteground182.com/codeigniter_h/" local="130828261215983153" remote="130828009800000000" Dst="2" />
 <file name="instructor_dashboard.php" server="siteground182.com/codeigniter_h/" local="130828261211552900" remote="130828009800000000" Dst="2" />
 <file name="instructor_edit_courses.php" server="siteground182.com/codeigniter_h/" local="130828261210000000" remote="130828009800000000" Dst="2" />
@@ -158,7 +158,7 @@
 <file name="manager_dashboard_all_employee_report_completed_test.php" server="siteground182.com/codeigniter_h/" local="130828261196132018" remote="130828009800000000" Dst="2" />
 <file name="manager_dashboard_company_profile.php" server="siteground182.com/codeigniter_h/" local="130828261194001896" remote="130828009800000000" Dst="2" />
 <file name="manager_dashboard_edit_user.php" server="siteground182.com/codeigniter_h/" local="130828219876878691" remote="130828009800000000" Dst="2" />
-<file name="manager_dashboard_employee_on_course.php" server="siteground182.com/codeigniter_h/" local="130828261188531583" remote="130828009800000000" Dst="2" />
+<file name="manager_dashboard_employee_on_course.php" server="siteground182.com/codeigniter_h/" local="130831132060483735" remote="130830880200000000" Dst="2" />
 <file name="manager_dashboard_employee_progress_report.php" server="siteground182.com/codeigniter_h/" local="130828261186281454" remote="130828009800000000" Dst="2" />
 <file name="manager_dashboard_employee_report.php" server="siteground182.com/codeigniter_h/" local="130828261184951378" remote="130828009800000000" Dst="2" />
 <file name="manager_dashboard_new.php" server="siteground182.com/codeigniter_h/" local="130828261182911261" remote="130828009800000000" Dst="2" />
@@ -188,7 +188,7 @@
 <file name="student_courses.php" server="siteground182.com/codeigniter_h/" local="130828261140268822" remote="130828010400000000" Dst="2" />
 <file name="student_course_forums.php" server="siteground182.com/codeigniter_h/" local="130828261143909031" remote="130828010400000000" Dst="2" />
 <file name="student_dashboard.php" server="siteground182.com/codeigniter_h/" local="130828261136978634" remote="130828010400000000" Dst="2" />
-<file name="student_messages.php" server="siteground182.com/codeigniter_h/" local="130828261133118413" remote="130828010400000000" Dst="2" />
+<file name="student_messages.php" server="siteground182.com/codeigniter_h/" local="130831064410000000" remote="130830812400000000" Dst="2" />
 <file name="student_nav_bar_options.php" server="siteground182.com/codeigniter_h/" local="130822083006085746" remote="130828010400000000" Dst="2" />
 <file name="student_private_profile.php" server="siteground182.com/codeigniter_h/" local="130828261127178074" remote="130828010400000000" Dst="2" />
 <file name="student_profile_edit.php" server="siteground182.com/codeigniter_h/" local="130805721889109422" remote="130828010400000000" Dst="2" />
@@ -202,4 +202,5 @@
 <file name="upload.php" server="siteground182.com/codeigniter_h/" local="130790508712678318" remote="130828010400000000" Dst="2" />
 <file name="welcome_message.php" server="siteground182.com/codeigniter_h/" local="130355669660000000" remote="130828010400000000" Dst="2" />
 <file name="about_us.php" server="siteground182.com/codeigniter_h/" local="130795386730969443" remote="130828010400000000" Dst="2" />
+<file name="manager_dashboard_contact_employee.php" server="siteground182.com/codeigniter_h/" local="130830864857650607" remote="130830612600000000" Dst="2" />
 </dwsync>

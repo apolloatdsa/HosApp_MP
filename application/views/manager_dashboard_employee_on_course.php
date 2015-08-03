@@ -75,9 +75,9 @@ $company = $this->session->userdata('company');
 								$id = 	$row->id ;
 								
 								
-								$image = base_url().'images/members/'.$id.'-'.$last_name;
+								// $image = base_url().'images/members/'.$id.'-'.$last_name;
 							
-							
+								include('includes/check_image.php');
 							
 							
 							
@@ -88,7 +88,7 @@ $company = $this->session->userdata('company');
                                     <div class="media v-middle">
                                         <div class="media-left">
                                             <a href="#">
-                                                <img src="'.$image.'.JPG" alt="person" class="img-circle width-40" />
+                                                <img src="'.$image.'" alt="person" class="img-circle width-40" />
                                             </a>
                                         </div>
                                         <div class="media-body">

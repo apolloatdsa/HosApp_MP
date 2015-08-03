@@ -105,53 +105,11 @@
                       </table>
                       </div>	
                       
-                <div class="col-md-6 ">
-                    <hr>
-                    <h4>Database table</h4>
-                    <hr>
                 
-                      
-                      
-                </div>    
-               <div class="col-md-6 ">
-                    <hr>
-                    <h4>Database table</h4>
-                    <hr>
-                
-                      
-                      
-                </div>           
-                <div class="col-md-6 ">
-                    <hr>
-                    <h4>Database table</h4>
-                    <hr>
-                
-                      
-                      
-                </div>          
-                <div class="col-md-6 ">
-                    <hr>
-                    <h4>Database table</h4>
-                    <hr>
-                
-                      
-                      
-                </div>          
-                <div class="col-md-6 ">
-                    <hr>
-                    <h4>Database table</h4>
-                    <hr>
-                
-                      
-                      
-                </div>
                           
                     </div>	
                     
-                    
-                    
-                    
-
+                 
                 </div>
             </div>
         </div>

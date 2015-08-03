@@ -1,204 +1,112 @@
-<?php include('includes/blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');
+
+//print_r($employee_list->result());
+
+
+								
+												
+//print_r($employees_images);
+//echo $employee_list->result() => 
+
+
+?>
     <div class="container">
         <div class="page-section">
             <div class="row">
                 <div class="col-md-9">
+                
                     <div class="media messages-container media-clearfix-xs-min media-grid">
-                        <div class="media-left">
-                            <div class="messages-list">
-                                <div class="panel panel-default paper-shadow" data-z="0.5" data-scrollable-h>
-                                    <ul class="list-group">
-                                        <li class="list-group-item active">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/woman-5.jpg" width="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">Today</span>
-                                                        <span class="user">Samantha Michael</span>
-                                                        <div class="text-light">Are we ok to meet...</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/guy-3.jpg" height="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">Sat</span>
-                                                        <span class="user">Adrian Demian.</span>
-                                                        <div class="text-light">Looking forward to...</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/woman-4.jpg" width="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">5 days</span>
-                                                        <span class="user">Michelle Anister</span>
-                                                        <div class="text-light">Nice design.</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/woman-3.jpg" height="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">Sat</span>
-                                                        <span class="user">Sue Tallbot</span>
-                                                        <div class="text-light">Looking forward to...</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/guy-9.jpg" height="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">Sat</span>
-                                                        <span class="user">Andy Smith</span>
-                                                        <div class="text-light">Looking forward to...</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/woman-9.jpg" height="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">Sat</span>
-                                                        <span class="user">Jeniffer Doe</span>
-                                                        <div class="text-light">Looking forward to...</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/guy-6.jpg" height="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">Sat</span>
-                                                        <span class="user">Jimmy Joe</span>
-                                                        <div class="text-light">Looking forward to...</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#">
-                                                <div class="media v-middle">
-                                                    <div class="media-left">
-                                                        <img src="<?php echo base_url();?>images/people/110/guy-2.jpg" height="50" alt="" class="media-object" />
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <span class="date">Sat</span>
-                                                        <span class="user">Chris Name</span>
-                                                        <div class="text-light">Looking forward to...</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    
+                        
+                        
                         <div class="media-body">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-btn">
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-envelope"></i> Send
-                                        </a>
-                                    </div>
-                                    <!-- /btn-group -->
-                                    <input type="text" class="form-control share-text" placeholder="Write message..." />
+                                   
+                                    <!-- /btn-group 
+                                    <input type="text" class="form-control share-text" placeholder="Write message..." /> -->
+                                    <?php // include('includes/messages_form.php');?>
+                                    
+                                    
+                                    
                                 </div>
                                 <!-- /input-group -->
+                                
+                                
+                                
                             </div>
-                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                            
+                            <?php 
+							
+					
+						
+						
+						$loggin_user = $this->session->userdata('user_id');
+		$employees = array(); 
+								
+						foreach($employee_list->result() as $row){
+							
+							if ($loggin_user != $row->id){	// exclude current user from the list
+							// create key and value to store in the options array	
+							$key = $row->id;
+							$value = $row->first_name. ' '. $row->last_name	; 
+							
+							$employees[$key] = $value; // build options array with list of user for the company
+							}			
+								}
+								
+					$employees_lastName = array(); 
+								
+						foreach($employee_list->result() as $row){
+							
+							// create key and value to store in the options array	
+							$key = $row->id;
+							$value = $row->last_name; 
+							
+							$employees_lastName[$key] = $value; // build options array with list of user for the company
+										
+								}			
+					
+					//print_r($employees_lastName);
+					
+					
+					if($messages != 'You have no new messages'){	
+					foreach($messages as $row){
+						
+						$from_id = $row->from_id;
+						$message = $row->message;
+						$when = $row->date;	
+							
+                    echo   ' <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
                                 <div class="panel-body">
                                     <div class="media v-middle">
                                         <div class="media-left">
-                                            <img src="<?php echo base_url();?>images/people/110/woman-5.jpg" alt="person" class="media-object img-circle width-50" />
+										<img src="'.base_url().'images/members/'.$from_id.'-'.$employees_lastName[$from_id].'.JPG" class="img-circle width-50" alt=""  />
+                                            
                                         </div>
                                         <div class="media-body message">
-                                            <h4 class="text-subhead margin-none"><a href="#">Samantha Michael</a></h4>
-                                            <p class="text-caption text-light"><i class="fa fa-clock-o"></i> 2 min ago</p>
+                                            <h4 class="text-subhead margin-none"><a href="#">'.$employees[$from_id].'</a></h4>
+                                            <p class="text-caption text-light"><i class="fa fa-clock-o"></i>  '.$when .'</p>
                                         </div>
                                     </div>
-                                    <p>Is 4pm ok?</p>
+                                    <p>'.$message.'</p>
                                 </div>
-                            </div>
-                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                                <div class="panel-body">
-                                    <div class="media v-middle">
-                                        <div class="media-left">
-                                            <img src="<?php echo base_url();?>images/people/110/guy-5.jpg" alt="person" class="media-object img-circle width-50" />
-                                        </div>
-                                        <div class="media-body message">
-                                            <h4 class="text-subhead margin-none"><a href="#">Adrian Demian</a></h4>
-                                            <p class="text-caption text-light"><i class="fa fa-clock-o"></i> 15 hrs ago</p>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Hi Samantha
-                                    </p>
-                                    <p>Sure, Tomorrow is great.. What time?</p>
-                                </div>
-                            </div>
-                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                                <div class="panel-body">
-                                    <div class="media v-middle">
-                                        <div class="media-left">
-                                            <img src="<?php echo base_url();?>images/people/110/woman-5.jpg" alt="person" class="media-object img-circle width-50" />
-                                        </div>
-                                        <div class="media-body message">
-                                            <h4 class="text-subhead margin-none"><a href="#">Samantha Michael</a></h4>
-                                            <p class="text-caption text-light"><i class="fa fa-clock-o"></i> 1 day ago</p>
-                                        </div>
-                                    </div>
-                                    <p>Sure.</p>
-                                    <p>Is Tomorrow ok to discuss?</p>
-                                </div>
-                            </div>
-                            <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-                                <div class="panel-body">
-                                    <div class="media v-middle">
-                                        <div class="media-left">
-                                            <img src="<?php echo base_url();?>images/people/110/guy-5.jpg" alt="person" class="media-object img-circle width-50" />
-                                        </div>
-                                        <div class="media-body message">
-                                            <h4 class="text-subhead margin-none"><a href="#">Adrian Demian</a></h4>
-                                            <p class="text-caption text-light"><i class="fa fa-clock-o"></i> 2 days ago</p>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Can we arrange a Skype call?
-                                    </p>
-                                </div>
-                            </div>
+                            </div> ';
+							
+							
+							}
+							}else{
+								
+								
+								echo '<h2> You have no new messages </h2>';
+								
+								}
+							
+							
+							
+                            ?>
+                           
+                           
                         </div>
                     </div>
                     <br/>

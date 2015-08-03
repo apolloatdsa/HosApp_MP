@@ -495,7 +495,24 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/short_footer');
 			
 		}
-		
+	function contact_employee(){
+			
+			$id =  $this->session->userdata('edit_id');
+			$company = $this->session->userdata('company');
+			$data['employee_list'] = $this->ion_auth->get_employee_list($company);
+			$data['employee'] = $this->ion_auth->edit_employee($id);
+			
+			$data['error'] = '';
+			$data['id'] = $id;
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
+			//echo $this->listview->render();
+			$this->load->view('manager_dashboard_contact_employee');
+			$this->load->view('templates/short_footer');
+			
+		}
+			
 		
 	function create_new_user(){
 			
@@ -741,6 +758,15 @@ class Manager_dashboard extends CI_Controller {
 			$this->load->view('templates/short_footer');
 	  
 	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	function mark_as_completed($id, $course_id){
 		
 		// add or remove the completed flag in employee_to_coursed

@@ -2829,14 +2829,26 @@ class Ion_auth_model extends CI_Model
 		return $query;
 		
 		}	
+		
+	function get_messages($user_id){
+		
+		$this->db->where('to_id', $user_id);
+		$query = $this->db->get('messages');
+		if ($query->num_rows() !== 0)
+				{
+					
+				return $query->result(); // success adding the course
+				}else{
+				
+				
+				return 'You have no new messages'; // if database connection failed
+		
+				}
+		
+		}	
+		
+		
 //#############################################################################################//
-
-	
-
-
-
- 
-
 
 
 	

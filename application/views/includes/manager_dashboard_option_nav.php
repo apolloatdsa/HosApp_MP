@@ -31,6 +31,9 @@ $sort_order = 'asc';
                                 
                                 
                                 <li class="list-group-item"><a class="link-text-color" href="<?php echo base_url();?>manager_dashboard/list_completed/<?php echo $sort_by ?>/<?php echo $sort_order ?>">List Completed - Table view</a></li>
+                                
+                                <li class="list-group-item"><a class="link-text-color"  href="<?php echo base_url();?>manager_dashboard/contact_employee">Contact employee </a></li>
+                                
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a class="link-text-color" href="#"><span>Another option here</span></a></li>
                                 <li class="list-group-item"><a  class="link-text-color" href="<?php echo base_url();?>auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
