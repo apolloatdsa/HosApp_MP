@@ -64,14 +64,35 @@ $company = $this->session->userdata('company');
                                         $attributes = array('class' => '', 'id' => '');
                                         echo form_open("manager_edit_user_controller/index/$id", $attributes); ?>
                                 
-                               
+                                <p>
+                                        <label for="first_name">First Name <span class="required">*</span></label>
+                                        <?php echo form_error('first_name'); ?>
+                                        <br /><input class="form-control" id="first_name" type="text" name="first_name" maxlength="30" placeholder = "<?php echo $first_name ?>" value="<?php echo $first_name;   ?>" readonly />
+                                </p>
+                                
+                                <p>
+                                        <label for="last_name">Last Name <span class="required">*</span></label>
+                                        <?php echo form_error('last_name'); ?>
+                                        <br /><input class="form-control" id="last_name" type="text" name="last_name" maxlength="30" placeholder = "<?php echo $last_name ?>"  value="<?php echo $last_name; set_value('last_name'); ?>" readonly />
+                                </p>
+                                
+                                <p>
+                                        <label for="email">Email <span class="required">*</span></label>
+                                        <?php echo form_error('email'); ?>
+                                        <br /><input class="form-control" id="email" type="text" name="email" maxlength="30" placeholder = "<?php echo $email ?>"  value="<?php echo $email; set_value('email'); ?>" readonly />
+                                </p>
+                                
                                 <p>
                                         <label for="department">Department <span class="required">*</span></label>
                                         <?php echo form_error('department'); ?>
                                         <br /><input class="form-control" id="department" type="text" name="department" maxlength="30" placeholder = "<?php echo $department ?>"  value="<?php echo $department;  set_value('department'); ?>" readonly />
                                 </p>
                                 
-                                
+                                <p>
+                                        <label for="phone">Phone <span class="required">*</span></label>
+                                        <?php echo form_error('phone'); ?>
+                                        <br /><input class="form-control" id="phone" type="text" name="phone" maxlength="30" placeholder = "<?php echo $phone ?>"  value="<?php echo $phone; set_value('phone'); ?>" readonly />
+                                </p>
                                 
                                 
                                 <?php echo form_close(); ?>
