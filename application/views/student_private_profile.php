@@ -1,5 +1,11 @@
 
-<?php include('includes/blue_bar_user_header.php');?>
+<?php include('includes/blue_bar_user_header.php');
+
+// students can upload their image
+
+
+
+?>
 
     <div class="container">
         <div class="page-section">
@@ -73,14 +79,14 @@
                                                 <div class="col-md-6">
                                                     <div class="">
                                                     	<label for="user_profile_fn">First name</label>
-                                                        <input type="text" class="form-control" id="user_profile_fn" placeholder="Your first name" value="<?php echo $this->session->userdata('user_first_name'); ?>">
+                                                        <input type="text" class="form-control" id="user_profile_fn" placeholder="Your first name" value="<?php echo $this->session->userdata('user_first_name'); ?>" readonly >
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="">
                                                    		<label for="user_profile_ln">Last name</label>
-                                                        <input type="text" class="form-control" id="user_profile_ln" placeholder="Your last name" value="<?php echo $this->session->userdata('user_last_name'); ?>">
+                                                        <input type="text" class="form-control" id="user_profile_ln" placeholder="Your last name" value="<?php echo $this->session->userdata('user_last_name');  ?>  " readonly >
                                                         
                                                     </div>
                                                 </div>
@@ -93,24 +99,13 @@
                                             <div class="">
                                                 <div class="input-group">
                                                     <span class=""><i class="fa fa-envelope"> </i> </span>
-                                                    <input type="email" class="form-control" id="user_profile_email" placeholder="Email" value="<?php echo $this->session->userdata('email'); ?>">
+                                                    <input type="email" class="form-control" id="user_profile_email" placeholder="Email" value="<?php echo $this->session->userdata('email'); ?>" readonly >
                                                     <label for="user_profile_email">Email address</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="user_profile_website" class="col-md-2 control-label">Website</label>
-                                        <div class="col-md-6">
-                                            <div class="">
-                                                <div class="input-group">
-                                                    <span class=""> <i class="fa fa-link"> </i> </span>
-                                                    <input type="text" class="form-control used" id="user_profile_website" value="www.your_web.com">
-                                                    <label for="user_profile_website">Website</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  
                                     <div class="form-group">
                                         <label for="user_profile_password" class="col-md-2 control-label">Change Password</label>
                                         <div class="col-md-6">

@@ -24,5 +24,6 @@
                             <li><a href="<?php echo base_url();?>online_training/blog_post">Blog Listing</a></li>
                             <li><a href="<?php echo base_url();?>online_training/contact_us_view">Contact</a></li>
                             <li><a href="<?php echo base_url();?>map/location_map">Company offices</a></li>
+                            <li><a href="<?php echo base_url();?>online_training/how_to_video">Watch the how to video</a></li>
                         </ul>
                     </li>

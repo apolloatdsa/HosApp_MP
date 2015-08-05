@@ -1,5 +1,16 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
+
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793
+// Major Project: CodeIgniter MVC framework for Folio LMS website. 
+// This model is used extensively throughout the project for functions accessing the database 
+// 
+
+
 * Name:  Ion Auth Model
 *
 * Version: 2.5.2
@@ -2272,9 +2283,16 @@ class Ion_auth_model extends CI_Model
 		return $ip_address;
 	}
 	
+	
+// Functions below were for the Folio project	
+// Date:2015/07/24
+// Author: Thomas Delaney
+// Student ID: D14126353
+// Author: Sarah Barrow
+// Student	ID:	D13126793	
+	
+
 	public function find_user_group($id){
-		
-		
 		
 		$query = $this->db->get_where('users_groups', array('user_id' => $id));
 		
@@ -2334,7 +2352,7 @@ class Ion_auth_model extends CI_Model
 		
 		}
 		
-	function manager_delete_user($id)
+	public function manager_delete_user($id)
 	{
 		$this->db->delete('users', array('id' => $id));
 		
@@ -2347,7 +2365,7 @@ class Ion_auth_model extends CI_Model
 	}
 	
 	
-	function get_employee_list($company) {
+	public function get_employee_list($company) {
 		
 		
 		$employee_list = $this->db->get_where('users', array('company' => $company));
@@ -2356,14 +2374,14 @@ class Ion_auth_model extends CI_Model
 		
 		}
 	
-	function get_courses() {
+	public function get_courses() {
 		
 		$courses = $this->db->get('courses');
 		
     		return $courses;
 		
 		}
-	function get_registered_courses_names($id){
+	public function get_registered_courses_names($id){
 			
 			$this->db->where('user_id', $id);
 			$query = $this->db->get('employee_to_course JOIN courses ON employee_to_course.course_id=courses.course_id' );
@@ -2371,7 +2389,7 @@ class Ion_auth_model extends CI_Model
 			return $query;
 		
 		}
-	function get_courses_list(){
+	public function get_courses_list(){
 			
 			
 			$query = $this->db->get('courses' );
@@ -2379,7 +2397,7 @@ class Ion_auth_model extends CI_Model
 			return $query;
 		
 		}	
-	function get_display_course($course_id){
+	public function get_display_course($course_id){
 		
 			$this->db->where('course_id', $course_id);
 			$query = $this->db->get('courses');
@@ -2387,7 +2405,7 @@ class Ion_auth_model extends CI_Model
 		
 		}
 		
-	function set_remove_completed($id, $course_id){
+	public function set_remove_completed($id, $course_id){
 		
 			$this->db->select('completed');
 			$this->db->where('user_id' , $id);
@@ -2429,7 +2447,7 @@ class Ion_auth_model extends CI_Model
 				
 			
 		}	
-	function set_couses_as_completed($id, $course_id){
+	public function set_couses_as_completed($id, $course_id){
 		
 			$this->db->select('completed');
 			$this->db->where('user_id' , $id);
@@ -2464,7 +2482,7 @@ class Ion_auth_model extends CI_Model
 		
 		}	
 			
-	function manager_remove_course($course_id, $id){
+	public function manager_remove_course($course_id, $id){
 		
 			$this->db->where('user_id', $id );
 			$this->db->where('course_id', $course_id );
@@ -2473,7 +2491,7 @@ class Ion_auth_model extends CI_Model
 			return true;
 			
 		}
-	function manager_remove_course_results($course_id, $id){
+	public function manager_remove_course_results($course_id, $id){
 		
 			$this->db->where('user_id', $id );
 			$this->db->where('course_id', $course_id );
@@ -2483,7 +2501,7 @@ class Ion_auth_model extends CI_Model
 		}	
 		
 					
-	function archive_completed_course($course_id, $id){
+	public function archive_completed_course($course_id, $id){
 		
 			$this->db->where('user_id', $id );
 			$this->db->where('course_id', $course_id );
@@ -2519,7 +2537,7 @@ class Ion_auth_model extends CI_Model
 			
 			
 		}				
-	function check_if_already_completed($course_id, $id){
+	public function check_if_already_completed($course_id, $id){
 		
 				$this->db->where('user_id', $id );
 				$this->db->where('course_id', $course_id );
@@ -2538,7 +2556,7 @@ class Ion_auth_model extends CI_Model
 				}
 		
 		}
-	function check_if_already_finished($course_id, $id){
+	public function check_if_already_finished($course_id, $id){
 		
 				$this->db->where('user_id', $id );
 				$this->db->where('course_id', $course_id );
@@ -2559,7 +2577,7 @@ class Ion_auth_model extends CI_Model
 		
 		}	
 		
-	function count_completed_courses($id){
+	public function count_completed_courses($id){
 		
 		$this->db->select('*');
 		$this->db->from('employee_results');
@@ -2571,7 +2589,7 @@ class Ion_auth_model extends CI_Model
 		return $query;
 		}
 		
-	function get_all_completed_courses(){
+	public function get_all_completed_courses(){
 		
 		$company = $this->session->userdata('company');
 		
@@ -2631,7 +2649,7 @@ class Ion_auth_model extends CI_Model
 		return $query;
 		}
 		
-		function count_all_completed_courses(){
+		public function count_all_completed_courses(){
 		
 		$company = $this->session->userdata('company');
 		
@@ -2646,7 +2664,7 @@ class Ion_auth_model extends CI_Model
 		return $query;
 		}
 		
-	function get_registered_courses($id){
+	public function get_registered_courses($id){
 		
 			$this->db->where('user_id', $id );
 			$query = $this->db->get('employee_to_course');
@@ -2655,7 +2673,7 @@ class Ion_auth_model extends CI_Model
 			return $query;
 		
 		}
-	function check_registered_courses($id){
+	public function check_registered_courses($id){
 		
 			$this->db->where('user_id', $id );
 			$query = $this->db->get('employee_results');
@@ -2665,7 +2683,7 @@ class Ion_auth_model extends CI_Model
 		
 		}		
 			
-	function get_selected_courses_public($course_id){
+	public function get_selected_courses_public($course_id){
 		
 		$this->db->where('course_id', $course_id );
 		$query = $this->db->get('courses');
@@ -2673,7 +2691,7 @@ class Ion_auth_model extends CI_Model
 		}	
 		
 		
-	function add_employee_to_course($course_id, $id, $company){ 
+	public function add_employee_to_course($course_id, $id, $company){ 
 	// This will check the table first to prevent duplicate entries	
 	//print_r($course_id. '<br>' .$id. ' <br>' . $company);
 		$course = $this->db->get_where('courses', array('course_id' => $course_id) ); // get details on the course - number_of_modules  & number_of_quizs
@@ -2714,14 +2732,14 @@ class Ion_auth_model extends CI_Model
 			}
 		
 		}
-	function get_company_info($company_name){
+	public function get_company_info($company_name){
 		
 		$query = $this->db->get_where('companies', array('company_name' => $company_name));
 		return $query;
 		}		
 			
 		
-	function add_to_employee_result_table($course_id, $id ){
+	public function add_to_employee_result_table($course_id, $id ){
 	// This will add a record to the result table- It adds the employee ID and the course ID - the results will be built when the employee has avtivity through the modules.
 		$course = $this->db->get('courses', $course_id ); // get details on the course - number_of_modules  & number_of_quizs
 		foreach($course->result() as $row){
@@ -2761,7 +2779,7 @@ class Ion_auth_model extends CI_Model
 		
 		}
 	
-	function get_employee_on_course($course_id, $company){ // will return
+	public function get_employee_on_course($course_id, $company){ // will return
 			//echo 'Course '.$course_id.' Company '. $company;
 		 	$this->db->from('employee_to_course');
 		 	$this->db->join('users', 'users.id = employee_to_course.user_id');
@@ -2789,21 +2807,21 @@ class Ion_auth_model extends CI_Model
 			
 		
 		}
-	function count_empolyees_on_course($course_id, $company){
+	public function count_empolyees_on_course($course_id, $company){
 		
 		$this->db->where('course_id', $course_id);
 		$this->db->where('company', $company);
 		$query = $this->db->count_all_results('employee_to_course');
 		return $query;
 		}
-	function employee_count($company) {
+	public function employee_count($company) {
 		
 		$this->db->where('company', $company);
 		$query = $this->db->count_all_results('users');
 		return $query;
 		}
 	
-	function get_employee_results($id, $course_id){
+	public function get_employee_results($id, $course_id){
 		
 		
 		$this->db->where('user_id' , $id);
@@ -2814,13 +2832,13 @@ class Ion_auth_model extends CI_Model
 		return $course_results;
 		
 		}	
-	function get_groups(){
+	public function get_groups(){
 		
 		$query = $this->db->get('groups');
 		return $query;
 		
 		}
-	function get_user_group($id){
+	public function get_user_group($id){
 		
 		$this->db->from('users_groups');
 		$this->db->join('groups', 'groups.id = users_groups.group_id');
@@ -2830,7 +2848,7 @@ class Ion_auth_model extends CI_Model
 		
 		}	
 		
-	function get_messages($user_id){
+	public function get_messages($user_id){
 		
 		$this->db->where('to_id', $user_id);
 		$query = $this->db->get('messages');
@@ -2852,7 +2870,8 @@ class Ion_auth_model extends CI_Model
 
 
 	
-	// function called by page loads in the online_training controller this will return the user level navbar to use 
+// function called by controllers loading views that use the top navbar - it returns the navbar depending on the user level
+// php switch could also have been used to acheive this
 	
 	public function navbar(){
 

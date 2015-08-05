@@ -12,6 +12,7 @@
 // https://ellislab.com/codeigniter/user-guide/database/queries.html
 // https://ellislab.com/codeigniter/user-guide/database/active_record.html
 // http://code.tutsplus.com/articles/30-awesome-codeigniter-tutorials-for-all-skill-levels--net-16915
+// not used in the project
 
 class Email extends CI_Controller {
 	 

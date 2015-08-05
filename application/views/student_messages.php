@@ -1,13 +1,6 @@
 <?php include('includes/blue_bar_user_header.php');
 
-//print_r($employee_list->result());
-
-
-								
-												
-//print_r($employees_images);
-//echo $employee_list->result() => 
-
+// employees display messages page
 
 ?>
     <div class="container">
@@ -17,32 +10,16 @@
                 
                     <div class="media messages-container media-clearfix-xs-min media-grid">
                     
-                        
-                        
                         <div class="media-body">
                             <div class="form-group">
-                                <div class="input-group">
-                                   
-                                    <!-- /btn-group 
-                                    <input type="text" class="form-control share-text" placeholder="Write message..." /> -->
-                                    <?php // include('includes/messages_form.php');?>
-                                    
-                                    
-                                    
-                                </div>
-                                <!-- /input-group -->
-                                
-                                
-                                
+                               
                             </div>
                             
                             <?php 
 							
 					
-						
-						
 						$loggin_user = $this->session->userdata('user_id');
-		$employees = array(); 
+						$employees = array(); // builds array with first and last name of employees with user_id as the key
 								
 						foreach($employee_list->result() as $row){
 							
@@ -55,7 +32,7 @@
 							}			
 								}
 								
-					$employees_lastName = array(); 
+						$employees_lastName = array(); // array of last name of employee with user_id as the key
 								
 						foreach($employee_list->result() as $row){
 							
@@ -76,12 +53,24 @@
 						$from_id = $row->from_id;
 						$message = $row->message;
 						$when = $row->date;	
+						
+						//$url = base_url(); 
+						$image_file = 'images/members/'.$from_id.'-'.$employees_lastName[$from_id].'.JPG'; // user image
+						//echo $image_file;
+						if (file_exists($image_file)){ // replace missing images with user icon
+									
+							$image =	base_url().$image_file ;  // use image if it is in the folder
+								
+								}else{
+									$image =	base_url().'images/people/110/user-placeholder.png' ; // user icon
+									}
+						
 							
                     echo   ' <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
                                 <div class="panel-body">
                                     <div class="media v-middle">
                                         <div class="media-left">
-										<img src="'.base_url().'images/members/'.$from_id.'-'.$employees_lastName[$from_id].'.JPG" class="img-circle width-50" alt=""  />
+										<img src="'.$image.'" class="img-circle width-50" alt=""  />
                                             
                                         </div>
                                         <div class="media-body message">

@@ -45,15 +45,11 @@ class Cdn extends CI_Controller {
 					 
 					 };
 					 
-					 
-					 
 				
-              
 				$this->load->library(array('ion_auth','form_validation'));
 				$this->load->helper(array('url','language'));
 				$this->lang->load('auth');
-				//$this->login_index();
-				//$this->index();
+				
         }
 		
 
@@ -66,9 +62,7 @@ class Cdn extends CI_Controller {
 	 
 	public function cdn_dashboard(){
 			
-			//$data['selected_course'] = $this->ion_auth->get_display_course($course_id);
-			//print_r($data['course_list']->result());
-			//$data['course_id'] = $course_id;
+			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
@@ -80,9 +74,7 @@ class Cdn extends CI_Controller {
 	
 	public function cdn_do_something(){
 			
-			//$data['selected_course'] = $this->ion_auth->get_display_course($course_id);
-			//print_r($data['course_list']->result());
-			//$data['course_id'] = $course_id;
+			
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use

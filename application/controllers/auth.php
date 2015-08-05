@@ -1,5 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+// This Ion Auth authentication library http://benedmunds.com/ion_auth/ was added to Codeigniter   
+
+
 class Auth extends CI_Controller {
 
 	function __construct()

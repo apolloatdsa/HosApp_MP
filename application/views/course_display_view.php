@@ -326,19 +326,9 @@
                     <br/>
                 </div>
                 <div class="col-md-3">
-                    <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-                        <div class="panel-heading panel-collapse-trigger">
-                            <h4 class="panel-title">Resources</h4>
-                        </div>
-                        <div class="panel-body list-group">
-                            <ul class="list-group list-group-menu">
-                                <li class="list-group-item active"><a class="link-text-color" href="#">Curriculum</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Course Forums</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Take Quiz</a></li>
-                                <li class="list-group-item"><a class="link-text-color" href="#">Quiz Results</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
+                    <?php include('includes/student_nav_bar_options.php')?>
+                    
                     <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
                         <div class="panel-heading panel-collapse-trigger">
                             <h4 class="panel-title">Instructor</h4>

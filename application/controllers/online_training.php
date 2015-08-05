@@ -324,7 +324,17 @@ class Online_training extends CI_Controller {
 			$this->load->view('blog_post' , $data);
 			$this->load->view('templates/footer');
 			
-			}													
+			}
+		public function how_to_video(){
+			
+			$data['title'] = 'Set page title here';
+			$this->load->view('templates/header', $data );
+			$this->ion_auth->navbar();// calls a function in the ion auth model to return the user level navbar to use
+			$this->load->view('how_to_video' , $data);
+			$this->load->view('templates/short_footer');
+			
+			}							
+																
 		public function frontend_2(){
 			
 			

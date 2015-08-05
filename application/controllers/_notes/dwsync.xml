@@ -14,7 +14,6 @@
 <file name="user_info.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822046131356632" remote="130821797400000000" Dst="2" />
 <file name="get_logged_in_user_info.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822046129946551" remote="130821797400000000" Dst="2" />
 <file name="contacts.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822043987113988" remote="130821797400000000" Dst="2" />
-<file name="demo.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130355669660000000" remote="130804699200000000" Dst="2" />
 <file name="index.html" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130782848400000000" remote="130804699200000000" Dst="2" />
 <file name="welcome.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130355669660000000" remote="130804699200000000" Dst="2" />
 <file name="manager_dashboard.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130824666337077841" remote="130824414000000000" Dst="2" />
@@ -23,10 +22,12 @@
 <file name="course_access.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822046132816715" remote="130821797400000000" Dst="2" />
 <file name="company_profile_controller.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130823944345602290" remote="130823692200000000" Dst="2" />
 <file name="cdn.php" server="ftp.breezecatcher-clothesline.com/codeigniter_h/" local="130822046128506469" remote="130821797400000000" Dst="2" />
-<file name="auth.php" server="siteground182.com/codeigniter_h/" local="130828296432007394" remote="130828044000000000" Dst="2" />
+<file name="auth.php" server="siteground182.com/codeigniter_h/" local="130832489069110189" remote="130832237400000000" Dst="2" />
 <file name="manager_dashboard.php" server="siteground182.com/codeigniter_h/" local="130830862996384149" remote="130830610800000000" Dst="2" />
 <file name="manager_edit_user_controller.php" server="siteground182.com/codeigniter_h/" local="130826569723265303" remote="130826317800000000" Dst="2" />
 <file name="member.php" server="siteground182.com/codeigniter_h/" local="130826411543467937" remote="130826159400000000" Dst="2" />
 <file name="message_controller.php" server="siteground182.com/codeigniter_h/" local="130830834664223642" remote="130830582600000000" Dst="2" />
 <file name="student.php" server="siteground182.com/codeigniter_h/" local="130830900910162693" remote="130830649200000000" Dst="2" />
+<file name="online_training.php" server="siteground182.com/codeigniter_h/" local="130832545886699969" remote="130832293800000000" Dst="2" />
+<file name="email.php" server="siteground182.com/codeigniter_h/" local="130832482210000000" remote="130832230200000000" Dst="2" />
 </dwsync>

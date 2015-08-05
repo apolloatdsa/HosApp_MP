@@ -41,7 +41,7 @@ class User_info extends CI_Controller {
 		
 	}// end construct
 
-	// start Tom Delaney edit	
+	//
 	#####################################################################################################################
 	
 	function index()
