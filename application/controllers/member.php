@@ -18,12 +18,14 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Member extends CI_Controller {
+	
+	// Used for controlling registers users who are in the memebrs group
 	 
 	 public function __construct()
         {
                 parent::__construct();
 				//session_start();
-				
+				// check to see if lgged in user in in one of the groups if not redirect them to the login page
 				if (!$this->session->userdata('instructor') && !$this->session->userdata('student')  && !$this->session->userdata('member')  && !$this->session->userdata('admin') ){
 					
 	 					redirect('auth/login');

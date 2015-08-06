@@ -19,11 +19,13 @@
 
 class Manager_dashboard extends CI_Controller {
 	
+	// used to control the manager dashboard and manager functions
 	 public function __construct()
         {
                 parent::__construct();
 				//session_start();
 				$this->load->library('listview');
+				// check if user level is manager or admin redirect to login if not
 				if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
 					
 	 					redirect('auth/logout');
@@ -37,8 +39,7 @@ class Manager_dashboard extends CI_Controller {
 				$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
 				$this->lang->load('auth');
-				//$this->login_index();
-				//$this->index();
+				
         }
 		
 	

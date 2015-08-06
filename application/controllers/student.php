@@ -18,12 +18,12 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Student extends CI_Controller {
-	 
+// used to manager the student dashboard and student finctions 	 
 	 public function __construct()
         {
                 parent::__construct();
 				//session_start();
-				
+				// limit access to students and any user with a higher level
 				if (!$this->session->userdata('student') && !$this->session->userdata('admin') && !$this->session->userdata('instructor') && !$this->session->userdata('manager')){
 					
 	 					redirect('online_training/index');

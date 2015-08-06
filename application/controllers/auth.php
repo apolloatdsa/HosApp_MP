@@ -5,6 +5,7 @@
 
 
 class Auth extends CI_Controller {
+// used to for registered user management 
 
 	function __construct()
 	{

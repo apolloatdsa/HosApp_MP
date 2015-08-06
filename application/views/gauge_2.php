@@ -15,7 +15,7 @@
 
 ?>  
 
-    <div id="gauge2" class="300x200px"></div>
+    <div id="gauge2" class="200x300px"></div>
     
     
     <script>

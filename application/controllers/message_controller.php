@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Message_controller extends CI_Controller {
+	
+	// user by managers sending mesages to employees from the manager dashboard
                
 	function __construct()
 	{

@@ -18,7 +18,7 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Company_profile_controller extends CI_Controller {
-               
+    // used by the manager dashboard to edit company information           
 	function __construct()
 	{
  		

@@ -18,7 +18,7 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Get_logged_in_user_info extends CI_Controller {
-
+	// used to get required information about the user and add to the current session
 	function __construct()
 	{
 		parent::__construct();

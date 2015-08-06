@@ -18,7 +18,7 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Edit_user_controller extends CI_Controller {
-               
+     // used by the manager dashboard to edit registered users          
 	function __construct()
 	{
  		parent::__construct();

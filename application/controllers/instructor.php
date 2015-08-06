@@ -19,7 +19,7 @@
 
 
 class Instructor extends CI_Controller {
-	 
+	 // controlls the instructor dashboard and finctions
 	 public function __construct()
         {
                 parent::__construct();

@@ -18,7 +18,7 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Contact_us_controller extends CI_Controller {
-               
+   // used for the contact form on the public side            
 	function __construct()
 	{
  		parent::__construct();

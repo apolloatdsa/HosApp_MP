@@ -19,6 +19,20 @@
 
 
 class Contacts extends CI_Controller {
+	
+	 public function __construct()
+        {
+                parent::__construct();
+				//session_start();
+				$this->load->library('listview');
+				if (!$this->session->userdata('manager') && !$this->session->userdata('admin') ){
+					
+	 					redirect('auth/logout');
+					 
+					 };
+				
+        }
+	
 
 	function index($offset = 0) {
 		$limit = 10;

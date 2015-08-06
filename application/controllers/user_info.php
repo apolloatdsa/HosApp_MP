@@ -19,7 +19,7 @@
 
 
 class User_info extends CI_Controller {
-
+	// controlls access to the user admin  users need to be admin to access this page
 	function __construct()
 	{
 		parent::__construct();

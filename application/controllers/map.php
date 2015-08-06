@@ -19,7 +19,7 @@
 
 
 class Map extends CI_Controller {
-	 
+	 // used for the company office location google maps
 	 public function __construct()
         {
                 parent::__construct();

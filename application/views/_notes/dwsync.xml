@@ -107,8 +107,8 @@
 <file name="manager_dashboard_edit_user_image.php" server="siteground182.com/codeigniter_h/" local="130828237621423621" remote="130827985800000000" Dst="2" />
 <file name="form_student_edit.php" server="siteground182.com/codeigniter_h/" local="130828261227703823" remote="130828009800000000" Dst="2" />
 <file name="manager_login_dashboard.php" server="siteground182.com/codeigniter_h/" local="130828261165750280" remote="130828009800000000" Dst="2" />
-<file name="check_image.php" server="siteground182.com/codeigniter_h/" local="130826423830440711" remote="130826172000000000" Dst="2" />
-<file name="manager_dashboard_employee_course_progress_report_page.php" server="siteground182.com/codeigniter_h/" local="130828261191551756" remote="130828009800000000" Dst="2" />
+<file name="check_image.php" server="siteground182.com/codeigniter_h/" local="130833402010000000" remote="130833150000000000" Dst="2" />
+<file name="manager_dashboard_employee_course_progress_report_page.php" server="siteground182.com/codeigniter_h/" local="130833409814663822" remote="130833157800000000" Dst="2" />
 <file name="manager_print_certificate.php" server="siteground182.com/codeigniter_h/" local="130828261162730107" remote="130828009800000000" Dst="2" />
 <file name="student_print_certificate.php" server="siteground182.com/codeigniter_h/" local="130828261129548209" remote="130828010400000000" Dst="2" />
 <file name="blue_bar_user_header.php" server="siteground182.com/codeigniter_h/" local="130826728073922443" remote="130826476200000000" Dst="2" />
@@ -143,7 +143,7 @@
 <file name="frontend_layout.php" server="siteground182.com/codeigniter_h/" local="130796062139830620" remote="130828009800000000" Dst="2" />
 <file name="galway_map_view.php" server="siteground182.com/codeigniter_h/" local="130811250423923526" remote="130828009800000000" Dst="2" />
 <file name="gauge_1.php" server="siteground182.com/codeigniter_h/" local="130822082465044800" remote="130828009800000000" Dst="2" />
-<file name="gauge_2.php" server="siteground182.com/codeigniter_h/" local="130822082504677067" remote="130828009800000000" Dst="2" />
+<file name="gauge_2.php" server="siteground182.com/codeigniter_h/" local="130833409575530145" remote="130833157200000000" Dst="2" />
 <file name="gold_plan_details.php" server="siteground182.com/codeigniter_h/" local="130795477719273676" remote="130828009800000000" Dst="2" />
 <file name="home_page.php" server="siteground182.com/codeigniter_h/" local="130828261221443465" remote="130828009800000000" Dst="2" />
 <file name="how_is_training_delivered.php" server="siteground182.com/codeigniter_h/" local="130795320020713834" remote="130828009800000000" Dst="2" />

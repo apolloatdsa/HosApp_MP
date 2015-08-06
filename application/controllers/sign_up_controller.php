@@ -18,7 +18,7 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Sign_up_controller extends CI_Controller {
-               
+    // public view sign up form           
 	function __construct()
 	{
  		parent::__construct();

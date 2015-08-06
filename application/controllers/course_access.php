@@ -18,13 +18,14 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Course_access extends CI_Controller {
-	 
+	
+	// used to controll access to course material 
 	 public function __construct()
         {
                 parent::__construct();
 				//session_start();
 				
-				if (!$this->ion_auth->logged_in()){
+				if (!$this->ion_auth->logged_in()){ // user has to be logged in to access 
 					
 	 					//redirect them to the login page
 					$data['title'] = 'Set page title here';

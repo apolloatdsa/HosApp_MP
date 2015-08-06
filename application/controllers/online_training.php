@@ -19,6 +19,8 @@
 
 
 class Online_training extends CI_Controller {
+	
+	// This is the public view of the website pages that can be viewed by non registered users
 	 
 	 public function __construct()
         {

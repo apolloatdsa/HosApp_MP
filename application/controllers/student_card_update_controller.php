@@ -18,7 +18,7 @@
 // Formigniter was used to generate forms used in the project. http://formigniter.org/app/
 
 class Student_card_update_controller extends CI_Controller {
-               
+     // used by the student dasgboard to edit student data          
 	function __construct()
 	{
  		parent::__construct();
