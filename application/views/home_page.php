@@ -21,7 +21,7 @@
         <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-speed="8" data-opacity="true">
             <div class="v-center">
                 <div class="page-section overlay-bg-white-strong relative paper-shadow" data-z="1">
-                    <h1 class="text-display-2 margin-v-0-15 display-inline-block">Training for the hospitality sector</h1>
+                    <h1 class="text-display-2 margin-v-0-15 display-inline-block">Track your training</h1>
                     <p class="text-subhead">Professionally Developed Web-Based Training Course Libraries.</p>
                     <p class="text-subhead">Automated training for staff in the hospitality business. Track staff progress as they learn through videos and quizzes.</p>
                     <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="<?php echo base_url() ?>online_training/sign_up">Sign Up From- &euro;125.00/mo</a>
