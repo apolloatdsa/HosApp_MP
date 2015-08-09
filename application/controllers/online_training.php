@@ -32,10 +32,10 @@ class Online_training extends CI_Controller {
 				$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
 				$this->lang->load('auth');
-				//$this->login_index();
+				
 				
 				// add extra required user information to the current session	
-	###############################################################################################################################################
+	
 		
 		if ($this->ion_auth->logged_in()){ // if user is logged add the user level I.E. admin/ member / student / instructor .. ect to the session
 			
@@ -62,7 +62,6 @@ class Online_training extends CI_Controller {
 	 public function index()
 	{
    
-	 // executes the code in here first
 			$data['title'] = 'Set page title here';
 			$this->load->view('templates/header', $data );
 			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use

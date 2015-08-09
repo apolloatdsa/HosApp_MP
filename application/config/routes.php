@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "online_training";
 $route['404_override'] = '';
-
+$route['seo/sitemap\.xml'] = "seo/sitemap";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

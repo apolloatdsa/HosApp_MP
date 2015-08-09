@@ -1,4 +1,8 @@
-            
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->            
             <div class="slick-basic slick-slider" data-items="4" data-items-lg="3" data-items-md="2" data-items-sm="1" data-items-xs="1">
                 <div class="item">
                     <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>

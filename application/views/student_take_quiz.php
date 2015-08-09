@@ -1,3 +1,9 @@
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
+
 <div class="split-vertical">
         <div class="page-section half bg-white">
             <div class="container">

@@ -1,13 +1,17 @@
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
 
 
-<?php  $id = $this->session->userdata('user_id'); 
+<?php
+ 
+$id = $this->session->userdata('user_id');
 
-//print_r($completed_courses->result());
-//print_r($number_of_results);
+include('includes/blue_bar_user_header.php');
 
-
- ?>
-<?php include('includes/blue_bar_user_header.php');?>
+?>
 
     <div class="container">
         <div class="page-section">

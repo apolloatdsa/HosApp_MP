@@ -1,4 +1,9 @@
-<?php //echo  var_dump($this->session->all_userdata());?>
+
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
 <?php //echo  var_dump($payment);
 
 $student_card_number = '';

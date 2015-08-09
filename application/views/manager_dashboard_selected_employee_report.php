@@ -1,3 +1,8 @@
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
 
 <?php 
 
@@ -198,18 +203,7 @@ $company = $this->session->userdata('company');
                                  
               <div class="col-md-4 col-md-offset-1"> <!-- div 8 -->
                                             <div class="media v-middle"> <!-- div 11 -->
-                                  <div class="media-right"> <!-- div 9 -->
-                                    <div class="icon-block width-150 bg-grey-150"> <!-- div 10 -->
-                      <img src="<?php echo $image ?>" alt="member" class="img-circle width-80" />
-                                      </div> <!-- div 10 -->
-                               		<br> <label for="last_login">Last Login </label>
-                                	<input class="form-control" id="last_login" type="text" name="last_login" maxlength="30"  value="<?php echo unix_to_human($last_login);   ?>" readonly />
-                                 	<br> <label for="created_on">Created on </label>
-                                	 <input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo unix_to_human($created_on);   ?>" readonly />           
-                    				<br> <label for="created_on">Folio user ID </label>
-                                 	<input class="form-control" id="created_on" type="text" name="created_on" maxlength="30"  value="<?php echo $id;   ?>" readonly />          	
-                                    
-                                   </div> <!-- div 9 -->
+                                 
                                    <p></p>   
                                    
                                    <p>  <?php  include('includes/employee_nav_buttons.php') ?> <!-- back to list Back next first last edit employee butons --> </p>

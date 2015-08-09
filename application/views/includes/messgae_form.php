@@ -1,4 +1,11 @@
-<?php // Change the css classes to suit your needs    
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
+
+
+<?php     
 
 $attributes = array('class' => '', 'id' => '');
 echo form_open('message_controller', $attributes); ?>

@@ -1,3 +1,9 @@
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
+
 <h1><?php echo lang('reset_password_heading');?></h1>
 
 <div id="infoMessage"><?php echo $message;?></div>

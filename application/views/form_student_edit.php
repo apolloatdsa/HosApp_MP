@@ -1,4 +1,8 @@
-                            <?php  // echo var_dump($employee)  ?>
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->                            <?php  // echo var_dump($employee)  ?>
                             
                             <?php 
 							
@@ -18,11 +22,6 @@
 								}
 							
 								include('includes/check_image.php');
-							
-							
-							
-							
-							
 							
 							
 							?>

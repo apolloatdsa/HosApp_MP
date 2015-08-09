@@ -1,3 +1,9 @@
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
+
 <?php include('includes/blue_bar_user_header.php');?>
     
     <!-- Top blue bar with user image name and type -->

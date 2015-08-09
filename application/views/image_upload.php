@@ -1,3 +1,10 @@
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
+
+
  <?php echo form_open_multipart('online_training/user_image_upload');  ?>
                             	
                                 <div class="col-md-6  page-section">

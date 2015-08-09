@@ -1,4 +1,8 @@
-
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
     <div class="parallax overflow-hidden page-section bg-deep-purple-300">
         <div class="container parallax-layer" data-opacity="true">
             <div class="media media-grid v-middle">

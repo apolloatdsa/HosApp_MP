@@ -1,4 +1,8 @@
-
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
             </div>
         </div>
         <!-- Sidebar component with st-effect-1 (set on the toggle button within the navbar) -->

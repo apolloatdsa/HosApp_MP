@@ -1,4 +1,8 @@
-
+<!--
+* Date:2015/07/24
+* Author: Thomas Delaney
+* Student ID: D14126353
+-->
 <?php 
 
 
@@ -31,8 +35,6 @@ $company = $this->session->userdata('company');
             <div class="col-md-7 col-lg-12">                                                        
                                   
 									
-                                     
-                                         
                                           <p>
                                          <!-- this dropdown of available courses --> 
                                          <label for="registered_courses">Employee has completed  -  </label><br>
