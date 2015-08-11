@@ -271,22 +271,7 @@ class Manager_dashboard extends CI_Controller {
 		
 		}
 	
-	function 	selected_employee_report_completed_blank($id){
-		
-			$this->session->userdata('edit_id', $id);
-			$data['employee'] = $this->ion_auth->edit_employee($id);// employee list
-			$data['courses'] = $this->ion_auth->get_courses(); // courses list
-			$data['completed_courses'] = $this->ion_auth->get_completed_courses($id); // employee is registered on these courses
-			$data['course_names'] = $this->ion_auth->get_registered_courses_names($id); // used to match course names
-		
-		
-			$data['title'] = 'Set page title here';
-			$this->load->view('templates/header', $data );
-			$this->ion_auth->navbar(); // calls a function in the ion auth model to return the user level navbar to use
-			$this->load->view('manager_dashboard_selected_employee_report_completed_blank');
-			$this->load->view('templates/short_footer');
-		
-		}
+	
 	
 	
 	function remove_course($course_id, $id){

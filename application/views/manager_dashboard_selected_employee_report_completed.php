@@ -97,14 +97,22 @@ $company = $this->session->userdata('company');
 										}else{
 											
 											echo ' <h4> The employee has not completed any courses </h4>
-												<h4> To demonistrate a completed course </h4>
+												<h4> To demonstrate a completed course </h4>
 												
 												<p>
 												<ul class="h4">
-												<li>Go to course progress page and add course - click add new button above. </li>
+												<li>Go to the course progress page by clicking the add new button above. Then assign a course. </li>
 												<li>To mark a course as completed click on the Add / Remove check on the course in the list.</li>
 												</ul>
-												</p>';
+												</p>
+												<p>
+												<img src="'.base_url().'images/set_complete.jpg" alt="member" class="img-circle width-300" />
+												
+												
+												
+												</p>
+												
+												';
 											
 											};
 										
